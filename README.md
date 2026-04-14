@@ -13,13 +13,15 @@ A RAG chatbot for University of Alberta Math & Statistics department using local
 
 - Python 3.12+
 - [Ollama](https://ollama.com) installed
+- assuming `uv` dependency management, but .lock and .toml left out for other environment users
 
 ## Setup
 
 ### 1. Install Dependencies
 
+If using `uv`:
 ```bash
-uv sync
+uv add -r requiremens.txt
 ```
 
 ### 2. Install Ollama
