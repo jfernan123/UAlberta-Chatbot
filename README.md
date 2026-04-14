@@ -87,9 +87,23 @@ uv run python chatbot.py
 
 ## Model Options
 
-For better quality (requires more RAM):
+This repo uses qwen3:0.6b by default. Other options:
+
+### Qwen (recommended for reasoning)
 
 ```bash
-ollama pull qwen3:1.7b
-# Then update chatbot.py to use model="qwen3:1.7b"
+ollama pull qwen3:1.7b  # Better quality, ~6GB RAM
+ollama pull qwen3:8b    # Best quality, ~16GB RAM
+```
+
+### Llama (alternative)
+
+```bash
+ollama pull llama3.1:8b  # ~16GB RAM
+```
+
+To switch models, update `chatbot.py`:
+
+```python
+llm = ChatOllama(model="llama3.1:8b", temperature=0)
 ```
