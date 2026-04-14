@@ -84,6 +84,44 @@ uv run python chatbot.py
 | `retriever.py` | Loads vector DB for retrieval |
 | `chatbot.py` | RAG chain with qwen3:0.6b |
 | `app.py` | Streamlit web UI |
+| `evaluation.py` | Evaluation suite with GLUE/ROUGE-style metrics |
+
+## Evaluation
+
+Run the evaluation suite to test the chatbot:
+
+```bash
+uv run python evaluation.py
+```
+
+This runs 8 test cases and reports:
+- **Retrieval Precision@4** - Quality of document retrieval (target: >0.8)
+- **Keyword Coverage** - Does response contain expected keywords?
+- **ROUGE-L** - String similarity with reference
+- **Overall Score** - Weighted combination of metrics
+
+### Sample Results
+
+```
+Metrics (averaged across 8 test cases):
+  - Retrieval Precision@4:     0.875
+  - Keyword Coverage:          0.533
+  - ROUGE-L:                   0.062
+  - Overall Score:             0.494
+
+By Category:
+  - programs: 0.616 (n=4)
+  - support: 0.538 (n=1)
+  - courses: 0.317 (n=3)
+```
+
+### Test Cases
+
+The evaluation includes questions on:
+- First-year courses (Calculus, Linear Algebra, Statistics)
+- Program differences (Honors vs Major)
+- Double majors and minors
+- Student support resources
 
 ## Model Options
 
