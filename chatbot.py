@@ -1,13 +1,13 @@
 # chatbot.py
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
-from retriever import load_retriever  # import your retriever
+from retriever import load_retriever
 
 
 def build_chatbot():
     retriever = load_retriever()
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+    llm = ChatOllama(model="qwen3:0.6b", temperature=0)
 
     prompt = ChatPromptTemplate.from_template("""
     Answer the question based only on the context below.
@@ -20,7 +20,7 @@ def build_chatbot():
     """)
 
     def format_docs(docs):
-        return docs, "\n\n".join(doc.page_content for doc in docs)
+        return "\n\n".join(doc.page_content for doc in docs)
 
     def build_input(question):
         docs = retriever.invoke(question)
@@ -30,9 +30,10 @@ def build_chatbot():
     def run_chain(question):
         inputs, docs = build_input(question)
         answer = (prompt | llm | StrOutputParser()).invoke(inputs)
-        return answer, docs
+        return answer
 
     return run_chain
+
 
 if __name__ == "__main__":
     bot = build_chatbot()
@@ -40,8 +41,7 @@ if __name__ == "__main__":
     while True:
         query = input("Ask a question: ")
 
-        # NEW invocation style
-        result = bot.invoke(query)
+        result = bot(query)
 
         print("\nAnswer:")
         print(result)
