@@ -9,5 +9,5 @@ st.title("UAlberta Math & Stats Assistant")
 query = st.text_input("Ask a question:")
 
 if query:
-    result = bot({"query": query})
-    st.write(result["result"])
+    result = bot(query)
+    st.write(result)
