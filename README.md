@@ -16,13 +16,15 @@ A RAG chatbot for University of Alberta Math & Statistics department using local
 
 - Python 3.12+
 - [Ollama](https://ollama.com) installed
+- assuming `uv` dependency management, but .lock and .toml left out for other environment users
 
 ## Setup
 
 ### 1. Install Dependencies
 
+If using `uv`:
 ```bash
-uv sync
+uv add -r requiremens.txt
 ```
 
 ### 2. Install Ollama
@@ -181,9 +183,11 @@ To switch models, update `chatbot.py`:
 ```python
 llm = ChatOllama(model="llama3.1:8b", temperature=0)
 ```
+<<<<<<< HEAD
 
 ## License
 
 This project is MIT Licensed.
 
 **Streamlit** is Apache 2.0 licensed - see [Streamlit License](https://github.com/streamlit-io/streamlit/blob/master/LICENSE)
+
