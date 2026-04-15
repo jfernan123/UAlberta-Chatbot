@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2026-04-15T23:35:31.099557",
+    "question": "What is the difference between mathematics and statistics programs?",
+    "response": "The difference between mathematics and statistics programs lies in their focus and structure. Mathematics programs emphasize rigorous study and depth, while statistics programs also prioritize rigor but may vary in specialization. Honors programs in mathematics allow students to balance the study of mathematics and the arts, whereas Major programs focus on a specific discipline. Additionally, BA Honors in Mathematics combines both fields, offering a unique blend of mathematical and artistic expl",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-15T23:38:49.315080",
+    "question": "What is calculus?",
+    "response": "Calculus is a branch of mathematics that deals with limits, derivatives, and integrals. It provides a way to understand and calculate the behavior of functions and their rates of change, which is fundamental in various fields such as physics, engineering, and economics.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-15T23:43:11.367015",
+    "question": "What is graph theory?",
+    "response": "The provided context does not mention graph theory. It focuses on undergraduate programs in Mathematics and Statistics, as well as double majors/minors in Science and Arts. There is no information about graph theory.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-15T23:46:11.012074",
+    "question": "What is measure theory?",
+    "response": "The provided context discusses undergraduate programs in mathematics and statistics, including Honors and Major programs, BSc and BA degrees, and details about BA Honors in Mathematics. However, measure theory is not mentioned or referenced in any of the provided texts. Therefore, based on the given information, I cannot answer the question about measure theory.",
+    "rating": 1
+  }
+]
