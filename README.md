@@ -183,7 +183,6 @@ To switch models, update `chatbot.py`:
 ```python
 llm = ChatOllama(model="llama3.1:8b", temperature=0)
 ```
-<<<<<<< HEAD
 
 ## License
 
