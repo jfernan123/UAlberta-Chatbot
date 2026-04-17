@@ -63,19 +63,30 @@ if __name__ == "__main__":
     # Ensure data directory exists
     os.makedirs("data", exist_ok=True)
 
-    urls = [
-        # Calendar pages
-        # "https://calendar.ualberta.ca/",
+urls = [
         # Program pages
         "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/index.html",
+        "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/statistics/index.html",
+        "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/mathematics/index.html",
+        
+        # Course page (only first-year available)
         "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
     ]
 
     results = []
     for url in urls:
-        results.append(scrape_page(url))
+        print(f"Scraping: {url}")
+        try:
+            results.append(scrape_page(url))
+            print(f"  Success")
+        except Exception as e:
+            print(f"  Error: {e}")
 
     with open("data/pages.json", "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
-    print(f"Scraped {len(results)} page(s), saved to data/pages.json")
+    print(f"\nScraped {len(results)} page(s), saved to data/pages.json")
+
+    # Count total sections
+    total_sections = sum(len(page.get("sections", [])) for page in results)
+    print(f"Total sections: {total_sections}")

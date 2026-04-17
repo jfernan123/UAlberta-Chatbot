@@ -57,12 +57,12 @@ This saves scraped content to `data/pages.json`.
 ### Create Vector DB
 
 ```bash
-uv run python -c "
-from chunker import chunk_json
-from vector_store import create_vector_db
-chunks = chunk_json('data/pages.json')
-create_vector_db(chunks)
-"
+uv run python make_db.py
+```
+
+Or for verbose output:
+```bash
+uv run python make_db.py -v
 ```
 
 ### Run Web UI
@@ -93,6 +93,7 @@ uv run python chatbot.py
 | `retriever.py` | Loads vector DB for retrieval |
 | `chatbot.py` | RAG chain with qwen3:0.6b |
 | `app.py` | Streamlit web UI (chat interface) |
+| `make_db.py` | Create vector DB from scraped data |
 | `feedback.py` | User feedback collection |
 | `analytics.py` | Feedback analysis & reporting |
 | `evaluation.py` | Evaluation suite with metrics |

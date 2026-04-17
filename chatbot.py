@@ -39,9 +39,17 @@ if __name__ == "__main__":
     bot = build_chatbot()
 
     while True:
-        query = input("Ask a question: ")
+        try:
+            query = input("Ask a question: ")
+            if not query.strip():
+                break
 
-        result = bot(query)
+            result = bot(query)
 
-        print("\nAnswer:")
-        print(result)
+            print("\nAnswer:")
+            print(result)
+        except EOFError:
+            break
+        except KeyboardInterrupt:
+            print("\nExiting...")
+            break
