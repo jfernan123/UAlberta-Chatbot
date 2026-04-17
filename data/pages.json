@@ -22,22 +22,34 @@
     ]
   },
   {
-    "url": "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/statistics/index.html",
-    "title": "300 Multiple Choices",
+    "url": "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/statistics.html",
+    "title": "Statistics | Mathematical and Statistical Sciences",
     "sections": [
       {
-        "heading": "Multiple Choices",
-        "content": "Available documents:/en/mathematical-and-statistical-sciences/undergraduate-studies/programs/statistics.html/index.html(common basename)"
+        "heading": "Employment for Statistics Majors",
+        "content": "Graduates from programs in Statistics are highly sought in a wide variety of fields. For example, many become: Graduates from our programs in Statistics also are well positioned to become accredited as an Associate Statistician (more information below) or as a professional actuary (more information on theMathematics and Financepage)."
+      },
+      {
+        "heading": "Associate Statistician",
+        "content": "The Statistical Society of Canada offers an accreditation program for statisticians practicing in Canada. The program has two levels of accreditation, namely Associate Statistician (A.Stat.) and Professional Statistician (P.Stat.). The qualification of Associate Statistician (A.Stat.) indicates that the holder has demonstrated an advanced understanding of statistical theory and its applications. The qualification of Professional Statistician (P.Stat.) indicates that the holder additionally has a minimum of six years of professional experience in the application of statistics. Graduates from one of our programs in Statistics are well on their way to completing the requirements for the qualification of A.Stat. For more details, please visit the theStatistical Society of Canadawebsite, in particular theaccreditationpage and the page with thelist of coursesat the University of Alberta that have been pre-approved towards meeting the educational requirements of the A.Stat."
+      },
+      {
+        "heading": "University of Alberta",
+        "content": "University Commons 5-140Edmonton, Alberta, Canada T6G 2N8 (780) 492 3396"
       }
     ]
   },
   {
-    "url": "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/mathematics/index.html",
-    "title": "300 Multiple Choices",
+    "url": "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/mathematics.html",
+    "title": "Mathematics | Mathematical and Statistical Sciences",
     "sections": [
       {
-        "heading": "Multiple Choices",
-        "content": "Available documents:/en/mathematical-and-statistical-sciences/undergraduate-studies/programs/mathematics.html/index.html(common basename)"
+        "heading": "Pure and Applied Mathematics",
+        "content": "Many people refer to these programs as programs inpuremathematics, as distinguished fromappliedmathematics. Although pure mathematics often derives its inspiration from physical ideas and its results frequently find extraordinarily important applications in other areas of science and technology (sometimes many, many years later), it is primarily pursued by those who are fascinated by its wealth of wonderful ideas and its perfection of detail. The division between pure and applied mathematics is not well defined, and many students choose to develop skills in both areas. Many of the most famous mathematicians were (and are) deeply committed to both aspects. Most pure mathematicians are employed by universities, colleges, and research institutes, although an increasing number also branch out into the commercial sectors (especially financial/market analysis and computing), where their ability to isolate, abstract, and formulate the essence of a problem is considered an invaluable skill. Degree options in Mathematics are as follows:"
+      },
+      {
+        "heading": "University of Alberta",
+        "content": "University Commons 5-140Edmonton, Alberta, Canada T6G 2N8 (780) 492 3396"
       }
     ]
   },
@@ -72,6 +84,28 @@
       {
         "heading": "COURSE REMARKS:",
         "content": "STAT 235, Introductory Statistics for Engineering Taken by Engineering Degree Program students. STAT 151, Introduction to Applied Statistics I For non-Engineering students, unless interested in Business or Econ. STAT 161, Introductory Statistics for Business or Economics For non-Engineering students with interest in Business or Econ."
+      },
+      {
+        "heading": "University of Alberta",
+        "content": "University Commons 5-140Edmonton, Alberta, Canada T6G 2N8 (780) 492 3396"
+      }
+    ]
+  },
+  {
+    "url": "https://www.ualberta.ca/mathematical-and-statistical-sciences/graduate-studies/programs",
+    "title": "Programs | Mathematical and Statistical Sciences",
+    "sections": [
+      {
+        "heading": "Graduate programs",
+        "content": "The Department of Mathematical and Statistical Sciences offers the following graduate programs. Details of the graduate programs can be found in theUniversity Calendar."
+      },
+      {
+        "heading": "The Graduate Teaching + Learning Program",
+        "content": "TheGraduate Teaching and Learning Programis a supplementary, post-baccalaureate certificate in University teaching instruction open to all students."
+      },
+      {
+        "heading": "The Embedded Certificate in Data Science",
+        "content": "Students planning to pursue a degree in Pure or Applied Mathematics, or Mathematical Physics may find it interesting that the Department offers an Embedded Certificate in Data Science. The intention of this certificate is to provide students with marketable skills for the non-academic job market but is likely also helpful in academic settings. Students are awarded the certificate if they complete three courses (out of a large list of possibilities), as well as the Graduate Teaching and Learning Program (Level 1). Depending on individual circumstances, the courses taken for the certificate may or may not count toward course requirements in the actual degree program."
       },
       {
         "heading": "University of Alberta",

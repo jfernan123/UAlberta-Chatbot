@@ -108,6 +108,34 @@ TEST_CASES = [
         "expected_topics": ["Honors Mathematics"],
         "category": "programs",
     },
+    {
+        "question": "What is the Statistics program?",
+        "expected_keywords": [
+            "Statistics",
+            "collecting",
+            "analyzing",
+            "interpreting data",
+            "Honors",
+            "Major",
+            "Minor",
+        ],
+        "expected_topics": ["Statistics program overview"],
+        "category": "programs",
+    },
+    {
+        "question": "What is the Mathematics program?",
+        "expected_keywords": [
+            "Mathematics",
+            "analysis",
+            "geometry",
+            "number theory",
+            "Honors",
+            "Major",
+            "Minor",
+        ],
+        "expected_topics": ["Mathematics program overview"],
+        "category": "programs",
+    },
 ]
 
 

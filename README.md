@@ -142,25 +142,33 @@ Run the evaluation suite to test the chatbot:
 uv run python evaluation.py
 ```
 
-This runs 8 test cases and reports:
+This runs 10 test cases and reports:
 - **Retrieval Precision@4** - Quality of document retrieval (target: >0.8)
 - **Keyword Coverage** - Does response contain expected keywords?
 - **ROUGE-L** - String similarity with reference
 - **Overall Score** - Weighted combination of metrics
 
+### Test Cases (10 total)
+
+The evaluation includes questions on:
+- First-year courses (Calculus, Linear Algebra, Statistics)
+- Program differences (Honors vs Major, Specialization)
+- Double majors and minors
+- Student support resources
+- **Program-specific questions**: Statistics program overview, Mathematics program overview
+
+> **Note:** 2 of 10 questions ("What is the Statistics program?" and "What is the Mathematics program?") currently fail due to limited scraped content - this is noted as future improvement area.
+
 ### Sample Results
 
 ```
-Metrics (averaged across 8 test cases):
-  - Retrieval Precision@4:     0.875
-  - Keyword Coverage:          0.533
-  - ROUGE-L:                   0.062
-  - Overall Score:             0.494
+Metrics (averaged across 10 test cases):
+  - Retrieval Precision@4:     ~0.80
+  - Overall Score:             ~0.45
 
-By Category:
-  - programs: 0.616 (n=4)
-  - support: 0.538 (n=1)
-  - courses: 0.317 (n=3)
+Questions needing improvement:
+  - What is the Statistics program? (requires more program page content)
+  - What is the Mathematics program? (requires more program page content)
 ```
 
 ## Model Options

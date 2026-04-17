@@ -63,15 +63,22 @@ if __name__ == "__main__":
     # Ensure data directory exists
     os.makedirs("data", exist_ok=True)
 
-urls = [
-        # Program pages
+    urls = [
+        # Program pages (fixed URLs - these now work)
         "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/index.html",
-        "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/statistics/index.html",
-        "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/mathematics/index.html",
+        "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/statistics.html",
+        "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/mathematics.html",
         
         # Course page (only first-year available)
         "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
+        
+        # Graduate programs (MDP - Modeling, Data and Predictions)
+        "https://www.ualberta.ca/mathematical-and-statistical-sciences/graduate-studies/programs",
     ]
+
+    # Note: Calendar pages removed as they require enhanced scraping for tables
+    # To re-enable calendar scraping, enhance scraper to handle HTML tables
+    # "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
 
     results = []
     for url in urls:
