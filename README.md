@@ -31,17 +31,18 @@ uv add -r requiremens.txt
 
 Follow instructions at https://ollama.com
 
+
+### 3. Start Ollama Server
+
+```bash
+ollama serve
+```
+
 ### 3. Pull Models
 
 ```bash
 ollama pull qwen3:0.6b
 ollama pull nomic-embed-text
-```
-
-### 4. Start Ollama Server
-
-```bash
-ollama serve
 ```
 
 ## Usage
