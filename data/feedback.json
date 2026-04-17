@@ -22,5 +22,11 @@
     "question": "What is measure theory?",
     "response": "The provided context discusses undergraduate programs in mathematics and statistics, including Honors and Major programs, BSc and BA degrees, and details about BA Honors in Mathematics. However, measure theory is not mentioned or referenced in any of the provided texts. Therefore, based on the given information, I cannot answer the question about measure theory.",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-17T09:56:41.395703",
+    "question": "What courses are mandatory for first year math or stats program?",
+    "response": "The mandatory courses for a first-year math or stats program are **Linear Algebra** and **Calculus**. These are typically required as foundational courses in the curriculum.",
+    "rating": 1
   }
 ]
