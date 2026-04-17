@@ -31,17 +31,18 @@ uv add -r requiremens.txt
 
 Follow instructions at https://ollama.com
 
+
+### 3. Start Ollama Server
+
+```bash
+ollama serve
+```
+
 ### 3. Pull Models
 
 ```bash
 ollama pull qwen3:0.6b
 ollama pull nomic-embed-text
-```
-
-### 4. Start Ollama Server
-
-```bash
-ollama serve
 ```
 
 ## Usage
@@ -184,7 +185,6 @@ To switch models, update `chatbot.py`:
 ```python
 llm = ChatOllama(model="llama3.1:8b", temperature=0)
 ```
-<<<<<<< HEAD
 
 ## License
 
