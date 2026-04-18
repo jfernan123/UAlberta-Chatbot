@@ -161,9 +161,9 @@ The evaluation includes questions on:
 
 ### Current Database Stats
 
-- Pages scraped: 7
-- Chunks in vector database: 63
-- Program pages covered: Statistics, Mathematics, Math & Finance, Math & Economics
+- Pages scraped: 8
+- Sections: 77
+- Program pages covered: Statistics, Mathematics, Math & Finance, Math & Economics, MDP ( Modeling, Data & Predictions)
 
 ### Sample Results
 

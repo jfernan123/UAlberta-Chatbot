@@ -118,6 +118,9 @@ if __name__ == "__main__":
         
         # Graduate programs (MDP - Modeling, Data and Predictions)
         "https://www.ualberta.ca/mathematical-and-statistical-sciences/graduate-studies/programs",
+        
+        # MDP Program website (separate site with full program details)
+        "https://sites.ualberta.ca/~mdpprog/",
     ]
 
     # Note: Calendar pages removed as they require enhanced scraping for tables
