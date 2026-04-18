@@ -40,5 +40,23 @@
     "question": "Can you tell me again in detail what the MDP program is?",
     "response": "The MDP program is designed for students interested in mathematics or statistics, aiming to help individuals achieve their goals in these fields. Graduates often pursue postgraduate studies or establish careers in research, industry, or government. The program emphasizes rigorous academic training and offers diverse pathways for students.",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-18T20:06:30.231876",
+    "question": "Can you explain more in detail what the statistics program is?",
+    "response": "The statistics program offered by the Statistical Society of Canada is an undergraduate program designed to prepare students for advanced statistical practices. Here's a detailed breakdown:\n\n1. **Accreditation Levels**:  \n   - **Associate Statistician (A.Stat.)**: Requires advanced understanding of statistical theory and its applications.  \n   - **Professional Statistician (P.Stat.)**: Requires a minimum of six years of professional experience in applying statistics.  \n\n2. **Program Structure**:",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-18T20:07:22.964300",
+    "question": "What mandatory courses at the U of A does a stats major take in their first year",
+    "response": "Based on the provided context, the mandatory course for a stats major at the University of Alberta in their first year is **Linear Algebra**. The context lists Linear Algebra as a course offered in the first-year program, indicating it is a required subject for such a major.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-18T20:12:50.102515",
+    "question": "What courses can you tell me about?",
+    "response": "The courses offered in Linear Algebra are listed in the context as a single entry. The answer is that the courses are Linear Algebra, and each source provides information about them.",
+    "rating": -1
   }
 ]

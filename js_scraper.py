@@ -137,6 +137,35 @@ def scrape_with_playwright(url, wait_time=3):
     return html
 
 
+def extract_course_content(soup):
+    """Extract course requirements from page text"""
+    import re
+    
+    text = soup.get_text()
+    
+    # Find course patterns like "STAT 151 - Introduction to Applied Statistics"
+    # or "MATH 117 - Honors Calculus I"
+    patterns = [
+        r'(STAT\s*\d+[^\n]{0,50})',
+        r'(MATH\s*\d+[^\n]{0,50})',
+        r'(CMPUT\s*\d+[^\n]{0,50})',
+    ]
+    
+    course_lines = []
+    seen = set()
+    
+    for pattern in patterns:
+        matches = re.findall(pattern, text, re.IGNORECASE)
+        for m in matches:
+            # Clean up
+            clean = m.strip().replace('\n', ' ')[:80]
+            if clean and clean not in seen and len(clean) > 5:
+                course_lines.append(clean)
+                seen.add(clean)
+    
+    return course_lines[:30]  # Limit to 30 courses
+
+
 def parse_html_to_sections(html, url):
     """
     Parse HTML to extract structured sections (same logic as scraper.py)
@@ -198,7 +227,7 @@ def parse_html_to_sections(html, url):
                     break
                 if hasattr(sibling, "name") and sibling.name in [
                     "p", "li", "td", "th", "tr", "div", "a", "ul", "ol",
-                ]:
+]:
                     text = sibling.get_text(strip=True)
                     if text and len(text) > 5:
                         content_parts.append(text)
@@ -209,6 +238,16 @@ def parse_html_to_sections(html, url):
                     "content": " ".join(content_parts)
                 })
     
+    # For calendar pages, also extract table data
+    if "calendar" in url:
+        course_lines = extract_course_content(soup)
+        if course_lines:
+            # Add course data as one section
+            sections.append({
+                "heading": "Course Requirements",
+                "content": " | ".join(course_lines)
+            })
+
     return {"url": url, "title": title, "sections": sections}
 
 
@@ -264,12 +303,8 @@ if __name__ == "__main__":
     
     # URLs to test with Playwright
     js_urls = [
-        # MDP - Modeling, Data and Predictions (graduate)
-        "https://www.ualberta.ca/mathematical-and-statistical-sciences/graduate-studies/programs",
-        # Statistics program (for intro)
-        "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/statistics.html",
-        # MDP Program website
-        "https://sites.ualberta.ca/~mdpprog/",
+        # Calendar pages - Statistics program requirements
+        "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
     ]
     
     results = []

@@ -377,6 +377,90 @@ def evaluate_generation(
 # =============================================================================
 
 
+def run_evaluation_batched(
+    chatbot_func, test_cases: List[Dict] = None, batch_size: int = 3
+) -> List[EvaluationResult]:
+    """
+    Run evaluation in batches with progress reporting
+
+    Args:
+        chatbot_func: Function that takes a question and returns response string
+        test_cases: Optional custom test cases (defaults to TEST_CASES)
+        batch_size: Number of test cases per batch (default 3)
+
+    Returns:
+        List of EvaluationResult objects
+    """
+    if test_cases is None:
+        test_cases = TEST_CASES
+
+    results = []
+
+    print("=" * 60)
+    print("RAG EVALUATION SUITE (BATCHED)")
+    print("=" * 60)
+    print(f"Running {len(test_cases)} test cases in batches of {batch_size}...\n")
+
+    for batch_start in range(0, len(test_cases), batch_size):
+        batch_end = min(batch_start + batch_size, len(test_cases))
+        batch = test_cases[batch_start:batch_end]
+
+        print(f"\n--- Batch {batch_start // batch_size + 1}/{(len(test_cases) + batch_size - 1) // batch_size} ---")
+        print(f"Progress: {batch_start}/{len(test_cases)} test cases completed\n")
+
+        for i, test_case in enumerate(batch, batch_start + 1):
+            question = test_case["question"]
+            print(f"[{i}/{len(test_cases)}] Question: {question[:50]}...")
+
+            try:
+                # Get response
+                response = chatbot_func(question)
+
+                # Get context
+                from retriever import load_retriever
+                retriever = load_retriever()
+                retrieved_docs = retriever.invoke(question)
+
+                # Evaluate retrieval
+                retrieval_result = evaluate_retrieval(question, retrieved_docs, k=4)
+
+                # Evaluate generation
+                generation_result = evaluate_generation(test_case, response, retrieved_docs)
+
+                # Compute ROUGE-L
+                reference = " ".join(test_case.get("expected_topics", []))
+                rouge_l = compute_rouge_l(response, reference)
+
+                # Overall score
+                overall = (
+                    0.3 * retrieval_result.precision
+                    + 0.4 * generation_result.keyword_coverage
+                    + 0.3 * rouge_l
+                )
+
+                result = EvaluationResult(
+                    test_case=test_case,
+                    retrieval=retrieval_result,
+                    generation=generation_result,
+                    rouge_l=rouge_l,
+                    overall_score=round(overall, 3),
+                )
+                results.append(result)
+
+                print(f"  - Precision@4: {retrieval_result.precision:.2f}")
+                print(f"  - Keyword Coverage: {generation_result.keyword_coverage:.2f}")
+                print(f"  - ROUGE-L: {rouge_l:.3f}")
+                print(f"  - Overall: {overall:.3f}")
+
+            except Exception as e:
+                print(f"  - ERROR: {str(e)}")
+                results.append(None)
+
+        print(f"\n>>> Partial complete: {len(results)}/{len(test_cases)} results")
+
+    return results
+
+
 def run_evaluation(
     chatbot_func, test_cases: List[Dict] = None
 ) -> List[EvaluationResult]:
@@ -509,8 +593,8 @@ if __name__ == "__main__":
     print("Building chatbot...")
     bot = build_chatbot()
 
-    # Run evaluation
-    results = run_evaluation(bot)
+    # Run evaluation (batched with progress)
+    results = run_evaluation_batched(bot, batch_size=3)
 
     # Print summary
     print_evaluation_summary(results)

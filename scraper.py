@@ -93,6 +93,11 @@ def scrape_page(url):
                 sections.append(
                     {"heading": heading_text, "content": " ".join(content_parts)}
                 )
+    
+    # For calendar pages, also extract all tables separately
+    if "calendar" in url:
+        table_sections = extract_all_tables(soup)
+        sections.extend(table_sections)
 
     return {"url": url, "title": title, "sections": sections}
 
@@ -121,11 +126,11 @@ if __name__ == "__main__":
         
         # MDP Program website (separate site with full program details)
         "https://sites.ualberta.ca/~mdpprog/",
+        
+        # Calendar pages - requires JavaScript rendering (currently commented out)
+        # "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",  # Statistics
+        # "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84314",  # Mathematics
     ]
-
-    # Note: Calendar pages removed as they require enhanced scraping for tables
-    # To re-enable calendar scraping, enhance scraper to handle HTML tables
-    # "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
 
     results = []
     for url in urls:
