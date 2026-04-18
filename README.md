@@ -24,7 +24,7 @@ A RAG chatbot for University of Alberta Math & Statistics department using local
 
 If using `uv`:
 ```bash
-uv add -r requiremens.txt
+uv add -r requirements.txt
 ```
 
 ### 2. Install Ollama
