@@ -152,12 +152,18 @@ This runs 10 test cases and reports:
 
 The evaluation includes questions on:
 - First-year courses (Calculus, Linear Algebra, Statistics)
-- Program differences (Honors vs Major, Specialization)
+- Program differences (Honors vs Major)
 - Double majors and minors
 - Student support resources
-- **Program-specific questions**: Statistics program overview, Mathematics program overview
+- Program-specific questions (Statistics overview, Mathematics overview)
 
 > **Note:** 2 of 10 questions ("What is the Statistics program?" and "What is the Mathematics program?") currently fail due to limited scraped content - this is noted as future improvement area.
+
+### Current Database Stats
+
+- Pages scraped: 7
+- Chunks in vector database: 63
+- Program pages covered: Statistics, Mathematics, Math & Finance, Math & Economics
 
 ### Sample Results
 
@@ -193,6 +199,23 @@ To switch models, update `chatbot.py`:
 ```python
 llm = ChatOllama(model="llama3.1:8b", temperature=0)
 ```
+
+## Future Work
+
+### Router Agent
+Add a routing agent to classify questions and route to specialized retrieval. This would improve topic-specific accuracy for questions about specific programs (Statistics, Mathematics, etc.).
+
+### Reinforcement Learning on User Responses
+Implement RL-based improvement using explicit thumbs up/down feedback to weight retrieval results. This would let the system learn which content sources are most helpful based on user satisfaction.
+
+### Enhanced Scraping (Coming Soon)
+Add Playwright/Selenium support to capture JavaScript-rendered content, including program overview sections currently missed by the basic scraper:
+- Fix Statistics program intro extraction
+- Capture calendar table content
+- Extract dynamic/hidden page elements
+
+### Additional Program Content
+Continue expanding scraped pages to cover more UAlberta Math & Stats programs and course catalog details.
 
 ## License
 

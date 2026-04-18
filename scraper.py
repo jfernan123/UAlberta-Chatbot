@@ -1,17 +1,29 @@
 # scraper.py
 import json
+import time
+import random
 import requests
 from bs4 import BeautifulSoup
 
 
+# Create a session for better request handling
+session = requests.Session()
+session.headers.update({
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Referer": "https://www.ualberta.ca/",
+    "Upgrade-Insecure-Requests": "1",
+})
+
+
 def scrape_page(url):
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.5",
-        "Connection": "keep-alive",
-    }
-    response = requests.get(url, headers=headers, timeout=30)
+    # Add random delay between requests (1-3 seconds)
+    time.sleep(random.uniform(1, 3))
+    
+    response = session.get(url, timeout=30)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "html.parser")
 
@@ -24,35 +36,63 @@ def scrape_page(url):
 
     # Extract structured sections (headings + following content)
     sections = []
-    for heading in soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"]):
-        heading_text = heading.get_text(strip=True)
-        if not heading_text:
-            continue
 
-        # Get following content until next heading
-        content_parts = []
-        for sibling in heading.next_siblings:
-            if (
-                hasattr(sibling, "name")
-                and sibling.name
-                and sibling.name.startswith("h")
-            ):
-                break
-            if hasattr(sibling, "name") and sibling.name in [
-                "p",
-                "li",
-                "td",
-                "th",
-                "tr",
-            ]:
+    # Find all headings
+    headings = soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"])
+    
+    if headings:
+        # Extract content BEFORE first heading (intro paragraphs)
+        first_heading = headings[0]
+        intro_content = []
+        for sibling in first_heading.previous_siblings:
+            if hasattr(sibling, "name") and sibling.name in ["p", "div"]:
                 text = sibling.get_text(strip=True)
-                if text:
-                    content_parts.append(text)
+                if text and len(text) > 20:  # Filter out short junk
+                    intro_content.append(text)
+        
+        # Add intro as first section if found
+        if intro_content:
+            # Get page title from URL or use first intro line as heading
+            intro_heading = title.split("|")[0].strip() if "|" in title else "Introduction"
+            sections.append({
+                "heading": intro_heading,
+                "content": " ".join(reversed(intro_content))  # Reverse to get correct order
+            })
 
-        if content_parts:
-            sections.append(
-                {"heading": heading_text, "content": " ".join(content_parts)}
-            )
+        # Extract content after each heading
+        for heading in headings:
+            heading_text = heading.get_text(strip=True)
+            if not heading_text:
+                continue
+
+            # Get following content until next heading
+            content_parts = []
+            for sibling in heading.next_siblings:
+                if (
+                    hasattr(sibling, "name")
+                    and sibling.name
+                    and sibling.name.startswith("h")
+                ):
+                    break
+                if hasattr(sibling, "name") and sibling.name in [
+                    "p",
+                    "li",
+                    "td",
+                    "th",
+                    "tr",
+                    "div",
+                    "a",  # Add anchor links for degree options
+                    "ul",
+                    "ol",
+                ]:
+                    text = sibling.get_text(strip=True)
+                    if text and len(text) > 5:  # Filter very short text
+                        content_parts.append(text)
+
+            if content_parts:
+                sections.append(
+                    {"heading": heading_text, "content": " ".join(content_parts)}
+                )
 
     return {"url": url, "title": title, "sections": sections}
 
@@ -68,6 +108,10 @@ if __name__ == "__main__":
         "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/index.html",
         "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/statistics.html",
         "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/mathematics.html",
+        
+        # Additional program pages
+        "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/mathematics-and-finance.html",
+        "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/programs/mathematics-and-economics.html",
         
         # Course page (only first-year available)
         "https://www.ualberta.ca/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
