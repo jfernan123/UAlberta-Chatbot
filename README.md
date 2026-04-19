@@ -157,21 +157,13 @@ The evaluation includes questions on:
 - Student support resources
 - Program-specific questions (Statistics overview, Mathematics overview)
 
-> **Note:** All 10 evaluation questions now retrieve relevant content. Some responses may still have room for improvement with more course details.
+> **Note:** 2 of 10 questions ("What is the Statistics program?" and "What is the Mathematics program?") currently fail due to limited scraped content - this is noted as future improvement area.
 
 ### Current Database Stats
 
-- Pages scraped: 9 (8 main site + 1 calendar)
-- Sections: 78
-- Program pages covered: Statistics, Mathematics, Math & Finance, Math & Economics, MDP (Modeling, Data & Predictions)
-- Has calendar course requirements via hybrid_scraper.py
-
-### Key Features Added
-
-- **hybrid_scraper.py** - combined scraper (requests + calendar regex extraction)
-- **Query expansion** - adds course codes (STAT, MATH) for better retrieval
-- **k=5** - balanced retrieval depth (reduced from 8 to prevent timeouts)
-- **Feedback fix** - Streamlit app with processing state to prevent crashes
+- Pages scraped: 7
+- Chunks in vector database: 63
+- Program pages covered: Statistics, Mathematics, Math & Finance, Math & Economics
 
 ### Sample Results
 
@@ -208,37 +200,7 @@ To switch models, update `chatbot.py`:
 llm = ChatOllama(model="llama3.1:8b", temperature=0)
 ```
 
-## Hyperparameter Tuning
-
-Tune these parameters based on your hardware and response quality needs:
-
-| Parameter | File | Default | Range | Notes |
-|-----------|------|---------|-------|-------|
-| k (retrieved chunks) | retriever.py | 5 | 3-10 | More chunks = more context but slower |
-| chunk_size | chunker.py | 800 | 400-1200 | Larger = more context per chunk |
-| chunk_overlap | chunker.py | 150 | 50-300 | Helps preserve context across chunks |
-| temperature (LLM) | chatbot.py | 0 | 0-1 | Lower = more deterministic, factual |
-| num_predict (max tokens) | chatbot.py | -1 | 50-500 | Cap max response length |
-
-### Performance Trade-offs
-
-- **k=3**: Fastest responses, minimal context
-- **k=5**: Balanced (current default)
-- **k=8-10**: Slower but more context (may cause timeouts on CPU-only)
-
-### Tuning Applied
-
-- k=5 (reduced from 8 to prevent timeouts)
-- Query expansion adds course codes (STAT, MATH) for better retrieval on statistics/math queries
-
 ## Future Work
-
-### Automated Testing Pipeline (Next Priority)
-- Implement a second agent to coordinate test execution
-- Run evaluation suite automatically after scraper updates
-- Track metrics over time (retrieval precision, keyword coverage)
-- Flag regressions before deployment
-- Automated pipeline: scraper → evaluate → report
 
 ### Router Agent
 Add a routing agent to classify questions and route to specialized retrieval. This would improve topic-specific accuracy for questions about specific programs (Statistics, Mathematics, etc.).
@@ -246,10 +208,14 @@ Add a routing agent to classify questions and route to specialized retrieval. Th
 ### Reinforcement Learning on User Responses
 Implement RL-based improvement using explicit thumbs up/down feedback to weight retrieval results. This would let the system learn which content sources are most helpful based on user satisfaction.
 
-### Enhanced Scraping
-- JavaScript rendering support (currently limited by CloudFront blocking on calendar.ualberta.ca)
-- Calendar table content extraction (hybrid_scraper.py provides regex-based fallback)
-- Add more program pages (course catalog details)
+### Enhanced Scraping (Coming Soon)
+Add Playwright/Selenium support to capture JavaScript-rendered content, including program overview sections currently missed by the basic scraper:
+- Fix Statistics program intro extraction
+- Capture calendar table content
+- Extract dynamic/hidden page elements
+
+### Additional Program Content
+Continue expanding scraped pages to cover more UAlberta Math & Stats programs and course catalog details.
 
 ## License
 

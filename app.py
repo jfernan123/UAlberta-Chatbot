@@ -23,11 +23,9 @@ with st.sidebar:
     st.write(f"- Programs: Best performing")
     st.write(f"- Courses: Need more content")
 
-# Initialize session state for chat history and processing
+# Initialize session state for chat history
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
-if "processing" not in st.session_state:
-    st.session_state.processing = False
 
 # Display chat history
 for message in st.session_state.chat_history:
@@ -38,12 +36,12 @@ for message in st.session_state.chat_history:
         with st.chat_message("assistant"):
             st.write(message["content"])
 
-            # Show feedback buttons for the last bot response (only if not processing)
-            if message == st.session_state.chat_history[-1] and not st.session_state.processing:
+            # Show feedback buttons for the last bot response
+            if message == st.session_state.chat_history[-1]:
                 st.markdown("**Was this response helpful?**")
                 col1, col2 = st.columns(2)
                 with col1:
-                    if st.button("👍 Yes", disabled=st.session_state.processing):
+                    if st.button("👍 Yes"):
                         record_feedback(
                             question=message.get("question", ""),
                             response=message["content"][:1000],
@@ -52,7 +50,7 @@ for message in st.session_state.chat_history:
                         st.success("Thanks!")
                         st.rerun()
                 with col2:
-                    if st.button("👎 No", disabled=st.session_state.processing):
+                    if st.button("👎 No"):
                         record_feedback(
                             question=message.get("question", ""),
                             response=message["content"][:1000],
@@ -67,22 +65,15 @@ prompt = st.chat_input("Ask a question...")
 if prompt:
     # Add user message to history
     st.session_state.chat_history.append({"role": "user", "content": prompt})
-    st.session_state.processing = True
-    st.rerun()
 
-# Generate bot response if we have a pending user message
-if st.session_state.chat_history and st.session_state.chat_history[-1]["role"] == "user" and st.session_state.processing:
-    prompt = st.session_state.chat_history[-1]["content"]
-    try:
-        response = bot(prompt)
-        st.session_state.chat_history.append(
-            {"role": "assistant", "content": response, "question": prompt}
-        )
-    except Exception as e:
-        st.session_state.chat_history.append(
-            {"role": "assistant", "content": f"Error: {str(e)}", "question": prompt}
-        )
-    st.session_state.processing = False
+    # Get bot response
+    response = bot(prompt)
+
+    # Add bot response to history
+    st.session_state.chat_history.append(
+        {"role": "assistant", "content": response, "question": prompt}
+    )
+
     st.rerun()
 
 # Clear chat button at the bottom

@@ -1,0 +1,8 @@
+db/
+__pycache__/
+*.pyc
+raw_html_grad/
+raw_html/
+raw_html_science/
+raw_html_calendar
+
