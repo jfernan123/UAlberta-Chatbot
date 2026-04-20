@@ -11,12 +11,16 @@ def build_chatbot():
 
     prompt = ChatPromptTemplate.from_template("""
     Answer the question based only on the context below.
+    Include specific course codes (like MATH 117, STAT 151), program names, 
+    and relevant terminology in your answer when applicable.
 
     Context:
     {context}
 
     Question:
     {question}
+
+    Answer:
     """)
 
     def format_docs(docs):

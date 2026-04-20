@@ -28,5 +28,11 @@
     "question": "What courses are mandatory for first year math or stats program?",
     "response": "The mandatory courses for a first-year math or stats program are **Linear Algebra** and **Calculus**. These are typically required as foundational courses in the curriculum.",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-20T08:58:11.825058",
+    "question": "What is the MDP program?",
+    "response": "The MDP program is a graduate training program in data science, designed to prepare students for careers in industry and government by combining data modeling, analytics, statistical machine learning, and modern computational methods. It is completed in 16 months and emphasizes practical skills in these areas.",
+    "rating": 1
   }
 ]

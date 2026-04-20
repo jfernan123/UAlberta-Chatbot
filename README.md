@@ -47,13 +47,37 @@ ollama pull nomic-embed-text
 
 ## Usage
 
-### Scrape Data
+### Scrape Data (Direct URL)
 
 ```bash
 uv run python scraper.py
 ```
 
 This saves scraped content to `data/pages.json`.
+
+### Web Crawler + Filter (Discovered URLs)
+
+For larger coverage, use the web crawler to discover URLs, then filter for priority content:
+
+```bash
+# Step 1: Crawl website (discovers URLs automatically)
+uv run python web_crawler.py --max-pages 100
+
+# Step 2: Filter for priority Math & Stats pages
+uv run python filter_crawler.py --input-dir raw_html --max-urls 30
+
+# Step 3: Create vector DB from filtered content
+uv run python make_db.py --input data/pages_filtered.json
+```
+
+#### Filter Priority Patterns
+
+The filter prioritizes URLs in this order:
+1. `/undergraduate-studies/programs/` (highest priority)
+2. `/undergraduate-studies/courses/`
+3. `/graduate-studies/`
+
+Use `--max-urls` to control how many URLs are processed (helpful for testing).
 
 ### Create Vector DB
 
@@ -89,7 +113,10 @@ uv run python chatbot.py
 | File | Purpose |
 |------|---------|
 | `scraper.py` | Scrapes UAlberta pages → JSON |
-| `chunker.py` | Chunks JSON/text for embedding |
+| `web_crawler.py` | Crawls website, discovers URLs, saves HTML |
+| `filter_crawler.py` | Filters crawled URLs by priority patterns |
+| `parsers.py` | Shared BeautifulSoup parsing logic |
+| `chunker.py` | Chunks JSON/HTML for embedding |
 | `vector_store.py` | Chroma vector database |
 | `retriever.py` | Loads vector DB for retrieval |
 | `chatbot.py` | RAG chain with qwen3:0.6b |
@@ -159,23 +186,19 @@ The evaluation includes questions on:
 
 > **Note:** 2 of 10 questions ("What is the Statistics program?" and "What is the Mathematics program?") currently fail due to limited scraped content - this is noted as future improvement area.
 
-### Current Database Stats
+### Current Results
 
-- Pages scraped: 7
-- Chunks in vector database: 63
-- Program pages covered: Statistics, Mathematics, Math & Finance, Math & Economics
-
-### Sample Results
+Using the web crawler + filter workflow with ~9 priority pages:
 
 ```
 Metrics (averaged across 10 test cases):
-  - Retrieval Precision@4:     ~0.80
-  - Overall Score:             ~0.45
-
-Questions needing improvement:
-  - What is the Statistics program? (requires more program page content)
-  - What is the Mathematics program? (requires more program page content)
+  - Retrieval Precision@4:     1.000
+  - Keyword Coverage:          0.499
+  - ROUGE-L:                  0.070
+  - Overall Score:             0.521
 ```
+
+The filter-based approach provides focused, high-quality retrieval compared to broad scraping.
 
 ## Model Options
 
