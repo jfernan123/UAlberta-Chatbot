@@ -1,0 +1,42 @@
+[
+  {
+    "test": "Math & Stats only",
+    "math_pages": 87,
+    "calendar_pages": 0,
+    "total_pages": 87,
+    "keywords": 0.476,
+    "rouge": 0.061,
+    "precision": 1.0,
+    "overall": 0.509
+  },
+  {
+    "test": "+ 10 Calendar",
+    "math_pages": 87,
+    "calendar_pages": 10,
+    "total_pages": 97,
+    "keywords": 0.436,
+    "rouge": 0.063,
+    "precision": 1.0,
+    "overall": 0.494
+  },
+  {
+    "test": "+ 20 Calendar",
+    "math_pages": 87,
+    "calendar_pages": 20,
+    "total_pages": 107,
+    "keywords": 0.436,
+    "rouge": 0.063,
+    "precision": 1.0,
+    "overall": 0.494
+  },
+  {
+    "test": "+ 50 Calendar",
+    "math_pages": 87,
+    "calendar_pages": 50,
+    "total_pages": 137,
+    "keywords": 0.423,
+    "rouge": 0.073,
+    "precision": 1.0,
+    "overall": 0.491
+  }
+]

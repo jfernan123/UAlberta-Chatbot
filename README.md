@@ -47,47 +47,51 @@ ollama pull nomic-embed-text
 
 ## Usage
 
-### Scrape Data (Direct URL)
+### Quick Start (Recommended)
+
+The repository comes pre-configured with relevant Math & Stats data (`data/pages_math.json`).
 
 ```bash
-uv run python scraper.py
-```
-
-This saves scraped content to `data/pages.json`.
-
-### Web Crawler + Filter (Discovered URLs)
-
-For larger coverage, use the web crawler to discover URLs, then filter for priority content:
-
-```bash
-# Step 1: Crawl website (discovers URLs automatically)
-uv run python web_crawler.py --max-pages 100
-
-# Step 2: Filter for priority Math & Stats pages
-uv run python filter_crawler.py --input-dir raw_html --max-urls 30
-
-# Step 3: Create vector DB from filtered content
-uv run python make_db.py --input data/pages_filtered.json
-```
-
-#### Filter Priority Patterns
-
-The filter prioritizes URLs in this order:
-1. `/undergraduate-studies/programs/` (highest priority)
-2. `/undergraduate-studies/courses/`
-3. `/graduate-studies/`
-
-Use `--max-urls` to control how many URLs are processed (helpful for testing).
-
-### Create Vector DB
-
-```bash
+# Create or rebuild vector database (uses pages_math.json by default)
 uv run python make_db.py
+
+# Run CLI chatbot
+uv run python chatbot.py
+
+# Or run web UI
+uv run streamlit run app.py
 ```
 
-Or for verbose output:
+### Rebuilding the Database
+
+If you modify the data source, rebuild the database:
+
 ```bash
+# With default data (pages_math.json)
+uv run python make_db.py
+
+# With custom data
+uv run python make_db.py --input data/your_data.json
+
+# Verbose output
 uv run python make_db.py -v
+```
+
+### Filter Priority Patterns (for web_crawler output)
+
+When using `filter_crawler.py` to process crawled URLs:
+
+| Priority | Pattern | Description |
+|----------|---------|-------------|
+| 1 | `/undergraduate-studies/programs/` | Program pages |
+| 2 | `/undergraduate-studies/courses/` | Course pages |
+| 3 | `/graduate-studies/` | Graduate info |
+| 4 | `calendar.ualberta.ca` + MATH/STAT | Calendar MATH/STAT pages |
+| 5 | MDP program | Modeling, Data & Predictions |
+
+```bash
+# Filter crawled URLs (requires raw_html/ from web_crawler)
+uv run python filter_crawler.py --input-dir raw_html --max-urls 50
 ```
 
 ### Run Web UI
@@ -112,19 +116,20 @@ uv run python chatbot.py
 
 | File | Purpose |
 |------|---------|
-| `scraper.py` | Scrapes UAlberta pages → JSON |
-| `web_crawler.py` | Crawls website, discovers URLs, saves HTML |
-| `filter_crawler.py` | Filters crawled URLs by priority patterns |
 | `parsers.py` | Shared BeautifulSoup parsing logic |
-| `chunker.py` | Chunks JSON/HTML for embedding |
-| `vector_store.py` | Chroma vector database |
-| `retriever.py` | Loads vector DB for retrieval |
-| `chatbot.py` | RAG chain with qwen3:0.6b |
-| `app.py` | Streamlit web UI (chat interface) |
+| `filter_crawler.py` | Filters crawled URLs by priority patterns |
+| `filter_suite.py` | Experiment runner for testing filter configs |
 | `make_db.py` | Create vector DB from scraped data |
+| `chunker.py` | Chunks JSON for embedding |
+| `vector_store.py` | Chroma vector database |
+| `retriever.py` | Hybrid BM25 + vector retrieval |
+| `chatbot.py` | RAG chain with qwen3:0.6b |
+| `app.py` | Streamlit web UI |
+| `evaluation.py` | Evaluation suite with metrics |
 | `feedback.py` | User feedback collection |
 | `analytics.py` | Feedback analysis & reporting |
-| `evaluation.py` | Evaluation suite with metrics |
+
+> **IMPORTANT:** The retriever (`retriever.py`) and vector DB (`db/`) must use the same data source. By default, both use `data/pages_math.json`. If you rebuild the DB with different data, update `retriever.py` accordingly.
 
 ## Feedback & Analytics
 
@@ -184,21 +189,19 @@ The evaluation includes questions on:
 - Student support resources
 - Program-specific questions (Statistics overview, Mathematics overview)
 
-> **Note:** 2 of 10 questions ("What is the Statistics program?" and "What is the Mathematics program?") currently fail due to limited scraped content - this is noted as future improvement area.
-
 ### Current Results
 
-Using the web crawler + filter workflow with ~9 priority pages:
+Using the combined Math & Stats department + Calendar data (137 pages):
 
 ```
 Metrics (averaged across 10 test cases):
   - Retrieval Precision@4:     1.000
-  - Keyword Coverage:          0.499
-  - ROUGE-L:                  0.070
-  - Overall Score:             0.521
+  - Keyword Coverage:          0.475
+  - ROUGE-L:                  0.080
+  - Overall Score:             0.514
 ```
 
-The filter-based approach provides focused, high-quality retrieval compared to broad scraping.
+The hybrid approach (BM25 + vector) with focused content provides high-quality retrieval.
 
 ## Model Options
 

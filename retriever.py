@@ -5,7 +5,7 @@ from langchain_ollama import OllamaEmbeddings
 from langchain_community.retrievers import BM25Retriever
 from langchain_core.documents import Document
 
-PAGES_FILE = "data/pages.json"
+PAGES_FILE = "data/pages_math.json"
 
 
 def _load_docs() -> list[Document]:

@@ -34,5 +34,41 @@
     "question": "What is the MDP program?",
     "response": "The MDP program is a graduate training program in data science, designed to prepare students for careers in industry and government by combining data modeling, analytics, statistical machine learning, and modern computational methods. It is completed in 16 months and emphasizes practical skills in these areas.",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-21T13:35:58.673686",
+    "question": "is there an honours math program?",
+    "response": "Based on the provided context, there is no direct mention of an \"honours math program\" at UAlberta. The context discusses undergraduate courses like MATH 134, 144, and 154, as well as the possibility of switching courses, but no specific information is given about an honours program. The focus of the context is on undergraduate programs, competitions, and student advising, not an existing honours program.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-21T13:36:52.701793",
+    "question": "Is there an honors math program?",
+    "response": "Based on the provided context, there is no mention of an honors math program. The information provided focuses on undergraduate programs, specific courses (like Precalculus), and academic experiences at the University of Alberta, but none of the sources discuss or reference an honors math program.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-21T13:37:17.640724",
+    "question": "What is the mdp program?",
+    "response": "The context provided does not mention the \"mdp program.\" The relevant information is about graduate programs at the University of Alberta, including course codes like MATH 117 and STAT 151, but there is no reference to the \"mdp program.\" Therefore, based solely on the given context, there is no information to identify the \"mdp program.\"",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-21T13:37:50.372926",
+    "question": "What do you know about the university?",
+    "response": "The university offers a range of programs and resources for students, including career development workshops, mentorship programs, and student support initiatives. For example, the Career Action Series and Career Leadership Symposium provide training in career development, while the Canadian Mathematical Society Student Committee supports students in their academic and professional journeys. Additionally, the university emphasizes student support through programs like the Canadian Undergraduate ",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-21T13:38:17.013772",
+    "question": "What courses are offered for undergraduate math students?",
+    "response": "The courses offered for undergraduate math students are MATH 160 - Higher Arithmetic and MATH 260 - Mathematical Reasoning for Teachers.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-21T14:01:06.039464",
+    "question": "what is the mdp program?",
+    "response": "Based on the provided context, there is no information about the MDP program. The context discusses graduate admissions, scholarships, academic integrity, and science-related topics, but does not mention or reference the MDP program.",
+    "rating": -1
   }
 ]

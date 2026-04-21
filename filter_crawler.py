@@ -27,8 +27,40 @@ def score_url(url):
         return 2
     elif "/graduate-studies/" in url:
         return 3
+    elif "calendar.ualberta.ca" in url:
+        return 4  # Calendar pages - need content check
+    elif "mdpprog" in url.lower() or "modeling-data-predictions" in url.lower():
+        return 5  # MDP program
     else:
         return 999  # Not in priority list
+
+
+def is_calendar_math_stat(filepath):
+    """Check if calendar HTML file contains MATH/STAT content."""
+    try:
+        with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
+            content = f.read().lower()
+
+        # Check for MATH/STAT course patterns
+        math_stat_patterns = [
+            "math ",
+            "mathematics",
+            "stat ",
+            "statistics",
+            "math 1",
+            "math 2",
+            "stat 1",
+            "stat 2",
+        ]
+
+        content_lower = content.lower()
+        for pattern in math_stat_patterns:
+            if pattern in content_lower:
+                return True
+
+        return False
+    except Exception:
+        return False
 
 
 def filter_and_parse(input_dir, max_urls=None):
@@ -43,15 +75,32 @@ def filter_and_parse(input_dir, max_urls=None):
 
     print(f"Found {len(manifest)} URLs in manifest")
 
-    # Score all URLs
+    # Score all URLs - first pass
     scored = []
+    calendar_urls = []
+
     for entry in manifest:
         url = entry.get("url", "")
         score = score_url(url)
-        if score < 999:  # Keep only priority URLs
-            scored.append((score, url, entry.get("file")))
 
-    print(f"Priority URLs found: {len(scored)}")
+        if score < 999:  # Keep only priority URLs
+            if score == 4:  # Calendar - need content check
+                calendar_urls.append((score, url, entry.get("file")))
+            else:
+                scored.append((score, url, entry.get("file")))
+
+    # Handle calendar content filtering
+    calendar_kept = 0
+    for score, url, filename in calendar_urls:
+        filepath = os.path.join(input_dir, filename)
+        if os.path.exists(filepath) and is_calendar_math_stat(filepath):
+            scored.append((score, url, filename))
+            calendar_kept += 1
+
+    print(
+        f"Priority URLs found (before calendar filter): {len(scored) + len(calendar_urls)}"
+    )
+    print(f"Calendar pages with MATH/STAT content: {calendar_kept}")
 
     # Sort by score (priority) and limit
     scored.sort(key=lambda x: x[0])
@@ -115,7 +164,7 @@ def main():
 
     print(f"Filtering: {args.input_dir}")
     print(
-        f"Priority patterns: /undergraduate-studies/programs/, /undergraduate-studies/courses/, /graduate-studies/"
+        f"Priority patterns: /undergraduate-studies/programs/, /undergraduate-studies/courses/, /graduate-studies/, calendar(MATH/STAT), MDP"
     )
 
     # Filter and parse

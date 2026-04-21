@@ -20,8 +20,8 @@ def main():
     parser.add_argument(
         "-i",
         "--input",
-        default="data/pages.json",
-        help="Input JSON file with scraped content (default: data/pages.json)",
+        default="data/pages_math.json",
+        help="Input JSON file with scraped content (default: data/pages_math.json)",
     )
     parser.add_argument(
         "-o",
