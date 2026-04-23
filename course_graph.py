@@ -8,6 +8,8 @@ Usage:
     python course_graph.py                    # Build from data/pages_math.json
     python course_graph.py --input custom.json  # Custom input
     python course_graph.py --output graph.json # Custom output
+    python course_graph.py --query "MATH 117"  # Query specific course
+    python course_graph.py --list             # List all courses
 """
 
 import json
@@ -15,12 +17,71 @@ import re
 import argparse
 from collections import defaultdict
 
+# Entry-level courses (no prerequisites needed)
+ENTRY_LEVEL_COURSES = {
+    "MATH 100",
+    "MATH 117",
+    "MATH 134",
+    "MATH 144",
+    "MATH 154",
+    "MATH 102",
+    "MATH 125",
+    "MATH 127",
+    "STAT 161",
+}
+
+# Course sequences - defines which courses are in the same progression
+# Note: MATH 102 is taken concurrently with MATH 101/209 (not after), so it's separate
+# Note: MATH 127 is taken concurrently with MATH 118/217 (not after), so it's separate
+COURSE_SEQUENCES = {
+    "engineering": [
+        "MATH 100",
+        "MATH 101",
+        "MATH 209",
+    ],  # Linear Algebra (MATH 102) is concurrent
+    "honors": [
+        "MATH 117",
+        "MATH 118",
+        "MATH 217",
+    ],  # Linear Algebra (MATH 127) is concurrent
+    "regular_life_sci": ["MATH 134", "MATH 136"],
+    "regular_math_phys": ["MATH 144", "MATH 146"],
+    "regular_business": ["MATH 154", "MATH 156"],
+    "regular_linear_alg": ["MATH 125"],
+    "analysis": ["MATH 216"],
+}
+
+# Build lookup: course -> sequence name
+COURSE_TO_SEQUENCE = {}
+for seq_name, courses in COURSE_SEQUENCES.items():
+    for course in courses:
+        COURSE_TO_SEQUENCE[course] = seq_name
+
 
 def extract_course_code(text):
     """Extract course code (e.g., MATH 101) from text."""
     pattern = r"\b(MATH|STAT)\s*(\d{3})\b"
     matches = re.findall(pattern, text, re.IGNORECASE)
     return list(set([f"{prefix.upper()} {num}" for prefix, num in matches]))
+
+
+def is_entry_level(course_code):
+    """Check if course is entry-level (no prerequisites)."""
+    return course_code in ENTRY_LEVEL_COURSES
+
+
+def get_sequence(course_code):
+    """Get the sequence a course belongs to."""
+    return COURSE_TO_SEQUENCE.get(course_code)
+
+
+def same_sequence(c1, c2):
+    """Check if two courses are in the same sequence."""
+    seq1 = get_sequence(c1)
+    seq2 = get_sequence(c2)
+    if seq1 is None or seq2 is None:
+        return False
+    return seq1 == seq2
 
 
 def extract_courses_from_program_pages(data):
@@ -165,6 +226,238 @@ def extract_course_name_simple(content):
     return name if name != "Unknown Course" else "Unknown Course"
 
 
+def extract_course_dependencies(content, course_code):
+    """
+    Extract raw dependencies from course page content.
+    Returns (prerequisites, next_courses) from the pipe-separated content.
+
+    Pattern:
+    - Part 2: Sometimes has actual prerequisite (especially for Year 2+ courses)
+    - Part 3+: Next courses (what you take after this course)
+    - Avoid contextual mentions like "may be admitted", "consent", "equivalent"
+    """
+    parts = content.split("|")
+
+    prereqs = []
+    next_courses = []
+
+    # Contextual keywords that indicate exceptions, not actual dependencies
+    skip_patterns = [
+        "may be admitted",
+        "consent",
+        "equivalent",
+        "corequisite",
+        "recommended",
+    ]
+
+    def is_contextual(text):
+        """Check if text contains contextual mentions (exceptions, not prereqs)."""
+        text_lower = text.lower()
+        return any(pattern in text_lower for pattern in skip_patterns)
+
+    # Part 2: Check for actual prerequisites (especially for non-entry courses)
+    if len(parts) > 2:
+        part2 = parts[2]
+        codes_p2 = extract_course_code(part2)
+        # If Part 2 is short and has a single course code, it's likely a prereq
+        if len(codes_p2) == 1 and len(part2) < 200 and not is_contextual(part2):
+            prereqs.extend(codes_p2)
+        elif "prerequisite" in part2.lower() and not is_contextual(part2):
+            prereqs.extend([c for c in codes_p2 if c != course_code])
+
+    # Part 3+: Next courses (what you take after this course)
+    if len(parts) > 3:
+        for part in parts[3:]:
+            # Skip contextual mentions
+            if is_contextual(part):
+                continue
+            codes = extract_course_code(part)
+            for c in codes:
+                if c != course_code and len(c.split()[1]) == 3:
+                    next_courses.append(c)
+
+    # If Part 2 has multiple course codes or mentions alternatives, it's entry alternatives
+    if len(parts) > 2:
+        part2 = parts[2]
+        codes_p2 = extract_course_code(part2)
+        if len(codes_p2) > 1 or " or " in part2.lower():
+            prereqs = []  # Clear prereqs from Part 2
+
+    return list(set(prereqs)), list(set(next_courses))
+
+
+def forward_pass(data):
+    """
+    Forward pass: Extract raw prereqs and next_courses from course pages.
+    Returns dict: {course_code: {"prereqs": [...], "next_courses": [...], "entry_alts": [...]}}
+    """
+    course_data = {}
+
+    for page in data:
+        if "preview_course" not in page.get("url", ""):
+            continue
+
+        for section in page.get("sections", []):
+            content = section["content"]
+            parts = content.split("|")
+            if len(parts) < 3:
+                continue
+
+            # Extract primary course from start
+            course_code, course_name = extract_primary_course(content)
+            if not course_code or len(course_code.split()[1]) != 3:
+                continue
+
+            prereqs, next_courses = extract_course_dependencies(content, course_code)
+
+            # Entry alternatives: courses from Part 2 that are entry-level (different sequence)
+            entry_alts = []
+            if len(parts) > 2:
+                part2 = parts[2]
+                codes_p2 = extract_course_code(part2)
+                if len(codes_p2) > 1 or " or " in part2.lower():
+                    entry_alts = [
+                        c for c in codes_p2 if c != course_code and is_entry_level(c)
+                    ]
+
+            course_data[course_code] = {
+                "prereqs": prereqs,
+                "next_courses": next_courses,
+                "entry_alts": entry_alts,
+                "name": course_name,
+                "url": page.get("url", ""),
+            }
+
+    return course_data
+
+
+def backward_pass(course_data):
+    """
+    Backward pass: Reconcile dependencies to filter out cross-sequence dependencies.
+
+    Rules:
+    1. Entry-level courses have no prerequisites
+    2. If prereq is entry-level course in different sequence -> it's entry alternative, not prereq
+    3. Only keep same-sequence prerequisites
+    """
+    reconciled = {}
+
+    for course_code, data in course_data.items():
+        # If course is entry-level, it has no prerequisites
+        if is_entry_level(course_code):
+            reconciled[course_code] = {
+                "name": data["name"],
+                "url": data["url"],
+                "prerequisites": [],
+                "sequence": get_sequence(course_code),
+                "alternatives": data["entry_alts"],
+            }
+            continue
+
+        # Filter prerequisites: only keep same-sequence ones
+        filtered_prereqs = []
+        for prereq in data["prereqs"]:
+            # Skip self-reference
+            if prereq == course_code:
+                continue
+            # Skip entry-level courses that are in DIFFERENT sequences
+            if is_entry_level(prereq) and not same_sequence(course_code, prereq):
+                continue
+            # Keep same-sequence courses or non-entry-level courses
+            filtered_prereqs.append(prereq)
+
+        # Determine sequence from entry-level alternatives or first prereq
+        sequence = get_sequence(course_code)
+        if not sequence:
+            for entry in data["entry_alts"]:
+                if is_entry_level(entry):
+                    sequence = get_sequence(entry)
+                    break
+            if not sequence:
+                for prereq in filtered_prereqs:
+                    sequence = get_sequence(prereq)
+                    if sequence:
+                        break
+
+        reconciled[course_code] = {
+            "name": data["name"],
+            "url": data["url"],
+            "prerequisites": list(set(filtered_prereqs)),
+            "sequence": sequence,
+            "alternatives": data["entry_alts"],
+        }
+
+    return reconciled
+
+
+def build_dependency_graph(forward_data):
+    """
+    Build the prerequisite dependency graph.
+
+    Combines:
+    1. Raw prerequisites from course pages
+    2. Inferred prerequisites from sequences (fills gaps)
+    3. Special handling for courses with complex prerequisites
+    """
+    # First, get all next_course relationships from raw data
+    next_course_map = {}
+    for course_code, data in forward_data.items():
+        for next_course in data["next_courses"]:
+            if next_course not in next_course_map:
+                next_course_map[next_course] = []
+            next_course_map[next_course].append(course_code)
+
+    # Build prerequisites from raw data
+    raw_prerequisites = {}
+    for course_code in forward_data.keys():
+        prereqs = []
+        if course_code in next_course_map:
+            for prev_course in next_course_map[course_code]:
+                if same_sequence(course_code, prev_course):
+                    prereqs.append(prev_course)
+        raw_prerequisites[course_code] = list(set(prereqs))
+
+    # Second pass: Infer missing prerequisites from sequences
+    inferred_prerequisites = {}
+
+    for seq_name, sequence in COURSE_SEQUENCES.items():
+        for i, course_code in enumerate(sequence):
+            if i == 0:
+                inferred_prerequisites[course_code] = []
+            else:
+                prev_course = None
+                for j in range(i - 1, -1, -1):
+                    if sequence[j] in forward_data:
+                        prev_course = sequence[j]
+                        break
+
+                if prev_course:
+                    if course_code not in inferred_prerequisites:
+                        inferred_prerequisites[course_code] = []
+                    if prev_course not in inferred_prerequisites[course_code]:
+                        inferred_prerequisites[course_code].append(prev_course)
+
+    # Merge: raw data takes priority, add inferred if missing
+    final_prerequisites = {}
+
+    for course_code in forward_data.keys():
+        raw_prereqs = raw_prerequisites.get(course_code, [])
+        inferred_prereqs = inferred_prerequisites.get(course_code, [])
+
+        combined = list(raw_prereqs)
+        for prereq in inferred_prereqs:
+            if prereq not in combined:
+                combined.append(prereq)
+
+        final_prerequisites[course_code] = combined
+
+    # Special case: MATH 216 has flexible entry (corequisite, not prerequisite)
+    if "MATH 216" in final_prerequisites:
+        final_prerequisites["MATH 216"] = []
+
+    return final_prerequisites
+
+
 def build_graph(input_file, output_file):
     """Build course dependency graph from scraped data."""
 
@@ -173,96 +466,71 @@ def build_graph(input_file, output_file):
     with open(input_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # Course info storage
-    courses = {}
-    dependencies = defaultdict(list)
+    print("Running forward pass (extracting raw dependencies)...")
+    forward_data = forward_pass(data)
+    print(f"  Found {len(forward_data)} courses with structured data")
 
-    # Process each page
-    course_pages = [p for p in data if "preview_course" in p.get("url", "")]
-    print(f"Found {len(course_pages)} course pages")
+    print("Running backward pass (reconciling cross-sequence dependencies)...")
+    reconciled = backward_pass(forward_data)
 
-    for page in course_pages:
-        url = page.get("url", "")
+    print("Building dependency graph...")
+    prerequisites = build_dependency_graph(forward_data)
 
-        # Find course requirements section
-        for section in page.get("sections", []):
-            heading = section.get("heading", "")
-            content = section.get("content", "")
-
-            if "course requirements" not in heading.lower():
-                continue
-
-            # Extract primary course code and name from start of content
-            course_code, course_name = extract_primary_course(content)
-            if not course_code:
-                continue
-
-            # Skip non-university courses (2-digit numbers)
-            try:
-                course_num = int(course_code.split()[1])
-                if course_num < 100:
-                    continue
-            except:
-                continue
-
-            # Find potential course sequences
-            # The data format is: course - alternatives (not true prereqs)
-            # We'll note alternatives and mark as "may_take_after"
-            prereqs = []
-
-            # Look for the pipe separator - content after it lists alternatives
-            if "|" in content:
-                alt_part = content.split("|")[1] if len(content.split("|")) > 1 else ""
-                alt_codes = extract_course_code(alt_part)
-                # Filter to get potential next-level courses
-                prereqs = [
-                    p for p in alt_codes if p != course_code and len(p.split()[1]) == 3
-                ]
-
-            # Determine year level from course number
-            try:
-                course_num = int(course_code.split()[1])
-                if 100 <= course_num < 200:
-                    year_level = 1
-                elif 200 <= course_num < 300:
-                    year_level = 2
-                elif 300 <= course_num < 400:
-                    year_level = 3
-                elif 400 <= course_num < 500:
-                    year_level = 4
-                else:
-                    year_level = 0
-            except:
-                year_level = 0
-
-            # Store course info
-            courses[course_code] = {
-                "name": course_name,
-                "url": url,
-                "year_level": year_level,
-                "alternatives": prereqs[
-                    :5
-                ],  # Note: these are alternatives, not prerequisites
-            }
-
-            # Build dependency edges (alternatives)
-            for prereq in prereqs:
-                if prereq != course_code:
-                    dependencies[course_code].append(prereq)
-
-    # Also extract courses from program pages (not just calendar course pages)
+    # Merge with program page courses and add prerequisites
     program_courses = extract_courses_from_program_pages(data)
     print(f"Found {len(program_courses)} courses from program pages")
 
-    # Merge program courses with calendar courses (calendar takes priority)
+    # Combine all courses
+    courses = {}
+
+    # First, add reconciled data with prerequisites
+    for course_code, data in reconciled.items():
+        year_level = 1
+        try:
+            num = int(course_code.split()[1])
+            if 100 <= num < 200:
+                year_level = 1
+            elif 200 <= num < 300:
+                year_level = 2
+            elif 300 <= num < 400:
+                year_level = 3
+            elif 400 <= num < 500:
+                year_level = 4
+        except:
+            pass
+
+        courses[course_code] = {
+            "name": data["name"],
+            "url": data["url"],
+            "year_level": year_level,
+            "prerequisites": prerequisites.get(course_code, []),
+            "alternatives": data["alternatives"],
+            "sequence": data["sequence"],
+        }
+
+    # Add program page courses that aren't in calendar data
     for code, info in program_courses.items():
         if code not in courses:
-            courses[code] = info
+            courses[code] = {
+                "name": info["name"],
+                "url": info["url"],
+                "year_level": info["year_level"],
+                "prerequisites": [],
+                "alternatives": [],
+                "sequence": get_sequence(code),
+            }
+
+    # Build dependencies dict
+    dependencies = {}
+    for course_code, course_info in courses.items():
+        if course_info["prerequisites"]:
+            dependencies[course_code] = course_info["prerequisites"]
 
     # Create output structure
     graph = {
         "courses": courses,
-        "dependencies": dict(dependencies),
+        "dependencies": dependencies,
+        "sequences": COURSE_SEQUENCES,
         "stats": {
             "total_courses": len(courses),
             "total_dependencies": sum(len(v) for v in dependencies.values()),
@@ -278,13 +546,23 @@ def build_graph(input_file, output_file):
     print(f"  Total dependencies: {graph['stats']['total_dependencies']}")
     print(f"  Saved to: {output_file}")
 
-    # Print sample
-    print("\n--- Sample Courses ---")
-    for code, info in list(courses.items())[:5]:
-        prereqs = info.get("prerequisites", [])
-        print(f"  {code}: {info['name'][:40]}")
-        if prereqs:
-            print(f"    Prerequisites: {', '.join(prereqs)}")
+    # Print sample with prerequisites
+    print("\n--- Sample Courses with Prerequisites ---")
+    sample_courses = [
+        "MATH 100",
+        "MATH 101",
+        "MATH 117",
+        "MATH 118",
+        "MATH 216",
+        "MATH 214",
+    ]
+    for code in sample_courses:
+        if code in courses:
+            info = courses[code]
+            prereqs = info.get("prerequisites", [])
+            print(f"  {code}: {info['name'][:35]}")
+            if prereqs:
+                print(f"    Prerequisites: {', '.join(prereqs)}")
 
     return graph
 

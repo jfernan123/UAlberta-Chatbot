@@ -4,416 +4,584 @@
       "name": "Honors Calculus I",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668643",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [
+        "MATH 100"
+      ],
+      "sequence": "honors"
     },
     "MATH 216": {
       "name": "Introduction to Analysis",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=671692",
       "year_level": 2,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": "analysis"
     },
     "MATH 100": {
       "name": "Calculus for Engineering I",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668638",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": "engineering"
     },
     "MATH 134": {
       "name": "Calculus for the Life Sciences I",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=670800",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [
+        "MATH 100"
+      ],
+      "sequence": "regular_life_sci"
     },
     "MATH 144": {
       "name": "Calculus for the Mathematical and Physical Science",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668647",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [
+        "MATH 100"
+      ],
+      "sequence": "regular_math_phys"
     },
     "MATH 154": {
       "name": "Calculus for Business and Economics I",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=671690",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [
+        "MATH 100"
+      ],
+      "sequence": "regular_business"
     },
     "MATH 101": {
       "name": "Calculus for Engineering II",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668639",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [
+        "MATH 100"
+      ],
+      "alternatives": [],
+      "sequence": "engineering"
     },
     "MATH 118": {
       "name": "Honors Calculus II",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668644",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [
+        "MATH 117"
+      ],
+      "alternatives": [],
+      "sequence": "honors"
     },
     "MATH 136": {
       "name": "Calculus for the Life Sciences II",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=671689",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [
+        "MATH 134"
+      ],
+      "alternatives": [
+        "MATH 100"
+      ],
+      "sequence": "regular_life_sci"
     },
     "MATH 146": {
       "name": "Calculus for the Mathematical and Physical Science",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668648",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [
+        "MATH 144"
+      ],
+      "alternatives": [
+        "MATH 100"
+      ],
+      "sequence": "regular_math_phys"
     },
     "MATH 156": {
       "name": "Calculus for Business and Economics II",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=671691",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [
+        "MATH 154"
+      ],
+      "alternatives": [
+        "MATH 100"
+      ],
+      "sequence": "regular_business"
     },
     "MATH 102": {
       "name": "Applied Linear Algebra",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668640",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
     },
     "MATH 125": {
       "name": "Linear Algebra I",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668645",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [
+        "MATH 102"
+      ],
+      "sequence": "regular_linear_alg"
     },
     "MATH 127": {
       "name": "Honors Linear Algebra I",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668646",
       "year_level": 1,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [
+        "MATH 102"
+      ],
+      "sequence": null
     },
     "MATH 209": {
       "name": "Calculus for Engineering III",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668651",
       "year_level": 2,
-      "alternatives": []
+      "prerequisites": [
+        "MATH 101"
+      ],
+      "alternatives": [
+        "MATH 102"
+      ],
+      "sequence": "engineering"
     },
     "MATH 214": {
       "name": "Calculus III",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668652",
       "year_level": 2,
-      "alternatives": []
+      "prerequisites": [],
+      "alternatives": [
+        "MATH 102"
+      ],
+      "sequence": null
     },
     "MATH 217": {
       "name": "Honors Calculus III",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668654",
       "year_level": 2,
-      "alternatives": []
+      "prerequisites": [
+        "MATH 118"
+      ],
+      "alternatives": [
+        "MATH 102"
+      ],
+      "sequence": "honors"
     },
     "MATH 114": {
       "name": "Course MATH 114",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 1,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 115": {
       "name": "Course MATH 115",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 1,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
-    },
-    "MATH 215": {
-      "name": "Course MATH 215",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
-      "year_level": 2,
-      "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 317": {
       "name": "Course MATH 317",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
-    "MATH 411": {
-      "name": "Course MATH 411",
+    "MATH 215": {
+      "name": "Course MATH 215",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
-      "year_level": 4,
+      "year_level": 2,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 311": {
       "name": "Course MATH 311",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
+    },
+    "MATH 411": {
+      "name": "Course MATH 411",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
     },
     "MATH 516": {
       "name": "Course MATH 516",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 5,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 225": {
       "name": "Course MATH 225",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 2,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 334": {
       "name": "Course MATH 334",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
-    },
-    "STAT 151": {
-      "name": "Course STAT 151",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
-      "year_level": 1,
-      "alternatives": [],
-      "source": "program_page"
-    },
-    "STAT 235": {
-      "name": "Course STAT 235",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
-      "year_level": 2,
-      "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "STAT 161": {
       "name": "Course STAT 161",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
       "year_level": 1,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
-    "MATH 256": {
-      "name": "Course MATH 256",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+    "STAT 235": {
+      "name": "Course STAT 235",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
       "year_level": 2,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
-    "MATH 429": {
-      "name": "Course MATH 429",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
+    "STAT 151": {
+      "name": "Course STAT 151",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
+      "year_level": 1,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
-    },
-    "MATH 228": {
-      "name": "Course MATH 228",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 2,
-      "alternatives": [],
-      "source": "program_page"
-    },
-    "MATH 226": {
-      "name": "Course MATH 226",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 2,
-      "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 328": {
       "name": "Course MATH 328",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
+    },
+    "MATH 226": {
+      "name": "Course MATH 226",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 2,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 429": {
+      "name": "Course MATH 429",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 228": {
+      "name": "Course MATH 228",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 2,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
     },
     "MATH 422": {
       "name": "Course MATH 422",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 4,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
-    },
-    "MATH 428": {
-      "name": "Course MATH 428",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
-      "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 326": {
       "name": "Course MATH 326",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
-    "MATH 448": {
-      "name": "Course MATH 448",
+    "MATH 256": {
+      "name": "Course MATH 256",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 2,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 428": {
+      "name": "Course MATH 428",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 4,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 348": {
       "name": "Course MATH 348",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 447": {
       "name": "Course MATH 447",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 4,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
+    },
+    "MATH 448": {
+      "name": "Course MATH 448",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
     },
     "MATH 111": {
       "name": "Course MATH 111",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 1,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 160": {
       "name": "Course MATH 160",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 1,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 201": {
       "name": "Course MATH 201",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 300": {
       "name": "Course MATH 300",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 241": {
       "name": "Course MATH 241",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
-    },
-    "MATH 325": {
-      "name": "Course MATH 325",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 3,
-      "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 227": {
       "name": "Course MATH 227",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
-    "STAT 353": {
-      "name": "Course STAT 353",
+    "MATH 325": {
+      "name": "Course MATH 325",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 357": {
       "name": "Course MATH 357",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
-    },
-    "MATH 408": {
-      "name": "Course MATH 408",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
-      "alternatives": [],
-      "source": "program_page"
-    },
-    "MATH 253": {
-      "name": "Course MATH 253",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 2,
-      "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 356": {
       "name": "Course MATH 356",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "MATH 415": {
       "name": "Course MATH 415",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 4,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
+    },
+    "STAT 353": {
+      "name": "Course STAT 353",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 3,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 408": {
+      "name": "Course MATH 408",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 253": {
+      "name": "Course MATH 253",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 2,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
     },
     "MATH 371": {
       "name": "Course MATH 371",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "STAT 265": {
       "name": "Course STAT 265",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
-    },
-    "STAT 499": {
-      "name": "Course STAT 499",
-      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
-      "year_level": 4,
-      "alternatives": [],
-      "source": "program_page"
-    },
-    "STAT 266": {
-      "name": "Course STAT 266",
-      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
-      "year_level": 2,
-      "alternatives": [],
-      "source": "program_page"
-    },
-    "STAT 372": {
-      "name": "Course STAT 372",
-      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
-      "year_level": 3,
-      "alternatives": [],
-      "source": "program_page"
-    },
-    "STAT 252": {
-      "name": "Course STAT 252",
-      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
-      "year_level": 2,
-      "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     },
     "STAT 378": {
       "name": "Course STAT 378",
       "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
       "year_level": 3,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
+    },
+    "STAT 372": {
+      "name": "Course STAT 372",
+      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
+      "year_level": 3,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 499": {
+      "name": "Course STAT 499",
+      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 266": {
+      "name": "Course STAT 266",
+      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
+      "year_level": 2,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 252": {
+      "name": "Course STAT 252",
+      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
+      "year_level": 2,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
     },
     "MATH 113": {
       "name": "Course MATH 113",
       "url": "https://calendar.ualberta.ca/content.php?catoid=56&navoid=17355",
       "year_level": 1,
+      "prerequisites": [],
       "alternatives": [],
-      "source": "program_page"
+      "sequence": null
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "MATH 101": [
+      "MATH 100"
+    ],
+    "MATH 118": [
+      "MATH 117"
+    ],
+    "MATH 136": [
+      "MATH 134"
+    ],
+    "MATH 146": [
+      "MATH 144"
+    ],
+    "MATH 156": [
+      "MATH 154"
+    ],
+    "MATH 209": [
+      "MATH 101"
+    ],
+    "MATH 217": [
+      "MATH 118"
+    ]
+  },
+  "sequences": {
+    "engineering": [
+      "MATH 100",
+      "MATH 101",
+      "MATH 209"
+    ],
+    "honors": [
+      "MATH 117",
+      "MATH 118",
+      "MATH 217"
+    ],
+    "regular_life_sci": [
+      "MATH 134",
+      "MATH 136"
+    ],
+    "regular_math_phys": [
+      "MATH 144",
+      "MATH 146"
+    ],
+    "regular_business": [
+      "MATH 154",
+      "MATH 156"
+    ],
+    "regular_linear_alg": [
+      "MATH 125"
+    ],
+    "analysis": [
+      "MATH 216"
+    ]
+  },
   "stats": {
     "total_courses": 61,
-    "total_dependencies": 0
+    "total_dependencies": 7
   }
 }

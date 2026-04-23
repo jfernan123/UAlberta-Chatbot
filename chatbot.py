@@ -76,15 +76,41 @@ def format_course_graph():
     }
 
     lines = ["=== Course Information ==="]
+
+    # Group courses by year level for better organization
+    by_year = {}
     for code, info in graph.get("courses", {}).items():
-        name = info.get("name", "Unknown")
+        if not code.startswith(("MATH", "STAT")):
+            continue
         year = info.get("year_level", 0)
+        if year not in by_year:
+            by_year[year] = []
+        by_year[year].append((code, info))
+
+    for year in sorted(by_year.keys()):
         year_label = year_labels.get(year, "Unknown")
-        alts = info.get("alternatives", [])
-        lines.append(f"{code} ({year_label}): {name}")
-        if alts:
-            lines.append(f"  Related: {', '.join(alts)}")
-    return "\n".join(lines[:40])  # Limit to first 40 courses
+        lines.append(f"\n--- {year_label} Courses ---")
+        for code, info in sorted(by_year[year]):
+            name = info.get("name", "Unknown")
+            prereqs = info.get("prerequisites", [])
+            seq = info.get("sequence", "")
+
+            line = f"{code}: {name}"
+            if seq:
+                line += f" [{seq.replace('_', ' ')}]"
+            lines.append(line)
+
+            if prereqs:
+                lines.append(f"  Prerequisites: {', '.join(prereqs)}")
+
+    # Add sequence overview
+    sequences = graph.get("sequences", {})
+    if sequences:
+        lines.append("\n=== Course Sequences ===")
+        for seq_name, courses in sequences.items():
+            lines.append(f"{seq_name.replace('_', ' ').title()}: {', '.join(courses)}")
+
+    return "\n".join(lines[:60])  # Limit to first 40 courses
 
 
 def build_chatbot():
