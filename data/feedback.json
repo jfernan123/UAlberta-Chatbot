@@ -70,5 +70,47 @@
     "question": "what is the mdp program?",
     "response": "Based on the provided context, there is no information about the MDP program. The context discusses graduate admissions, scholarships, academic integrity, and science-related topics, but does not mention or reference the MDP program.",
     "rating": -1
+  },
+  {
+    "timestamp": "2026-04-23T16:37:19.817863",
+    "question": "what statistics programs are offered?",
+    "response": "The Statistics Primer Course and the Common Course Requirements for BSc Major and Honors Degrees are the statistics programs offered at the University of Alberta. These programs provide foundational statistics skills and are designed to prepare students for advanced studies.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-23T16:37:47.414128",
+    "question": "What math courses are offered?",
+    "response": "The math courses offered include:\n\n- **Year 1**: MATH 117 (Honors in Mathematics), MATH 118 (Honors in Mathematics and Economics), MATH 134 (Calculus for Life Sciences I), MATH 144 (Calculus for Mathematical and Physical Science), MATH 154 (Calculus for Business and Economics I), MATH 100 (Calculus for Engineering I), MATH 101 (Calculus for Engineering II), MATH 125 (Linear Algebra I), MATH 127 (Honors Linear Algebra I), and MATH 136 (Calculus for Life Sciences II), MATH 146 (Calculus for Mathem",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-23T16:38:11.740014",
+    "question": "What is the MDP program?",
+    "response": "The MDP program is a **professionally-oriented course-based Master’s program in Modelling, Data + Predictions**. It is designed to provide students with a unique combination of data modelling, data analytics, statistical machine learning algorithms, and modern computational methods. The program emphasizes practical skills for careers in industry and government, and it is completed in 16 months.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-23T16:38:43.883841",
+    "question": "What courses can you tell me about?",
+    "response": "The courses available include:  \n1. **Mathematics Primer Courses** (optional, non-credit): Covers topics like real numbers, algebra, geometry, functions, exponents, logarithms, trigonometry, and linear algebra. Offers both online and in-person options.  \n2. **Statistics Primer Course**: Refreshes prerequisite statistics skills, covering linear functions, probability, descriptive statistics, and interpretations.  \n3. **Honors Stream Courses**: Allows switching from honors courses (e.g., MATH 117 ",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-23T16:39:31.768388",
+    "question": "Can you name another mathematics professor?",
+    "response": "Another mathematics professor at the University of Alberta is **Terry Gannon**.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-23T16:40:17.817347",
+    "question": "What courses are offered in the third year?",
+    "response": "The third year courses are listed in the context as follows:  \n- **MATH 216 (Year 2): Introduction to Analysis**  \n- **MATH 214 (Year 2): Calculus III**  \n- **MATH 217 (Year 2): Honors Calculus III**  \n\nThese courses are offered in the second year of undergraduate studies.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-23T16:40:44.404267",
+    "question": "Those are third year courses",
+    "response": "Those are third year courses, which include courses in Year 2 and Year 3. For example, MATH 214 (Year 2) and MATH 217 (Year 2) are Year 2 courses, while MATH 216 (Year 2) and MATH 217 (Year 2) are also Year 2 courses. Additionally, courses in Year 3 such as MATH 217 (Year 2) and MATH 214 (Year 2) are included.",
+    "rating": -1
   }
 ]
