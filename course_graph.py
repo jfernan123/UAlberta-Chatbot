@@ -23,6 +23,60 @@ def extract_course_code(text):
     return list(set([f"{prefix.upper()} {num}" for prefix, num in matches]))
 
 
+def extract_courses_from_program_pages(data):
+    """Extract course information from program pages (not just calendar course pages)."""
+    courses = {}
+
+    for page in data:
+        url = page.get("url", "")
+
+        # Skip if it's already a calendar course page (we handle those separately)
+        if "preview_course" in url:
+            continue
+
+        # Process all sections
+        for section in page.get("sections", []):
+            content = section.get("content", "")
+            heading = section.get("heading", "")
+
+            # Extract all course codes mentioned
+            course_codes = extract_course_code(content)
+
+            for course_code in course_codes:
+                # Skip if we already have this course with better info
+                if course_code in courses:
+                    continue
+
+                # Determine year level from course number
+                try:
+                    course_num = int(course_code.split()[1])
+                    if 100 <= course_num < 200:
+                        year_level = 1
+                    elif 200 <= course_num < 300:
+                        year_level = 2
+                    elif 300 <= course_num < 400:
+                        year_level = 3
+                    elif 400 <= course_num < 500:
+                        year_level = 4
+                    elif 500 <= course_num < 600:
+                        year_level = 5  # Graduate
+                    else:
+                        year_level = 0
+                except:
+                    year_level = 0
+
+                # Store basic info (name will be updated if we find better info)
+                courses[course_code] = {
+                    "name": f"Course {course_code}",
+                    "url": url,
+                    "year_level": year_level,
+                    "alternatives": [],
+                    "source": "program_page",
+                }
+
+    return courses
+
+
 def parse_course_prerequisites(content, primary_course_code):
     """Extract prerequisites from course content."""
     # Get the primary course this page is about
@@ -195,6 +249,15 @@ def build_graph(input_file, output_file):
             for prereq in prereqs:
                 if prereq != course_code:
                     dependencies[course_code].append(prereq)
+
+    # Also extract courses from program pages (not just calendar course pages)
+    program_courses = extract_courses_from_program_pages(data)
+    print(f"Found {len(program_courses)} courses from program pages")
+
+    # Merge program courses with calendar courses (calendar takes priority)
+    for code, info in program_courses.items():
+        if code not in courses:
+            courses[code] = info
 
     # Create output structure
     graph = {

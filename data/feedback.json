@@ -112,5 +112,11 @@
     "question": "Those are third year courses",
     "response": "Those are third year courses, which include courses in Year 2 and Year 3. For example, MATH 214 (Year 2) and MATH 217 (Year 2) are Year 2 courses, while MATH 216 (Year 2) and MATH 217 (Year 2) are also Year 2 courses. Additionally, courses in Year 3 such as MATH 217 (Year 2) and MATH 214 (Year 2) are included.",
     "rating": -1
+  },
+  {
+    "timestamp": "2026-04-23T16:47:16.719866",
+    "question": "What is the honors math program?",
+    "response": "The honors math program is designed for students with approved qualifications, allowing them to complete a special field of study in four consecutive years. Students can switch courses from the equivalent course required by their program, transferring homework and exam weights accordingly. The program is supervised by a department and offers support for students transitioning from honors to the required course.",
+    "rating": -1
   }
 ]
