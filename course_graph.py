@@ -17,8 +17,9 @@ import re
 import argparse
 from collections import defaultdict
 
-# Entry-level courses (no prerequisites needed)
+# Entry-level courses (no prerequisites needed - just high school math)
 ENTRY_LEVEL_COURSES = {
+    # MATH entry level courses
     "MATH 100",
     "MATH 117",
     "MATH 134",
@@ -27,7 +28,117 @@ ENTRY_LEVEL_COURSES = {
     "MATH 102",
     "MATH 125",
     "MATH 127",
+    # STAT entry level courses (high school math only)
+    "STAT 151",
     "STAT 161",
+    "STAT 181",
+}
+
+# MATH course sequences
+MATH_SEQUENCES = {
+    "engineering": ["MATH 100", "MATH 101", "MATH 209"],  # STAT 235 after MATH 101
+    "honors": [
+        "MATH 117",
+        "MATH 118",
+        "MATH 217",
+    ],  # Linear Algebra (MATH 127) is concurrent
+    "regular_life_sci": ["MATH 134", "MATH 136"],
+    "regular_math_phys": ["MATH 144", "MATH 146"],
+    "regular_business": ["MATH 154", "MATH 156"],
+    "regular_linear_alg": ["MATH 125"],
+    "analysis": ["MATH 216"],
+}
+
+# STAT course sequences
+STAT_SEQUENCES = {
+    "applied_stats": ["STAT 151", "STAT 252", "STAT 337", "STAT 368", "STAT 378"],
+    "probability": ["STAT 181", "STAT 265", "STAT 371", "STAT 471"],
+    "prob_stats_ii": ["STAT 266", "STAT 276", "STAT 361", "STAT 372", "STAT 378"],
+    "engineering_stats": ["STAT 235"],  # After MATH 101 in engineering
+}
+
+# Combined sequences
+COURSE_SEQUENCES = {**MATH_SEQUENCES, **STAT_SEQUENCES}
+
+# STAT course names (from UAlberta catalogue)
+STAT_COURSE_NAMES = {
+    "STAT 151": "Introduction to Applied Statistics I",
+    "STAT 161": "Introductory Statistics for Business and Economics",
+    "STAT 181": "Introduction to Combinatorics and Probability",
+    "STAT 235": "Introductory Statistics for Engineering",
+    "STAT 252": "Introduction to Applied Statistics II",
+    "STAT 265": "Probability and Statistics I",
+    "STAT 266": "Probability and Statistics II",
+    "STAT 276": "Statistics for Data Science",
+    "STAT 281": "Probability by Counting and Queuing",
+    "STAT 337": "Biostatistics",
+    "STAT 353": "Life Contingencies I",
+    "STAT 361": "Sampling Techniques",
+    "STAT 368": "Introduction to Design and Analysis of Experiments",
+    "STAT 371": "Probability and Stochastic Processes",
+    "STAT 372": "Mathematical Statistics",
+    "STAT 378": "Applied Regression Analysis",
+    "STAT 413": "Computing for Data Science",
+    "STAT 432": "Survival Analysis",
+    "STAT 437": "Applied Statistical Methods",
+    "STAT 441": "Statistical Methods for Learning and Data Mining",
+    "STAT 453": "Risk Theory",
+    "STAT 471": "Probability I",
+    "STAT 479": "Time Series Analysis",
+}
+
+# MATH prerequisites for STAT courses (cross-discipline)
+STAT_MATH_PREREQUISITES = {
+    "STAT 181": {
+        "prereq": ["MATH 125", "MATH 127"],
+        "coreq": ["MATH 101", "MATH 118", "MATH 136", "MATH 146", "MATH 156"],
+    },
+    "STAT 235": {"prereq": ["MATH 100"], "coreq": ["MATH 101"]},
+    "STAT 265": {"coreq": ["MATH 209", "MATH 214", "MATH 217"]},
+    "STAT 266": {
+        "prereq": ["MATH 209", "MATH 214", "MATH 217"],
+        "coreq": ["MATH 225", "MATH 227"],
+    },
+    "STAT 276": {"coreq": ["MATH 117", "MATH 216"]},
+    "STAT 353": {"prereq": ["MATH 253"]},
+}
+
+# STAT prerequisites (from program requirements)
+STAT_PREREQUISITES = {
+    "STAT 252": ["STAT 151", "STAT 161", "STAT 235", "STAT 141", "SCI 151"],
+    "STAT 265": [],
+    "STAT 266": ["STAT 265", "STAT 281"],
+    "STAT 276": ["STAT 265", "STAT 281"],
+    "STAT 337": ["STAT 151", "STAT 161", "SCI 151"],
+    "STAT 353": ["STAT 265", "STAT 281"],
+    "STAT 361": ["STAT 266", "STAT 276"],
+    "STAT 368": ["STAT 266", "STAT 276"],
+    "STAT 371": ["STAT 265", "STAT 281"],
+    "STAT 372": ["STAT 266", "STAT 276"],
+    "STAT 378": ["STAT 266", "STAT 276"],
+    "STAT 432": ["STAT 372", "STAT 378"],
+    "STAT 441": ["STAT 378"],
+    "STAT 453": ["STAT 371", "STAT 281"],
+    "STAT 471": ["STAT 371", "STAT 281"],
+}
+
+# STAT prerequisites (from program requirements)
+STAT_PREREQUISITES = {
+    "STAT 252": ["STAT 151", "STAT 161", "STAT 235", "STAT 141", "SCI 151"],
+    "STAT 265": [],  # Entry level for probability track
+    "STAT 266": ["STAT 265", "STAT 281"],
+    "STAT 276": ["STAT 265", "STAT 281"],
+    "STAT 337": ["STAT 151", "STAT 161", "SCI 151"],
+    "STAT 353": ["STAT 265", "STAT 281"],
+    "STAT 361": ["STAT 266", "STAT 276"],
+    "STAT 368": ["STAT 266", "STAT 276"],
+    "STAT 371": ["STAT 265", "STAT 281"],
+    "STAT 372": ["STAT 266", "STAT 276"],
+    "STAT 378": ["STAT 266", "STAT 276"],
+    "STAT 432": ["STAT 372", "STAT 378"],
+    "STAT 441": ["STAT 378"],
+    "STAT 453": ["STAT 371", "STAT 281"],
+    "STAT 471": ["STAT 371", "STAT 281"],
 }
 
 # Course sequences - defines which courses are in the same progression
@@ -455,6 +566,15 @@ def build_dependency_graph(forward_data):
     if "MATH 216" in final_prerequisites:
         final_prerequisites["MATH 216"] = []
 
+    # Add STAT prerequisites from our STAT_PREREQUISITES mapping
+    for stat_course, prereqs in STAT_PREREQUISITES.items():
+        if stat_course not in final_prerequisites:
+            final_prerequisites[stat_course] = []
+        # Add any STAT prerequisites not already present
+        for prereq in prereqs:
+            if prereq not in final_prerequisites[stat_course]:
+                final_prerequisites[stat_course].append(prereq)
+
     return final_prerequisites
 
 
@@ -511,13 +631,53 @@ def build_graph(input_file, output_file):
     # Add program page courses that aren't in calendar data
     for code, info in program_courses.items():
         if code not in courses:
+            year_level = info["year_level"]
+            # Use known STAT names if available
+            name = STAT_COURSE_NAMES.get(code, info["name"])
+
+            # Get STAT prerequisites
+            stat_prereqs = STAT_PREREQUISITES.get(code, [])
+            math_prereqs = STAT_MATH_PREREQUISITES.get(code, {})
+
             courses[code] = {
-                "name": info["name"],
+                "name": name,
                 "url": info["url"],
-                "year_level": info["year_level"],
-                "prerequisites": [],
+                "year_level": year_level,
+                "prerequisites": stat_prereqs,
                 "alternatives": [],
                 "sequence": get_sequence(code),
+                "math_prerequisites": math_prereqs if math_prereqs else None,
+            }
+
+    # Add any remaining STAT courses from our STAT_COURSE_NAMES that aren't in courses yet
+    for stat_code, stat_name in STAT_COURSE_NAMES.items():
+        if stat_code not in courses:
+            try:
+                year_level = int(stat_code.split()[1])
+                if 100 <= year_level < 200:
+                    year_level = 1
+                elif 200 <= year_level < 300:
+                    year_level = 2
+                elif 300 <= year_level < 400:
+                    year_level = 3
+                elif 400 <= year_level < 500:
+                    year_level = 4
+                else:
+                    year_level = 5
+            except:
+                year_level = 1
+
+            stat_prereqs = STAT_PREREQUISITES.get(stat_code, [])
+            math_prereqs = STAT_MATH_PREREQUISITES.get(stat_code, {})
+
+            courses[stat_code] = {
+                "name": stat_name,
+                "url": "",
+                "year_level": year_level,
+                "prerequisites": stat_prereqs,
+                "alternatives": [],
+                "sequence": get_sequence(stat_code),
+                "math_prerequisites": math_prereqs if math_prereqs else None,
             }
 
     # Build dependencies dict
