@@ -424,7 +424,7 @@ def evaluate_generation(
 
 
 def run_evaluation(
-    chatbot_func, test_cases: List[Dict] = None
+    chatbot_func, test_cases: List[Dict] = None, retriever=None
 ) -> List[EvaluationResult]:
     """
     Run complete evaluation on all test cases
@@ -432,12 +432,19 @@ def run_evaluation(
     Args:
         chatbot_func: Function that takes a question and returns (response, docs)
         test_cases: Optional custom test cases (defaults to TEST_CASES)
+        retriever: Optional pre-built retriever (will be created if not provided)
 
     Returns:
         List of EvaluationResult objects
     """
     if test_cases is None:
         test_cases = TEST_CASES
+
+    # Build retriever once outside the loop
+    if retriever is None:
+        from retriever import load_retriever
+
+        retriever = load_retriever()
 
     results = []
 
@@ -451,13 +458,10 @@ def run_evaluation(
         print(f"[{i}/{len(test_cases)}] Question: {question[:50]}...")
 
         try:
-            # Get response and retrieved docs
+            # Get response
             response = chatbot_func(question)
 
-            # Get context (we need to access the retriever)
-            from retriever import load_retriever
-
-            retriever = load_retriever()
+            # Get context using pre-built retriever (no re-import inside loop)
             retrieved_docs = retriever.invoke(question)
 
             # Evaluate retrieval
