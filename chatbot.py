@@ -1,9 +1,39 @@
 # chatbot.py
 import json
+import re
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 from retriever import load_retriever
+
+# Case-insensitivity mapping for common variations
+# Keys are regex patterns, values are replacement strings
+QUERY_VARIATIONS = [
+    (r"\bmdp\b", "MDP"),
+    (r"\bhonours?\b", "Honors"),
+    (r"\bstats\b", "Statistics"),
+    (r"\bmaths\b", "Mathematics"),
+    (r"\bundergrad\b", "undergraduate"),
+    (r"\bmath(?!ematics)\b", "Mathematics"),
+    (r"\bstat(?!istics)\b", "Statistics"),
+    (r"\byr1\b", "Year 1"),
+    (r"\byr2\b", "Year 2"),
+    (r"\byr3\b", "Year 3"),
+    (r"\byr4\b", "Year 4"),
+    (r"\b1st year\b", "first year"),
+    (r"\b2nd year\b", "second year"),
+    (r"\b3rd year\b", "third year"),
+    (r"\b4th year\b", "fourth year"),
+    (r"\bundergraduateuate\b", "undergraduate"),  # Fix double undergrad
+]
+
+
+def normalize_query(query: str) -> str:
+    """Normalize query to handle common case/spelling variations."""
+    normalized = query
+    for pattern, replacement in QUERY_VARIATIONS:
+        normalized = re.sub(pattern, replacement, normalized, flags=re.IGNORECASE)
+    return normalized
 
 
 def load_course_graph():
@@ -89,17 +119,23 @@ Answer:
         return "\n\n".join(doc.page_content for doc in docs)
 
     def build_input(question):
-        docs = retriever.invoke(question)
+        # Normalize query for case-insensitive matching
+        normalized_q = normalize_query(question)
+
+        docs = retriever.invoke(normalized_q)
         context = "\n\n".join(doc.page_content for doc in docs)
         course_info = format_course_graph()
         return {
             "context": context,
             "course_graph": course_info,
-            "question": question,
+            "question": normalized_q,
         }, docs
 
     def run_chain(question):
-        inputs, docs = build_input(question)
+        # Normalize query for consistent processing
+        normalized_q = normalize_query(question)
+
+        inputs, docs = build_input(normalized_q)
         answer = (prompt | llm | StrOutputParser()).invoke(inputs)
         return answer
 
