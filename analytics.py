@@ -121,6 +121,27 @@ def get_improvement_recommendations() -> list:
             "💡 No positive feedback for programs yet. Ensure program pages are well indexed."
         )
 
+    # Correlation with evaluation (check for topic overlap)
+    if low_rated:
+        low_topics = set()
+        for entry in low_rated:
+            q = entry.get("question", "").lower()
+            if "mdp" in q:
+                low_topics.add("MDP")
+            if "honors" in q or "honour" in q:
+                low_topics.add("Honors")
+            if "statistic" in q:
+                low_topics.add("Statistics")
+            if "mathematic" in q:
+                low_topics.add("Mathematics")
+            if "course" in q:
+                low_topics.add("Courses")
+
+        if low_topics:
+            recommendations.append(
+                f"📊 Low-rated topics: {', '.join(sorted(low_topics))}"
+            )
+
     return recommendations
 
 
@@ -175,11 +196,6 @@ def print_report():
     print(generate_report())
 
 
-if __name__ == "__main__":
-    print_report()
-
-
-# Also make it runable from command line
 if __name__ == "__main__":
     import sys
 

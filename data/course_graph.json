@@ -1,0 +1,111 @@
+{
+  "courses": {
+    "MATH 117": {
+      "name": "Honors Calculus I",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668643",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 216": {
+      "name": "Introduction to Analysis",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=671692",
+      "year_level": 2,
+      "alternatives": []
+    },
+    "MATH 100": {
+      "name": "Calculus for Engineering I",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668638",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 134": {
+      "name": "Calculus for the Life Sciences I",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=670800",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 144": {
+      "name": "Calculus for the Mathematical and Physical Science",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668647",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 154": {
+      "name": "Calculus for Business and Economics I",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=671690",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 101": {
+      "name": "Calculus for Engineering II",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668639",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 118": {
+      "name": "Honors Calculus II",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668644",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 136": {
+      "name": "Calculus for the Life Sciences II",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=671689",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 146": {
+      "name": "Calculus for the Mathematical and Physical Science",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668648",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 156": {
+      "name": "Calculus for Business and Economics II",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=671691",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 102": {
+      "name": "Applied Linear Algebra",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668640",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 125": {
+      "name": "Linear Algebra I",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668645",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 127": {
+      "name": "Honors Linear Algebra I",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668646",
+      "year_level": 1,
+      "alternatives": []
+    },
+    "MATH 209": {
+      "name": "Calculus for Engineering III",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668651",
+      "year_level": 2,
+      "alternatives": []
+    },
+    "MATH 214": {
+      "name": "Calculus III",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668652",
+      "year_level": 2,
+      "alternatives": []
+    },
+    "MATH 217": {
+      "name": "Honors Calculus III",
+      "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668654",
+      "year_level": 2,
+      "alternatives": []
+    }
+  },
+  "dependencies": {},
+  "stats": {
+    "total_courses": 17,
+    "total_dependencies": 0
+  }
+}

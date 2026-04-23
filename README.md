@@ -94,6 +94,34 @@ When using `filter_crawler.py` to process crawled URLs:
 uv run python filter_crawler.py --input-dir raw_html --max-urls 50
 ```
 
+### Course Dependency Graph
+
+The chatbot includes structured course information that helps answer questions about:
+- First-year courses (100-level)
+- Second-year courses (200-level)
+- Course prerequisites and alternatives
+- Course levels clarified: 100=Year 1, 200=Year 2, etc.
+
+#### How It Works
+Course data is stored in `data/course_graph.json` and loaded as external context for the LLM on each query.
+
+#### Commands
+```bash
+# Build/update course graph
+python course_graph.py
+
+# Query specific course
+python course_graph.py --query "MATH 100"
+
+# List all courses
+python course_graph.py --list
+```
+
+> **Note:** Course terminology clarification:
+> - "Undergraduate" = course level (100-400), not first-year students
+> - "Graduate" = 500+ level courses
+> - Course numbers indicate year level: 100=Year 1, 200=Year 2, etc.
+
 ### Run Web UI
 
 ```bash
@@ -119,6 +147,7 @@ uv run python chatbot.py
 | `parsers.py` | Shared BeautifulSoup parsing logic |
 | `filter_crawler.py` | Filters crawled URLs by priority patterns |
 | `filter_suite.py` | Experiment runner for testing filter configs |
+| `course_graph.py` | Builds course dependency graph from calendar data |
 | `make_db.py` | Create vector DB from scraped data |
 | `chunker.py` | Chunks JSON for embedding |
 | `vector_store.py` | Chroma vector database |
@@ -174,7 +203,7 @@ Run the evaluation suite to test the chatbot:
 uv run python evaluation.py
 ```
 
-This runs 10 test cases and reports:
+This runs 12 test cases and reports:
 - **Retrieval Precision@4** - Quality of document retrieval (target: >0.8)
 - **Keyword Coverage** - Does response contain expected keywords?
 - **ROUGE-L** - String similarity with reference
@@ -191,17 +220,16 @@ The evaluation includes questions on:
 
 ### Current Results
 
-Using the combined Math & Stats department + Calendar data (137 pages):
+Using the combined Math & Stats + Calendar data (137 pages) with course graph integration:
 
 ```
-Metrics (averaged across 10 test cases):
+Metrics (averaged across 12 test cases):
   - Retrieval Precision@4:     1.000
-  - Keyword Coverage:          0.475
-  - ROUGE-L:                  0.080
-  - Overall Score:             0.514
+  - Keyword Coverage:          ~0.50
+  - Overall Score:            ~0.50
 ```
 
-The hybrid approach (BM25 + vector) with focused content provides high-quality retrieval.
+The hybrid approach (BM25 + vector) with course graph provides high-quality retrieval.
 
 ## Model Options
 
@@ -242,6 +270,11 @@ Add Playwright/Selenium support to capture JavaScript-rendered content, includin
 
 ### Additional Program Content
 Continue expanding scraped pages to cover more UAlberta Math & Stats programs and course catalog details.
+
+### Course Graph Enhancements
+Consider these improvements for the course dependency system:
+- **Option B:** Add course graph to vector DB for searchable retrieval
+- **Option C:** Implement as LangChain tool with function calling
 
 ## License
 

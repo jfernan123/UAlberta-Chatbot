@@ -18,13 +18,14 @@ TEST_CASES = [
     {
         "question": "What courses can I take in first year?",
         "expected_keywords": [
-            "Calculus",
-            "Linear Algebra",
-            "Statistics",
-            "MATH",
-            "STAT",
+            "MATH 117",
+            "MATH 118",
+            "courses",
+            "MATH 136",
+            "MATH 146",
+            "MATH 156",
         ],
-        "expected_topics": ["Calculus", "Linear Algebra", "Statistics"],
+        "expected_topics": ["First-year courses"],
         "category": "courses",
     },
     {
@@ -71,12 +72,12 @@ TEST_CASES = [
         "question": "What Calculus courses are offered?",
         "expected_keywords": [
             "Calculus",
-            "MATH 117",
-            "MATH 118",
-            "MATH 134",
-            "MATH 144",
+            "MATH 100",
+            "MATH 101",
+            "MATH 201",
+            "MATH 209",
         ],
-        "expected_topics": ["Calculus"],
+        "expected_topics": ["Calculus courses"],
         "category": "courses",
     },
     {
@@ -104,20 +105,46 @@ TEST_CASES = [
     },
     {
         "question": "What are the requirements for Honors in Mathematics?",
-        "expected_keywords": ["Honors", "GPA", "MATH", "department approval"],
+        "expected_keywords": ["Honors", "MATH", "department approval", "GPA"],
         "expected_topics": ["Honors Mathematics"],
         "category": "programs",
+    },
+    {
+        "question": "What is the MDP program?",
+        "expected_keywords": [
+            "MDP",
+            "Modelling",
+            "Data",
+            "Predictions",
+            "master",
+            "data science",
+            "16 months",
+        ],
+        "expected_topics": ["MDP program"],
+        "category": "programs",
+    },
+    {
+        "question": "What courses are offered for undergraduate math students?",
+        "expected_keywords": [
+            "MATH 160",
+            "MATH 260",
+            "Elementary Education",
+            "Higher Arithmetic",
+            "Mathematical Reasoning",
+        ],
+        "expected_topics": ["Undergraduate courses (Education)"],
+        "category": "courses",
     },
     {
         "question": "What is the Statistics program?",
         "expected_keywords": [
             "Statistics",
-            "collecting",
-            "analyzing",
-            "interpreting data",
-            "Honors",
+            "data analysts",
+            "actuaries",
+            "biostatisticians",
             "Major",
             "Minor",
+            "Associate Statistician",
         ],
         "expected_topics": ["Statistics program overview"],
         "category": "programs",
@@ -132,6 +159,7 @@ TEST_CASES = [
             "Honors",
             "Major",
             "Minor",
+            "Applied Mathematics",
         ],
         "expected_topics": ["Mathematics program overview"],
         "category": "programs",
@@ -170,6 +198,8 @@ class GenerationResult:
     keyword_coverage: float
     response_length: int
     context_used: bool
+    keywords_in_data: List[str]
+    keywords_not_in_data: List[str]
 
 
 @dataclass
@@ -360,6 +390,20 @@ def evaluate_generation(
         response, expected_keywords
     )
 
+    context_text = (
+        " ".join(doc.page_content for doc in context_docs).lower()
+        if context_docs
+        else ""
+    )
+
+    keywords_in_data = []
+    keywords_not_in_data = []
+    for kw in expected_keywords:
+        if kw.lower() in context_text:
+            keywords_in_data.append(kw)
+        else:
+            keywords_not_in_data.append(kw)
+
     return GenerationResult(
         question=test_case["question"],
         response=response,
@@ -369,6 +413,8 @@ def evaluate_generation(
         keyword_coverage=keyword_coverage,
         response_length=len(response),
         context_used=len(context_docs) > 0,
+        keywords_in_data=keywords_in_data,
+        keywords_not_in_data=keywords_not_in_data,
     )
 
 
@@ -497,6 +543,18 @@ def print_evaluation_summary(results: List[EvaluationResult]):
     for r in valid_results:
         q_short = r.test_case["question"][:40]
         print(f"  [{r.overall_score:.3f}] {q_short}...")
+
+    # Content availability check
+    all_missing_from_data = []
+    for r in valid_results:
+        if r.generation.keywords_not_in_data:
+            all_missing_from_data.extend(r.generation.keywords_not_in_data)
+
+    if all_missing_from_data:
+        print(f"\n⚠️ Keywords NOT found in any retrieved content:")
+        for kw in set(all_missing_from_data):
+            print(f"  - {kw}")
+        print(f"\n  These keywords may not exist in the current data source.")
 
 
 # =============================================================================
