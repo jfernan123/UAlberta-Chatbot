@@ -270,3 +270,93 @@ def search_courses(keyword: str) -> str:
         lines.append(f"\n... and {len(matches) - 15} more courses")
 
     return "\n".join(lines)
+
+
+@tool
+def get_courses_by_level(
+    department: Optional[str] = None,
+    level: Optional[str] = None,
+) -> str:
+    """Get courses filtered by department and level (year).
+
+    Args:
+        department: "math", "stat", or None for both.
+        level: "first" (100s), "second" (200s), "third" (300s),
+               "senior" (400s), "graduate" (500+), or "upper" (300+).
+
+    Returns:
+        Filtered courses with their names and prerequisites.
+    """
+    graph = load_course_graph()
+    courses = graph.get("courses", {})
+
+    # Map level names to course number ranges
+    level_ranges = {
+        "first": (100, 199),
+        "second": (200, 299),
+        "third": (300, 399),
+        "senior": (400, 499),
+        "upper": (300, 999),  # 300+ = upper level undergrad
+        "graduate": (500, 999),
+    }
+
+    # Determine course number range
+    num_range = level_ranges.get(level) if level else None
+
+    # Filter by department
+    if department == "math":
+        filtered = {c: info for c, info in courses.items() if c.startswith("MATH")}
+    elif department == "stat":
+        filtered = {c: info for c, info in courses.items() if c.startswith("STAT")}
+    else:
+        filtered = courses
+
+    # Filter by level/course number
+    if num_range:
+        min_num, max_num = num_range
+        filtered = {
+            c: info
+            for c, info in filtered.items()
+            if any(
+                min_num <= int(c.split()[1]) <= max_num
+                for c in [c]
+                if c.split()[1].isdigit()
+            )
+        }
+
+    if not filtered:
+        return f"No {department or ''} courses found for level '{level}'."
+
+    # Group and format
+    by_num = {}
+    for code, info in filtered.items():
+        try:
+            num = int(code.split()[1])
+            if num not in by_num:
+                by_num[num] = []
+            by_num[num].append((code, info))
+        except:
+            pass
+
+    lines = [
+        f"{department.title() if department else ''} {level.title() if level else ''} Courses:".strip()
+    ]
+
+    for num in sorted(by_num.keys()):
+        century = num // 100  # 505 -> 5, 432 -> 4, etc.
+        level_label = {
+            1: "First Year (100-level)",
+            2: "Second Year (200-level)",
+            3: "Third Year (300-level)",
+            4: "Senior (400-level)",
+            5: "Graduate (500-level)",
+        }.get(century, f"{century}00-level")
+
+        lines.append(f"\n{level_label}:")
+        for code, info in sorted(by_num[num]):
+            prereqs = info.get("prerequisites", [])
+            lines.append(f"  {code}: {info['name']}")
+            if prereqs:
+                lines.append(f"    Prerequisites: {', '.join(prereqs)}")
+
+    return "\n".join(lines)

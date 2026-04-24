@@ -13,6 +13,7 @@ from course_tools import (
     get_course_prerequisites,
     get_course_sequence,
     search_courses,
+    get_courses_by_level,
 )
 
 # Case-insensitivity mapping for common variations
@@ -117,6 +118,16 @@ def detect_course_tools(query: str) -> list:
     if any(kw in query_lower for kw in search_keywords):
         tools_to_call.append(search_courses)
 
+    # Senior/Graduate level course queries - check BEFORE general math/stat keywords
+    senior_keywords = ["senior", "400-level", "yr4", "yr 4", "fourth year"]
+    grad_keywords = ["graduate", "grad ", "500-level", "yr5", "yr 5", "500 level"]
+    if any(kw in query_lower for kw in senior_keywords + grad_keywords):
+        level = (
+            "senior" if any(kw in query_lower for kw in senior_keywords) else "graduate"
+        )
+        tools_to_call = [get_courses_by_level]
+        return tools_to_call
+
     return tools_to_call
 
 
@@ -150,6 +161,22 @@ def call_course_tools(query: str) -> str:
                 # Extract keyword from query
                 keyword = extract_search_keyword(query)
                 result = tool_func.invoke({"keyword": keyword})
+            elif tool_func == get_courses_by_level:
+                # Determine department and level from query
+                level = (
+                    "senior"
+                    if any(
+                        kw in query.lower()
+                        for kw in ["senior", "400-level", "yr4", "fourth year"]
+                    )
+                    else "graduate"
+                )
+                dept = None
+                if "math" in query.lower():
+                    dept = "math"
+                elif "stat" in query.lower():
+                    dept = "stat"
+                result = tool_func.invoke({"department": dept, "level": level})
             else:
                 result = ""
 
@@ -237,6 +264,7 @@ IMPORTANT INSTRUCTIONS:
 3. Do NOT make up course names or numbers - only use courses that appear in the Course Information section.
 4. If the Course Information mentions specific courses (like MATH 118 or MATH 217), include them in your answer.
 5. When listing Statistics (STAT) courses, note that many require MATH prerequisites - include MATH courses that appear in the Course Information as they may be required prerequisites.
+6. Previous user answers are in data/feedback.json. Study these to craft your response.
 
 IMPORTANT TERMINOLOGY CLARIFICATION:
 - "Undergraduate" in this context refers to COURSE LEVEL (100-400 level), NOT first-year students

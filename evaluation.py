@@ -194,6 +194,24 @@ TEST_CASES = [
         "expected_topics": ["STAT 265 MATH requirements"],
         "category": "prerequisites",
     },
+    {
+        "question": "What graduate MATH courses are available?",
+        "expected_keywords": ["MATH 505", "MATH 506", "MATH 515"],
+        "expected_topics": ["Graduate courses"],
+        "category": "level_specific",
+    },
+    {
+        "question": "What senior STAT courses are available?",
+        "expected_keywords": ["STAT 471", "STAT 479", "STAT 413"],
+        "expected_topics": ["Senior courses"],
+        "category": "level_specific",
+    },
+    {
+        "question": "What graduate courses are there?",
+        "expected_keywords": ["MATH", "STAT", "500"],
+        "expected_topics": ["Graduate MATH and STAT"],
+        "category": "level_specific",
+    },
 ]
 
 

@@ -13,7 +13,8 @@ A RAG chatbot for University of Alberta Math & Statistics department using local
 - CLI and web interface
 - **Case-insensitive query handling** (mdp → MDP, honours → Honors, etc.)
 - **LangChain tools for on-demand course information** (prerequisites, sequences, searches)
-- **Course dependency graph** with MATH and STAT prerequisites
+- **Course dependency graph** with MATH and STAT prerequisites (178 courses)
+- **Graduate/Senior level course detection** (400-level, 500-level)
 
 ## Prerequisites
 
@@ -22,7 +23,7 @@ A RAG chatbot for University of Alberta Math & Statistics department using local
 - assuming `uv` dependency management, but .lock and .toml left out for other environment users
 - Data files (pre-configured):
   - `data/pages_math.json` - 137 scraped pages
-  - `data/course_graph.json` - 75 courses with prerequisites
+  - `data/course_graph.json` - 178 courses (120 MATH + 58 STAT) with prerequisites
   - `db/` - Chroma vector database
 
 ## Setup
@@ -221,13 +222,13 @@ Run the evaluation suite to test the chatbot:
 uv run python evaluation.py
 ```
 
-This runs 17 test cases and reports:
+This runs 20 test cases and reports:
 - **Retrieval Precision@4** - Quality of document retrieval (target: >0.8)
 - **Keyword Coverage** - Does response contain expected keywords?
 - **ROUGE-L** - String similarity with reference
 - **Overall Score** - Weighted combination of metrics
 
-### Test Cases (17 total)
+### Test Cases (20 total)
 
 The evaluation includes questions on:
 - First-year courses (Calculus, Linear Algebra, Statistics)
@@ -235,7 +236,7 @@ The evaluation includes questions on:
 - Double majors and minors
 - Student support resources
 - Program-specific questions (Statistics overview, Mathematics overview)
-- **Course prerequisites** (NEW - 5 test cases added)
+- **Course prerequisites** (5 test cases added)
   - MATH 209 prerequisites
   - STAT 266 prerequisites
   - Course sequences (after MATH 117)
@@ -303,9 +304,11 @@ Add Playwright/Selenium support to capture JavaScript-rendered content, includin
 Continue expanding scraped pages to cover more UAlberta Math & Stats programs and course catalog details.
 
 ### Course Graph Enhancements (Done ✓)
-- Course prerequisites extracted for 75 courses (MATH + STAT)
+- Course prerequisites extracted for **178 courses** (120 MATH + 58 STAT)
 - Implemented as LangChain tools with on-demand retrieval
 - Added prerequisite test cases to evaluation suite
+- Added graduate/senior level course detection (400-level, 500-level)
+- Test cases: "What graduate MATH courses?", "What senior STAT courses?"
 
 ## License
 
