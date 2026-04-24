@@ -20,8 +20,9 @@ def main():
     parser.add_argument(
         "-i",
         "--input",
-        default="data/pages_math.json",
-        help="Input JSON file with scraped content (default: data/pages_math.json)",
+        nargs="+",
+        default=["data/pages.json"],
+        help="One or more input JSON files (default: data/pages_math.json)",
     )
     parser.add_argument(
         "-o",
@@ -34,16 +35,18 @@ def main():
     )
     args = parser.parse_args()
 
+    chunks = []
+    for input_file in args.input:
+        if args.verbose:
+            print(f"Loading data from {input_file}...")
+        file_chunks = chunk_json(input_file)
+        chunks.extend(file_chunks)
+        if args.verbose:
+            print(f"  {len(file_chunks)} chunks from {input_file}")
+
     if args.verbose:
-        print(f"Loading data from {args.input}...")
+        print(f"Total: {len(chunks)} chunks")
 
-    # Load and chunk data
-    chunks = chunk_json(args.input)
-
-    if args.verbose:
-        print(f"Loaded {len(chunks)} chunks from {args.input}")
-
-    # Create vector database
     create_vector_db(chunks)
 
     print(f"Created vector database at {args.output}/")

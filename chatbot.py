@@ -16,6 +16,26 @@ from courses.course_tools import (
     get_courses_by_level,
 )
 
+# Change to "claude" to use Claude Haiku, "ollama" to use local qwen3
+LLM_PROVIDER = "claude"
+
+# Set to False to disable course tool detection and rely purely on vector DB
+USE_COURSE_TOOLS = True
+
+# Set to True to print retrieved chunks and course tool output before each answer
+VERBOSE = False
+
+# Set to False to disable query normalization (e.g. "stat" -> "Statistics")
+USE_NORMALIZATION = False
+
+
+def _get_llm():
+    if LLM_PROVIDER == "claude":
+        from langchain_anthropic import ChatAnthropic
+        return ChatAnthropic(model="claude-haiku-4-5-20251001", temperature=0)
+    return ChatOllama(model="qwen3:0.6b", temperature=0)
+
+
 # Shared conversation memory (across all users, limited to 10 messages)
 # Manual implementation instead of langchain.memory (v0.3+ changed this)
 _shared_history = []  # List of {"question": str, "answer": str}
@@ -86,6 +106,18 @@ def detect_course_tools(query: str) -> list:
     query_lower = query.lower()
     tools_to_call = []
     course_codes = extract_course_codes(query)
+
+    # Skip course listing tools for program-structure / comparison queries
+    skip_listing_keywords = [
+        "difference between", "honors vs", "major vs", "honors and major",
+        "what is the difference", "compare", "program structure",
+        "how to apply", "apply to", "admissions", "how do i apply",
+        "double major", "can i double",
+        "what programs", "what is the mdp", "what is the msc", "what is the phd",
+        "decima robinson",
+    ]
+    if any(kw in query_lower for kw in skip_listing_keywords):
+        return []
 
     # Prerequisite queries have highest priority (needs course code)
     prereq_keywords = [
@@ -183,6 +215,8 @@ def detect_course_tools(query: str) -> list:
 
 def call_course_tools(query: str) -> str:
     """Call appropriate course tools based on query."""
+    if not USE_COURSE_TOOLS:
+        return ""
     tools_to_call = detect_course_tools(query)
     course_codes = extract_course_codes(query)
 
@@ -324,7 +358,7 @@ def extract_search_keyword(query: str) -> str:
 
 def build_chatbot():
     retriever = load_retriever()
-    llm = ChatOllama(model="qwen3:0.6b", temperature=0)
+    llm = _get_llm()
 
     # Use shared conversation history across all users
     get_history = _get_history_str
@@ -370,11 +404,8 @@ Answer:
         return "\n\n".join(doc.page_content for doc in docs)
 
     def build_input(question):
-        # Detect course tools BEFORE normalization (to preserve STAT/STAT keywords)
         course_info = call_course_tools(question)
-
-        # Normalize query for retrieval
-        normalized_q = normalize_query(question)
+        normalized_q = normalize_query(question) if USE_NORMALIZATION else question
 
         docs = retriever.invoke(normalized_q)
         context = "\n\n".join(doc.page_content for doc in docs)
@@ -392,14 +423,20 @@ Answer:
         # Get course info BEFORE normalization (preserves STAT/MATH keywords)
         course_info = call_course_tools(question)
 
-        # Then normalize for retrieval
-        normalized_q = normalize_query(question)
+        normalized_q = normalize_query(question) if USE_NORMALIZATION else question
 
         docs = retriever.invoke(normalized_q)
         context = "\n\n".join(doc.page_content for doc in docs)
 
         if not course_info:
             course_info = "No specific course information available for this query."
+
+        if VERBOSE:
+            print(f"\n--- Retrieved {len(docs)} chunks ---")
+            for i, doc in enumerate(docs, 1):
+                print(f"\n[{i}] {doc.page_content}")
+            print(f"\n--- Course tool output ---\n{course_info}")
+            print("-" * 40)
 
         # Load chat history from shared memory
         history_str = get_history()
