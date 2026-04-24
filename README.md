@@ -15,6 +15,7 @@ A RAG chatbot for University of Alberta Math & Statistics department using local
 - **LangChain tools for on-demand course information** (prerequisites, sequences, searches)
 - **Course dependency graph** with MATH and STAT prerequisites (178 courses)
 - **Graduate/Senior level course detection** (400-level, 500-level)
+- **Conversation memory** - remembers last 10 Q&A pairs across all users
 
 ## Prerequisites
 

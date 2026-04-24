@@ -32,6 +32,24 @@
           "level_specific": 0.553
         }
       }
+    },
+    {
+      "timestamp": "2026-04-24T12:30:39.840442",
+      "model": "qwen3:0.6b",
+      "total_cases": 20,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.619702380952381,
+        "avg_rouge": 0.05245,
+        "avg_overall": 0.5635,
+        "by_category": {
+          "courses": 0.542,
+          "programs": 0.5784285714285715,
+          "support": 0.522,
+          "prerequisites": 0.5559999999999999,
+          "level_specific": 0.5836666666666667
+        }
+      }
     }
   ]
 }

@@ -1,7 +1,7 @@
 # chatbot.py
 import json
 import re
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
@@ -15,6 +15,33 @@ from course_tools import (
     search_courses,
     get_courses_by_level,
 )
+
+# Shared conversation memory (across all users, limited to 10 messages)
+# Manual implementation instead of langchain.memory (v0.3+ changed this)
+_shared_history = []  # List of {"question": str, "answer": str}
+MAX_HISTORY = 10
+
+
+def _add_to_history(question: str, answer: str):
+    """Add a Q&A pair to shared history."""
+    _shared_history.append({"question": question, "answer": answer})
+    # Keep only last MAX_HISTORY pairs
+    if len(_shared_history) > MAX_HISTORY:
+        _shared_history.pop(0)
+
+
+def _get_history_str() -> str:
+    """Get formatted history string."""
+    if not _shared_history:
+        return "No previous conversation."
+
+    lines = []
+    for i, item in enumerate(_shared_history, 1):
+        lines.append(f"Turn {i}:")
+        lines.append(f"  User: {item['question']}")
+        lines.append(f"  Assistant: {item['answer'][:200]}...")  # Truncate for context
+    return "\n".join(lines)
+
 
 # Case-insensitivity mapping for common variations
 QUERY_VARIATIONS = [
@@ -299,9 +326,16 @@ def build_chatbot():
     retriever = load_retriever()
     llm = ChatOllama(model="qwen3:0.6b", temperature=0)
 
+    # Use shared conversation history across all users
+    get_history = _get_history_str
+    add_to_history = _add_to_history
+
     prompt = ChatPromptTemplate.from_template("""
 You are a helpful assistant for the University of Alberta Math & Statistics department.
 Answer questions based on the course information and context provided.
+
+Chat History (previous conversation):
+{chat_history}
 
 IMPORTANT INSTRUCTIONS:
 1. When the Course Information section contains specific details about courses (like prerequisites, course names, or sequences), you MUST use that information to answer the question.
@@ -367,12 +401,20 @@ Answer:
         if not course_info:
             course_info = "No specific course information available for this query."
 
+        # Load chat history from shared memory
+        history_str = get_history()
+
         inputs = {
+            "chat_history": history_str,
             "context": context,
             "course_info": course_info,
             "question": normalized_q,
         }
         answer = (prompt | llm | StrOutputParser()).invoke(inputs)
+
+        # Save to shared history
+        add_to_history(question, answer)
+
         return answer
 
     return run_chain
