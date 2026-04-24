@@ -286,5 +286,11 @@
     "question": "What are the honors math courses?",
     "response": "The University of Alberta offers honors Mathematics courses, which are available for students transitioning from high school to university. For example, students can switch from MATH 117 to MATH 100, 114, 134, 144, or 154, or from MATH 127 to MATH 125, prior to the end of the sixth week of classes. These honors courses are designed to meet the academic standards for special fields and require specific prerequisites.",
     "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:55:56.589999",
+    "question": "Tell me about statistics courses",
+    "response": "Statistics courses at the University of Alberta are structured across different years, with specific course offerings:\n\n- **Year 1**: STAT 151, STAT 161, STAT 181  \n- **Year 2**: STAT 235, STAT 252, STAT 265, STAT 266, STAT 276, STAT 281  \n- **Year 3**: STAT 337, STAT 353, STAT 361, STAT 368, STAT 371, STAT 372, STAT 378  \n- **Year 4**: STAT 413, STAT 432, STAT 437, STAT 441, STAT 453, STAT 471, STAT 479, STAT 497, STAT 498, STAT 499  \n- **Year 5**: STAT 501, STAT 502, STAT 503, STAT 504, STAT 5",
+    "rating": 1
   }
 ]
