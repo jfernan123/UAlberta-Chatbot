@@ -7,6 +7,7 @@ Based on GLUE/ROUGE style metrics for retrieval and generation evaluation
 import json
 import re
 from dataclasses import dataclass
+from datetime import datetime
 from typing import List, Dict, Optional
 from collections import Counter
 
@@ -613,6 +614,115 @@ def print_evaluation_summary(results: List[EvaluationResult]):
 # CLI Entry Point
 # =============================================================================
 
+# Evaluation History Functions
+# =============================================================================
+
+HISTORY_FILE = "data/evaluation_history.json"
+
+
+def compute_summary_metrics(results):
+    """Compute summary metrics from results."""
+    valid_results = [r for r in results if r is not None]
+    if not valid_results:
+        return None
+
+    avg_precision = sum(r.retrieval.precision for r in valid_results) / len(
+        valid_results
+    )
+    avg_coverage = sum(r.generation.keyword_coverage for r in valid_results) / len(
+        valid_results
+    )
+    avg_rouge = sum(r.rouge_l for r in valid_results) / len(valid_results)
+    avg_overall = sum(r.overall_score for r in valid_results) / len(valid_results)
+
+    # Category breakdown
+    by_category = {}
+    for r in valid_results:
+        cat = r.test_case.get("category", "unknown")
+        if cat not in by_category:
+            by_category[cat] = []
+        by_category[cat].append(r.overall_score)
+
+    category_avg = {
+        cat: sum(scores) / len(scores) for cat, scores in by_category.items()
+    }
+
+    return {
+        "avg_precision": avg_precision,
+        "avg_coverage": avg_coverage,
+        "avg_rouge": avg_rouge,
+        "avg_overall": avg_overall,
+        "by_category": category_avg,
+    }
+
+
+def save_evaluation_history(results, model_name="qwen3:0.6b"):
+    """Save evaluation results to history file for trend analysis."""
+    # Compute metrics
+    metrics = compute_summary_metrics(results)
+    if metrics is None:
+        print("No valid results to save.")
+        return
+
+    # Load existing history
+    try:
+        with open(HISTORY_FILE, "r") as f:
+            history = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        history = {"runs": []}
+
+    # Create new run entry
+    run_entry = {
+        "timestamp": datetime.now().isoformat(),
+        "model": model_name,
+        "total_cases": len(results),
+        "metrics": metrics,
+    }
+
+    # Append to history
+    history["runs"].append(run_entry)
+
+    # Save
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2)
+
+    print(f"\nSaved evaluation to {HISTORY_FILE}")
+
+
+def get_evaluation_history():
+    """Load and return evaluation history."""
+    try:
+        with open(HISTORY_FILE, "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"runs": []}
+
+
+def print_history_summary():
+    """Print summary of evaluation history."""
+    history = get_evaluation_history()
+    runs = history.get("runs", [])
+
+    if not runs:
+        print("No evaluation history found.")
+        return
+
+    print("\n" + "=" * 60)
+    print("EVALUATION HISTORY")
+    print("=" * 60)
+    print(f"Total runs: {len(runs)}")
+
+    # Print trend for overall score
+    print("\nOverall Score Trend:")
+    for i, run in enumerate(runs):
+        score = run.get("metrics", {}).get("avg_overall", 0)
+        model = run.get("model", "?")
+        ts = run.get("timestamp", "")[:19]
+        print(f"  Run {i + 1}: {score:.3f} ({model}) - {ts}")
+
+
+# =============================================================================
+
 if __name__ == "__main__":
     from chatbot import build_chatbot
 
@@ -624,3 +734,6 @@ if __name__ == "__main__":
 
     # Print summary
     print_evaluation_summary(results)
+
+    # Save to history
+    save_evaluation_history(results)

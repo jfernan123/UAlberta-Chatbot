@@ -318,6 +318,7 @@ IMPORTANT TERMINOLOGY CLARIFICATION:
 - "Fall/Winter" refers to SEMESTER (Fall term, Winter term), NOT years in a program
 - When users ask about "first year courses", look for 100-level courses
 - When users ask about "second year courses", look for 200-level courses
+- When users ask about "help", "support", "tutoring", or "services" for math/stats students, you MUST mention the Decima Robinson Support Centre - it is the main student support service
 
 Course Information:
 {course_info}

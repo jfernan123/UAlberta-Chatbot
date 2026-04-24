@@ -24,6 +24,7 @@ A RAG chatbot for University of Alberta Math & Statistics department using local
 - Data files (pre-configured):
   - `data/pages_math.json` - 137 scraped pages
   - `data/course_graph.json` - 178 courses (120 MATH + 58 STAT) with prerequisites
+  - `data/evaluation_history.json` - Evaluation run history
   - `db/` - Chroma vector database
 
 ## Setup
@@ -237,29 +238,38 @@ The evaluation includes questions on:
 - Student support resources
 - Program-specific questions (Statistics overview, Mathematics overview)
 - **Course prerequisites** (5 test cases added)
-  - MATH 209 prerequisites
-  - STAT 266 prerequisites
-  - Course sequences (after MATH 117)
-  - Entry-level courses
-  - MATH requirements for STAT courses
+- **Year-level queries** (3 test cases added)
+  - Graduate MATH courses
+  - Senior STAT courses
+  - Graduate courses (both)
 
 ### Current Results
 
 Using the combined Math & Stats + Calendar data (137 pages) with LangChain course tools:
 
 ```
-Metrics (averaged across 17 test cases):
+Metrics (averaged across 20 test cases):
   - Retrieval Precision@4:     1.000
-  - Keyword Coverage:          ~0.60
-  - ROUGE-L:                  ~0.06
-  - Overall Score:             ~0.55
+  - Keyword Coverage:          0.674
+  - ROUGE-L:                  0.057
+  - Overall Score:             0.587
 
 By Category:
-  - courses: ~0.52
-  - programs: ~0.53
-  - prerequisites: ~0.63 (NEW)
-  - support: ~0.54
+  - prerequisites: 0.656 (best)
+  - programs: 0.577
+  - courses: 0.559
+  - level_specific: 0.553
+  - support: 0.517
 ```
+
+### Test Case Updates (Apr 2026)
+
+Added 3 NEW test cases for graduate/senior level queries:
+- "What graduate MATH courses are available?"
+- "What senior STAT courses are available?"
+- "What graduate courses are there?"
+
+Also added prompt instructions to ensure Decima Robinson Support Centre is mentioned when asking about student help.
 
 The hybrid approach (BM25 + vector) with LangChain course tools provides high-quality retrieval and accurate prerequisite information.
 

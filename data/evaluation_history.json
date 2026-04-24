@@ -1,0 +1,37 @@
+{
+  "runs": [
+    {
+      "timestamp": "2026-04-24T10:16:52.190378",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.8222222222222223,
+        "avg_rouge": 0.06666666666666667,
+        "avg_overall": 0.6486666666666667,
+        "by_category": {
+          "courses": 0.64,
+          "programs": 0.653
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-24T11:05:10.554051",
+      "model": "qwen3:0.6b",
+      "total_cases": 20,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.6741666666666666,
+        "avg_rouge": 0.05665,
+        "avg_overall": 0.5866,
+        "by_category": {
+          "courses": 0.55925,
+          "programs": 0.5768571428571428,
+          "support": 0.517,
+          "prerequisites": 0.6561999999999999,
+          "level_specific": 0.553
+        }
+      }
+    }
+  ]
+}

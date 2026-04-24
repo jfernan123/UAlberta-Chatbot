@@ -290,6 +290,9 @@ def get_courses_by_level(
     graph = load_course_graph()
     courses = graph.get("courses", {})
 
+    # Normalize level to lowercase for lookup
+    level_key = level.lower() if level else None
+
     # Map level names to course number ranges
     level_ranges = {
         "first": (100, 199),
@@ -301,7 +304,7 @@ def get_courses_by_level(
     }
 
     # Determine course number range
-    num_range = level_ranges.get(level) if level else None
+    num_range = level_ranges.get(level_key) if level_key else None
 
     # Filter by department
     if department == "math":
@@ -342,7 +345,7 @@ def get_courses_by_level(
         f"{department.title() if department else ''} {level.title() if level else ''} Courses:".strip()
     ]
 
-    for num in sorted(by_num.keys()):
+    for num in sorted(by_num.keys())[:3]:  # Limit to first 3 course number groups
         century = num // 100  # 505 -> 5, 432 -> 4, etc.
         level_label = {
             1: "First Year (100-level)",
@@ -353,10 +356,12 @@ def get_courses_by_level(
         }.get(century, f"{century}00-level")
 
         lines.append(f"\n{level_label}:")
-        for code, info in sorted(by_num[num]):
+        for code, info in sorted(by_num[num])[:10]:  # Limit to 10 per level
             prereqs = info.get("prerequisites", [])
             lines.append(f"  {code}: {info['name']}")
             if prereqs:
                 lines.append(f"    Prerequisites: {', '.join(prereqs)}")
+
+    lines.append(f"\n... and {sum(len(v) for v in by_num.values()) - 30} more courses")
 
     return "\n".join(lines)
