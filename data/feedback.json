@@ -292,5 +292,29 @@
     "question": "Tell me about statistics courses",
     "response": "Statistics courses at the University of Alberta are structured across different years, with specific course offerings:\n\n- **Year 1**: STAT 151, STAT 161, STAT 181  \n- **Year 2**: STAT 235, STAT 252, STAT 265, STAT 266, STAT 276, STAT 281  \n- **Year 3**: STAT 337, STAT 353, STAT 361, STAT 368, STAT 371, STAT 372, STAT 378  \n- **Year 4**: STAT 413, STAT 432, STAT 437, STAT 441, STAT 453, STAT 471, STAT 479, STAT 497, STAT 498, STAT 499  \n- **Year 5**: STAT 501, STAT 502, STAT 503, STAT 504, STAT 5",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T14:06:56.108763",
+    "question": "What courses are offered in the first year?",
+    "response": "The first year (100-level) courses offered include:  \n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nThese courses are listed in the provided course information.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T14:07:24.109362",
+    "question": "what statistics courses are offered in the first year?",
+    "response": "The first year (100-level) statistics courses offered include:  \n- **STAT 151: Introduction to Applied Statistics I**  \n- **STAT 161: Introductory Statistics for Business and Economics**  \n- **STAT 181: Introduction to Combinatorics and Probability**  \n\nThese courses are listed in the provided course information.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T14:08:09.387669",
+    "question": "What graduate courses are offered?",
+    "response": "The graduate courses offered include:  \n- **STAT 501: Directed Study I** with prerequisites: STAT 252, STAT 337  \n- **STAT 502: Directed Study II** with prerequisites: STAT 252, STAT 337  \n- **STAT 503: Directed Study III** with prerequisites: STAT 372, STAT 378  \n- **Applied Mathematics** (specifically Master's regulations)  \n- **PhD regulations** for Mathematical Finance, Mathematical Physics, and Pure Mathematics  \n- **Statistical Machine Learning** (Master's and PhD regulations)  \n\nThese cou",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T14:23:38.182820",
+    "question": "Tell me about stats courses",
+    "response": "Statistics courses at the University of Alberta are structured across four years, with offerings in each year as follows:\n\n- **Year 1**: STAT 151, STAT 161, STAT 181  \n- **Year 2**: STAT 235, STAT 252, STAT 265, STAT 266, STAT 276, STAT 281  \n- **Year 3**: STAT 337, STAT 353, STAT 361, STAT 368, STAT 371, STAT 372, STAT 378  \n- **Year 4**: STAT 413, STAT 432, STAT 437, STAT 441, STAT 453, STAT 471, STAT 479, STAT 497, STAT 498, STAT 499  \n- **Year 5**: STAT 501, STAT 502, STAT 503, STAT 504, STA",
+    "rating": 1
   }
 ]

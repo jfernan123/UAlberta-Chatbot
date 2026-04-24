@@ -219,6 +219,15 @@
       "sequence": null,
       "math_prerequisites": null
     },
+    "MATH 311": {
+      "name": "Introduction to Ring Theory",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
+      "year_level": 3,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
     "MATH 411": {
       "name": "Honors Complex Variables",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
@@ -227,15 +236,6 @@
         "MATH 314",
         "MATH 317"
       ],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "MATH 311": {
-      "name": "Introduction to Ring Theory",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
-      "year_level": 3,
-      "prerequisites": [],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -282,15 +282,6 @@
       "sequence": null,
       "math_prerequisites": null
     },
-    "STAT 151": {
-      "name": "Introduction to Applied Statistics I",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
-      "year_level": 1,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
     "STAT 161": {
       "name": "Introductory Statistics for Business and Economics",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
@@ -316,13 +307,22 @@
         ]
       }
     },
-    "MATH 328": {
-      "name": "Group Theory",
+    "STAT 151": {
+      "name": "Introduction to Applied Statistics I",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
+      "year_level": 1,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 428": {
+      "name": "Advanced Ring Theory",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 3,
+      "year_level": 4,
       "prerequisites": [
-        "MATH 227",
-        "MATH 228"
+        "MATH 326",
+        "MATH 327"
       ],
       "alternatives": [],
       "sequence": null,
@@ -334,31 +334,6 @@
       "year_level": 2,
       "prerequisites": [
         "MATH 125"
-      ],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "MATH 256": {
-      "name": "Course MATH 256",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 2,
-      "prerequisites": [
-        "MATH 125",
-        "MATH 127"
-      ],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "MATH 228": {
-      "name": "Course MATH 228",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 2,
-      "prerequisites": [
-        "MATH 102",
-        "MATH 125",
-        "MATH 127"
       ],
       "alternatives": [],
       "sequence": null,
@@ -376,12 +351,13 @@
       "sequence": null,
       "math_prerequisites": null
     },
-    "MATH 326": {
-      "name": "Ring and Modules",
+    "MATH 256": {
+      "name": "Course MATH 256",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 3,
+      "year_level": 2,
       "prerequisites": [
-        "MATH 227"
+        "MATH 125",
+        "MATH 127"
       ],
       "alternatives": [],
       "sequence": null,
@@ -398,25 +374,37 @@
       "sequence": null,
       "math_prerequisites": null
     },
-    "MATH 428": {
-      "name": "Advanced Ring Theory",
+    "MATH 326": {
+      "name": "Ring and Modules",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
+      "year_level": 3,
       "prerequisites": [
-        "MATH 326",
-        "MATH 327"
+        "MATH 227"
       ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
-    "MATH 447": {
-      "name": "Elementary Topology",
+    "MATH 328": {
+      "name": "Group Theory",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
+      "year_level": 3,
       "prerequisites": [
-        "MATH 216",
-        "MATH 217"
+        "MATH 227",
+        "MATH 228"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 228": {
+      "name": "Course MATH 228",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 2,
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
       ],
       "alternatives": [],
       "sequence": null,
@@ -441,6 +429,18 @@
         "MATH 102",
         "MATH 125",
         "MATH 127"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 447": {
+      "name": "Elementary Topology",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 216",
+        "MATH 217"
       ],
       "alternatives": [],
       "sequence": null,
@@ -531,15 +531,6 @@
       "sequence": null,
       "math_prerequisites": null
     },
-    "MATH 415": {
-      "name": "Mathematical Finance I",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
     "MATH 357": {
       "name": "Game Theory and Economic Modelling",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
@@ -561,6 +552,23 @@
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
+    },
+    "STAT 353": {
+      "name": "Life Contingencies I",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 253",
+        "STAT 265",
+        "STAT 281"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": {
+        "prereq": [
+          "MATH 253"
+        ]
+      }
     },
     "MATH 408": {
       "name": "Computational Finance",
@@ -590,22 +598,14 @@
       "sequence": null,
       "math_prerequisites": null
     },
-    "STAT 353": {
-      "name": "Life Contingencies I",
+    "MATH 415": {
+      "name": "Mathematical Finance I",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 3,
-      "prerequisites": [
-        "MATH 253",
-        "STAT 265",
-        "STAT 281"
-      ],
+      "year_level": 4,
+      "prerequisites": [],
       "alternatives": [],
       "sequence": null,
-      "math_prerequisites": {
-        "prereq": [
-          "MATH 253"
-        ]
-      }
+      "math_prerequisites": null
     },
     "MATH 371": {
       "name": "Mathematical Programming and Optimization I",
@@ -635,27 +635,29 @@
         ]
       }
     },
-    "STAT 266": {
-      "name": "Probability and Statistics II",
+    "STAT 378": {
+      "name": "Applied Regression Analysis",
       "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
-      "year_level": 2,
+      "year_level": 3,
       "prerequisites": [
-        "STAT 265",
-        "STAT 281"
+        "STAT 266",
+        "STAT 276"
       ],
       "alternatives": [],
       "sequence": null,
-      "math_prerequisites": {
-        "prereq": [
-          "MATH 209",
-          "MATH 214",
-          "MATH 217"
-        ],
-        "coreq": [
-          "MATH 225",
-          "MATH 227"
-        ]
-      }
+      "math_prerequisites": null
+    },
+    "STAT 372": {
+      "name": "Mathematical Statistics",
+      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
+      "year_level": 3,
+      "prerequisites": [
+        "STAT 266",
+        "STAT 276"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
     },
     "STAT 499": {
       "name": "Research Project",
@@ -681,29 +683,27 @@
       "sequence": null,
       "math_prerequisites": null
     },
-    "STAT 372": {
-      "name": "Mathematical Statistics",
+    "STAT 266": {
+      "name": "Probability and Statistics II",
       "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
-      "year_level": 3,
+      "year_level": 2,
       "prerequisites": [
-        "STAT 266",
-        "STAT 276"
+        "STAT 265",
+        "STAT 281"
       ],
       "alternatives": [],
       "sequence": null,
-      "math_prerequisites": null
-    },
-    "STAT 378": {
-      "name": "Applied Regression Analysis",
-      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
-      "year_level": 3,
-      "prerequisites": [
-        "STAT 266",
-        "STAT 276"
-      ],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
+      "math_prerequisites": {
+        "prereq": [
+          "MATH 209",
+          "MATH 214",
+          "MATH 217"
+        ],
+        "coreq": [
+          "MATH 225",
+          "MATH 227"
+        ]
+      }
     },
     "MATH 113": {
       "name": "Course MATH 113",
@@ -1961,39 +1961,35 @@
       "MATH 125",
       "MATH 127"
     ],
-    "MATH 328": [
-      "MATH 227",
-      "MATH 228"
+    "MATH 428": [
+      "MATH 326",
+      "MATH 327"
     ],
     "MATH 226": [
       "MATH 125"
-    ],
-    "MATH 256": [
-      "MATH 125",
-      "MATH 127"
-    ],
-    "MATH 228": [
-      "MATH 102",
-      "MATH 125",
-      "MATH 127"
     ],
     "MATH 429": [
       "MATH 328",
       "MATH 327"
     ],
-    "MATH 326": [
-      "MATH 227"
+    "MATH 256": [
+      "MATH 125",
+      "MATH 127"
     ],
     "MATH 422": [
       "MATH 227"
     ],
-    "MATH 428": [
-      "MATH 326",
-      "MATH 327"
+    "MATH 326": [
+      "MATH 227"
     ],
-    "MATH 447": [
-      "MATH 216",
-      "MATH 217"
+    "MATH 328": [
+      "MATH 227",
+      "MATH 228"
+    ],
+    "MATH 228": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
     ],
     "MATH 448": [
       "MATH 348"
@@ -2002,6 +1998,10 @@
       "MATH 102",
       "MATH 125",
       "MATH 127"
+    ],
+    "MATH 447": [
+      "MATH 216",
+      "MATH 217"
     ],
     "MATH 300": [
       "MATH 201",
@@ -2035,6 +2035,11 @@
     "MATH 356": [
       "MATH 253"
     ],
+    "STAT 353": [
+      "MATH 253",
+      "STAT 265",
+      "STAT 281"
+    ],
     "MATH 408": [
       "STAT 471"
     ],
@@ -2047,19 +2052,18 @@
       "MATH 156",
       "SCI 100"
     ],
-    "STAT 353": [
-      "MATH 253",
-      "STAT 265",
-      "STAT 281"
-    ],
     "MATH 371": [
       "MATH 102",
       "MATH 125",
       "MATH 127"
     ],
-    "STAT 266": [
-      "STAT 265",
-      "STAT 281"
+    "STAT 378": [
+      "STAT 266",
+      "STAT 276"
+    ],
+    "STAT 372": [
+      "STAT 266",
+      "STAT 276"
     ],
     "STAT 252": [
       "STAT 151",
@@ -2068,13 +2072,9 @@
       "STAT 141",
       "SCI 151"
     ],
-    "STAT 372": [
-      "STAT 266",
-      "STAT 276"
-    ],
-    "STAT 378": [
-      "STAT 266",
-      "STAT 276"
+    "STAT 266": [
+      "STAT 265",
+      "STAT 281"
     ],
     "STAT 276": [
       "STAT 265",
