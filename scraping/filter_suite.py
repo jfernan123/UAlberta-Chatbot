@@ -32,7 +32,7 @@ def combine_json_files(files, output):
 
 def run_make_db(input_file, verbose=False):
     """Build the vector database."""
-    cmd = [sys.executable, "make_db.py", "--input", input_file]
+    cmd = [sys.executable, "-m", "retrieval.make_db", "--input", input_file]
     if verbose:
         cmd.append("-v")
 
@@ -44,7 +44,7 @@ def run_make_db(input_file, verbose=False):
 def run_evaluation():
     """Run evaluation and extract scores."""
     result = subprocess.run(
-        [sys.executable, "evaluation.py"], capture_output=True, text=True, timeout=300
+        [sys.executable, "-m", "tests.evaluation"], capture_output=True, text=True, timeout=300
     )
 
     if result.returncode != 0:
@@ -78,7 +78,7 @@ def filter_math_stats(output_file):
     print(f"Total URLs in manifest: {len(manifest)}")
 
     # Parse ALL URLs (not just priority filtered)
-    from parsers import parse_html_to_sections
+    from .parsers import parse_html_to_sections
 
     results = []
     for i, entry in enumerate(manifest, 1):
@@ -104,7 +104,7 @@ def filter_calendar(output_file, max_urls, input_dir="tmp/raw_html_calendar"):
     """Filter calendar pages with MATH/STAT content."""
     print(f"Filtering calendar ({max_urls} max)...")
 
-    from filter_crawler import score_url, is_calendar_math_stat
+    from .filter_crawler import score_url, is_calendar_math_stat
 
     with open(f"{input_dir}/manifest.json") as f:
         manifest = json.load(f)
@@ -128,7 +128,7 @@ def filter_calendar(output_file, max_urls, input_dir="tmp/raw_html_calendar"):
                 break
 
     # Parse
-    from parsers import parse_html_to_sections
+    from .parsers import parse_html_to_sections
 
     results = []
     for i, (url, filename) in enumerate(filtered, 1):

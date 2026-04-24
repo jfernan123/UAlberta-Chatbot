@@ -9,6 +9,8 @@ Optional: Set ENABLE_LLM_JUDGE=True to enable LLM-as-Judge evaluation
 import json
 import re
 import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Dict, Optional
@@ -590,7 +592,7 @@ def run_evaluation(
 
     # Build retriever once outside the loop
     if retriever is None:
-        from retriever import load_retriever
+        from retrieval import load_retriever
 
         retriever = load_retriever()
 

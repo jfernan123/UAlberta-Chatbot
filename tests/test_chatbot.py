@@ -10,9 +10,12 @@ Usage:
 """
 
 import argparse
+import os
 import re
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import anthropic
-from retriever import load_retriever
+from retrieval import load_retriever
 
 MODEL = "claude-haiku-4-5"
 SYSTEM_PROMPT = """\
