@@ -220,5 +220,71 @@
     "question": "What is the statistics program?",
     "response": "The statistics program is offered as a **Major in Statistics** and a **Specialization in Statistics** within the Department of Mathematical and Statistical Science at the University of Alberta. This program includes a variety of courses from Year 1 to Year 5, with prerequisites and corequisites listed in the course information. It also emphasizes non-credit courses like the **Mathematics Primer Course** and **Statistics Primer Course** to help students transition from high school to university-l",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T13:49:28.363365",
+    "question": "What courses are offered in the first year?",
+    "response": "The first year (100-level) courses offered include:  \n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nThese courses are listed in the provided course information.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:49:46.598603",
+    "question": "Can you tell me other first year math courses?",
+    "response": "The first year (100-level) Mathematics courses offered include:  \n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nOther courses listed in the context include **MATH 103: Linear Algebra for Engineering** and **MATH 104: Multivariable Calculus** (if available). Let me know if you'd like more details!",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:50:16.611233",
+    "question": "What about second year math courses?",
+    "response": "Second Year (200-level) Mathematics courses include:  \n- **MATH 201: Course MATH 201**  \n- **MATH 209: Calculus for Engineering III**  \n  *Prerequisite: MATH 101*  \n- **MATH 214: Calculus III**  \n  *Prerequisites: MATH 101, MATH 115, MATH 118, MATH 136, MATH 146, MATH 156*  \n\nThese courses are listed in the provided course information.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:50:33.099895",
+    "question": "Can you tell me about first year stats courses?",
+    "response": "The first year (100-level) Statistics courses offered include:  \n- **STAT 151: Introduction to Applied Statistics I**  \n- **STAT 161: Introductory Statistics for Business and Economics**  \n- **STAT 181: Introduction to Combinatorics and Probability**  \n\nThese courses are part of the first-year Mathematics program and may require prerequisites such as MATH 100 or similar courses. For more specific prerequisites, please check the course information provided in the context.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T13:51:11.424346",
+    "question": "What does a semester in statistics look like?",
+    "response": "A semester in statistics typically lasts 16 weeks, as indicated in the course offerings and the NSERC Undergraduate Student Research Awards program. For example, STAT courses are offered in Year 1 (100-level) with a 16-week semester, Year 2 (200-level) with a 16-week duration, and so on. This aligns with the structure of the Statistics Division at the University of Alberta.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:51:25.673144",
+    "question": "What is the mdp program?",
+    "response": "The MDP program is a **Master’s program in data science** offered by the University of Alberta. It combines **data modelling, analytics, statistical machine learning**, and modern computational methods to prepare students for careers in industry and government. Designed to be completed in **16 months**, the program emphasizes practical skills and focuses on **practical aspects of mathematical and statistical modeling**.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T13:51:58.883736",
+    "question": "Tell me about all of the math courses ",
+    "response": "The University of Alberta offers a comprehensive range of Mathematics courses, supported by various initiatives to help students transition from high school to university. Here's a summary of all Mathematics courses:\n\n1. **Primer Courses**:  \n   - **Mathematics Primer Course**: Offers optional non-credit courses to refresh high school math skills, covering topics like real numbers, algebra, geometry, functions, exponents, logarithms, and trigonometry. It is offered online and includes both in-pe",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:52:16.807849",
+    "question": "Can you tell me about 200 level math?",
+    "response": "The 200-level Mathematics courses offered include:  \n- **MATH 201: Course MATH 201**  \n- **MATH 209: Calculus for Engineering III** (Prerequisite: MATH 101)  \n- **MATH 214: Calculus III** (Prerequisites: MATH 101, MATH 115, MATH 118, MATH 136, MATH 146, MATH 156)  \n\nThese courses are part of the second-year program and are structured to build foundational skills in calculus and linear algebra.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:52:36.363198",
+    "question": "What about 300 level math?",
+    "response": "The 300-level Mathematics courses offered at the University of Alberta include:  \n- **MATH 300: Advanced Boundary Value Problems** (Prerequisites: MATH 201, MATH 209)  \n- **MATH 311: Introduction to Ring Theory**  \n- **MATH 315: Calculus IV** (Prerequisites: MATH 102, MATH 125, MATH 127)  \n\nThese courses are part of the third year mathematics program.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:53:12.777819",
+    "question": "Do you know about honors math?",
+    "response": "The University of Alberta offers honors Mathematics courses, which are available for students transitioning from high school to university. For example, students can switch from MATH 117 to MATH 100, 114, 134, or 144, or from MATH 127 to MATH 125, as per the program's requirements. These honors courses typically require a more concentrated course of study, usually four consecutive years, under the supervision of a department. If a student wishes to switch, they can do so before the end of the si",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:53:35.016440",
+    "question": "What are the honors math courses?",
+    "response": "The University of Alberta offers honors Mathematics courses, which are available for students transitioning from high school to university. For example, students can switch from MATH 117 to MATH 100, 114, 134, 144, or 154, or from MATH 127 to MATH 125, prior to the end of the sixth week of classes. These honors courses are designed to meet the academic standards for special fields and require specific prerequisites.",
+    "rating": -1
   }
 ]
