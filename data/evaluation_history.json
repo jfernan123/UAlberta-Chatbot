@@ -50,6 +50,147 @@
           "level_specific": 0.5836666666666667
         }
       }
+    },
+    {
+      "timestamp": "2026-04-24T12:49:43.415908",
+      "model": "qwen3:0.6b",
+      "total_cases": 20,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.6854761904761905,
+        "avg_rouge": 0.046150000000000004,
+        "avg_overall": 0.588,
+        "by_category": {
+          "courses": 0.52475,
+          "programs": 0.5730000000000001,
+          "support": 0.611,
+          "prerequisites": 0.6569999999999999,
+          "level_specific": 0.5846666666666667
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-24T12:58:22.918670",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.7111111111111111,
+        "avg_rouge": 0.08033333333333333,
+        "avg_overall": 0.6083333333333334,
+        "by_category": {
+          "courses": 0.52,
+          "programs": 0.6525000000000001
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-24T12:59:04.488409",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.7111111111111111,
+        "avg_rouge": 0.078,
+        "avg_overall": 0.6076666666666667,
+        "by_category": {
+          "courses": 0.513,
+          "programs": 0.655
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-24T13:00:20.898608",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.6555555555555556,
+        "avg_rouge": 0.04766666666666667,
+        "avg_overall": 0.5766666666666667,
+        "by_category": {
+          "courses": 0.515,
+          "programs": 0.6074999999999999
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-24T13:01:03.482611",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.7111111111111111,
+        "avg_rouge": 0.078,
+        "avg_overall": 0.6076666666666667,
+        "by_category": {
+          "courses": 0.513,
+          "programs": 0.655
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-24T13:01:53.113635",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.5444444444444444,
+        "avg_rouge": 0.08533333333333333,
+        "avg_overall": 0.5433333333333333,
+        "by_category": {
+          "courses": 0.515,
+          "programs": 0.5575
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-24T13:02:36.952889",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.7111111111111111,
+        "avg_rouge": 0.07433333333333333,
+        "avg_overall": 0.6066666666666667,
+        "by_category": {
+          "courses": 0.515,
+          "programs": 0.6525000000000001
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-24T13:07:03.359034",
+      "model": "qwen3:0.6b",
+      "total_cases": 5,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.7466666666666667,
+        "avg_rouge": 0.0694,
+        "avg_overall": 0.6194,
+        "by_category": {
+          "courses": 0.5973333333333334,
+          "programs": 0.6525000000000001
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-24T13:21:14.478499",
+      "model": "qwen3:0.6b",
+      "total_cases": 20,
+      "metrics": {
+        "avg_precision": 1.0,
+        "avg_coverage": 0.6103571428571428,
+        "avg_rouge": 0.05595,
+        "avg_overall": 0.5608500000000001,
+        "by_category": {
+          "courses": 0.52525,
+          "programs": 0.5261428571428571,
+          "support": 0.522,
+          "prerequisites": 0.6577999999999999,
+          "level_specific": 0.5406666666666666
+        }
+      }
     }
   ]
 }

@@ -22,15 +22,17 @@ def year_level_label(year):
 
 
 @tool
-def get_stat_courses(year: Optional[int] = None) -> str:
+def get_stat_courses(year: Optional[int] = None, detail: bool = False) -> str:
     """Get STAT (Statistics) courses, optionally filtered by year level.
 
     Args:
         year: Optional year level (1-4). If None, returns all STAT courses.
               Year 1 = 100-level courses, Year 2 = 200-level, etc.
+        detail: If False (default), returns overview mode - just codes per year.
+               If True, returns full details with prerequisites.
 
     Returns:
-        Formatted list of STAT courses with their names and prerequisites.
+        Formatted list of STAT courses.
     """
     graph = load_course_graph()
     stat_courses = {
@@ -47,6 +49,23 @@ def get_stat_courses(year: Optional[int] = None) -> str:
     if not stat_courses:
         return "No STAT courses found for the specified year."
 
+    # Overview mode: list courses by year without full prereq details to avoid verbose output
+    if not detail and len(stat_courses) > 10:
+        lines = ["STAT Courses (overview):"]
+        by_year = {}
+        for code, info in stat_courses.items():
+            yr = info.get("year_level", 0)
+            if yr not in by_year:
+                by_year[yr] = []
+            by_year[yr].append(code)
+
+        for yr in sorted(by_year.keys()):
+            codes = ", ".join(sorted(by_year[yr]))
+            lines.append(f"{year_level_label(yr)}: {codes}")
+
+        return "\n".join(lines)
+
+    # Detailed mode: full info with prereqs
     lines = ["STAT Courses:"]
 
     # Group by year
@@ -80,15 +99,17 @@ def get_stat_courses(year: Optional[int] = None) -> str:
 
 
 @tool
-def get_math_courses(year: Optional[int] = None) -> str:
+def get_math_courses(year: Optional[int] = None, detail: bool = False) -> str:
     """Get MATH (Mathematics) courses, optionally filtered by year level.
 
     Args:
         year: Optional year level (1-4). If None, returns all MATH courses.
               Year 1 = 100-level courses, Year 2 = 200-level, etc.
+        detail: If False (default), returns overview mode - just codes per year.
+               If True, returns full details with prerequisites.
 
     Returns:
-        Formatted list of MATH courses with their names and prerequisites.
+        Formatted list of MATH courses.
     """
     graph = load_course_graph()
     math_courses = {
@@ -105,6 +126,23 @@ def get_math_courses(year: Optional[int] = None) -> str:
     if not math_courses:
         return "No MATH courses found for the specified year."
 
+    # Overview mode: list courses by year without full prereq details
+    if not detail and len(math_courses) > 10:
+        lines = ["MATH Courses (overview):"]
+        by_year = {}
+        for code, info in math_courses.items():
+            yr = info.get("year_level", 0)
+            if yr not in by_year:
+                by_year[yr] = []
+            by_year[yr].append(code)
+
+        for yr in sorted(by_year.keys()):
+            codes = ", ".join(sorted(by_year[yr]))
+            lines.append(f"{year_level_label(yr)}: {codes}")
+
+        return "\n".join(lines)
+
+    # Detailed mode: full info with prereqs
     lines = ["MATH Courses:"]
 
     # Group by year
@@ -260,11 +298,20 @@ def search_courses(keyword: str) -> str:
         return f"No courses found matching '{keyword}'."
 
     lines = [f"Courses matching '{keyword}':"]
-    for code, info in matches[:15]:  # Limit to 15 results
-        prereqs = info.get("prerequisites", [])
-        lines.append(f"\n{code}: {info['name']}")
-        if prereqs:
-            lines.append(f"  Prerequisites: {', '.join(prereqs)}")
+
+    # Overview mode: if >10 courses, just list names (no prereqs to avoid verbose output)
+    if len(matches) > 10:
+        for code, info in matches[:15]:
+            lines.append(f"- {code}: {info['name']}")
+        if len(matches) > 15:
+            lines.append(f"... and {len(matches) - 15} more courses")
+    else:
+        # Detailed mode: show prerequisites for each course
+        for code, info in matches[:15]:
+            prereqs = info.get("prerequisites", [])
+            lines.append(f"\n{code}: {info['name']}")
+            if prereqs:
+                lines.append(f"  Prerequisites: {', '.join(prereqs)}")
 
     if len(matches) > 15:
         lines.append(f"\n... and {len(matches) - 15} more courses")

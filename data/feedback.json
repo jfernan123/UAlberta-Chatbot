@@ -184,5 +184,41 @@
     "question": "What courses does math 300 depend on?",
     "response": "Based on the provided course information, Mathematics 300 does not have a direct prerequisite listed. The course information for Year 3 does not specify any prerequisites for MATH 300, indicating that it may depend on other courses not explicitly mentioned in the context. Therefore, the answer is that there are no specific prerequisites for Mathematics 300 as per the given information.",
     "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:23:32.395077",
+    "question": "What is the statistics program?",
+    "response": "The statistics program at the University of Alberta Mathematics & Statistics department is structured into several years: Year 1 through Year 5, with courses like STAT 151, 161, 235, 252, 265, 266, 276, 281, 337, 353, 361, 368, 371, 372, 378, 413, 432, 437, 441, 453, 471, 479, 497, 498, 499, 501, 502, 503, 504, 505, 512, 513, 514, 515, 532, 537, 541, 553, 561, 562, 566, 568, 571, 575, 578, 580, 590, 600, 637, 664, 665, 900, 900A, 900B, 901, 902, 903. Students must complete MATH 101, 118, 136, 14",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:25:15.042380",
+    "question": "What courses are offered in first year?",
+    "response": "The first year (100-level) courses offered at the University of Alberta Mathematics & Statistics department include:  \n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n- Additional courses listed in the course information (e.g., MATH 103, 104, etc.) with prerequisites specified.  \n\nThese courses are structured to meet the requirements for first-year students, with a focus on foundational mathematics.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T13:25:36.941465",
+    "question": "What honors courses are offered in the first year?",
+    "response": "Based on the provided information, there are no specific honors courses listed for the first year (100-level) courses offered at the University of Alberta Mathematics & Statistics department. The first year courses include MATH 100, 101, 102, etc., but no details are given about honors courses in this context. If you're referring to honors courses in the broader academic context, they might be part of the 100-level courses, but the information provided does not specify them. Let me know if you'd",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T13:26:42.434186",
+    "question": "What is the mdp program?",
+    "response": "The MDP program is a **professionally-oriented course-based Master’s program in Modelling, Data + Predictions (MDP)**, designed to provide students with a unique combination of data modelling, data analytics, statistical machine learning algorithms, and modern computational methods. It is completed in 16 months and emphasizes practical skills for careers in industry and government.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T13:28:05.216244",
+    "question": "What is machine learning?",
+    "response": "Machine learning is a subset of artificial intelligence and data science that involves algorithms, models, and data analysis to enable systems to learn patterns from data. It focuses on developing models that can make predictions or decisions with increasing accuracy over time. Key aspects include statistical modeling, regression analysis, and machine learning algorithms such as decision trees, neural networks, and random forests. Many graduate-level programs, like the MDP (Modelling, Data + Pre",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T13:29:00.572005",
+    "question": "What is the statistics program?",
+    "response": "The statistics program is offered as a **Major in Statistics** and a **Specialization in Statistics** within the Department of Mathematical and Statistical Science at the University of Alberta. This program includes a variety of courses from Year 1 to Year 5, with prerequisites and corequisites listed in the course information. It also emphasizes non-credit courses like the **Mathematics Primer Course** and **Statistics Primer Course** to help students transition from high school to university-l",
+    "rating": 1
   }
 ]

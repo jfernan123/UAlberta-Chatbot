@@ -2,14 +2,108 @@
 """
 Evaluation suite for UAlberta Math & Stats RAG Chatbot
 Based on GLUE/ROUGE style metrics for retrieval and generation evaluation
+
+Optional: Set ENABLE_LLM_JUDGE=True to enable LLM-as-Judge evaluation
 """
 
 import json
 import re
+import os
 from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Dict, Optional
 from collections import Counter
+
+# Enable/disable LLM-as-Judge evaluation (slower but more comprehensive)
+ENABLE_LLM_JUDGE = os.environ.get("ENABLE_LLM_JUDGE", "false").lower() == "true"
+JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "qwen3:0.6b")
+
+# =============================================================================
+# LLM-as-Judge Evaluator (Optional)
+# =============================================================================
+
+# Lazy-loaded judge to avoid initialization overhead
+_judge_chain = None
+
+
+def _get_judge_chain():
+    """Get or create the LLM-as-Judge chain."""
+    global _judge_chain
+    if _judge_chain is None:
+        from langchain_ollama import ChatOllama
+        from langchain_core.prompts import ChatPromptTemplate
+        import warnings
+
+        warnings.filterwarnings("ignore")
+
+        llm = ChatOllama(model=JUDGE_MODEL)
+
+        judge_prompt = """Rate this answer. Output JSON only, keys h,a,r,c (0-1):
+
+Q: {question}
+A: {response}
+
+JSON:"""
+
+        _judge_chain = ChatPromptTemplate.from_template(judge_prompt) | llm
+
+    return _judge_chain
+
+
+def evaluate_with_llm_judge(
+    question: str, response: str, context: str = ""
+) -> Optional[Dict]:
+    """
+    Use LLM to judge response quality.
+
+    Returns dict with helpfulness, accuracy, relevance, completeness scores
+    or None if LLM judge is disabled.
+    """
+    if not ENABLE_LLM_JUDGE:
+        return None
+
+    try:
+        import json
+        import re
+
+        chain = _get_judge_chain()
+        result = chain.invoke(
+            {"question": question, "response": response, "context": context[:1000]}
+        )
+
+        content = result.content
+
+        try:
+            data = json.loads(content)
+            h = data.get("h", data.get("helpfulness", 0))
+            a = data.get("a", data.get("accuracy", 0))
+            r = data.get("r", data.get("relevance", 0))
+            c = data.get("c", data.get("completeness", 0))
+            return {
+                "helpfulness": float(h),
+                "accuracy": float(a),
+                "relevance": float(r),
+                "completeness": float(c),
+            }
+        except json.JSONDecodeError:
+            match = re.search(r"\{[^}]+\}", content)
+            if match:
+                data = json.loads(match.group())
+                h = data.get("h", data.get("helpfulness", 0))
+                a = data.get("a", data.get("accuracy", 0))
+                r = data.get("r", data.get("relevance", 0))
+                c = data.get("c", data.get("completeness", 0))
+                return {
+                    "helpfulness": float(h),
+                    "accuracy": float(a),
+                    "relevance": float(r),
+                    "completeness": float(c),
+                }
+            return None
+    except Exception as e:
+        print(f"LLM Judge error: {e}")
+        return None
+
 
 # =============================================================================
 # Test Cases with Expected Keywords (derived from scraped content)
@@ -260,6 +354,11 @@ class EvaluationResult:
     generation: GenerationResult
     rouge_l: float
     overall_score: float
+    judge_scores: Optional[Dict] = None
+    judge_issues: Optional[List[str]] = None
+    judge_hallucinations: Optional[List[str]] = None
+    judge_suggestions: Optional[List[str]] = None
+    response: Optional[str] = None
 
 
 # =============================================================================
@@ -530,12 +629,26 @@ def run_evaluation(
                 + 0.3 * rouge_l
             )
 
+            # Optional LLM-as-Judge evaluation
+            judge_scores = None
+            if ENABLE_LLM_JUDGE:
+                context_str = "\n".join(doc.page_content for doc in retrieved_docs[:4])
+                judge_scores = evaluate_with_llm_judge(question, response, context_str)
+                if judge_scores:
+                    avg_judge = sum(judge_scores.values()) / len(judge_scores)
+                    print(f"  - LLM Judge: {avg_judge:.3f}")
+                    print(
+                        f"    (H:{judge_scores.get('helpfulness', 0):.1f} A:{judge_scores.get('accuracy', 0):.1f} R:{judge_scores.get('relevance', 0):.1f} C:{judge_scores.get('completeness', 0):.1f})"
+                    )
+
             result = EvaluationResult(
                 test_case=test_case,
                 retrieval=retrieval_result,
                 generation=generation_result,
                 rouge_l=rouge_l,
                 overall_score=round(overall, 3),
+                judge_scores=judge_scores,
+                response=response,
             )
             results.append(result)
 
@@ -578,6 +691,11 @@ def print_evaluation_summary(results: List[EvaluationResult]):
     print(f"  - Keyword Coverage:          {avg_coverage:.3f}")
     print(f"  - ROUGE-L:                   {avg_rouge:.3f}")
     print(f"  - Overall Score:             {avg_overall:.3f}")
+
+    # LLM Judge scores (if enabled)
+    if ENABLE_LLM_JUDGE:
+        print(f"\nLLM Judge Scores (experimental):")
+        print(f"  - Note: ENABLE_LLM_JUDGE=true to enable")
 
     # Category breakdown
     categories = {}
@@ -689,6 +807,62 @@ def save_evaluation_history(results, model_name="qwen3:0.6b"):
     print(f"\nSaved evaluation to {HISTORY_FILE}")
 
 
+CASES_FILE = "data/evaluation_cases.json"
+
+
+def save_evaluation_cases(results, model_name="qwen3:0.6b"):
+    """Save detailed evaluation case data to separate file."""
+    valid_results = [r for r in results if r is not None]
+    if not valid_results:
+        print("No valid results to save.")
+        return
+
+    try:
+        with open(CASES_FILE, "r") as f:
+            history = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        history = {"runs": []}
+
+    cases_data = []
+    for r in valid_results:
+        case = {
+            "question": r.test_case.get("question", ""),
+            "category": r.test_case.get("category", ""),
+            "response": r.response or "",
+            "metrics": {
+                "precision": r.retrieval.precision if r.retrieval else 0,
+                "coverage": r.generation.keyword_coverage,
+                "rouge_l": r.rouge_l,
+                "overall": r.overall_score,
+            },
+        }
+        if r.judge_scores:
+            case["judge_scores"] = r.judge_scores
+            case["judge_avg"] = sum(r.judge_scores.values()) / len(r.judge_scores)
+        if r.judge_issues:
+            case["judge_issues"] = r.judge_issues
+        if r.judge_hallucinations:
+            case["judge_hallucinations"] = r.judge_hallucinations
+        if r.judge_suggestions:
+            case["judge_suggestions"] = r.judge_suggestions
+
+        cases_data.append(case)
+
+    run_entry = {
+        "timestamp": datetime.now().isoformat(),
+        "model": model_name,
+        "total_cases": len(valid_results),
+        "cases": cases_data,
+    }
+
+    history["runs"].append(run_entry)
+
+    with open(CASES_FILE, "w") as f:
+        json.dump(history, f, indent=2)
+
+    print(f"Saved {len(cases_data)} cases to {CASES_FILE}")
+
+
 def get_evaluation_history():
     """Load and return evaluation history."""
     try:
@@ -737,3 +911,4 @@ if __name__ == "__main__":
 
     # Save to history
     save_evaluation_history(results)
+    save_evaluation_cases(results)

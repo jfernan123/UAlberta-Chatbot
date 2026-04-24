@@ -1,0 +1,623 @@
+{
+  "runs": [
+    {
+      "timestamp": "2026-04-24T12:58:22.918969",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "cases": [
+        {
+          "question": "What courses can I take in first year?",
+          "category": "courses",
+          "response": "From the course information, first-year courses include:\n\n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nAdditionally, students can take **MATH 136, 146, or 156** after completing **MATH 117, 134, 144, or 154**. Some courses may require prerequisites like **MATH 117** for others, depending on the specific program.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.066,
+            "overall": 0.52
+          }
+        },
+        {
+          "question": "What's the difference between Honors and Major programs?",
+          "category": "programs",
+          "response": "The difference between Honors and Major programs lies in their focus and structure:  \n- **Honors programs** are designed for students who are passionate and committed to a specific discipline, with courses built around that field. Graduates often pursue postgraduate studies or enter research fields.  \n- **Major programs** offer a broader, more general education, allowing students to explore disciplines beyond their initial passion. Graduates of Major programs establish careers in diverse areas like post-secondary education, industry, or government.  \n\nBoth programs emphasize rigor, but Honors programs require deeper discipline focus, while Major programs provide more flexibility in specialization.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.078,
+            "overall": 0.643
+          }
+        },
+        {
+          "question": "What programs are available in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "The available programs in Mathematics and Statistics include **Honors and Major programs** in a variety of fields, as well as **Minors** in both disciplines. These programs are offered through the Department of Mathematical and Statistical Science, with options for both degree types. For more details, visit the degree types page or consult the department's advising resources.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8333333333333334,
+            "rouge_l": 0.097,
+            "overall": 0.662
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-04-24T12:59:04.488788",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "cases": [
+        {
+          "question": "What courses can I take in first year?",
+          "category": "courses",
+          "response": "From the course information, first-year courses include:\n\n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nOther courses in first year (100-level) are listed in the context, but specific course numbers are not provided. For example, **MATH 136, 146, or 156** can be taken after completing **MATH 117, 134, 144, or 154**. Note that courses like **MATH 117 and 118** are required for Honors in Mathematics and Economics. Students can switch between non-Engineering streams after taking Calculus I.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.044,
+            "overall": 0.513
+          },
+          "judge_scores": {
+            "helpfulness": 0.8,
+            "accuracy": 0.9,
+            "relevance": 0.7,
+            "completeness": 0.8
+          },
+          "judge_avg": 0.8,
+          "judge_issues": [
+            "missing info"
+          ],
+          "judge_hallucinations": [
+            "false claim"
+          ],
+          "judge_suggestions": [
+            "add detail"
+          ]
+        },
+        {
+          "question": "What's the difference between Honors and Major programs?",
+          "category": "programs",
+          "response": "The difference between Honors and Major programs lies in their focus and structure:  \n- **Honors programs** are designed for students who are passionate and committed to the discipline, built around specialized Honors courses. Graduates often pursue postgraduate degrees or research opportunities.  \n- **Major programs** are for students seeking a strong foundation in modern mathematics or statistics, but may not be ready to commit to the challenge of an Honors program. Graduates of Major programs also have postgraduate options, though they may require more rigorous coursework. Both programs offer flexibility, with Honors programs sometimes considered a more advanced level due to their challenges.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.093,
+            "overall": 0.648
+          },
+          "judge_scores": {
+            "helpfulness": 0.8,
+            "accuracy": 0.9,
+            "relevance": 0.7,
+            "completeness": 0.8
+          },
+          "judge_avg": 0.8,
+          "judge_issues": [
+            "missing info"
+          ],
+          "judge_hallucinations": [
+            "false claim"
+          ],
+          "judge_suggestions": [
+            "add detail"
+          ]
+        },
+        {
+          "question": "What programs are available in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "The available programs in Mathematics and Statistics include **Honors and Major programs** in a variety of fields, as well as **Minors** in both disciplines. These programs are offered through the Department of Mathematical and Statistical Science, with options for both degree types. For more details, visit the degree types page or consult the department's advising resources.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8333333333333334,
+            "rouge_l": 0.097,
+            "overall": 0.662
+          },
+          "judge_scores": {
+            "helpfulness": 0.8,
+            "accuracy": 0.9,
+            "relevance": 0.7,
+            "completeness": 0.8
+          },
+          "judge_avg": 0.8,
+          "judge_issues": [
+            "missing info"
+          ],
+          "judge_hallucinations": [
+            "false claim"
+          ],
+          "judge_suggestions": [
+            "add detail"
+          ]
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-04-24T13:00:20.898983",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "cases": [
+        {
+          "question": "What courses can I take in first year?",
+          "category": "courses",
+          "response": "From the course information, first-year courses include:\n\n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nThese courses are designed for Year 1 students. For honors courses (MATH 117 and 118), students must take these as prerequisites. Additionally, students can take **MATH 136, 146, or 156** after completing MATH 117, 134, or 154. Note that courses like MATH 117 and 118 are required for honors in Mathematics and Economics.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.049,
+            "overall": 0.515
+          }
+        },
+        {
+          "question": "What's the difference between Honors and Major programs?",
+          "category": "programs",
+          "response": "The difference between Honors and Major programs lies in their focus and structure:  \n- **Honors programs** are designed for students who are passionate and committed to a discipline, with courses developed in depth. Graduates often pursue postgraduate studies or research, and students may choose to pursue honors courses.  \n- **Major programs** are for students aiming to build a strong foundation in modern mathematics or statistics, with options for postgraduate degrees. Graduates may also pursue research or other advanced studies.  \n\nHonors programs emphasize creativity and rigorous problem-solving, while Major programs focus on specialization and depth in a single subject.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.077,
+            "overall": 0.643
+          }
+        },
+        {
+          "question": "What programs are available in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "\u03ea\nOkay, the user is asking about the available programs in Mathematics and Statistics. Let me look through the provided information.\n\nFirst, there's a section on Degree Options in Mathematics and Finance. It mentions that students can enter one of our programs in Mathematics and Finance in their second or third year. These are quota programs, so admission is competitive. Then there's a mention of degree types, stating that the department offers Honors and Major programs in a variety of fields, including Mathematics and Statistics. The degree types page is referenced, so that's a key point.\n\nAnother source, the University Primer Courses, also mentions that students can take these courses to refresh their math skills before starting their first-year courses. But the user is asking about the available programs, not just the courses. So the main programs would be the Bachelor of Science in Mathematics and Statistics, with possible Honors programs.\n\nWait, the first source says that degree options include Mathematics and Finance, but the user is specifically asking about Mathematics and Statistics. The second source mentions degree types, which include both Mathematics and Statistics. So the answer should list the Bachelor of Science in Mathematics and Statistics, along with possible Honors programs in those fields.\n\nI need to make sure there's no confusion with other programs mentioned. The user might be looking for the specific programs available, not just the courses. So the answer should include the Bachelor of Science in Mathematics and Statistics, and any Honors programs in those fields, as per the degree types mentioned.\n</think>\n\nThe available programs in Mathematics and Statistics include:\n\n1. **Bachelor of Science in Mathematics and Statistics**  \n   - This is a major program in Mathematics and Statistics, offering students the opportunity to study advanced mathematics and statistics in their second or third year.  \n\n2. **Bachelor of Science with Honors**  \n   - A program that includes Honors, allowing students to pursue advanced studies in Mathematics and Statistics with academic support and resources.  \n\nThese programs are available as degree options, with additional details provided in the department\u2019s degree types page.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.6666666666666666,
+            "rouge_l": 0.017,
+            "overall": 0.572
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-04-24T13:01:03.483049",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "cases": [
+        {
+          "question": "What courses can I take in first year?",
+          "category": "courses",
+          "response": "From the course information, first-year courses include:\n\n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nOther courses in first year (100-level) are listed in the context, but specific course numbers are not provided. For example, **MATH 136, 146, or 156** can be taken after completing **MATH 117, 134, 144, or 154**. Note that courses like **MATH 117 and 118** are required for Honors in Mathematics and Economics. Students can switch between non-Engineering streams after taking Calculus I.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.044,
+            "overall": 0.513
+          },
+          "judge_scores": {
+            "helpfulness": 0.8,
+            "accuracy": 0.9,
+            "relevance": 0.7,
+            "completeness": 0.8
+          },
+          "judge_avg": 0.8
+        },
+        {
+          "question": "What's the difference between Honors and Major programs?",
+          "category": "programs",
+          "response": "The difference between Honors and Major programs lies in their focus and structure:  \n- **Honors programs** are designed for students who are passionate and committed to the discipline, built around specialized Honors courses. Graduates often pursue postgraduate degrees or research opportunities.  \n- **Major programs** are for students seeking a strong foundation in modern mathematics or statistics, but may not be ready to commit to the challenge of an Honors program. Graduates of Major programs also have postgraduate options, though they may require more rigorous coursework. Both programs offer flexibility, with Honors programs sometimes considered a more advanced level due to their challenges.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.093,
+            "overall": 0.648
+          },
+          "judge_scores": {
+            "helpfulness": 0.8,
+            "accuracy": 0.9,
+            "relevance": 0.7,
+            "completeness": 0.8
+          },
+          "judge_avg": 0.8
+        },
+        {
+          "question": "What programs are available in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "The available programs in Mathematics and Statistics include **Honors and Major programs** in a variety of fields, as well as **Minors** in both disciplines. These programs are offered through the Department of Mathematical and Statistical Science, with options for both degree types. For more details, visit the degree types page or consult the department's advising resources.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8333333333333334,
+            "rouge_l": 0.097,
+            "overall": 0.662
+          },
+          "judge_scores": {
+            "helpfulness": 0.8,
+            "accuracy": 0.9,
+            "relevance": 0.7,
+            "completeness": 0.8
+          },
+          "judge_avg": 0.8
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-04-24T13:01:53.120730",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "cases": [
+        {
+          "question": "What courses can I take in first year?",
+          "category": "courses",
+          "response": "From the course information, first-year courses include:\n\n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nThese courses are designed for Year 1 students. For honors courses (MATH 117 and 118), students must take these as prerequisites. Additionally, students can take **MATH 136, 146, or 156** after completing MATH 117, 134, or 154. Note that courses like MATH 117 and 118 are required for honors in Mathematics and Economics.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.049,
+            "overall": 0.515
+          },
+          "judge_scores": {
+            "helpfulness": 1.0,
+            "accuracy": 1.0,
+            "relevance": 1.0,
+            "completeness": 1.0
+          },
+          "judge_avg": 1.0
+        },
+        {
+          "question": "What's the difference between Honors and Major programs?",
+          "category": "programs",
+          "response": "The difference between Honors and Major programs lies in their focus and structure:  \n- **Honors programs** are designed for students who are passionate and committed to a discipline, with courses developed in depth. Graduates often pursue postgraduate studies or research, and students may choose to pursue honors courses.  \n- **Major programs** are for students aiming to build a strong foundation in modern mathematics or statistics, with options for postgraduate degrees. Graduates may also pursue research or other advanced studies.  \n\nHonors programs emphasize creativity and rigorous problem-solving, while Major programs focus on specialization and depth in a single subject.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.077,
+            "overall": 0.643
+          },
+          "judge_scores": {
+            "helpfulness": 1.0,
+            "accuracy": 1.0,
+            "relevance": 1.0,
+            "completeness": 1.0
+          },
+          "judge_avg": 1.0
+        },
+        {
+          "question": "What programs are available in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "\u3131\n</think>\n\nThe available programs in Mathematics and Statistics include:\n\n1. Mathematics and Finance\n2. Mathematics and Statistics\n\nThese are quota programs, meaning that only a limited number of students can be registered in these programs, and admission is competitive.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.3333333333333333,
+            "rouge_l": 0.13,
+            "overall": 0.472
+          },
+          "judge_scores": {
+            "helpfulness": 1.0,
+            "accuracy": 1.0,
+            "relevance": 1.0,
+            "completeness": 1.0
+          },
+          "judge_avg": 1.0
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-04-24T13:02:36.953354",
+      "model": "qwen3:0.6b",
+      "total_cases": 3,
+      "cases": [
+        {
+          "question": "What courses can I take in first year?",
+          "category": "courses",
+          "response": "From the course information, first-year courses include:\n\n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nThese courses are designed for Year 1 students. For honors courses (MATH 117 and 118), students must take these as prerequisites. Additionally, students can take **MATH 136, 146, or 156** after completing MATH 117, 134, or 154. Note that courses like MATH 117 and 118 are required for honors in Mathematics and Economics.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.049,
+            "overall": 0.515
+          }
+        },
+        {
+          "question": "What's the difference between Honors and Major programs?",
+          "category": "programs",
+          "response": "The difference between Honors and Major programs lies in their focus and structure:  \n- **Honors programs** are designed for students who are passionate and committed to a discipline, with courses developed in depth. Graduates often pursue postgraduate studies or research, and students may choose to pursue honors courses.  \n- **Major programs** are for students aiming to build a strong foundation in modern mathematics or statistics, with options for postgraduate degrees. Graduates may also pursue research or other advanced studies.  \n\nHonors programs emphasize creativity and rigorous problem-solving, while Major programs focus on specialization and depth in a single subject.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.077,
+            "overall": 0.643
+          }
+        },
+        {
+          "question": "What programs are available in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "The available programs in Mathematics and Statistics include **Honors and Major programs** in a variety of fields, as well as **Minors** in both disciplines. These programs are offered through the Department of Mathematical and Statistical Science, with options for both degree types. For more details, visit the degree types page or consult the department's advising resources.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8333333333333334,
+            "rouge_l": 0.097,
+            "overall": 0.662
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-04-24T13:07:03.359828",
+      "model": "qwen3:0.6b",
+      "total_cases": 5,
+      "cases": [
+        {
+          "question": "What courses can I take in first year?",
+          "category": "courses",
+          "response": "From the course information, first-year courses include:\n\n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nAdditionally, students can take **MATH 136, 146, or 156** after completing **MATH 117, 134, 144, or 154**. Some courses may require prerequisites like **MATH 117** for others, depending on the specific program.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.066,
+            "overall": 0.52
+          }
+        },
+        {
+          "question": "What's the difference between Honors and Major programs?",
+          "category": "programs",
+          "response": "The difference between Honors and Major programs lies in their focus and structure:  \n- **Honors programs** are designed for students who are passionate and committed to a specific discipline, with courses built around that field. Graduates often pursue postgraduate studies or enter research fields.  \n- **Major programs** offer a broader, more general education, allowing students to explore disciplines beyond their initial passion. Graduates of Major programs establish careers in diverse areas like post-secondary education, industry, or government.  \n\nBoth programs emphasize rigor, but Honors programs require deeper discipline focus, while Major programs provide more flexibility in specialization.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.078,
+            "overall": 0.643
+          }
+        },
+        {
+          "question": "What programs are available in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "The available programs in Mathematics and Statistics include **Honors and Major programs** in a variety of fields, as well as **Minors** in both disciplines. These programs are offered through the Department of Mathematical and Statistical Science, with options for both degree types. For more details, visit the degree types page or consult the department's advising resources.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8333333333333334,
+            "rouge_l": 0.097,
+            "overall": 0.662
+          }
+        },
+        {
+          "question": "What is Linear Algebra?",
+          "category": "courses",
+          "response": "Linear Algebra is the study of vector spaces and their transformation properties. It focuses on linear transformations, such as abstract vector spaces, diagonalization of matrices, inner products, and the study of linear operators. These concepts are applied in various fields, including least squares fitting, rotations in space (like computer graphics and engineering), and powerful search algorithms (e.g., Google's algorithms). It serves as a prerequisite for advanced courses in mathematics, physics, and engineering, alongside other disciplines like coding theory and number theory. Examples include MATH 125 (Linear Algebra I) and MATH 225 (Linear Algebra II), which emphasize theoretical foundations and algorithmic aspects.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.6,
+            "rouge_l": 0.039,
+            "overall": 0.552
+          }
+        },
+        {
+          "question": "What Calculus courses are offered?",
+          "category": "courses",
+          "response": "\u30cc\n\n</think>\n\nThe Calculus courses offered at the University of Alberta include:\n\n- MATH 100 - Calculus I\n- MATH 101 - Calculus II\n- MATH 102 - Applied Linear Algebra\n- MATH 201 - Differential Equations\n- MATH 209 - Calculus II (for Engineering)\n\nThese courses are offered to support undergraduate programs in the Faculty of Engineering.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.067,
+            "overall": 0.72
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-04-24T13:21:14.479168",
+      "model": "qwen3:0.6b",
+      "total_cases": 20,
+      "cases": [
+        {
+          "question": "What courses can I take in first year?",
+          "category": "courses",
+          "response": "From the first-year courses listed, you can take the following:\n\n- **MATH 100: Calculus for Engineering I**  \n- **MATH 101: Calculus for Engineering II**  \n- **MATH 102: Applied Linear Algebra**  \n\nSome courses may require prerequisites, such as **MATH 100** for **MATH 101**. For example, **MATH 136, 146, or 156** can be taken after completing **MATH 117, 134, 144, or 154**. Additionally, **Honors in Mathematics and Economics** courses are available for advanced study in the first year.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.051,
+            "overall": 0.515
+          }
+        },
+        {
+          "question": "What's the difference between Honors and Major programs?",
+          "category": "programs",
+          "response": "The difference between Honors and Major programs lies in their focus and structure:  \n- **Honors programs** emphasize passion and depth, with students building on their Honors courses to engage in rigorous, research-oriented studies. Graduates often pursue postgraduate degrees or pursue careers in research.  \n- **Major programs** focus on specialization in a single discipline, offering a broader range of options for postgraduate studies or career paths in fields like mathematics or statistics.  \n\nBoth programs require strong prerequisites, but Honors programs may have specific subject area requirements (e.g., Planning honors require 60 units in Science courses), while Major programs have different minimums.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.094,
+            "overall": 0.648
+          }
+        },
+        {
+          "question": "What programs are available in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "The available programs in Mathematics and Statistics include **Honors and Major programs** in a variety of fields, as well as **Minors** in both disciplines. These programs are offered through the Department of Mathematical and Statistical Science, with options for both degree types. For more details, visit the degree types page or consult the department's advising resources.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8333333333333334,
+            "rouge_l": 0.097,
+            "overall": 0.662
+          }
+        },
+        {
+          "question": "What is Linear Algebra?",
+          "category": "courses",
+          "response": "Linear Algebra is the study of vector spaces and their transformation properties. It focuses on linear transformations, such as abstract vector spaces, diagonalization of matrices, inner products, and the study of linear operators. These concepts are applied in various fields, including least squares fitting, rotations in space (like computer graphics and engineering), and powerful search algorithms (e.g., Google's algorithms). It serves as a prerequisite for advanced courses in mathematics, physics, and engineering, alongside other disciplines like coding theory and number theory. Examples include MATH 125 (Linear Algebra I) and MATH 225 (Linear Algebra II), which emphasize theoretical foundations and algorithmic aspects.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.6,
+            "rouge_l": 0.039,
+            "overall": 0.552
+          }
+        },
+        {
+          "question": "What Calculus courses are offered?",
+          "category": "courses",
+          "response": "The Calculus courses offered at the University of Alberta include:\n\n1. **MATH 100 - Calculus I**  \n2. **MATH 101 - Calculus I**  \n3. **MATH 102 - Applied Linear Algebra**  \n4. **MATH 201 - Differential Equations**  \n5. **MATH 209 - Calculus II**  \n6. **MATH 300 - Advanced Boundary Value Problems**  \n\nThese courses are specifically for students in the Faculty of Engineering.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.065,
+            "overall": 0.719
+          }
+        },
+        {
+          "question": "Can I double major in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "\u30d7\u30ec\u30a4\nOkay, the user is asking if they can double major in Mathematics and Statistics. Let me start by recalling the information provided.\n\nFirst, looking at the university's course requirements, there's a note about taking MATH 117 and 118 for Year 1 Honors in Mathematics and Finance. Also, MATH 117 and 118 are recommended for Year 1 students in Honors in Mathematics and Finance. So, if the user is taking a first-year course in Mathematics, they need to have those courses. \n\nNow, for Statistics, the university's course requirements mention that MATH 214 is a pre-requisite for Intermediate Calculus I. But Statistics might require different courses. Wait, the user is asking about a double major in Mathematics and Statistics. So, they need to have both disciplines covered.\n\nLooking at the source links, there's a note about taking MATH 117 and 118 for Year 1 Honors in Mathematics and Finance. Also, MATH 117 and 118 are recommended for Year 1 students in Honors in Mathematics and Finance. So, if the user is in the first year, they need to have those courses. \n\nFor Statistics, the university's course requirements mention that MATH 214 is a pre-requisite for Intermediate Calculus I. But Statistics might require different courses. However, the user is asking about a double major in Mathematics and Statistics. So, they need to have both disciplines covered. \n\nWait, but the user is asking if they can double major in Mathematics and Statistics. So, they need to have both disciplines in their curriculum. The university's course requirements mention that MATH 117 and 118 are required for Year 1 Honors in Mathematics and Finance. So, if the user is in the first year, they need to have those courses. \n\nBut Statistics might require different courses. However, the user is asking about a double major, so they need to have both disciplines in their curriculum. The university's course requirements mention that MATH 117 and 118 are required for Year 1 Honors in Mathematics and Finance. So, if the user is in the first year, they need to have those courses. \n\nTherefore, the answer would be that yes, they can double major in Mathematics and Statistics by taking MATH 117 and 118 for Year 1 Honors in Mathematics and Finance, and then taking Statistics courses that meet the university's requirements. However, the user needs to check the specific course requirements for Statistics to ensure they meet all prerequisites.\n</think>\n\nYes, you can double major in Mathematics and Statistics by following these steps:  \n\n1. **Mathematics**: Ensure you have completed **MATH 117 and 118** (for Year 1 Honors in Mathematics and Finance) as required by the university. These courses are recommended for Year 1 students in Honors in Mathematics and Finance.  \n\n2. **Statistics**: Take **MATH 214** (Intermediate Calculus I) as a pre-requisite for Statistics courses. Additionally, ensure your curriculum includes relevant Statistics courses that meet the university\u2019s prerequisites.  \n\nBy aligning your courses with the university\u2019s requirements, you can successfully double major in Mathematics and Statistics. Always verify course prerequisites with the university to ensure compatibility.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.2,
+            "rouge_l": 0.004,
+            "overall": 0.381
+          }
+        },
+        {
+          "question": "What help is available for math courses?",
+          "category": "support",
+          "response": "For Mathematics courses, the Decima Robinson Support Centre offers comprehensive assistance. Here are the key help options:\n\n1. **One-on-One Support**: Graduate students are available for one-on-one consultations to address homework or academic questions.  \n2. **Exam Study Sessions**: Offered for select courses to help students prepare for exams.  \n3. **Review Seminars**: Weekly seminars to reinforce concepts.  \n4. **Precalculus Program**: A program to refresh high school math skills.  \n5. **Primer Course**: Helps students transition from high school to university.  \n\nThe Centre is open during Fall and Winter terms and staffed by graduate students. Contact them at `mssdrsc@ualberta.ca` or visit University Commons 1-200 for more details.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.075,
+            "overall": 0.522
+          }
+        },
+        {
+          "question": "What are the requirements for Honors in Mathematics?",
+          "category": "programs",
+          "response": "The requirements for Honors in Mathematics are as follows:  \n1. **Course Requirements**: Complete all requirements of Year Two, including specific courses such as **ACCTG 314** (for Mathematics Honors).  \n2. **Minimum GPA**: A minimum cumulative GPA of **3.5** on all coursework taken since admission to the Bachelor of Commerce program.  \n3. **Admission Criteria**:  \n   - A letter of intent and interview.  \n   - Demonstrated excellence in academic performance (e.g., grades A- or higher in ECON 101, MATH 154, or equivalent).  \n4. **Flexibility**: Students can apply to the Honors program or switch to a Major program, depending on their interests.  \n\nThese requirements ensure students are prepared for rigorous academic challenges and are open to exploring their interests in mathematics.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.75,
+            "rouge_l": 0.034,
+            "overall": 0.61
+          }
+        },
+        {
+          "question": "What is the MDP program?",
+          "category": "programs",
+          "response": "The MDP program is a professionally-oriented program in data science, combining data modelling and data analytics skills. It is designed to prepare students for careers in industry and government by emphasizing practical aspects such as mathematical and statistical modelling, data analysis, statistical machine learning algorithms, and modern computational methods. The program is completed in 16 months.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.7142857142857143,
+            "rouge_l": 0.069,
+            "overall": 0.606
+          }
+        },
+        {
+          "question": "What courses are offered for undergraduate math students?",
+          "category": "courses",
+          "response": "The undergraduate Mathematics courses offered at the University of Alberta include:\n\n1. **MATH 505: Stochastic Analysis I**  \n   Prerequisites: STAT 371, STAT 281, MATH 467  \n\n2. **MATH 506: Complex Variables**  \n   Prerequisites: MATH 411  \n\n3. **MATH 508: Computational Finance**  \n   Prerequisites: STAT 371, STAT 281, MATH 467, FIN 654, ECON 598  \n\nOther 14 courses in the Math Graduate Programs also require specific prerequisites, such as MATH 467, STAT 281, or FIN 654. These courses are designed for students seeking advanced mathematical studies.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.0,
+            "rouge_l": 0.049,
+            "overall": 0.315
+          }
+        },
+        {
+          "question": "What is the Statistics program?",
+          "category": "programs",
+          "response": "The Statistics program at the University of Alberta offers a wide range of courses from Year 1 to Year 5, covering topics such as statistics for business, engineering, and data science. Key courses include:\n\n- **Year 1**: Introductory Statistics for Business and Economics (STAT 151), Introductory Statistics for Engineering (STAT 235), and Introductory Combinatorics and Probability (STAT 181).  \n- **Year 2**: Introductory Statistics for Engineering (STAT 235), Introduction to Applied Statistics II (STAT 252), and Probability and Statistics I (STAT 265).  \n- **Year 3**: Biostatistics, Life Contingencies I, and Sampling Techniques.  \n- **Year 4**: Survival Analysis, Applied Statistical Methods, and Statistical Methods for Learning.  \n- **Year 5**: Directed Study I\u2013V, Applied Regression Analysis, and Research Projects.  \n\nThe program emphasizes both theoretical foundations and practical applications, supported by the Statistics Division\u2019s resources and services.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.14285714285714285,
+            "rouge_l": 0.029,
+            "overall": 0.366
+          }
+        },
+        {
+          "question": "What is the Mathematics program?",
+          "category": "programs",
+          "response": "The Mathematics program at the University of Alberta requires students to present either **Mathematics 30-1** or **Mathematics 30-2** for admission to specific programs. For example:  \n- **Faculty of Arts** and **Political Science** minors require Mathematics 30-1 or 30-2.  \n- **Economics** and **Environmental and Conservation Sciences** minors also require Mathematics 30-1.  \n- The **Faculty of Business** requires Mathematics 30-1 as a prerequisite for required courses.  \n- Students in the **BKin/BEd Elementary Route** must complete 3 units in Mathematics (MATH 160) as part of their degree program.  \n- Nonmatriculated applicants must present Mathematics 30-1 or 30-2, with specific prerequisites depending on the program choice.  \n\nThe program emphasizes prerequisites and admission requirements to ensure academic rigor and alignment with Alberta educational standards.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.25,
+            "rouge_l": 0.033,
+            "overall": 0.41
+          }
+        },
+        {
+          "question": "What are the prerequisites for MATH 209?",
+          "category": "prerequisites",
+          "response": "The prerequisites for Mathematics 209 (Calculus for Engineering III) are **MATH 101**.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.133,
+            "overall": 0.74
+          }
+        },
+        {
+          "question": "What do I need before taking STAT 266?",
+          "category": "prerequisites",
+          "response": "To take Statistics 266, you must have completed **STAT 265** and **STAT 281** as prerequisites, along with **MATH 209**, **MATH 214**, and **MATH 217** as MATH prerequisites. Additionally, you must have completed the MATH corequisites **MATH 225** and **MATH 227**.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0,
+            "overall": 0.7
+          }
+        },
+        {
+          "question": "What courses can I take after completing MATH 117?",
+          "category": "prerequisites",
+          "response": "After completing Mathematics 117, you can take **MATH 118 (Honors Calculus II)** as a prerequisite for Honors Calculus III (MATH 217). Additionally, you can pursue **MATH 217 (Honors Calculus III)**, which is part of the Honors Sequence. These courses are designed to build on your foundation in Honors Mathematics.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.077,
+            "overall": 0.723
+          }
+        },
+        {
+          "question": "What courses can I take without any prerequisites?",
+          "category": "prerequisites",
+          "response": "Based on the provided information, there are no courses listed that do not require prerequisites. However, students can take MATH 117 and 118 as co-requisites for PHYS 144 and 146, which are required for certain courses. If you're looking for courses without prerequisites, there are no specific courses mentioned in the provided information. Let me know if you need further assistance!",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.25,
+            "rouge_l": 0.032,
+            "overall": 0.41
+          }
+        },
+        {
+          "question": "What MATH courses do I need before STAT 265?",
+          "category": "prerequisites",
+          "response": "To prepare for Statistics 265, you need to complete the following Mathematics courses:  \n**MATH 209, MATH 214, and MATH 217**.  \n\nThese courses are listed as prerequisites for Statistics 265 in the provided information.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.054,
+            "overall": 0.716
+          }
+        },
+        {
+          "question": "What graduate MATH courses are available?",
+          "category": "level_specific",
+          "response": "The graduate Mathematics courses available at the University of Alberta include:  \n1. **MATH 505: Stochastic Analysis I**  \n   Prerequisites: STAT 371, STAT 281, MATH 467  \n\n2. **MATH 506: Complex Variables**  \n   Prerequisites: MATH 411  \n\n3. **MATH 508: Computational Finance**  \n   Prerequisites: STAT 371, STAT 281, MATH 467, FIN 654, ECON 598  \n\nOther graduate Mathematics courses listed in the information include **MATH 507** and **MATH 509**, but they are not explicitly mentioned in the provided data.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.6666666666666666,
+            "rouge_l": 0.054,
+            "overall": 0.583
+          }
+        },
+        {
+          "question": "What senior STAT courses are available?",
+          "category": "level_specific",
+          "response": "The senior Statistics courses available at the University of Alberta include:  \n1. **STAT 413: Computing for Data Science**  \n   Prerequisites: STAT 265, STAT 281  \n\n2. **STAT 432: Survival Analysis**  \n   Prerequisites: STAT 372, STAT 378  \n\n3. **STAT 437: Applied Statistical Methods**  \n   Prerequisites: STAT 252, STAT 337  \n\nOther senior Statistics courses are listed in the provided information, but they are not explicitly mentioned in the current context.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.3333333333333333,
+            "rouge_l": 0.061,
+            "overall": 0.452
+          }
+        },
+        {
+          "question": "What graduate courses are there?",
+          "category": "level_specific",
+          "response": "The graduate courses offered at the University of Alberta include:  \n1. **STAT 501: Directed Study I**  \n2. **STAT 502: Directed Study II**  \n3. **STAT 503: Directed Study III**  \n... and 44 more courses listed in the graduate (500-level) section. These courses are part of the Statistics program and are structured as directed study courses.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.6666666666666666,
+            "rouge_l": 0.069,
+            "overall": 0.587
+          }
+        }
+      ]
+    }
+  ]
+}

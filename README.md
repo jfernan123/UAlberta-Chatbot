@@ -251,17 +251,40 @@ Using the combined Math & Stats + Calendar data (137 pages) with LangChain cours
 ```
 Metrics (averaged across 20 test cases):
   - Retrieval Precision@4:     1.000
-  - Keyword Coverage:          0.674
-  - ROUGE-L:                  0.057
-  - Overall Score:             0.587
+  - Keyword Coverage:          0.610
+  - ROUGE-L:                  0.056
+  - Overall Score:             0.561
 
 By Category:
-  - prerequisites: 0.656 (best)
-  - programs: 0.577
-  - courses: 0.559
-  - level_specific: 0.553
-  - support: 0.517
+  - prerequisites: 0.658 (best)
+  - programs: 0.526
+  - courses: 0.525
+  - level_specific: 0.541
+  - support: 0.522
 ```
+
+### LLM-as-Judge Evaluation (Experimental)
+
+The evaluation suite includes an optional LLM-as-Judge feature that evaluates response quality using a separate LLM. To enable:
+
+```bash
+ENABLE_LLM_JUDGE=true uv run python evaluation.py
+```
+
+This adds scores for:
+- **Helpfulness** - Does the response answer the question?
+- **Accuracy** - Is the information correct?
+- **Relevance** - Does it use relevant course/prereq info?
+- **Completeness** - Are all important details included?
+
+Note: The default judge model is `qwen3:0.6b` which may give generic scores. For better evaluation, use a larger model (requires sufficient RAM):
+
+```bash
+# qwen3:8b may not work due to memory constraints
+JUDGE_MODEL=qwen3:8b ENABLE_LLM_JUDGE=true uv run python evaluation.py
+```
+
+Results are saved to `data/evaluation_cases.json` with per-case details including responses.
 
 ### Test Case Updates (Apr 2026)
 
