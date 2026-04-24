@@ -101,6 +101,15 @@ def detect_course_tools(query: str) -> list:
         "geometry",
     ]
     if any(kw in query_lower for kw in math_keywords):
+        # NEW: If a specific course code is mentioned and user is asking "what is X",
+        # prioritize getting specific course info instead of listing all courses
+        if course_codes and any(
+            kw in query_lower
+            for kw in ["what is", "what's", "details", "about", "name of"]
+        ):
+            # User is asking about a specific course - get that course's details
+            tools_to_call = [get_course_prerequisites]
+            return tools_to_call
         tools_to_call.append(get_math_courses)
 
     # Search queries (fallback)
@@ -227,6 +236,7 @@ IMPORTANT INSTRUCTIONS:
 2. Do NOT say a course is not listed when it appears in the Course Information.
 3. Do NOT make up course names or numbers - only use courses that appear in the Course Information section.
 4. If the Course Information mentions specific courses (like MATH 118 or MATH 217), include them in your answer.
+5. When listing Statistics (STAT) courses, note that many require MATH prerequisites - include MATH courses that appear in the Course Information as they may be required prerequisites.
 
 IMPORTANT TERMINOLOGY CLARIFICATION:
 - "Undergraduate" in this context refers to COURSE LEVEL (100-400 level), NOT first-year students

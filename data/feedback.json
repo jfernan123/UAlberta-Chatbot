@@ -142,5 +142,47 @@
     "question": "What courses does math 118 depend on?",
     "response": "Mathematics 118 (Honors Calculus II) depends on **MATH 117 (Honors Calculus I)**. This is explicitly stated in the Notes section, which notes that MATH 117 and 118 must be taken by Year 1 students in Honors in Mathematics and Economics, and that MATH 118 is recommended for Year 1 students in Honors in Mathematics and Finance.",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T08:24:52.897545",
+    "question": "What is the mdp Program?",
+    "response": "The MDP Program is a **Course-based Master’s Program in Modelling, Data + Predictions (MDP)**, offered as a graduate program in data science. It is designed to be completed in **16 months**, emphasizing practical skills in mathematical and statistical modeling, data analysis, statistical machine learning, and modern computational methods. The program prepares students for careers in industry and government, with a focus on applying data-driven solutions to real-world problems.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T08:25:12.030790",
+    "question": "What courses are offered in third year mathematics?",
+    "response": "The third year mathematics courses offered are:\n\n- MATH 300  \n- MATH 311  \n- MATH 317  \n- MATH 325  \n- MATH 326  \n- MATH 328  \n- MATH 334  \n- MATH 348  \n- MATH 356  \n- MATH 357  \n- MATH 371  \n\nThese courses are listed under Year 3 in the MATH Courses section.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T08:25:31.743242",
+    "question": "Do you know the name of MATH 300?",
+    "response": "Yes, Mathematics 300 is listed in the MATH Courses section. It is part of Year 3, under MATH 300.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T08:25:56.298507",
+    "question": "Do you know any of the 300 level math course names?",
+    "response": "Yes, the 300-level Mathematics course names include **MATH 300**. This course is listed in the Year 3 section of the MATH Courses, indicating it is a 300-level course.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T08:27:27.144001",
+    "question": "That isn't quite what I asked for. Just courses in 300 range",
+    "response": "Based on the provided course information, there are no specific courses listed in the 300-level range. However, if you're looking for 300-level courses, you can refer to the following:\n\n- **MATH 300** (Advanced Boundary Value Problems) and **IMATH 309** (Mathematical Methods for Electrical Engineers) are 300-level courses offered in the Engineering Service Courses. These courses are explicitly listed in the course information and may be prerequisites for other 300-level courses.\n\nIf you have spe",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T08:27:50.315486",
+    "question": "What courses does stat 453 depend on?",
+    "response": "Statistics 453 depends on **STAT 371** and **STAT 281**.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T08:28:10.301336",
+    "question": "What courses does math 300 depend on?",
+    "response": "Based on the provided course information, Mathematics 300 does not have a direct prerequisite listed. The course information for Year 3 does not specify any prerequisites for MATH 300, indicating that it may depend on other courses not explicitly mentioned in the context. Therefore, the answer is that there are no specific prerequisites for Mathematics 300 as per the given information.",
+    "rating": -1
   }
 ]

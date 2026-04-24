@@ -156,7 +156,14 @@
       "name": "Calculus III",
       "url": "https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668652",
       "year_level": 2,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 101",
+        "MATH 115",
+        "MATH 118",
+        "MATH 136",
+        "MATH 146",
+        "MATH 156"
+      ],
       "alternatives": [
         "MATH 102"
       ],
@@ -202,37 +209,44 @@
       "math_prerequisites": null
     },
     "MATH 317": {
-      "name": "Course MATH 317",
+      "name": "Honors Calculus IV",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 3,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "MATH 311": {
-      "name": "Course MATH 311",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
-      "year_level": 3,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 217"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 411": {
-      "name": "Course MATH 411",
+      "name": "Honors Complex Variables",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 4,
+      "prerequisites": [
+        "MATH 314",
+        "MATH 317"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 311": {
+      "name": "Introduction to Ring Theory",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
+      "year_level": 3,
       "prerequisites": [],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 516": {
-      "name": "Course MATH 516",
+      "name": "Linear Analysis",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 5,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 417"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -241,25 +255,29 @@
       "name": "Course MATH 225",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 2,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 100",
+        "MATH 113",
+        "MATH 114",
+        "MATH 117",
+        "MATH 134",
+        "MATH 144",
+        "MATH 154",
+        "SCI 100"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 334": {
-      "name": "Course MATH 334",
+      "name": "Introduction to Partial Differential Equations",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 3,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "STAT 161": {
-      "name": "Introductory Statistics for Business and Economics",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
-      "year_level": 1,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -280,6 +298,15 @@
         ]
       }
     },
+    "STAT 161": {
+      "name": "Introductory Statistics for Business and Economics",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
+      "year_level": 1,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
     "STAT 151": {
       "name": "Introduction to Applied Statistics I",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/first-year-courses/index.html",
@@ -289,56 +316,49 @@
       "sequence": null,
       "math_prerequisites": null
     },
-    "MATH 256": {
-      "name": "Course MATH 256",
+    "MATH 428": {
+      "name": "Advanced Ring Theory",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 2,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "MATH 328": {
-      "name": "Course MATH 328",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 3,
-      "prerequisites": [],
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 326",
+        "MATH 327"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 326": {
-      "name": "Course MATH 326",
+      "name": "Ring and Modules",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 227"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
-    "MATH 422": {
-      "name": "Course MATH 422",
+    "MATH 256": {
+      "name": "Course MATH 256",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "MATH 428": {
-      "name": "Course MATH 428",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
-      "prerequisites": [],
+      "year_level": 2,
+      "prerequisites": [
+        "MATH 125",
+        "MATH 127"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 429": {
-      "name": "Course MATH 429",
+      "name": "Advanced Group Theory and Representation Theory",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 4,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 328",
+        "MATH 327"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -347,7 +367,22 @@
       "name": "Course MATH 228",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 422": {
+      "name": "Coding Theory",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 227"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -356,34 +391,57 @@
       "name": "Course MATH 226",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 125"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 328": {
+      "name": "Group Theory",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 227",
+        "MATH 228"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 448": {
-      "name": "Course MATH 448",
+      "name": "Introduction to Differential Geometry",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 4,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 348"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 348": {
-      "name": "Course MATH 348",
+      "name": "Differential Geometry of Curves and Surfaces",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 447": {
-      "name": "Course MATH 447",
+      "name": "Elementary Topology",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 4,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 216",
+        "MATH 217"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -407,10 +465,13 @@
       "math_prerequisites": null
     },
     "MATH 300": {
-      "name": "Course MATH 300",
+      "name": "Advanced Boundary Value Problems",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 201",
+        "MATH 209"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -428,16 +489,33 @@
       "name": "Course MATH 241",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 100",
+        "MATH 101",
+        "MATH 114",
+        "MATH 115",
+        "MATH 117",
+        "MATH 125",
+        "MATH 127",
+        "MATH 134",
+        "MATH 136",
+        "MATH 144",
+        "MATH 146",
+        "MATH 154",
+        "MATH 156",
+        "SCI 100"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 325": {
-      "name": "Course MATH 325",
+      "name": "Linear Algebra III",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 225"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -446,25 +524,68 @@
       "name": "Course MATH 227",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
+      "prerequisites": [
+        "MATH 127"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 357": {
+      "name": "Game Theory and Economic Modelling",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 356"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 408": {
+      "name": "Computational Finance",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 4,
+      "prerequisites": [
+        "STAT 471"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 253": {
+      "name": "Course MATH 253",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 2,
+      "prerequisites": [
+        "MATH 101",
+        "MATH 115",
+        "MATH 118",
+        "MATH 136",
+        "MATH 146",
+        "MATH 156",
+        "SCI 100"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "MATH 415": {
+      "name": "Mathematical Finance I",
+      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
+      "year_level": 4,
       "prerequisites": [],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
     },
     "MATH 356": {
-      "name": "Course MATH 356",
+      "name": "Introduction to Mathematical Finance II",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "MATH 415": {
-      "name": "Course MATH 415",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 253"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -474,6 +595,7 @@
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
       "prerequisites": [
+        "MATH 253",
         "STAT 265",
         "STAT 281"
       ],
@@ -485,38 +607,15 @@
         ]
       }
     },
-    "MATH 357": {
-      "name": "Course MATH 357",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 3,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "MATH 408": {
-      "name": "Course MATH 408",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 4,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "MATH 253": {
-      "name": "Course MATH 253",
-      "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
-      "year_level": 2,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
     "MATH 371": {
-      "name": "Course MATH 371",
+      "name": "Mathematical Programming and Optimization I",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 3,
-      "prerequisites": [],
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -533,6 +632,28 @@
           "MATH 209",
           "MATH 214",
           "MATH 217"
+        ]
+      }
+    },
+    "STAT 266": {
+      "name": "Probability and Statistics II",
+      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
+      "year_level": 2,
+      "prerequisites": [
+        "STAT 265",
+        "STAT 281"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": {
+        "prereq": [
+          "MATH 209",
+          "MATH 214",
+          "MATH 217"
+        ],
+        "coreq": [
+          "MATH 225",
+          "MATH 227"
         ]
       }
     },
@@ -563,37 +684,6 @@
       "sequence": null,
       "math_prerequisites": null
     },
-    "STAT 499": {
-      "name": "Course STAT 499",
-      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
-      "year_level": 4,
-      "prerequisites": [],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": null
-    },
-    "STAT 266": {
-      "name": "Probability and Statistics II",
-      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
-      "year_level": 2,
-      "prerequisites": [
-        "STAT 265",
-        "STAT 281"
-      ],
-      "alternatives": [],
-      "sequence": null,
-      "math_prerequisites": {
-        "prereq": [
-          "MATH 209",
-          "MATH 214",
-          "MATH 217"
-        ],
-        "coreq": [
-          "MATH 225",
-          "MATH 227"
-        ]
-      }
-    },
     "STAT 378": {
       "name": "Applied Regression Analysis",
       "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
@@ -602,6 +692,15 @@
         "STAT 266",
         "STAT 276"
       ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "STAT 499": {
+      "name": "Research Project",
+      "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
+      "year_level": 4,
+      "prerequisites": [],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -704,8 +803,7 @@
       "url": "",
       "year_level": 3,
       "prerequisites": [
-        "STAT 265",
-        "STAT 281"
+        "STAT 265"
       ],
       "alternatives": [],
       "sequence": null,
@@ -715,7 +813,10 @@
       "name": "Computing for Data Science",
       "url": "",
       "year_level": 4,
-      "prerequisites": [],
+      "prerequisites": [
+        "STAT 265",
+        "STAT 281"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -736,7 +837,10 @@
       "name": "Applied Statistical Methods",
       "url": "",
       "year_level": 4,
-      "prerequisites": [],
+      "prerequisites": [
+        "STAT 252",
+        "STAT 337"
+      ],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
@@ -780,10 +884,1026 @@
       "name": "Time Series Analysis",
       "url": "",
       "year_level": 4,
+      "prerequisites": [
+        "STAT 372",
+        "STAT 378"
+      ],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "STAT 497": {
+      "name": "Reading in Statistics",
+      "url": "",
+      "year_level": 4,
       "prerequisites": [],
       "alternatives": [],
       "sequence": null,
       "math_prerequisites": null
+    },
+    "STAT 498": {
+      "name": "Statistical Topics in Data Science",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null,
+      "math_prerequisites": null
+    },
+    "STAT 501": {
+      "name": "Directed Study I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 252",
+        "STAT 337"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 502": {
+      "name": "Directed Study II",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 252",
+        "STAT 337"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 503": {
+      "name": "Directed Study III",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 372",
+        "STAT 378"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 504": {
+      "name": "Directed Study IV",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 505": {
+      "name": "Directed Study V",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 501",
+        "STAT 502"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 512": {
+      "name": "Techniques of Mathematics for Statistics",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 513": {
+      "name": "Statistical Computing",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 514": {
+      "name": "Statistics for Clinical Trials I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 515": {
+      "name": "Statistics for Clinical Trials II",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 514"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 532": {
+      "name": "Survival Analysis",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 372"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 537": {
+      "name": "Statistical Methods for Applied Research II",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 437"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 541": {
+      "name": "Statistics for Learning",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 553": {
+      "name": "Risk Theory",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 371"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 561": {
+      "name": "Sample Survey Methodology",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 361",
+        "STAT 372",
+        "STAT 471"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 562": {
+      "name": "Discrete Data Analysis",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 372",
+        "STAT 471"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 566": {
+      "name": "Methods of Statistical Inference",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 471"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 568": {
+      "name": "Design and Analysis of Experiments",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 368"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 571": {
+      "name": "Probability and Measure",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 471"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 575": {
+      "name": "Multivariate Analysis",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 372",
+        "STAT 512"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 578": {
+      "name": "Regression Analysis",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 378"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 580": {
+      "name": "Stochastic Processes",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 471"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 590": {
+      "name": "Statistical Consulting",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 568",
+        "STAT 578"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 600": {
+      "name": "Reading in Statistics",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 637": {
+      "name": "Statistical Methods for Applied Research III",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 537"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 664": {
+      "name": "Advanced Statistical Inference",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 512",
+        "STAT 566"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 665": {
+      "name": "Asymptotic Methods in Statistical Inference",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 566",
+        "STAT 512"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 900": {
+      "name": "Directed Research Project",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 900A": {
+      "name": "Directed Research Project",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 900B": {
+      "name": "Directed Research Project",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 901": {
+      "name": "Practicum in Statistics I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 902": {
+      "name": "Practicum in Statistics II",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "STAT 903": {
+      "name": "Internship in Biostatistics",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 315": {
+      "name": "Calculus IV",
+      "url": "",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 322": {
+      "name": "Graph Theory",
+      "url": "",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 336": {
+      "name": "Methods of Applied Mathematics",
+      "url": "",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 225",
+        "MATH 227"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 337": {
+      "name": "Applied Linear Algebra",
+      "url": "",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 209",
+        "MATH 215",
+        "MATH 217",
+        "MATH 315"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 341": {
+      "name": "Geometry of Convex Sets",
+      "url": "",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 343": {
+      "name": "Methods of Optimization",
+      "url": "",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 241"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 372": {
+      "name": "Mathematical Programming and Optimization II",
+      "url": "",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 373": {
+      "name": "Continuous Optimization",
+      "url": "",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 381": {
+      "name": "Numerical Analysis",
+      "url": "",
+      "year_level": 3,
+      "prerequisites": [
+        "MATH 102",
+        "MATH 125",
+        "MATH 127"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 405": {
+      "name": "Stochastic Analysis I",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "STAT 371",
+        "STAT 281",
+        "MATH 467"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 412": {
+      "name": "Algebraic Number Theory",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 326"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 414": {
+      "name": "Analysis II",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 314"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 417": {
+      "name": "Real Analysis",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 317",
+        "MATH 414"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 418": {
+      "name": "Linear Analysis",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 417"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 421": {
+      "name": "Combinatorics",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 326",
+        "MATH 327"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 424": {
+      "name": "Algebra: Groups and Fields",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 326",
+        "MATH 228"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 432": {
+      "name": "Intermediate Differential Equations",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 201",
+        "MATH 334",
+        "MATH 336",
+        "MA PH 251"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 436": {
+      "name": "Intermediate Partial Differential Equations",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 300",
+        "MATH 337"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 467": {
+      "name": "Theory of Probability",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "MATH 214",
+        "MATH 216"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 471": {
+      "name": "Markov Models",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [
+        "STAT 281",
+        "STAT 371"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 483": {
+      "name": "Topics in Algebra",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 497": {
+      "name": "Reading in Mathematics",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 498": {
+      "name": "Mathematical Topics in Data Science",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 499": {
+      "name": "Research Project",
+      "url": "",
+      "year_level": 4,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 505": {
+      "name": "Stochastic Analysis I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 371",
+        "STAT 281",
+        "MATH 467"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 506": {
+      "name": "Complex Variables",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 411"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 508": {
+      "name": "Computational Finance",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 371",
+        "STAT 281",
+        "MATH 467",
+        "FIN 654",
+        "ECON 598"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 509": {
+      "name": "Data Structures and Platforms",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 510": {
+      "name": "Stochastic Analysis II",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 505"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 512": {
+      "name": "Algebraic Number Theory",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 326"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 514": {
+      "name": "Measure Theory I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 317"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 515": {
+      "name": "Mathematical Finance I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "STAT 471"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 518": {
+      "name": "Functional Analysis",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 516"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 519": {
+      "name": "Introduction to Operator Algebras",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 516"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 520": {
+      "name": "Mathematical Finance II",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 515"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 521": {
+      "name": "Differential Manifolds",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 446",
+        "MATH 448"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 524": {
+      "name": "Ordinary Differential Equations IIA",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 334",
+        "MATH 336"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 525": {
+      "name": "Ordinary Differential Equations IIB",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 524"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 527": {
+      "name": "Intermediate Partial Differential Equations",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 436"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 530": {
+      "name": "Algebraic Topology",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 227",
+        "MATH 317",
+        "MATH 447"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 535": {
+      "name": "Numerical Methods I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 536": {
+      "name": "Numerical Solutions of Partial Differential Equations I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 337",
+        "MATH 436"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 538": {
+      "name": "Techniques of Applied Mathematics",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 438"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 539": {
+      "name": "Applied Functional Analysis",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 438"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 542": {
+      "name": "Fourier Analysis",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 418"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 543": {
+      "name": "Measure Theory II",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 417",
+        "MATH 514"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 556": {
+      "name": "Introduction to Fluid Mechanics",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 311",
+        "MATH 411"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 570": {
+      "name": "Mathematical Biology",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 524"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 572": {
+      "name": "Mathematical Modelling in Industry, Government, and Sciences",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 574": {
+      "name": "Mathematical Modeling of Infectious Diseases",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 334",
+        "MATH 336"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 581": {
+      "name": "Group Theory",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 328"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 582": {
+      "name": "Rings and Modules",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 326"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 583": {
+      "name": "Topics in Algebra",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [
+        "MATH 326",
+        "MATH 327",
+        "MATH 328",
+        "MATH 329"
+      ],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 600": {
+      "name": "Reading in Mathematics",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 601": {
+      "name": "Graduate Colloquium",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 617": {
+      "name": "Topics in Functional Analysis I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 623": {
+      "name": "Topics in Differential Geometry and Mechanics",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 625": {
+      "name": "Advanced Mathematical Finance",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 653": {
+      "name": "Seminar in Functional Analysis",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 655": {
+      "name": "Topics in Fluid Dynamics",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 663": {
+      "name": "Topics in Applied Mathematics I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 664": {
+      "name": "Topics in Applied Mathematics II",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 667": {
+      "name": "Topics in Differential Equations I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 676": {
+      "name": "Topics in Geometry I",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 681": {
+      "name": "Topics in Algebra",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 682": {
+      "name": "Topics in Algebra",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 900": {
+      "name": "Directed Research Project",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 900A": {
+      "name": "Directed Research Project",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
+    },
+    "MATH 900B": {
+      "name": "Directed Research Project",
+      "url": "",
+      "year_level": 5,
+      "prerequisites": [],
+      "alternatives": [],
+      "sequence": null
     }
   },
   "dependencies": {
@@ -805,10 +1925,139 @@
     "MATH 209": [
       "MATH 101"
     ],
+    "MATH 214": [
+      "MATH 101",
+      "MATH 115",
+      "MATH 118",
+      "MATH 136",
+      "MATH 146",
+      "MATH 156"
+    ],
     "MATH 217": [
       "MATH 118"
     ],
+    "MATH 317": [
+      "MATH 217"
+    ],
+    "MATH 411": [
+      "MATH 314",
+      "MATH 317"
+    ],
+    "MATH 516": [
+      "MATH 417"
+    ],
+    "MATH 225": [
+      "MATH 100",
+      "MATH 113",
+      "MATH 114",
+      "MATH 117",
+      "MATH 134",
+      "MATH 144",
+      "MATH 154",
+      "SCI 100"
+    ],
+    "MATH 334": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 428": [
+      "MATH 326",
+      "MATH 327"
+    ],
+    "MATH 326": [
+      "MATH 227"
+    ],
+    "MATH 256": [
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 429": [
+      "MATH 328",
+      "MATH 327"
+    ],
+    "MATH 228": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 422": [
+      "MATH 227"
+    ],
+    "MATH 226": [
+      "MATH 125"
+    ],
+    "MATH 328": [
+      "MATH 227",
+      "MATH 228"
+    ],
+    "MATH 448": [
+      "MATH 348"
+    ],
+    "MATH 348": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 447": [
+      "MATH 216",
+      "MATH 217"
+    ],
+    "MATH 300": [
+      "MATH 201",
+      "MATH 209"
+    ],
+    "MATH 241": [
+      "MATH 100",
+      "MATH 101",
+      "MATH 114",
+      "MATH 115",
+      "MATH 117",
+      "MATH 125",
+      "MATH 127",
+      "MATH 134",
+      "MATH 136",
+      "MATH 144",
+      "MATH 146",
+      "MATH 154",
+      "MATH 156",
+      "SCI 100"
+    ],
+    "MATH 325": [
+      "MATH 225"
+    ],
+    "MATH 227": [
+      "MATH 127"
+    ],
+    "MATH 357": [
+      "MATH 356"
+    ],
+    "MATH 408": [
+      "STAT 471"
+    ],
+    "MATH 253": [
+      "MATH 101",
+      "MATH 115",
+      "MATH 118",
+      "MATH 136",
+      "MATH 146",
+      "MATH 156",
+      "SCI 100"
+    ],
+    "MATH 356": [
+      "MATH 253"
+    ],
     "STAT 353": [
+      "MATH 253",
+      "STAT 265",
+      "STAT 281"
+    ],
+    "MATH 371": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "STAT 266": [
       "STAT 265",
       "STAT 281"
     ],
@@ -822,10 +2071,6 @@
     "STAT 372": [
       "STAT 266",
       "STAT 276"
-    ],
-    "STAT 266": [
-      "STAT 265",
-      "STAT 281"
     ],
     "STAT 378": [
       "STAT 266",
@@ -849,12 +2094,19 @@
       "STAT 276"
     ],
     "STAT 371": [
+      "STAT 265"
+    ],
+    "STAT 413": [
       "STAT 265",
       "STAT 281"
     ],
     "STAT 432": [
       "STAT 372",
       "STAT 378"
+    ],
+    "STAT 437": [
+      "STAT 252",
+      "STAT 337"
     ],
     "STAT 441": [
       "STAT 378"
@@ -866,6 +2118,263 @@
     "STAT 471": [
       "STAT 371",
       "STAT 281"
+    ],
+    "STAT 479": [
+      "STAT 372",
+      "STAT 378"
+    ],
+    "STAT 501": [
+      "STAT 252",
+      "STAT 337"
+    ],
+    "STAT 502": [
+      "STAT 252",
+      "STAT 337"
+    ],
+    "STAT 503": [
+      "STAT 372",
+      "STAT 378"
+    ],
+    "STAT 505": [
+      "STAT 501",
+      "STAT 502"
+    ],
+    "STAT 515": [
+      "STAT 514"
+    ],
+    "STAT 532": [
+      "STAT 372"
+    ],
+    "STAT 537": [
+      "STAT 437"
+    ],
+    "STAT 553": [
+      "STAT 371"
+    ],
+    "STAT 561": [
+      "STAT 361",
+      "STAT 372",
+      "STAT 471"
+    ],
+    "STAT 562": [
+      "STAT 372",
+      "STAT 471"
+    ],
+    "STAT 566": [
+      "STAT 471"
+    ],
+    "STAT 568": [
+      "STAT 368"
+    ],
+    "STAT 571": [
+      "STAT 471"
+    ],
+    "STAT 575": [
+      "STAT 372",
+      "STAT 512"
+    ],
+    "STAT 578": [
+      "STAT 378"
+    ],
+    "STAT 580": [
+      "STAT 471"
+    ],
+    "STAT 590": [
+      "STAT 568",
+      "STAT 578"
+    ],
+    "STAT 637": [
+      "STAT 537"
+    ],
+    "STAT 664": [
+      "STAT 512",
+      "STAT 566"
+    ],
+    "STAT 665": [
+      "STAT 566",
+      "STAT 512"
+    ],
+    "MATH 315": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 322": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 336": [
+      "MATH 225",
+      "MATH 227"
+    ],
+    "MATH 337": [
+      "MATH 209",
+      "MATH 215",
+      "MATH 217",
+      "MATH 315"
+    ],
+    "MATH 341": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 343": [
+      "MATH 241"
+    ],
+    "MATH 372": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 373": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 381": [
+      "MATH 102",
+      "MATH 125",
+      "MATH 127"
+    ],
+    "MATH 405": [
+      "STAT 371",
+      "STAT 281",
+      "MATH 467"
+    ],
+    "MATH 412": [
+      "MATH 326"
+    ],
+    "MATH 414": [
+      "MATH 314"
+    ],
+    "MATH 417": [
+      "MATH 317",
+      "MATH 414"
+    ],
+    "MATH 418": [
+      "MATH 417"
+    ],
+    "MATH 421": [
+      "MATH 326",
+      "MATH 327"
+    ],
+    "MATH 424": [
+      "MATH 326",
+      "MATH 228"
+    ],
+    "MATH 432": [
+      "MATH 201",
+      "MATH 334",
+      "MATH 336",
+      "MA PH 251"
+    ],
+    "MATH 436": [
+      "MATH 300",
+      "MATH 337"
+    ],
+    "MATH 467": [
+      "MATH 214",
+      "MATH 216"
+    ],
+    "MATH 471": [
+      "STAT 281",
+      "STAT 371"
+    ],
+    "MATH 505": [
+      "STAT 371",
+      "STAT 281",
+      "MATH 467"
+    ],
+    "MATH 506": [
+      "MATH 411"
+    ],
+    "MATH 508": [
+      "STAT 371",
+      "STAT 281",
+      "MATH 467",
+      "FIN 654",
+      "ECON 598"
+    ],
+    "MATH 510": [
+      "MATH 505"
+    ],
+    "MATH 512": [
+      "MATH 326"
+    ],
+    "MATH 514": [
+      "MATH 317"
+    ],
+    "MATH 515": [
+      "STAT 471"
+    ],
+    "MATH 518": [
+      "MATH 516"
+    ],
+    "MATH 519": [
+      "MATH 516"
+    ],
+    "MATH 520": [
+      "MATH 515"
+    ],
+    "MATH 521": [
+      "MATH 446",
+      "MATH 448"
+    ],
+    "MATH 524": [
+      "MATH 334",
+      "MATH 336"
+    ],
+    "MATH 525": [
+      "MATH 524"
+    ],
+    "MATH 527": [
+      "MATH 436"
+    ],
+    "MATH 530": [
+      "MATH 227",
+      "MATH 317",
+      "MATH 447"
+    ],
+    "MATH 536": [
+      "MATH 337",
+      "MATH 436"
+    ],
+    "MATH 538": [
+      "MATH 438"
+    ],
+    "MATH 539": [
+      "MATH 438"
+    ],
+    "MATH 542": [
+      "MATH 418"
+    ],
+    "MATH 543": [
+      "MATH 417",
+      "MATH 514"
+    ],
+    "MATH 556": [
+      "MATH 311",
+      "MATH 411"
+    ],
+    "MATH 570": [
+      "MATH 524"
+    ],
+    "MATH 574": [
+      "MATH 334",
+      "MATH 336"
+    ],
+    "MATH 581": [
+      "MATH 328"
+    ],
+    "MATH 582": [
+      "MATH 326"
+    ],
+    "MATH 583": [
+      "MATH 326",
+      "MATH 327",
+      "MATH 328",
+      "MATH 329"
     ]
   },
   "sequences": {
@@ -899,7 +2408,7 @@
     ]
   },
   "stats": {
-    "total_courses": 75,
-    "total_dependencies": 38
+    "total_courses": 178,
+    "total_dependencies": 237
   }
 }

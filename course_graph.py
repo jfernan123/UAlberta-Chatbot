@@ -85,6 +85,332 @@ STAT_COURSE_NAMES = {
     "STAT 453": "Risk Theory",
     "STAT 471": "Probability I",
     "STAT 479": "Time Series Analysis",
+    "STAT 497": "Reading in Statistics",
+    "STAT 498": "Statistical Topics in Data Science",
+    "STAT 499": "Research Project",
+}
+
+# STAT 500-level (graduate) course names
+STAT_500_NAMES = {
+    "STAT 501": "Directed Study I",
+    "STAT 502": "Directed Study II",
+    "STAT 503": "Directed Study III",
+    "STAT 504": "Directed Study IV",
+    "STAT 505": "Directed Study V",
+    "STAT 512": "Techniques of Mathematics for Statistics",
+    "STAT 513": "Statistical Computing",
+    "STAT 514": "Statistics for Clinical Trials I",
+    "STAT 515": "Statistics for Clinical Trials II",
+    "STAT 532": "Survival Analysis",
+    "STAT 537": "Statistical Methods for Applied Research II",
+    "STAT 541": "Statistics for Learning",
+    "STAT 553": "Risk Theory",
+    "STAT 561": "Sample Survey Methodology",
+    "STAT 562": "Discrete Data Analysis",
+    "STAT 566": "Methods of Statistical Inference",
+    "STAT 568": "Design and Analysis of Experiments",
+    "STAT 571": "Probability and Measure",
+    "STAT 575": "Multivariate Analysis",
+    "STAT 578": "Regression Analysis",
+    "STAT 580": "Stochastic Processes",
+    "STAT 590": "Statistical Consulting",
+}
+
+# STAT graduate/thesis courses
+STAT_GRADUATE_NAMES = {
+    "STAT 600": "Reading in Statistics",
+    "STAT 637": "Statistical Methods for Applied Research III",
+    "STAT 664": "Advanced Statistical Inference",
+    "STAT 665": "Asymptotic Methods in Statistical Inference",
+    "STAT 900": "Directed Research Project",
+    "STAT 900A": "Directed Research Project",
+    "STAT 900B": "Directed Research Project",
+    "STAT 901": "Practicum in Statistics I",
+    "STAT 902": "Practicum in Statistics II",
+    "STAT 903": "Internship in Biostatistics",
+}
+
+# MATH 400-level course names (from UAlberta catalogue)
+MATH_400_NAMES = {
+    "MATH 405": "Stochastic Analysis I",
+    "MATH 408": "Computational Finance",
+    "MATH 411": "Honors Complex Variables",
+    "MATH 412": "Algebraic Number Theory",
+    "MATH 414": "Analysis II",
+    "MATH 415": "Mathematical Finance I",
+    "MATH 417": "Real Analysis",
+    "MATH 418": "Linear Analysis",
+    "MATH 421": "Combinatorics",
+    "MATH 422": "Coding Theory",
+    "MATH 424": "Algebra: Groups and Fields",
+    "MATH 428": "Advanced Ring Theory",
+    "MATH 429": "Advanced Group Theory and Representation Theory",
+    "MATH 432": "Intermediate Differential Equations",
+    "MATH 436": "Intermediate Partial Differential Equations",
+    "MATH 447": "Elementary Topology",
+    "MATH 448": "Introduction to Differential Geometry",
+    "MATH 467": "Theory of Probability",
+    "MATH 471": "Markov Models",
+    "MATH 483": "Topics in Algebra",
+    "MATH 497": "Reading in Mathematics",
+    "MATH 498": "Mathematical Topics in Data Science",
+    "MATH 499": "Research Project",
+}
+
+# MATH 500-level (graduate) course names
+MATH_500_NAMES = {
+    "MATH 505": "Stochastic Analysis I",
+    "MATH 506": "Complex Variables",
+    "MATH 508": "Computational Finance",
+    "MATH 509": "Data Structures and Platforms",
+    "MATH 510": "Stochastic Analysis II",
+    "MATH 512": "Algebraic Number Theory",
+    "MATH 514": "Measure Theory I",
+    "MATH 515": "Mathematical Finance I",
+    "MATH 516": "Linear Analysis",
+    "MATH 518": "Functional Analysis",
+    "MATH 519": "Introduction to Operator Algebras",
+    "MATH 520": "Mathematical Finance II",
+    "MATH 521": "Differential Manifolds",
+    "MATH 524": "Ordinary Differential Equations IIA",
+    "MATH 525": "Ordinary Differential Equations IIB",
+    "MATH 527": "Intermediate Partial Differential Equations",
+    "MATH 530": "Algebraic Topology",
+    "MATH 535": "Numerical Methods I",
+    "MATH 536": "Numerical Solutions of Partial Differential Equations I",
+    "MATH 538": "Techniques of Applied Mathematics",
+    "MATH 539": "Applied Functional Analysis",
+    "MATH 542": "Fourier Analysis",
+    "MATH 543": "Measure Theory II",
+    "MATH 556": "Introduction to Fluid Mechanics",
+    "MATH 570": "Mathematical Biology",
+    "MATH 572": "Mathematical Modelling in Industry, Government, and Sciences",
+    "MATH 574": "Mathematical Modeling of Infectious Diseases",
+    "MATH 581": "Group Theory",
+    "MATH 582": "Rings and Modules",
+    "MATH 583": "Topics in Algebra",
+}
+
+# Graduate/thesis courses
+MATH_GRADUATE_NAMES = {
+    "MATH 600": "Reading in Mathematics",
+    "MATH 601": "Graduate Colloquium",
+    "MATH 617": "Topics in Functional Analysis I",
+    "MATH 623": "Topics in Differential Geometry and Mechanics",
+    "MATH 625": "Advanced Mathematical Finance",
+    "MATH 653": "Seminar in Functional Analysis",
+    "MATH 655": "Topics in Fluid Dynamics",
+    "MATH 663": "Topics in Applied Mathematics I",
+    "MATH 664": "Topics in Applied Mathematics II",
+    "MATH 667": "Topics in Differential Equations I",
+    "MATH 676": "Topics in Geometry I",
+    "MATH 681": "Topics in Algebra",
+    "MATH 682": "Topics in Algebra",
+    "MATH 900": "Directed Research Project",
+    "MATH 900A": "Directed Research Project",
+    "MATH 900B": "Directed Research Project",
+}
+
+# MATH 300-level course names (from UAlberta catalogue)
+MATH_300_NAMES = {
+    "MATH 300": "Advanced Boundary Value Problems",
+    "MATH 311": "Introduction to Ring Theory",
+    "MATH 315": "Calculus IV",
+    "MATH 317": "Honors Calculus IV",
+    "MATH 322": "Graph Theory",
+    "MATH 325": "Linear Algebra III",
+    "MATH 326": "Ring and Modules",
+    "MATH 328": "Group Theory",
+    "MATH 334": "Introduction to Partial Differential Equations",
+    "MATH 336": "Methods of Applied Mathematics",
+    "MATH 337": "Applied Linear Algebra",
+    "MATH 341": "Geometry of Convex Sets",
+    "MATH 343": "Methods of Optimization",
+    "MATH 348": "Differential Geometry of Curves and Surfaces",
+    "MATH 356": "Introduction to Mathematical Finance II",
+    "MATH 357": "Game Theory and Economic Modelling",
+    "MATH 371": "Mathematical Programming and Optimization I",
+    "MATH 372": "Mathematical Programming and Optimization II",
+    "MATH 373": "Continuous Optimization",
+    "MATH 381": "Numerical Analysis",
+}
+
+# MATH prerequisites (from UAlberta catalogue)
+MATH_PREREQUISITES = {
+    # 200-level
+    "MATH 201": {"coreq": ["MATH 209", "MATH 214"]},
+    "MATH 209": {"prereq": ["MATH 101"], "coreq": ["MATH 102"]},
+    "MATH 214": {
+        "prereq": [
+            "MATH 101",
+            "MATH 115",
+            "MATH 118",
+            "MATH 136",
+            "MATH 146",
+            "MATH 156",
+        ]
+    },
+    "MATH 216": {
+        "coreq": ["MATH 101", "MATH 115", "MATH 136", "MATH 146", "MATH 156", "SCI 100"]
+    },
+    "MATH 217": {
+        "prereq": ["MATH 102", "MATH 125", "MATH 127"],
+        "coreq": ["MATH 118", "MATH 216"],
+    },
+    "MATH 225": {
+        "prereq": [
+            "MATH 100",
+            "MATH 113",
+            "MATH 114",
+            "MATH 117",
+            "MATH 134",
+            "MATH 144",
+            "MATH 154",
+            "SCI 100",
+        ],
+        "coreq": ["MATH 102", "MATH 125", "MATH 127"],
+    },
+    "MATH 226": {"prereq": ["MATH 125"]},
+    "MATH 227": {"prereq": ["MATH 127"], "coreq": ["MATH 226"]},
+    "MATH 228": {"prereq": ["MATH 102", "MATH 125", "MATH 127"]},
+    "MATH 241": {
+        "prereq": [
+            "MATH 100",
+            "MATH 101",
+            "MATH 114",
+            "MATH 115",
+            "MATH 117",
+            "MATH 125",
+            "MATH 127",
+            "MATH 134",
+            "MATH 136",
+            "MATH 144",
+            "MATH 146",
+            "MATH 154",
+            "MATH 156",
+            "SCI 100",
+        ]
+    },
+    "MATH 243": {"prereq": ["MATH 241"]},
+    "MATH 253": {
+        "prereq": [
+            "MATH 101",
+            "MATH 115",
+            "MATH 118",
+            "MATH 136",
+            "MATH 146",
+            "MATH 156",
+            "SCI 100",
+        ],
+        "coreq": ["MATH 209", "MATH 214"],
+    },
+    "MATH 256": {"prereq": ["MATH 125", "MATH 127"]},
+    # 300-level
+    "MATH 300": {"prereq": ["MATH 201", "MATH 209"]},
+    "MATH 309": {"prereq": ["MATH 209"]},
+    "MATH 311": {"coreq": ["MATH 215", "MATH 315", "MATH 317", "MA PH 351"]},
+    "MATH 314": {"prereq": ["MATH 209", "MATH 215"]},
+    "MATH 315": {
+        "prereq": ["MATH 102", "MATH 125", "MATH 127"],
+        "coreq": ["MATH 214", "MATH 217"],
+    },
+    "MATH 317": {"prereq": ["MATH 217"]},
+    "MATH 322": {"prereq": ["MATH 102", "MATH 125", "MATH 127"]},
+    "MATH 324": {"prereq": ["MATH 227", "MATH 228"]},
+    "MATH 325": {"prereq": ["MATH 225"]},
+    "MATH 326": {"prereq": ["MATH 227"], "coreq": ["MATH 225", "MATH 228"]},
+    "MATH 327": {"prereq": ["MATH 226", "MATH 227"]},
+    "MATH 328": {"prereq": ["MATH 227", "MATH 228"]},
+    "MATH 329": {"prereq": ["MATH 327"]},
+    "MATH 334": {
+        "prereq": ["MATH 102", "MATH 125", "MATH 127"],
+        "coreq": ["MATH 209", "MATH 214", "MATH 217"],
+    },
+    "MATH 336": {
+        "prereq": ["MATH 225", "MATH 227"],
+        "coreq": ["MATH 209", "MATH 217", "MATH 314"],
+    },
+    "MATH 337": {
+        "prereq": ["MATH 209", "MATH 215", "MATH 217", "MATH 315"],
+        "coreq": ["MATH 201", "MATH 334", "MATH 336", "MA PH 251"],
+    },
+    "MATH 341": {"prereq": ["MATH 102", "MATH 125", "MATH 127"]},
+    "MATH 343": {"prereq": ["MATH 241"]},
+    "MATH 348": {
+        "prereq": ["MATH 102", "MATH 125", "MATH 127"],
+        "coreq": ["MATH 209", "MATH 215", "MATH 217", "MATH 315"],
+    },
+    "MATH 356": {"prereq": ["MATH 253"], "coreq": ["STAT 265", "STAT 281"]},
+    "MATH 357": {"prereq": ["MATH 356"]},
+    "MATH 371": {
+        "prereq": ["MATH 102", "MATH 125", "MATH 127"],
+        "coreq": ["MATH 209", "MATH 214", "MATH 217"],
+    },
+    "MATH 372": {
+        "prereq": ["MATH 102", "MATH 125", "MATH 127"],
+        "coreq": ["MATH 209", "MATH 214", "MATH 217"],
+    },
+    "MATH 373": {
+        "prereq": ["MATH 102", "MATH 125", "MATH 127"],
+        "coreq": ["MATH 209", "MATH 214", "MATH 217"],
+    },
+    "MATH 381": {
+        "prereq": ["MATH 102", "MATH 125", "MATH 127"],
+        "coreq": ["MATH 209", "MATH 214", "MATH 217"],
+    },
+    # 400-level
+    "MATH 405": {"prereq": ["STAT 371", "STAT 281", "MATH 467"]},
+    "MATH 408": {"prereq": ["STAT 471"], "coreq": ["ECE 342"]},
+    "MATH 411": {"prereq": ["MATH 314", "MATH 317"]},
+    "MATH 412": {"prereq": ["MATH 326"]},
+    "MATH 414": {"prereq": ["MATH 314"]},
+    "MATH 415": {"coreq": ["STAT 471"]},
+    "MATH 417": {"prereq": ["MATH 317", "MATH 414"]},
+    "MATH 418": {"prereq": ["MATH 417"], "coreq": ["MATH 447"]},
+    "MATH 421": {"prereq": ["MATH 326", "MATH 327"]},
+    "MATH 422": {"prereq": ["MATH 227"], "coreq": ["MATH 228"]},
+    "MATH 424": {"prereq": ["MATH 326", "MATH 228"], "coreq": ["MATH 328"]},
+    "MATH 428": {"prereq": ["MATH 326", "MATH 327"]},
+    "MATH 429": {"prereq": ["MATH 328", "MATH 327"]},
+    "MATH 432": {"prereq": ["MATH 201", "MATH 334", "MATH 336", "MA PH 251"]},
+    "MATH 436": {"prereq": ["MATH 300", "MATH 337"]},
+    "MATH 447": {
+        "prereq": ["MATH 216", "MATH 217"],
+        "coreq": ["MATH 328", "MA PH 464"],
+    },
+    "MATH 448": {"prereq": ["MATH 348"], "coreq": ["MATH 225", "MATH 227"]},
+    "MATH 467": {"prereq": ["MATH 214", "MATH 216"], "coreq": ["MATH 217"]},
+    "MATH 471": {"prereq": ["STAT 281", "STAT 371"]},
+    # 500-level (graduate)
+    "MATH 505": {"prereq": ["STAT 371", "STAT 281", "MATH 467"]},
+    "MATH 506": {"prereq": ["MATH 411"]},
+    "MATH 508": {"prereq": ["STAT 371", "STAT 281", "MATH 467", "FIN 654", "ECON 598"]},
+    "MATH 510": {"prereq": ["MATH 505"]},
+    "MATH 512": {"prereq": ["MATH 326"]},
+    "MATH 514": {"prereq": ["MATH 317"]},
+    "MATH 515": {"prereq": ["STAT 471"]},
+    "MATH 516": {"prereq": ["MATH 417"], "coreq": ["MATH 447"]},
+    "MATH 518": {"prereq": ["MATH 516"], "coreq": ["MATH 447"]},
+    "MATH 519": {"prereq": ["MATH 516"], "coreq": ["MATH 447"]},
+    "MATH 520": {"prereq": ["MATH 515"], "coreq": ["MATH 510"]},
+    "MATH 521": {"prereq": ["MATH 446", "MATH 448"]},
+    "MATH 524": {"prereq": ["MATH 334", "MATH 336"]},
+    "MATH 525": {"prereq": ["MATH 524"]},
+    "MATH 527": {"prereq": ["MATH 436"], "coreq": ["MATH 516"]},
+    "MATH 530": {"prereq": ["MATH 227", "MATH 317", "MATH 447"]},
+    "MATH 535": {"prereq": []},
+    "MATH 536": {"prereq": ["MATH 337", "MATH 436"]},
+    "MATH 538": {"prereq": ["MATH 438"]},
+    "MATH 539": {"prereq": ["MATH 438"]},
+    "MATH 542": {"prereq": ["MATH 418"]},
+    "MATH 543": {"prereq": ["MATH 417", "MATH 514"], "coreq": ["MATH 447"]},
+    "MATH 556": {"prereq": ["MATH 311", "MATH 411"], "coreq": ["MATH 436"]},
+    "MATH 570": {"prereq": ["MATH 524"]},
+    "MATH 572": {"prereq": []},
+    "MATH 574": {"prereq": ["MATH 334", "MATH 336"]},
+    "MATH 581": {"prereq": ["MATH 328"]},
+    "MATH 582": {"prereq": ["MATH 326"]},
+    "MATH 583": {"prereq": ["MATH 326", "MATH 327", "MATH 328", "MATH 329"]},
 }
 
 # MATH prerequisites for STAT courses (cross-discipline)
@@ -103,42 +429,61 @@ STAT_MATH_PREREQUISITES = {
     "STAT 353": {"prereq": ["MATH 253"]},
 }
 
-# STAT prerequisites (from program requirements)
+# STAT prerequisites (from UAlberta catalogue)
 STAT_PREREQUISITES = {
+    # 200-level
     "STAT 252": ["STAT 151", "STAT 161", "STAT 235", "STAT 141", "SCI 151"],
     "STAT 265": [],
     "STAT 266": ["STAT 265", "STAT 281"],
     "STAT 276": ["STAT 265", "STAT 281"],
+    "STAT 281": [],
+    # 300-level
     "STAT 337": ["STAT 151", "STAT 161", "SCI 151"],
-    "STAT 353": ["STAT 265", "STAT 281"],
+    "STAT 353": ["MATH 253", "STAT 265", "STAT 281"],
     "STAT 361": ["STAT 266", "STAT 276"],
     "STAT 368": ["STAT 266", "STAT 276"],
-    "STAT 371": ["STAT 265", "STAT 281"],
+    "STAT 371": ["STAT 265"],
     "STAT 372": ["STAT 266", "STAT 276"],
     "STAT 378": ["STAT 266", "STAT 276"],
+    # 400-level
+    "STAT 413": ["STAT 265", "STAT 281"],
     "STAT 432": ["STAT 372", "STAT 378"],
+    "STAT 437": ["STAT 252", "STAT 337"],
     "STAT 441": ["STAT 378"],
     "STAT 453": ["STAT 371", "STAT 281"],
     "STAT 471": ["STAT 371", "STAT 281"],
-}
-
-# STAT prerequisites (from program requirements)
-STAT_PREREQUISITES = {
-    "STAT 252": ["STAT 151", "STAT 161", "STAT 235", "STAT 141", "SCI 151"],
-    "STAT 265": [],  # Entry level for probability track
-    "STAT 266": ["STAT 265", "STAT 281"],
-    "STAT 276": ["STAT 265", "STAT 281"],
-    "STAT 337": ["STAT 151", "STAT 161", "SCI 151"],
-    "STAT 353": ["STAT 265", "STAT 281"],
-    "STAT 361": ["STAT 266", "STAT 276"],
-    "STAT 368": ["STAT 266", "STAT 276"],
-    "STAT 371": ["STAT 265", "STAT 281"],
-    "STAT 372": ["STAT 266", "STAT 276"],
-    "STAT 378": ["STAT 266", "STAT 276"],
-    "STAT 432": ["STAT 372", "STAT 378"],
-    "STAT 441": ["STAT 378"],
-    "STAT 453": ["STAT 371", "STAT 281"],
-    "STAT 471": ["STAT 371", "STAT 281"],
+    "STAT 479": ["STAT 372", "STAT 378"],
+    "STAT 497": [],
+    "STAT 498": [],
+    "STAT 499": [],
+    # 500-level
+    "STAT 501": ["STAT 252", "STAT 337"],
+    "STAT 502": ["STAT 252", "STAT 337"],
+    "STAT 503": ["STAT 372", "STAT 378"],
+    "STAT 504": [],
+    "STAT 505": ["STAT 501", "STAT 502"],
+    "STAT 512": [],
+    "STAT 513": [],
+    "STAT 514": [],
+    "STAT 515": ["STAT 514"],
+    "STAT 532": ["STAT 372"],
+    "STAT 537": ["STAT 437"],
+    "STAT 541": [],
+    "STAT 553": ["STAT 371"],
+    "STAT 561": ["STAT 361", "STAT 372", "STAT 471"],
+    "STAT 562": ["STAT 372", "STAT 471"],
+    "STAT 566": ["STAT 471"],
+    "STAT 568": ["STAT 368"],
+    "STAT 571": ["STAT 471"],
+    "STAT 575": ["STAT 372", "STAT 512"],
+    "STAT 578": ["STAT 378"],
+    "STAT 580": ["STAT 471"],
+    "STAT 590": ["STAT 568", "STAT 578"],
+    # Graduate
+    "STAT 600": [],
+    "STAT 637": ["STAT 537"],
+    "STAT 664": ["STAT 512", "STAT 566"],
+    "STAT 665": ["STAT 566", "STAT 512"],
 }
 
 # Course sequences - defines which courses are in the same progression
@@ -679,6 +1024,152 @@ def build_graph(input_file, output_file):
                 "sequence": get_sequence(stat_code),
                 "math_prerequisites": math_prereqs if math_prereqs else None,
             }
+
+    # Add STAT 500-level course names
+    for stat_code, stat_name in STAT_500_NAMES.items():
+        if stat_code in courses:
+            courses[stat_code]["name"] = stat_name
+        else:
+            try:
+                year_level = int(stat_code.split()[1])
+                if 500 <= year_level < 600:
+                    year_level = 5
+            except:
+                year_level = 5
+
+            prereqs = STAT_PREREQUISITES.get(stat_code, [])
+
+            courses[stat_code] = {
+                "name": stat_name,
+                "url": "",
+                "year_level": year_level,
+                "prerequisites": prereqs,
+                "alternatives": [],
+                "sequence": get_sequence(stat_code),
+            }
+
+    # Add STAT graduate courses
+    for stat_code, stat_name in STAT_GRADUATE_NAMES.items():
+        if stat_code in courses:
+            courses[stat_code]["name"] = stat_name
+        else:
+            try:
+                year_level = int(stat_code.split()[1])
+                if year_level >= 600:
+                    year_level = 5
+            except:
+                year_level = 5
+
+            prereqs = STAT_PREREQUISITES.get(stat_code, [])
+
+            courses[stat_code] = {
+                "name": stat_name,
+                "url": "",
+                "year_level": year_level,
+                "prerequisites": prereqs,
+                "alternatives": [],
+                "sequence": get_sequence(stat_code),
+            }
+
+    # Add MATH 300-level course names
+    for math_code, math_name in MATH_300_NAMES.items():
+        if math_code in courses:
+            courses[math_code]["name"] = math_name
+        else:
+            try:
+                year_level = int(math_code.split()[1])
+                if 300 <= year_level < 400:
+                    year_level = 3
+            except:
+                year_level = 3
+
+            courses[math_code] = {
+                "name": math_name,
+                "url": "",
+                "year_level": year_level,
+                "prerequisites": [],
+                "alternatives": [],
+                "sequence": get_sequence(math_code),
+            }
+
+    # Add MATH 400-level course names
+    for math_code, math_name in MATH_400_NAMES.items():
+        if math_code in courses:
+            courses[math_code]["name"] = math_name
+        else:
+            try:
+                year_level = int(math_code.split()[1])
+                if 400 <= year_level < 500:
+                    year_level = 4
+            except:
+                year_level = 4
+
+            prereq_data = MATH_PREREQUISITES.get(math_code, {})
+            prereqs = prereq_data.get("prereq", [])
+
+            courses[math_code] = {
+                "name": math_name,
+                "url": "",
+                "year_level": year_level,
+                "prerequisites": prereqs,
+                "alternatives": [],
+                "sequence": get_sequence(math_code),
+            }
+
+    # Add MATH 500-level course names
+    for math_code, math_name in MATH_500_NAMES.items():
+        if math_code in courses:
+            courses[math_code]["name"] = math_name
+        else:
+            try:
+                year_level = int(math_code.split()[1])
+                if 500 <= year_level < 600:
+                    year_level = 5
+            except:
+                year_level = 5
+
+            prereq_data = MATH_PREREQUISITES.get(math_code, {})
+            prereqs = prereq_data.get("prereq", [])
+
+            courses[math_code] = {
+                "name": math_name,
+                "url": "",
+                "year_level": year_level,
+                "prerequisites": prereqs,
+                "alternatives": [],
+                "sequence": get_sequence(math_code),
+            }
+
+    # Add graduate courses
+    for math_code, math_name in MATH_GRADUATE_NAMES.items():
+        if math_code in courses:
+            courses[math_code]["name"] = math_name
+        else:
+            try:
+                year_level = int(math_code.split()[1])
+                if year_level >= 600:
+                    year_level = 5
+            except:
+                year_level = 5
+
+            prereq_data = MATH_PREREQUISITES.get(math_code, {})
+            prereqs = prereq_data.get("prereq", [])
+
+            courses[math_code] = {
+                "name": math_name,
+                "url": "",
+                "year_level": year_level,
+                "prerequisites": prereqs,
+                "alternatives": [],
+                "sequence": get_sequence(math_code),
+            }
+
+    # Also update 200/300 level MATH courses with prerequisites from MATH_PREREQUISITES
+    for math_code, prereq_data in MATH_PREREQUISITES.items():
+        if math_code in courses:
+            prereqs = prereq_data.get("prereq", [])
+            if prereqs and not courses[math_code].get("prerequisites"):
+                courses[math_code]["prerequisites"] = prereqs
 
     # Build dependencies dict
     dependencies = {}
