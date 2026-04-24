@@ -118,5 +118,29 @@
     "question": "What is the honors math program?",
     "response": "The honors math program is designed for students with approved qualifications, allowing them to complete a special field of study in four consecutive years. Students can switch courses from the equivalent course required by their program, transferring homework and exam weights accordingly. The program is supervised by a department and offers support for students transitioning from honors to the required course.",
     "rating": -1
+  },
+  {
+    "timestamp": "2026-04-23T17:54:40.023355",
+    "question": "What courses are offered in first year?",
+    "response": "The courses offered in first year are:\n\n- MATH 100: Calculus for Engineering I  \n- MATH 101: Calculus for Engineering II  \n- MATH 111: Course MATH 111  \n- MATH 113: Course MATH 113  \n- MATH 114: Course MATH 114  \n- MATH 115: Course MATH 115  \n- MATH 117: Honors Calculus I [honors]  \n- MATH 118: Honors Calculus II [honors]  \n\nThese courses are all listed under the Year 1 Courses section.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-23T17:55:47.221330",
+    "question": "What statistics courses are offered?",
+    "response": "The statistics courses offered include:\n\n- **Year 1**:  \n  - MATH 100, 101, 111, 113, 114, 115, 117, 118, 125, 127, 134, 136, 144, 146, 154, 156, 160, 161, 181, 235, 252, 265, 266, 276, 281.  \n\n- **Year 2**:  \n  - MATH 201, 209, 214, 215, 216, 225, 226, 227, 228, 241, 253, 256, and STAT 235, 252, 265, 266, 276, 281.  \n\nThese courses are structured by year level (100-400) and cover topics like calculus, linear algebra, statistics, and probability.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-23T18:01:15.279794",
+    "question": "What statistics courses are offered?",
+    "response": "The statistics courses offered include:\n\n- **Year 1**:  \n  - STAT 151: Introduction to Applied Statistics I  \n  - STAT 161: Introductory Statistics for Business and Economics  \n  - STAT 181: Introduction to Combinatorics and Probability  \n\n- **Year 2**:  \n  - STAT 235: Introductory Statistics for Engineering  \n  - STAT 252: Introduction to Applied Statistics II  \n  - STAT 265: Probability and Statistics I  \n  - STAT 266: Probability and Statistics II  \n  - STAT 276: Statistics for Data Science  ",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-23T18:02:37.536048",
+    "question": "What courses does math 118 depend on?",
+    "response": "Mathematics 118 (Honors Calculus II) depends on **MATH 117 (Honors Calculus I)**. This is explicitly stated in the Notes section, which notes that MATH 117 and 118 must be taken by Year 1 students in Honors in Mathematics and Economics, and that MATH 118 is recommended for Year 1 students in Honors in Mathematics and Finance.",
+    "rating": 1
   }
 ]

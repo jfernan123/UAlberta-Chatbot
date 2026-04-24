@@ -4,10 +4,18 @@ import re
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
+from langchain_core.messages import HumanMessage, AIMessage
+from langchain.tools import tool
 from retriever import load_retriever
+from course_tools import (
+    get_stat_courses,
+    get_math_courses,
+    get_course_prerequisites,
+    get_course_sequence,
+    search_courses,
+)
 
 # Case-insensitivity mapping for common variations
-# Keys are regex patterns, values are replacement strings
 QUERY_VARIATIONS = [
     (r"\bmdp\b", "MDP"),
     (r"\bhonours?\b", "Honors"),
@@ -24,7 +32,7 @@ QUERY_VARIATIONS = [
     (r"\b2nd year\b", "second year"),
     (r"\b3rd year\b", "third year"),
     (r"\b4th year\b", "fourth year"),
-    (r"\bundergraduateuate\b", "undergraduate"),  # Fix double undergrad
+    (r"\bundergraduateuate\b", "undergraduate"),
 ]
 
 
@@ -36,81 +44,174 @@ def normalize_query(query: str) -> str:
     return normalized
 
 
-def load_course_graph():
-    """Load course dependency graph."""
-    try:
-        with open("data/course_graph.json") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return None
+def extract_course_codes(query: str) -> list:
+    """Extract course codes from a query."""
+    import re
+
+    pattern = r"\b(MATH|STAT)\s*(\d{3})\b"
+    matches = re.findall(pattern, query, re.IGNORECASE)
+    return [f"{prefix.upper()} {num}" for prefix, num in matches]
 
 
-def get_course_info(course_code):
-    """Look up course information from the course graph."""
-    graph = load_course_graph()
-    if not graph:
-        return None
-    return graph.get("courses", {}).get(course_code)
+def detect_course_tools(query: str) -> list:
+    """Detect which course tools should be called based on query keywords."""
+    query_lower = query.lower()
+    tools_to_call = []
+    course_codes = extract_course_codes(query)
+
+    # Prerequisite queries have highest priority (needs course code)
+    prereq_keywords = [
+        "prerequisite",
+        "prereq",
+        "require",
+        "before i take",
+        "before taking",
+        "need before",
+    ]
+    if any(kw in query_lower for kw in prereq_keywords) and course_codes:
+        tools_to_call.append(get_course_prerequisites)
+        return tools_to_call  # Prioritize prereq over general course queries
+
+    # Sequence/pathway queries
+    seq_keywords = ["sequence", "path", "stream", "track", "after completing"]
+    if any(kw in query_lower for kw in seq_keywords):
+        tools_to_call.append(get_course_sequence)
+        return tools_to_call
+
+    # Statistics course queries
+    stat_keywords = [
+        "statistic",
+        "statistics",
+        "stat ",
+        "stat",
+        "data science",
+        "biostat",
+        "probability",
+    ]
+    if any(kw in query_lower for kw in stat_keywords):
+        tools_to_call.append(get_stat_courses)
+
+    # Math course queries
+    math_keywords = [
+        "math ",
+        "mathematic",
+        "calculus",
+        "algebra",
+        "analysis",
+        "geometry",
+    ]
+    if any(kw in query_lower for kw in math_keywords):
+        tools_to_call.append(get_math_courses)
+
+    # Search queries (fallback)
+    search_keywords = ["search", "find", "look for", "offered", "without any prereq"]
+    if any(kw in query_lower for kw in search_keywords):
+        tools_to_call.append(search_courses)
+
+    return tools_to_call
 
 
-def get_course_prereqs(course_code):
-    """Get prerequisites for a course."""
-    course = get_course_info(course_code)
-    if course:
-        return course.get("alternatives", [])
-    return []
+def call_course_tools(query: str) -> str:
+    """Call appropriate course tools based on query."""
+    tools_to_call = detect_course_tools(query)
+    course_codes = extract_course_codes(query)
+
+    if not tools_to_call:
+        return ""
+
+    results = []
+    for tool_func in tools_to_call:
+        try:
+            if tool_func == get_stat_courses:
+                result = tool_func.invoke({})
+            elif tool_func == get_math_courses:
+                result = tool_func.invoke({})
+            elif tool_func == get_course_prerequisites:
+                # Use first course code found, or default
+                code = course_codes[0] if course_codes else None
+                if code:
+                    result = tool_func.invoke({"course_code": code})
+                else:
+                    result = "No specific course code found in question."
+            elif tool_func == get_course_sequence:
+                # Try to extract sequence name from query
+                seq = extract_sequence_from_query(query)
+                result = tool_func.invoke({"sequence_name": seq})
+            elif tool_func == search_courses:
+                # Extract keyword from query
+                keyword = extract_search_keyword(query)
+                result = tool_func.invoke({"keyword": keyword})
+            else:
+                result = ""
+
+            if result:
+                results.append(result)
+        except Exception as e:
+            results.append(f"Error calling {tool_func.name}: {e}")
+
+    return "\n\n".join(results)
 
 
-def format_course_graph():
-    """Format course graph for context."""
-    graph = load_course_graph()
-    if not graph:
-        return "No course data available."
-
-    year_labels = {
-        0: "Graduate/Other",
-        1: "Year 1",
-        2: "Year 2",
-        3: "Year 3",
-        4: "Year 4",
+def extract_sequence_from_query(query: str) -> str | None:
+    """Extract sequence name from query."""
+    query_lower = query.lower()
+    sequences = {
+        "engineering": ["engineering"],
+        "honors": ["honors", "honour"],
+        "regular_life_sci": ["life sci", "life science"],
+        "regular_math_phys": ["math phys", "physical science"],
+        "regular_business": ["business", "economics"],
+        "applied_stats": ["applied stat"],
+        "probability": ["probability"],
     }
 
-    lines = ["=== Course Information ==="]
+    for seq_name, keywords in sequences.items():
+        if any(kw in query_lower for kw in keywords):
+            return seq_name
 
-    # Group courses by year level for better organization
-    by_year = {}
-    for code, info in graph.get("courses", {}).items():
-        if not code.startswith(("MATH", "STAT")):
-            continue
-        year = info.get("year_level", 0)
-        if year not in by_year:
-            by_year[year] = []
-        by_year[year].append((code, info))
+    # NEW: Detect sequence from course code in query (Option A)
+    course_codes = extract_course_codes(query)
+    if course_codes:
+        # Map course to its sequence
+        course_to_seq = {
+            "MATH 117": "honors",
+            "MATH 118": "honors",
+            "MATH 216": "honors",
+            "MATH 217": "honors",
+            "MATH 100": "engineering",
+            "MATH 101": "engineering",
+            "MATH 209": "engineering",
+            "MATH 134": "regular_life_sci",
+            "MATH 136": "regular_life_sci",
+            "MATH 144": "regular_math_phys",
+            "MATH 146": "regular_math_phys",
+            "MATH 154": "regular_business",
+            "MATH 156": "regular_business",
+        }
+        if course_codes[0] in course_to_seq:
+            return course_to_seq[course_codes[0]]
 
-    for year in sorted(by_year.keys()):
-        year_label = year_labels.get(year, "Unknown")
-        lines.append(f"\n--- {year_label} Courses ---")
-        for code, info in sorted(by_year[year]):
-            name = info.get("name", "Unknown")
-            prereqs = info.get("prerequisites", [])
-            seq = info.get("sequence", "")
+    return None
 
-            line = f"{code}: {name}"
-            if seq:
-                line += f" [{seq.replace('_', ' ')}]"
-            lines.append(line)
 
-            if prereqs:
-                lines.append(f"  Prerequisites: {', '.join(prereqs)}")
+def extract_search_keyword(query: str) -> str:
+    """Extract search keyword from query."""
+    query_lower = query.lower()
+    # Common patterns for searching
+    patterns = [
+        r"courses (?:about|covering|dealing with|matching) (\w+)",
+        r"courses (?:in|about|for) (\w+)",
+        r"what courses (?:cover|deal with|match) (\w+)",
+    ]
 
-    # Add sequence overview
-    sequences = graph.get("sequences", {})
-    if sequences:
-        lines.append("\n=== Course Sequences ===")
-        for seq_name, courses in sequences.items():
-            lines.append(f"{seq_name.replace('_', ' ').title()}: {', '.join(courses)}")
+    import re
 
-    return "\n".join(lines[:60])  # Limit to first 40 courses
+    for pattern in patterns:
+        match = re.search(pattern, query_lower)
+        if match:
+            return match.group(1)
+
+    return query_lower.split()[-1] if query_lower.split() else "calculus"
 
 
 def build_chatbot():
@@ -119,7 +220,13 @@ def build_chatbot():
 
     prompt = ChatPromptTemplate.from_template("""
 You are a helpful assistant for the University of Alberta Math & Statistics department.
-Answer questions based on the context provided.
+Answer questions based on the course information and context provided.
+
+IMPORTANT INSTRUCTIONS:
+1. When the Course Information section contains specific details about courses (like prerequisites, course names, or sequences), you MUST use that information to answer the question.
+2. Do NOT say a course is not listed when it appears in the Course Information.
+3. Do NOT make up course names or numbers - only use courses that appear in the Course Information section.
+4. If the Course Information mentions specific courses (like MATH 118 or MATH 217), include them in your answer.
 
 IMPORTANT TERMINOLOGY CLARIFICATION:
 - "Undergraduate" in this context refers to COURSE LEVEL (100-400 level), NOT first-year students
@@ -129,10 +236,10 @@ IMPORTANT TERMINOLOGY CLARIFICATION:
 - When users ask about "first year courses", look for 100-level courses
 - When users ask about "second year courses", look for 200-level courses
 
-Course Dependency Information (use this when users ask about course prerequisites):
-{course_graph}
+Course Information:
+{course_info}
 
-Main Context:
+Main Context (from department website):
 {context}
 
 Question:
@@ -145,23 +252,42 @@ Answer:
         return "\n\n".join(doc.page_content for doc in docs)
 
     def build_input(question):
-        # Normalize query for case-insensitive matching
+        # Detect course tools BEFORE normalization (to preserve STAT/STAT keywords)
+        course_info = call_course_tools(question)
+
+        # Normalize query for retrieval
         normalized_q = normalize_query(question)
 
         docs = retriever.invoke(normalized_q)
         context = "\n\n".join(doc.page_content for doc in docs)
-        course_info = format_course_graph()
+
+        if not course_info:
+            course_info = "No specific course information available for this query."
+
         return {
             "context": context,
-            "course_graph": course_info,
+            "course_info": course_info,
             "question": normalized_q,
         }, docs
 
     def run_chain(question):
-        # Normalize query for consistent processing
+        # Get course info BEFORE normalization (preserves STAT/MATH keywords)
+        course_info = call_course_tools(question)
+
+        # Then normalize for retrieval
         normalized_q = normalize_query(question)
 
-        inputs, docs = build_input(normalized_q)
+        docs = retriever.invoke(normalized_q)
+        context = "\n\n".join(doc.page_content for doc in docs)
+
+        if not course_info:
+            course_info = "No specific course information available for this query."
+
+        inputs = {
+            "context": context,
+            "course_info": course_info,
+            "question": normalized_q,
+        }
         answer = (prompt | llm | StrOutputParser()).invoke(inputs)
         return answer
 

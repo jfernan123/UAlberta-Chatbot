@@ -164,6 +164,36 @@ TEST_CASES = [
         "expected_topics": ["Mathematics program overview"],
         "category": "programs",
     },
+    {
+        "question": "What are the prerequisites for MATH 209?",
+        "expected_keywords": ["MATH 101", "prerequisite"],
+        "expected_topics": ["MATH 209 prerequisites"],
+        "category": "prerequisites",
+    },
+    {
+        "question": "What do I need before taking STAT 266?",
+        "expected_keywords": ["STAT 265", "MATH 209"],
+        "expected_topics": ["STAT 266 prerequisites"],
+        "category": "prerequisites",
+    },
+    {
+        "question": "What courses can I take after completing MATH 117?",
+        "expected_keywords": ["MATH 118", "MATH 217"],
+        "expected_topics": ["Honors calculus sequence"],
+        "category": "prerequisites",
+    },
+    {
+        "question": "What courses can I take without any prerequisites?",
+        "expected_keywords": ["MATH 100", "MATH 117", "STAT 151", "entry"],
+        "expected_topics": ["Entry-level courses"],
+        "category": "prerequisites",
+    },
+    {
+        "question": "What MATH courses do I need before STAT 265?",
+        "expected_keywords": ["MATH 209", "MATH 214", "MATH 217"],
+        "expected_topics": ["STAT 265 MATH requirements"],
+        "category": "prerequisites",
+    },
 ]
 
 
