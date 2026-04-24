@@ -92,6 +92,29 @@ def detect_course_tools(query: str) -> list:
     if any(kw in query_lower for kw in stat_keywords):
         tools_to_call.append(get_stat_courses)
 
+    # Year level queries - check BEFORE math_keywords (to catch "100-level math" etc)
+    year_keywords = [
+        "first year",
+        "second year",
+        "third year",
+        "yr1",
+        "yr2",
+        "yr3",
+        "100-level",
+        "100 level",
+        "200-level",
+        "200 level",
+        "300-level",
+        "300 level",
+        "year 1",
+        "year 2",
+        "year 3",
+    ]
+    for kw in year_keywords:
+        if kw in query_lower:
+            tools_to_call = [get_courses_by_level]
+            return tools_to_call
+
     # Math course queries
     math_keywords = [
         "math ",
@@ -163,14 +186,36 @@ def call_course_tools(query: str) -> str:
                 result = tool_func.invoke({"keyword": keyword})
             elif tool_func == get_courses_by_level:
                 # Determine department and level from query
-                level = (
-                    "senior"
-                    if any(
-                        kw in query.lower()
-                        for kw in ["senior", "400-level", "yr4", "fourth year"]
-                    )
-                    else "graduate"
-                )
+                q = query.lower()
+                # Check for year level
+                if any(
+                    kw in q
+                    for kw in ["first year", "100-level", "100 level", "yr1", "year 1"]
+                ):
+                    level = "first"
+                elif any(
+                    kw in q
+                    for kw in ["second year", "200-level", "200 level", "yr2", "year 2"]
+                ):
+                    level = "second"
+                elif any(
+                    kw in q
+                    for kw in ["third year", "300-level", "300 level", "yr3", "year 3"]
+                ):
+                    level = "third"
+                elif any(
+                    kw in q
+                    for kw in ["senior", "400-level", "400 level", "yr4", "fourth year"]
+                ):
+                    level = "senior"
+                elif any(
+                    kw in q
+                    for kw in ["graduate", "grad ", "500-level", "500 level", "yr5"]
+                ):
+                    level = "graduate"
+                else:
+                    level = "graduate"  # default
+                # Determine department
                 dept = None
                 if "math" in query.lower():
                     dept = "math"
