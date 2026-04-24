@@ -304,12 +304,6 @@ Add a routing agent to classify questions and route to specialized retrieval. Th
 ### Reinforcement Learning on User Responses
 Implement RL-based improvement using explicit thumbs up/down feedback to weight retrieval results. This would let the system learn which content sources are most helpful based on user satisfaction.
 
-### Enhanced Scraping (Coming Soon)
-Add Playwright/Selenium support to capture JavaScript-rendered content, including program overview sections currently missed by the basic scraper:
-- Fix Statistics program intro extraction
-- Capture calendar table content
-- Extract dynamic/hidden page elements
-
 ### Additional Program Content
 Continue expanding scraped pages to cover more UAlberta Math & Stats programs and course catalog details.
 
