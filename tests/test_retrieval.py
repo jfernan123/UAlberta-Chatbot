@@ -12,7 +12,10 @@ Usage:
 """
 
 import argparse
-from retriever import load_retriever
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from retrieval import load_retriever
 
 DEFAULT_QUERIES = [
     "what are the prerequisites for STAT 371",

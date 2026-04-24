@@ -7,7 +7,7 @@ Analyzes feedback patterns to identify areas for improvement
 import json
 from collections import Counter
 from datetime import datetime
-from feedback import load_feedback, get_statistics, get_low_rated_questions
+from .feedback import load_feedback, get_statistics, get_low_rated_questions
 
 
 def categorize_question(question: str) -> str:

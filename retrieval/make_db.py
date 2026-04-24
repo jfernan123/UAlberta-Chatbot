@@ -9,8 +9,8 @@ Usage:
 """
 
 import argparse
-from chunker import chunk_json
-from vector_store import create_vector_db
+from .chunker import chunk_json
+from .vector_store import create_vector_db
 
 
 def main():

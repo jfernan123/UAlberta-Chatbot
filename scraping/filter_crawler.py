@@ -16,7 +16,7 @@ import argparse
 import json
 import os
 
-from parsers import parse_html_to_sections
+from .parsers import parse_html_to_sections
 
 
 def score_url(url):
