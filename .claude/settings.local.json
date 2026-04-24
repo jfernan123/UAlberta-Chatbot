@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "Bash(python -c ' *)",
+      "Bash(python tests/test_suite.py)"
     ]
   }
 }

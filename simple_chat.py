@@ -1,24 +1,10 @@
-"""
-test_chatbot.py
-
-Quick CLI chatbot using Claude Haiku + the vector DB retriever.
-No Streamlit, no Ollama LLM — just retrieval + Claude in the terminal.
-
-Usage:
-    python test_chatbot.py
-    python test_chatbot.py --k 6
-"""
-
 import argparse
-import os
 import re
-import sys
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import anthropic
 from retrieval import load_retriever
 
 # Set to True to print retrieved chunks before each answer
-SHOW_CHUNKS = True
+SHOW_CHUNKS = False
 
 MODEL = "claude-haiku-4-5"
 SYSTEM_PROMPT = """\
@@ -39,6 +25,7 @@ def main():
     retriever.search_kwargs["k"] = args.k
 
     client = anthropic.Anthropic()
+    history = []
     print(f"Ready. Using {MODEL} with k={args.k}. Type 'quit' to exit.\n")
 
     while True:
@@ -51,7 +38,7 @@ def main():
         if not question or question.lower() in ("quit", "exit"):
             break
 
-        # If query mentions a course code (e.g. STAT 371), prepend it so BM25 matches exactly
+        # Prepend course codes so BM25 matches exactly (e.g. STAT 471)
         course_codes = re.findall(r'\b([A-Z]{2,6})\s*(\d{3})\b', question.upper())
         query = question
         if course_codes:
@@ -67,13 +54,19 @@ def main():
                 print(f"\n[{i}] {doc.page_content}")
             print("\n" + "-" * 40)
 
+        history.append({"role": "user", "content": f"Context:\n{context}\n\nQuestion: {question}"})
+
         response = client.messages.create(
             model=MODEL,
             max_tokens=1024,
             system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": f"Context:\n{context}\n\nQuestion: {question}"}],
+            messages=history,
         )
-        print(f"\nAssistant: {response.content[0].text}\n")
+
+        answer = response.content[0].text
+        history.append({"role": "assistant", "content": answer})
+
+        print(f"\nAssistant: {answer}\n")
 
 
 if __name__ == "__main__":

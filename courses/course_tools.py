@@ -377,38 +377,42 @@ def get_courses_by_level(
     if not filtered:
         return f"No {department or ''} courses found for level '{level}'."
 
-    # Group and format
-    by_num = {}
+    # Group by century (100s, 200s, etc.)
+    by_century = {}
     for code, info in filtered.items():
         try:
-            num = int(code.split()[1])
-            if num not in by_num:
-                by_num[num] = []
-            by_num[num].append((code, info))
-        except:
+            century = int(code.split()[1]) // 100
+            if century not in by_century:
+                by_century[century] = []
+            by_century[century].append((code, info))
+        except Exception:
             pass
+
+    century_labels = {
+        1: "First Year (100-level)",
+        2: "Second Year (200-level)",
+        3: "Third Year (300-level)",
+        4: "Senior (400-level)",
+        5: "Graduate (500-level)",
+    }
 
     lines = [
         f"{department.title() if department else ''} {level.title() if level else ''} Courses:".strip()
     ]
 
-    for num in sorted(by_num.keys())[:3]:  # Limit to first 3 course number groups
-        century = num // 100  # 505 -> 5, 432 -> 4, etc.
-        level_label = {
-            1: "First Year (100-level)",
-            2: "Second Year (200-level)",
-            3: "Third Year (300-level)",
-            4: "Senior (400-level)",
-            5: "Graduate (500-level)",
-        }.get(century, f"{century}00-level")
-
-        lines.append(f"\n{level_label}:")
-        for code, info in sorted(by_num[num])[:10]:  # Limit to 10 per level
+    total = len(filtered)
+    shown = 0
+    for century in sorted(by_century.keys()):
+        label = century_labels.get(century, f"{century}00-level")
+        lines.append(f"\n{label}:")
+        for code, info in sorted(by_century[century]):
             prereqs = info.get("prerequisites", [])
             lines.append(f"  {code}: {info['name']}")
             if prereqs:
                 lines.append(f"    Prerequisites: {', '.join(prereqs)}")
+            shown += 1
 
-    lines.append(f"\n... and {sum(len(v) for v in by_num.values()) - 30} more courses")
+    if shown < total:
+        lines.append(f"\n... and {total - shown} more courses")
 
     return "\n".join(lines)
