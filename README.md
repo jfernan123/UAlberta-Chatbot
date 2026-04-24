@@ -11,12 +11,19 @@ A RAG chatbot for University of Alberta Math & Statistics department using local
 - User feedback collection with 👍/👎 ratings
 - Analytics dashboard for response improvement
 - CLI and web interface
+- **Case-insensitive query handling** (mdp → MDP, honours → Honors, etc.)
+- **LangChain tools for on-demand course information** (prerequisites, sequences, searches)
+- **Course dependency graph** with MATH and STAT prerequisites
 
 ## Prerequisites
 
 - Python 3.12+
 - [Ollama](https://ollama.com) installed
 - assuming `uv` dependency management, but .lock and .toml left out for other environment users
+- Data files (pre-configured):
+  - `data/pages_math.json` - 137 scraped pages
+  - `data/course_graph.json` - 75 courses with prerequisites
+  - `db/` - Chroma vector database
 
 ## Setup
 
@@ -100,10 +107,20 @@ The chatbot includes structured course information that helps answer questions a
 - First-year courses (100-level)
 - Second-year courses (200-level)
 - Course prerequisites and alternatives
+- MATH and STAT course sequences
 - Course levels clarified: 100=Year 1, 200=Year 2, etc.
 
 #### How It Works
-Course data is stored in `data/course_graph.json` and loaded as external context for the LLM on each query.
+Course data is stored in `data/course_graph.json` and loaded via LangChain tools on-demand, not in the prompt. This prevents context bloat and ensures accurate prerequisite information.
+
+#### Course Sequences Supported
+- **Engineering**: MATH 100 → MATH 101 → MATH 209
+- **Honors**: MATH 117 → MATH 118 → MATH 217
+- **Regular Life Sciences**: MATH 134 → MATH 136
+- **Regular Math/Physical Sciences**: MATH 144 → MATH 146
+- **Regular Business**: MATH 154 → MATH 156
+- **Applied Statistics**: STAT 151 → STAT 252 → STAT 266 → STAT 372 → STAT 378
+- **Probability**: STAT 265 → STAT 371 → STAT 471
 
 #### Commands
 ```bash
@@ -148,13 +165,14 @@ uv run python chatbot.py
 | `filter_crawler.py` | Filters crawled URLs by priority patterns |
 | `filter_suite.py` | Experiment runner for testing filter configs |
 | `course_graph.py` | Builds course dependency graph from calendar data |
+| `course_tools.py` | LangChain tools for on-demand course lookups |
 | `make_db.py` | Create vector DB from scraped data |
 | `chunker.py` | Chunks JSON for embedding |
 | `vector_store.py` | Chroma vector database |
 | `retriever.py` | Hybrid BM25 + vector retrieval |
-| `chatbot.py` | RAG chain with qwen3:0.6b |
+| `chatbot.py` | RAG chain with qwen3:0.6b and course tools |
 | `app.py` | Streamlit web UI |
-| `evaluation.py` | Evaluation suite with metrics |
+| `evaluation.py` | Evaluation suite with 17 test cases |
 | `feedback.py` | User feedback collection |
 | `analytics.py` | Feedback analysis & reporting |
 
@@ -203,13 +221,13 @@ Run the evaluation suite to test the chatbot:
 uv run python evaluation.py
 ```
 
-This runs 12 test cases and reports:
+This runs 17 test cases and reports:
 - **Retrieval Precision@4** - Quality of document retrieval (target: >0.8)
 - **Keyword Coverage** - Does response contain expected keywords?
 - **ROUGE-L** - String similarity with reference
 - **Overall Score** - Weighted combination of metrics
 
-### Test Cases (10 total)
+### Test Cases (17 total)
 
 The evaluation includes questions on:
 - First-year courses (Calculus, Linear Algebra, Statistics)
@@ -217,19 +235,32 @@ The evaluation includes questions on:
 - Double majors and minors
 - Student support resources
 - Program-specific questions (Statistics overview, Mathematics overview)
+- **Course prerequisites** (NEW - 5 test cases added)
+  - MATH 209 prerequisites
+  - STAT 266 prerequisites
+  - Course sequences (after MATH 117)
+  - Entry-level courses
+  - MATH requirements for STAT courses
 
 ### Current Results
 
-Using the combined Math & Stats + Calendar data (137 pages) with course graph integration:
+Using the combined Math & Stats + Calendar data (137 pages) with LangChain course tools:
 
 ```
-Metrics (averaged across 12 test cases):
+Metrics (averaged across 17 test cases):
   - Retrieval Precision@4:     1.000
-  - Keyword Coverage:          ~0.50
-  - Overall Score:            ~0.50
+  - Keyword Coverage:          ~0.60
+  - ROUGE-L:                  ~0.06
+  - Overall Score:             ~0.55
+
+By Category:
+  - courses: ~0.52
+  - programs: ~0.53
+  - prerequisites: ~0.63 (NEW)
+  - support: ~0.54
 ```
 
-The hybrid approach (BM25 + vector) with course graph provides high-quality retrieval.
+The hybrid approach (BM25 + vector) with LangChain course tools provides high-quality retrieval and accurate prerequisite information.
 
 ## Model Options
 
@@ -271,10 +302,10 @@ Add Playwright/Selenium support to capture JavaScript-rendered content, includin
 ### Additional Program Content
 Continue expanding scraped pages to cover more UAlberta Math & Stats programs and course catalog details.
 
-### Course Graph Enhancements
-Consider these improvements for the course dependency system:
-- **Option B:** Add course graph to vector DB for searchable retrieval
-- **Option C:** Implement as LangChain tool with function calling
+### Course Graph Enhancements (Done ✓)
+- Course prerequisites extracted for 75 courses (MATH + STAT)
+- Implemented as LangChain tools with on-demand retrieval
+- Added prerequisite test cases to evaluation suite
 
 ## License
 
