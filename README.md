@@ -245,6 +245,7 @@ This project supports [uv](https://github.com/astral-sh/uv) for running commands
 ```{bash}
 uv sync
 ```
+Ensure [Ollama is installed and running](https://github.com/ollama/ollama?tab=readme-ov-file#start-ollama). See [Using Ollama](#using-ollama-local-free) for setup. if [Ollama](https://ollama.com) not installed or running.
 
 ```bash
 # Run chatbot
@@ -276,7 +277,3 @@ uv run python chatbot.py
 ANTHROPIC_API_KEY=sk-... LLM_PROVIDER=claude uv run python chatbot.py
 ```
 ---
-
-## License
-
-This project includes Streamlit. See: https://github.com/streamlit/streamlit/blob/develop/LICENSE
