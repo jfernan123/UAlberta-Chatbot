@@ -109,12 +109,6 @@ def main():
             answer = bot(question)
             print(answer)
 
-    for i, question in enumerate(TEST_QUESTIONS, 1):
-        print(f"\n[{i}/{len(TEST_QUESTIONS)}] {question}")
-        print("-" * 70)
-        for chunk in bot(question):
-            print(chunk, end="", flush=True)
-        print("\n" + "=" * 70)
 
 
 if __name__ == "__main__":
