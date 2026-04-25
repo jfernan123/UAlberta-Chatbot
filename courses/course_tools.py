@@ -177,6 +177,25 @@ def get_math_courses(year: Optional[int] = None, detail: bool = False) -> str:
     return "\n".join(lines)
 
 
+def _get_raw_prereq_text(course_code: str) -> str | None:
+    """Pull the raw 'Prerequisite: ...' sentence from the calendar page for a course."""
+    try:
+        pages = _load_calendar_pages()
+        for p in pages:
+            for s in p.get("sections", []):
+                heading = s.get("heading", "")
+                # Match heading like "STAT 252 - Introduction to..."
+                if heading.startswith(course_code + " -") or heading.startswith(course_code + ":"):
+                    content = s.get("content", "")
+                    # Extract the Prerequisite sentence
+                    m = re.search(r"((?:Pre|Co)requisite[s]?:.*?)(?:\s{2}|Notes:|$)", content)
+                    if m:
+                        return m.group(1).strip()
+    except Exception:
+        pass
+    return None
+
+
 @tool
 def get_course_prerequisites(course_code: str) -> str:
     """Get prerequisites for a specific course.
@@ -208,11 +227,16 @@ def get_course_prerequisites(course_code: str) -> str:
     lines = [f"{course_code}: {course['name']}"]
     lines.append(f"Year Level: {year_level_label(course.get('year_level', 0))}")
 
-    prereqs = course.get("prerequisites", [])
-    if prereqs:
-        lines.append(f"Prerequisites: {', '.join(prereqs)}")
+    # Prefer raw calendar text — it preserves OR/AND logic exactly as written
+    raw = _get_raw_prereq_text(course_code)
+    if raw:
+        lines.append(raw)
     else:
-        lines.append("Prerequisites: None (entry-level course)")
+        prereqs = course.get("prerequisites", [])
+        if prereqs:
+            lines.append(f"Prerequisites: {', '.join(prereqs)}")
+        else:
+            lines.append("Prerequisites: None (entry-level course)")
 
     math_prereqs = course.get("math_prerequisites", {})
     if math_prereqs:

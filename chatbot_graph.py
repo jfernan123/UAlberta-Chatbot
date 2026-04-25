@@ -276,6 +276,29 @@ Answer:
 """)
 
 
+def _extract_sources(context: str, course_info: str, query_type: str) -> list[str]:
+    """Pull unique source URLs out of retrieved context chunks."""
+    urls = []
+    for chunk in context.split("\n\n"):
+        m = re.match(r"\[Source: (https?://[^\]]+)\]", chunk.strip())
+        if m:
+            url = m.group(1)
+            if url not in urls:
+                urls.append(url)
+
+    # For structured tool results, note the data source
+    if course_info and "No specific course information" not in course_info:
+        label = None
+        if query_type.startswith("prereq") or query_type.startswith("courses"):
+            label = "Course database (data/course_graph.json)"
+        elif query_type.startswith("program_req"):
+            label = "UAlberta Academic Calendar (calendar.ualberta.ca)"
+        if label and label not in urls:
+            urls.append(label)
+
+    return urls
+
+
 def generate_node(state: RAGState) -> RAGState:
     llm = _get_llm()
     chain = _ANSWER_PROMPT | llm | StrOutputParser()
@@ -285,6 +308,12 @@ def generate_node(state: RAGState) -> RAGState:
         "context": state["context"],
         "question": state["question"],
     })
+
+    sources = _extract_sources(state["context"], state["course_info"], state["query_type"])
+    if sources:
+        source_lines = "\n".join(f"- {s}" for s in sources)
+        answer += f"\n\n---\n**Sources:**\n{source_lines}"
+
     return {**state, "answer": answer}
 
 
