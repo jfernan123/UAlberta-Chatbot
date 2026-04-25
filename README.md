@@ -23,7 +23,7 @@ User question
 
 ```bash
 conda activate stat541
-pip install langchain langchain-anthropic langchain-chroma langchain-ollama langgraph anthropic
+pip install langchain langchain-anthropic langchain-chroma langchain-ollama langgraph anthropic sentence-transformers
 ```
 
 ### 2. Set your Anthropic API key
@@ -164,7 +164,7 @@ Tools available:
 
 ## Model
 
-Embeddings use **nomic-embed-text** via Ollama (local, no API cost).
+Embeddings use **BAAI/bge-small-en-v1.5** via `sentence-transformers` (local, no Ollama or API needed). The model downloads automatically on first run.
 
 Both `chatbot.py` and `chatbot_graph.py` support two LLM backends, controlled by the `LLM_PROVIDER` environment variable (or the hardcoded default at the top of each file):
 
@@ -203,7 +203,6 @@ Requires [Ollama](https://ollama.com) installed and running:
 ```bash
 ollama serve
 ollama pull qwen3:0.6b
-ollama pull nomic-embed-text
 ```
 
 Then set `LLM_PROVIDER = "ollama"` in the chatbot file.
