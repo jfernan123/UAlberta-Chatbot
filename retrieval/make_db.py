@@ -3,11 +3,12 @@
 make_db.py - Delete and rebuild the vector database from scratch.
 
 Usage:
-    python -m retrieval.make_db
-    python -m retrieval.make_db -v
-    python -m retrieval.make_db --embedding sentence
-    python -m retrieval.make_db --embedding openai
-    python -m retrieval.make_db -i data/pages_math.json data/pages_calendar.json
+    python -m retrieval.make_db                        # delete old DB and rebuild (ollama embeddings)
+    python -m retrieval.make_db --embedding ollama     # nomic-embed-text via Ollama (default)
+    python -m retrieval.make_db --embedding sentence   # BGE local via sentence-transformers
+    python -m retrieval.make_db --embedding openai     # OpenAI text-embedding-3-small
+    python -m retrieval.make_db -v                     # verbose — shows chunk counts per file
+
 """
 
 import argparse
