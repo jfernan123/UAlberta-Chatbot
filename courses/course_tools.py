@@ -1,11 +1,17 @@
 from langchain.tools import tool
 from typing import Optional
 import json
+import re
 
 
 def load_course_graph():
     """Load course dependency graph."""
     with open("data/course_graph.json") as f:
+        return json.load(f)
+
+
+def _load_calendar_pages():
+    with open("data/pages_calendar.json", encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -414,5 +420,101 @@ def get_courses_by_level(
 
     if shown < total:
         lines.append(f"\n... and {total - shown} more courses")
+
+    return "\n".join(lines)
+
+
+# Known poids for math/stats program pages in the UAlberta calendar
+_PROGRAM_POIDS = {
+    "honors math":        "84304",
+    "honors mathematics": "84304",
+    "major math":         "84304",
+    "major mathematics":  "84304",
+    "minor math":         "84304",
+    "minor mathematics":  "84304",
+    "honors stat":        "84315",
+    "honors statistics":  "84315",
+    "major stat":         "84315",
+    "major statistics":   "84315",
+    "minor stat":         "84315",
+    "minor statistics":   "84315",
+}
+
+
+@tool
+def get_program_requirements(program: str) -> str:
+    """Get the full course requirements for a BSc program (Honors/Major/Minor in Math or Statistics).
+
+    Args:
+        program: One of 'honors math', 'major math', 'honors statistics', 'major statistics', etc.
+
+    Returns:
+        Full list of required courses with units for the specified program.
+    """
+    key = program.lower().strip()
+    poid = _PROGRAM_POIDS.get(key)
+
+    # Fuzzy match if exact key not found
+    if not poid:
+        for k, p in _PROGRAM_POIDS.items():
+            if all(w in key for w in k.split()):
+                poid = p
+                break
+
+    if not poid:
+        available = ", ".join(sorted(set(_PROGRAM_POIDS.keys())))
+        return f"Program '{program}' not recognized. Available: {available}"
+
+    pages = _load_calendar_pages()
+    page = next((p for p in pages if f"poid={poid}" in p.get("url", "")), None)
+    if not page:
+        return f"Program page (poid={poid}) not found in calendar data."
+
+    # Determine which sub-program to extract based on key
+    if "minor" in key:
+        target_heading = "Minor"
+    elif "major" in key:
+        target_heading = "Major"
+    else:
+        target_heading = "Honors"
+
+    # Collect sections relevant to the requested sub-program
+    lines = []
+    in_section = False
+    for s in page.get("sections", []):
+        heading = s["heading"].strip()
+        content = s["content"].strip()
+
+        # Detect section start
+        if f"{target_heading} in" in heading and "Requirements" in heading:
+            in_section = True
+            lines.append(f"\n{heading}:")
+            continue
+
+        # Detect next sub-program section (stop collecting)
+        if in_section and any(
+            f"{prog} in" in heading and "Requirements" in heading
+            for prog in ["Honors", "Major", "Minor"]
+            if prog != target_heading
+        ):
+            break
+
+        if in_section:
+            if not content:
+                lines.append(f"\n{heading}:")
+            elif heading.startswith(("3 units", "6 units")):
+                lines.append(f"  Choose {heading} {content}")
+            else:
+                lines.append(f"{heading}: {content}")
+
+    if not lines:
+        return f"Could not find {target_heading} requirements for poid={poid}."
+
+    # Prepend summary line from the overview section
+    for s in page.get("sections", []):
+        if "Courses for Subject Area Requirements" in s["heading"]:
+            summary = s["content"][:300]
+            lines.insert(0, summary)
+            break
 
     return "\n".join(lines)

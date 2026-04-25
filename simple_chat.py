@@ -4,7 +4,7 @@ import anthropic
 from retrieval import load_retriever
 
 # Set to True to print retrieved chunks before each answer
-SHOW_CHUNKS = False
+SHOW_CHUNKS = True
 
 MODEL = "claude-haiku-4-5"
 SYSTEM_PROMPT = """\
