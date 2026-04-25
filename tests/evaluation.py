@@ -728,7 +728,7 @@ def print_evaluation_summary(results: List[EvaluationResult]):
             all_missing_from_data.extend(r.generation.keywords_not_in_data)
 
     if all_missing_from_data:
-        print(f"\n⚠️ Keywords NOT found in any retrieved content:")
+        print(f"\n[!] Keywords NOT found in any retrieved content:")
         for kw in set(all_missing_from_data):
             print(f"  - {kw}")
         print(f"\n  These keywords may not exist in the current data source.")
@@ -916,5 +916,5 @@ if __name__ == "__main__":
     print_evaluation_summary(results)
 
     # Save to history
-    save_evaluation_history(results)
-    save_evaluation_cases(results)
+    save_evaluation_history(results, model_name="claude-haiku-4-5-20251001")
+    save_evaluation_cases(results, model_name="claude-haiku-4-5-20251001")

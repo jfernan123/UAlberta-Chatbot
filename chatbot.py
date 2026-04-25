@@ -1,6 +1,5 @@
 import re
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 from retrieval import load_retriever
 from courses.course_tools import (
@@ -13,7 +12,7 @@ from courses.course_tools import (
 )
 
 # Switch to "claude" to use Claude Haiku instead of local Ollama
-LLM_PROVIDER = "ollama"
+LLM_PROVIDER = "claude"
 
 # Set to False to disable course tool detection and rely purely on vector DB
 USE_COURSE_TOOLS = True
@@ -29,6 +28,7 @@ def _get_llm():
     if LLM_PROVIDER == "claude":
         from langchain_anthropic import ChatAnthropic
         return ChatAnthropic(model="claude-haiku-4-5-20251001", temperature=0)
+    from langchain_ollama import ChatOllama
     return ChatOllama(model="qwen3:0.6b", temperature=0, think=False)
 
 

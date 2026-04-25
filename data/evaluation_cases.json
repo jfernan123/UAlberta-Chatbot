@@ -618,6 +618,233 @@
           }
         }
       ]
+    },
+    {
+      "timestamp": "2026-04-25T01:24:19.786150",
+      "model": "qwen3:0.6b",
+      "total_cases": 20,
+      "cases": [
+        {
+          "question": "What courses can I take in first year?",
+          "category": "courses",
+          "response": "# First Year (100-level) Courses at University of Alberta\n\nHere are all the first-year courses offered by the Math & Statistics department:\n\n## Calculus Courses\n\n**Engineering Stream:**\n- MATH 100: Calculus for Engineering I\n- MATH 101: Calculus for Engineering II (prerequisite: MATH 100)\n\n**Honors Stream:**\n- MATH 117: Honors Calculus I\n- MATH 118: Honors Calculus II (prerequisite: MATH 117)\n\n**Life Sciences Stream:**\n- MATH 134: Calculus for the Life Sciences I\n- MATH 136: Calculus for the Life Sciences II (prerequisite: MATH 134)\n\n**Mathematical and Physical Sciences Stream:**\n- MATH 144: Calculus for the Mathematical and Physical Sciences\n- MATH 146: Calculus for the Mathematical and Physical Sciences (prerequisite: MATH 144)\n\n**Business and Economics Stream:**\n- MATH 154: Calculus for Business and Economics I\n- MATH 156: Calculus for Business and Economics II (prerequisite: MATH 154)\n\n## Linear Algebra Courses\n- MATH 102: Applied Linear Algebra\n- MATH 125: Linear Algebra I\n- MATH 127: Honors Linear Algebra I\n\n## Other Mathematics Courses\n- MATH 111: Introduction to Discrete Mathematics\n- MATH 113\n- MATH 114\n- MATH 115\n- MATH 160: Higher Arithmetic\n\n## Statistics Courses\n- STAT 151: Introduction to Applied Statistics I\n- STAT 161: Introductory Statistics for Business and Economics\n- STAT 181: Introduction to Combinatorics and Probability\n\nThe specific courses you should take depend on your program requirements. I recommend consulting with the Undergraduate Office about which courses are appropriate for your particular program.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.016,
+            "overall": 0.705
+          }
+        },
+        {
+          "question": "What's the difference between Honors and Major programs?",
+          "category": "programs",
+          "response": "# Honors vs Major Programs in Mathematics and Statistics\n\n## **Honors Programs**\n\nHonors programs are designed for students who are **passionate about and fully committed to the discipline**. Key features include:\n\n- **Greater depth and rigor**: Programs are built around a suite of Honors courses with in-depth development of the discipline\n- **Advanced preparation**: Students reach the level of rigour used by practising mathematicians and statisticians by graduation\n- **Career paths**: Most graduates pursue postgraduate degrees, while others establish careers in research, post-secondary education, industry, and government\n\n## **Major Programs**\n\nMajor programs are for students who want a **strong background in modern mathematics or statistics** but have different goals:\n\n- **More flexibility**: Students are not ready to commit to the challenge of an Honors program, or want to explore interests in other disciplines\n- **Broader options**: Graduates establish rewarding careers in diverse areas including post-secondary education, industry (health, finance, computing, etc.), and government\n- **Postgraduate potential**: With the right course choices, Major students can also pursue postgraduate studies\n\n## **Switching Between Programs**\n\nIt's possible to transfer between Major and Honors programs! Some students start in a Major program to explore their interests and later switch to Honors, while others go the opposite direction. **Students wishing to transfer must submit an application.**",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.046,
+            "overall": 0.714
+          }
+        },
+        {
+          "question": "What programs are available in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "# Undergraduate Programs in Mathematics and Statistics\n\nThe Department of Mathematical and Statistical Sciences at the University of Alberta offers the following **undergraduate degree programs**:\n\n1. **Statistics**\n2. **Mathematics and Finance**\n3. **Mathematics and Economics**\n4. **Mathematics**\n5. **Mathematical Physics**\n6. **Applied Mathematics**\n7. **Data Science**\n\n## Degree Types Available\n\nFor each discipline, the department offers:\n- **Honors Programs** - for students fully committed to the discipline\n- **Major Programs** - for students seeking a strong foundation in the subject\n- **Minor Programs** - in Mathematics and Statistics\n\n## Data Science Pathways\n\nThe Data Science program offers three specialized options:\n- **Data Science - Computer Science Option** (emphasizes programming, algorithms, machine learning, and large-scale data systems)\n- **Data Science - Mathematics Option** (focuses on mathematical modelling, optimization, stochastic processes, and theoretical foundations)\n- **Data Science - Statistics Option** (emphasizes statistical modelling, inference, regression, and statistical learning methods)\n\nFor detailed program requirements and more information about degree types, you can visit the [degree types page](https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/programs/index.html) or contact the department's advising office.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.045,
+            "overall": 0.713
+          }
+        },
+        {
+          "question": "What is Linear Algebra?",
+          "category": "courses",
+          "response": "# What is Linear Algebra?\n\nLinear algebra is **the study of vector spaces and their transformation properties**. It's a fundamental area of mathematics with wide-ranging applications across many disciplines.\n\n## Key Applications\n\nLinear algebra can be applied to:\n- **Least squares fitting** - for data analysis and curve fitting\n- **Rotations in space** - useful in computer graphics and engineering\n- **Search algorithms** - such as those employed by Google\n- And many other practical problems in science, engineering, and technology\n\n## Why It Matters\n\nLinear algebra courses serve as **prerequisites for many advanced courses** not just in mathematics and statistics, but also in physics and engineering. This includes courses in algebra, coding theory, and number theory.\n\n## Linear Algebra Courses at University of Alberta\n\nThe department offers several linear algebra courses at different levels:\n\n**First Year:**\n- **MATH 125** - Linear Algebra I\n- **MATH 127** - Honors Linear Algebra I\n- **MATH 102** - Applied Linear Algebra\n\n**Second Year:**\n- **MATH 225** - Linear Algebra II (follows MATH 125)\n- **MATH 227** - Honors Linear Algebra II (follows MATH 127)\n\nThe second-year courses focus on **linear transformations of vector spaces**, including abstract vector spaces, diagonalization of matrices, and inner products.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.02,
+            "overall": 0.626
+          }
+        },
+        {
+          "question": "What Calculus courses are offered?",
+          "category": "courses",
+          "response": "# Calculus Courses Offered at University of Alberta\n\nThe Department of Mathematical and Statistical Sciences offers a comprehensive range of calculus courses across multiple levels:\n\n## **Year 1 (100-level) Calculus Courses**\n\n**Engineering Stream:**\n- MATH 100 - Calculus for Engineering I\n- MATH 101 - Calculus for Engineering II\n\n**Non-Engineering Streams:**\n- MATH 134 - Calculus for the Life Sciences I\n- MATH 136 - Calculus for the Life Sciences II\n- MATH 144 - Calculus for the Mathematical and Physical Sciences I\n- MATH 146 - Calculus for the Mathematical and Physical Sciences II\n- MATH 154 - Calculus for Business and Economics I\n- MATH 156 - Calculus for Business and Economics II\n\n**Honors Calculus (open to all students):**\n- MATH 117 - Honors Calculus I\n- MATH 118 - Honors Calculus II\n\n## **Year 2 (200-level) Calculus Courses**\n\n**Non-Engineering:**\n- MATH 214 - Calculus III\n- MATH 217 - Honors Calculus III\n\n**Engineering:**\n- MATH 209 - Calculus for Engineering III\n\n## **Year 3+ (300-level and above)**\n\n- MATH 315 - Calculus IV\n- MATH 317 - Honors Calculus IV\n\nThese courses cover topics including limits, derivatives, integration, sequences, series, multivariate calculus, and vector calculus.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.8,
+            "rouge_l": 0.02,
+            "overall": 0.626
+          }
+        },
+        {
+          "question": "Can I double major in Mathematics and Statistics?",
+          "category": "programs",
+          "response": "# Double Majoring in Mathematics and Statistics\n\nBased on the University of Alberta's program regulations, **you cannot double major in Mathematics and Statistics** because of the following rule:\n\n## Key Restriction\n\n**\"The major and minor may not share courses from the same subject or area of concentration. Courses in a major or a minor may not overlap.\"**\n\nSince both Mathematics and Statistics are closely related disciplines within the same subject area (Mathematical and Statistical Sciences), they share many courses and would have significant overlap. This violates the university's policy that prevents double majors in the same subject area.\n\n## Alternative Options\n\nInstead, you might consider:\n- **Major in Mathematics + Minor in Statistics** (if allowed by your faculty)\n- **Major in Statistics + Minor in Mathematics** (if allowed by your faculty)\n- **Major in one discipline** and combine it with a major or minor in a different subject area (such as Economics, Computer Science, Physics, etc.)\n\nFor specific guidance on your particular situation and to explore what combinations might work for your degree program, I recommend contacting the **Department of Mathematical and Statistical Sciences** directly. They can provide personalized advice based on your academic goals and degree requirements.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.4,
+            "rouge_l": 0.02,
+            "overall": 0.466
+          }
+        },
+        {
+          "question": "What help is available for math courses?",
+          "category": "support",
+          "response": "# Help Available for Mathematics Courses\n\nIf you need help with your mathematics or statistics courses, the **Decima Robinson Support Centre** is the main resource available to you.\n\n## Decima Robinson Support Centre\n\nThe Support Centre offers assistance for students who are:\n- Struggling with course material\n- Working through homework problems\n- Need help understanding concepts from lectures and notes\n\n### Additional Support: Precalculus Program\n\nThe department also offers a **Precalculus program** through the Decima Robinson Support Centre, which includes:\n- Structured instruction in precalculus topics\n- **In-person drop-in help** available every weekday from **1:00 PM to 3:00 PM**\n- Help with written homework, online homework, and problems from your notes\n- Registration fee of $200 for six weeks of the program\n\nFor more information about available support services and to get started, visit the Decima Robinson Support Centre or contact the Department of Mathematical and Statistical Sciences.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.052,
+            "overall": 0.516
+          }
+        },
+        {
+          "question": "What are the requirements for Honors in Mathematics?",
+          "category": "programs",
+          "response": "# Requirements for Honors in Mathematics\n\n## Program Structure\n\nHonors in Mathematics requires a **minimum of 51 and a maximum of 57 units**.\n\n## Admission Requirements\n\nStudents must meet the following to be admitted to the BA Honors in Mathematics program:\n\n- Consult **BA Honors admission requirements** for Faculty regulations\n- Meet minimum average requirements and prerequisites outlined in the Specific Admission Requirements to BA Honors Majors chart\n- Students are encouraged to complete requirements for at least two majors during their Foundation Year\n\n## Promotion Requirements\n\nTo continue in the Honors program:\n\n- Maintain a minimum GPA of **3.0 on all courses taken during Fall/Winter terms**\n- Note: Individual department requirements may exceed Faculty minimums\n\n## Graduation Requirements\n\nTo graduate with **Honors in Mathematics**, you must have:\n\n- A **graduation average of at least 3.0**\n- An **average of at least 3.3 in all MATH courses**\n\n### First Class Honors\n\nTo graduate with **First Class Honors**, you must achieve:\n\n- An average of at least **3.7 on all MATH courses taken in the last two years**\n- An average of at least **3.5 or better on all courses in the final two years** (last 60 units)\n\n## Program Flexibility\n\nThe BA Honors in Mathematics is a **flexible program** that allows you to design your degree for either general liberal education or a specific career focus.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.75,
+            "rouge_l": 0.018,
+            "overall": 0.605
+          }
+        },
+        {
+          "question": "What is the MDP program?",
+          "category": "programs",
+          "response": "# What is the MDP Program?\n\nThe **MDP (Modelling, Data + Predictions)** is a professionally-oriented, **course-based Master's program** offered by the Department of Mathematical and Statistical Sciences at the University of Alberta.\n\n## Program Focus\n\nThe MDP program is a **graduate training program in data science** that provides students with a unique combination of:\n- Data modelling\n- Data analytics skills\n- Statistical machine learning algorithms\n- Modern computational methods\n- Practical aspects of mathematical and statistical modelling and data analysis\n\n## Program Duration\n\nThe MDP program is **designed to be completed in 16 months**, making it an efficient option for students looking to enter data science careers quickly.\n\n## Career Preparation\n\nThis program prepares students for **related careers in industry and government**, with a strong emphasis on practical, real-world applications of data science and statistical methods.\n\n## Contact Information\n\nFor questions about the MDP program specifically, you can contact:\n- **Jane Cooper** (UCOMM 5-182F)\n- Email: mssmdp@ualberta.ca\n\nFor general prospective student inquiries about any graduate program, you can also email: **sci.gradadm@ualberta.ca**",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.023,
+            "overall": 0.707
+          }
+        },
+        {
+          "question": "What courses are offered for undergraduate math students?",
+          "category": "courses",
+          "response": "# Undergraduate Mathematics Courses at University of Alberta\n\nThe Department of Mathematical and Statistical Sciences offers a comprehensive range of undergraduate (100-400 level) mathematics courses. Here's what's available:\n\n## First Year (100-level) Courses\n\n**Calculus Courses:**\n- MATH 100 - Calculus for Engineering I\n- MATH 101 - Calculus for Engineering II\n- MATH 209 - Calculus for Engineering III\n- Honors Calculus (available to all students with keen interest in mathematics)\n\n**Linear Algebra:**\n- MATH 102 - Applied Linear Algebra\n\n## Second Year and Beyond\n\nThe department offers courses across multiple mathematical disciplines including:\n- Analysis (e.g., MATH 216 - Introduction to Analysis)\n- Intermediate Calculus\n- And many other 200, 300, and 400-level courses\n\n## Additional Support\n\nIf you're transitioning from high school, the department also offers optional **Mathematics Primer Courses** (online, non-credit) to help refresh your high school mathematics skills.\n\n---\n\n**Note:** For a complete and detailed list of all specific 200, 300, and 400-level course offerings, I'd recommend checking the [University of Alberta Calendar](https://calendar.ualberta.ca/) or contacting the Department of Mathematical and Statistical Sciences directly, as course availability can vary by term.\n\nIs there a specific area of mathematics or particular course level you'd like to know more about?",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.0,
+            "rouge_l": 0.02,
+            "overall": 0.306
+          }
+        },
+        {
+          "question": "What is the Statistics program?",
+          "category": "programs",
+          "response": "# What is the Statistics Program?\n\nThe **Major in Statistics** is an undergraduate degree program offered by the Department of Mathematical and Statistical Sciences at the University of Alberta.\n\n## Program Overview\n\nThis program provides students with comprehensive training in statistical theory, methods, and applications. It's designed for students who want to develop expertise in statistics and its practical applications across various fields.\n\n## Important Note\n\nThe department previously offered a **Specialization in Statistics**, but this program is no longer accepting new students. Students interested in pursuing statistics at the University of Alberta should instead apply to the **Major in Statistics** program.\n\n## Program Resources\n\nA detailed **program planner** is available to help you understand the course sequence and requirements for completing the Major in Statistics degree.\n\n---\n\n**Would you like to know more about:**\n- The specific course requirements for the Major in Statistics?\n- What statistics courses are available at different year levels?\n- How the Major in Statistics compares to other programs?\n- Graduate statistics programs (MSc in Statistics)?",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.2857142857142857,
+            "rouge_l": 0.034,
+            "overall": 0.424
+          }
+        },
+        {
+          "question": "What is the Mathematics program?",
+          "category": "programs",
+          "response": "# What is the Mathematics Program?\n\nThe **Major in Mathematics** is an undergraduate degree program offered by the Department of Mathematical and Statistical Sciences at the University of Alberta.\n\n## Program Overview\n\nThe Mathematics program provides students with a comprehensive foundation in mathematical theory and problem-solving. It is designed for students who want to develop deep expertise in mathematics and its applications across various disciplines.\n\n## Related Programs\n\nThe department also offers:\n\n- **Minor in Mathematics** - A foundational program that complements a primary area of study, offering students essential mathematical concepts and problem-solving techniques\n- **Honors in Mathematics** - An advanced program for students who are passionate about and fully committed to mathematics\n\n## High School Prerequisites\n\nTo enter the Mathematics program, students must present:\n- **Mathematics 30-1** (required)\n- **Mathematics 31** (required)\n\nMathematics 30-1 is a prerequisite for all Mathematics courses at the University of Alberta (except MATH 160).\n\n## Course Offerings\n\nThe program offers a wide range of undergraduate mathematics courses across all year levels:\n- **Year 1 (100-level)**: Calculus, linear algebra, and foundational courses\n- **Year 2 (200-level)**: Intermediate mathematics courses\n- **Year 3 (300-level)**: Advanced mathematics courses\n- **Year 4 (400-level)**: Specialized and upper-level courses\n\nFor more details about specific course requirements and program structure, you can download the program planner or contact the Undergraduate Contact in the department.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.026,
+            "overall": 0.508
+          }
+        },
+        {
+          "question": "What are the prerequisites for MATH 209?",
+          "category": "prerequisites",
+          "response": "# Prerequisites for MATH 209\n\nBased on the course information available, **MATH 209 - Calculus for Engineering III** has the following prerequisites:\n\n- **MATH 101** (prerequisite)\n- **MATH 102** (prerequisite or corequisite)\n\nThese courses must be completed before or concurrently with MATH 209.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.087,
+            "overall": 0.726
+          }
+        },
+        {
+          "question": "What do I need before taking STAT 266?",
+          "category": "prerequisites",
+          "response": "# Prerequisites for STAT 266\n\n**STAT 266 - Probability and Statistics II** has the following prerequisites:\n\n- **STAT 281** OR\n- **STAT 265**\n\n## Important Note\n\nIf you are presenting **STAT 265**, you must also present one of the following as a **corequisite**:\n- **MATH 117** OR\n- **MATH 216**\n\nA corequisite means you must take that course at the same time as STAT 266, rather than before it.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.056,
+            "overall": 0.517
+          }
+        },
+        {
+          "question": "What courses can I take after completing MATH 117?",
+          "category": "prerequisites",
+          "response": "# Courses You Can Take After MATH 117\n\nAfter completing **MATH 117 (Honors Calculus I)**, you have several options depending on your program stream:\n\n## Calculus II Courses\n\nYou can proceed to any of the following Calculus II courses:\n\n- **MATH 118** (Honors Calculus II) - the natural continuation in the Honors sequence\n- **MATH 136** (Regular Life Sciences Calculus II)\n- **MATH 146** (Regular Math/Physics Calculus II)\n- **MATH 156** (Regular Business Calculus II)\n\n## Upper-Level Courses\n\nAny of the Calculus II courses listed above are accepted as prerequisites for:\n\n- **MATH 214** (Intermediate Calculus I)\n\n## Important Notes\n\n- **MATH 117 can substitute** for MATH 100, MATH 114, MATH 134, or MATH 144, so you have flexibility in choosing your Calculus II course based on your program requirements.\n\n- If you're interested in taking **MATH 118** after MATH 117, you can proceed directly without additional consent.\n\n- Students can **switch between non-Engineering streams** after completing MATH 117 if they wish to change their program direction.\n\nFor specific guidance on which course sequence is best for your particular program, I recommend consulting with an academic advisor in the Department of Mathematical and Statistical Sciences.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.5,
+            "rouge_l": 0.03,
+            "overall": 0.509
+          }
+        },
+        {
+          "question": "What courses can I take without any prerequisites?",
+          "category": "prerequisites",
+          "response": "# Courses with No Prerequisites\n\nI don't have specific information in the course database about which undergraduate mathematics and statistics courses have **no prerequisites**.\n\nHowever, based on the context provided, I can tell you that:\n\n## First-Year (100-level) Courses\nMost **100-level courses** are typically designed as entry-level courses and may have minimal or no prerequisites, though some do require specific high school mathematics background.\n\n## How to Find Out\n\nTo get a definitive answer about which courses require no prerequisites, I recommend:\n\n1. **Checking the Course Calendar** - Visit the [University of Alberta Calendar](https://calendar.ualberta.ca/) and search for specific courses you're interested in\n2. **Contacting the Department** - Reach out to the Department of Mathematical and Statistical Sciences directly for detailed prerequisite information\n3. **Visiting the Department Website** - The department website has comprehensive course listings with prerequisite details\n4. **Speaking with an Advisor** - An academic advisor can help you identify courses suitable for your background\n\nIf you have specific courses in mind that you'd like to know about, feel free to ask and I can help look up their prerequisites!",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.25,
+            "rouge_l": 0.022,
+            "overall": 0.407
+          }
+        },
+        {
+          "question": "What MATH courses do I need before STAT 265?",
+          "category": "prerequisites",
+          "response": "# Prerequisites for STAT 265\n\n**STAT 265 - Probability and Statistics I** has the following Mathematics requirement:\n\n- **One of MATH 117 or MATH 216** (corequisite)\n\n## Important Note\n\nThe corequisite requirement means you must be taking one of these Mathematics courses **at the same time** as STAT 265, not necessarily before it. However, if you have already completed either MATH 117 or MATH 216, you can proceed directly to STAT 265.\n\n## Course Descriptions\n\n- **MATH 117** - Honors Calculus I (Year 1)\n- **MATH 216** - Applied Differential Equations (Year 2)\n\nIf you have questions about which course is most appropriate for your program, I recommend contacting the Department of Mathematical and Statistical Sciences or visiting the **Decima Robinson Support Centre** for academic advising.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 0.0,
+            "rouge_l": 0.046,
+            "overall": 0.314
+          }
+        },
+        {
+          "question": "What graduate MATH courses are available?",
+          "category": "level_specific",
+          "response": "# Graduate Mathematics Courses Available\n\nThe Department of Mathematical and Statistical Sciences offers a comprehensive range of graduate (500+ level) Mathematics courses:\n\n## 500-Level Courses\n\n- **MATH 505**: Stochastic Analysis I\n- **MATH 506**: Complex Variables\n- **MATH 508**: Computational Finance\n- **MATH 509**: Data Structures and Platforms\n- **MATH 510**: Stochastic Analysis II\n- **MATH 512**: Algebraic Number Theory\n- **MATH 514**: Measure Theory I\n- **MATH 515**: Mathematical Finance I\n- **MATH 516**: Linear Analysis\n- **MATH 518**: Functional Analysis\n- **MATH 519**: Introduction to Operator Algebras\n- **MATH 520**: Mathematical Finance II\n- **MATH 521**: Differential Manifolds\n- **MATH 524**: Ordinary Differential Equations IIA\n- **MATH 525**: Ordinary Differential Equations IIB\n- **MATH 527**: Intermediate Partial Differential Equations\n- **MATH 530**: Algebraic Topology\n- **MATH 535**: Numerical Methods I\n- **MATH 536**: Numerical Solutions of Partial Differential Equations I\n- **MATH 538**: Techniques of Applied Mathematics\n- **MATH 539**: Applied Functional Analysis\n- **MATH 542**: Fourier Analysis\n- **MATH 543**: Measure Theory II\n- **MATH 556**: Introduction to Fluid Mechanics\n- **MATH 570**: Mathematical Biology\n- **MATH 572**: Mathematical Modelling in Industry, Government, and Sciences\n- **MATH 574**: Mathematical Modeling of Infectious Diseases\n- **MATH 581**: Group Theory\n- **MATH 582**: Rings and Modules\n- **MATH 583**: Topics in Algebra\n\n## 600-Level Courses\n\n- **MATH 600**: Reading in Mathematics\n- **MATH 601**: Graduate Colloquium\n- **MATH 617**: Topics in Functional Analysis I\n- **MATH 623**: Topics in Differential Geometry and Mechanics\n- **MATH 625**: Advanced Mathematical Finance\n- **MATH 653**: Seminar in Functional Analysis\n- **MATH 655**: Topics in Fluid Dynamics\n- **MATH 663**: Topics in Applied Mathematics I\n- **MATH 664**: Topics in Applied Mathematics II\n- **MATH 667**: Topics in Differential Equations I\n- **MATH 676**: Topics in Geometry I\n- **MATH 681**: Topics in Algebra\n- **MATH 682**: Topics in Algebra\n\n## 900-Level Courses\n\n- **MATH 900**: Directed Research Project\n\nThese courses support graduate specializations in **Applied Mathematics, Mathematical Finance, Mathematical Physics, (Pure) Mathematics, Statistical Machine Learning, and Statistics**.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.012,
+            "overall": 0.704
+          }
+        },
+        {
+          "question": "What senior STAT courses are available?",
+          "category": "level_specific",
+          "response": "# Senior Statistics Courses Available\n\nThe Department of Mathematical and Statistical Sciences offers the following **senior (400-level) Statistics courses**:\n\n- **STAT 413** - Computing for Data Science\n  - Prerequisites: STAT 265, STAT 281\n\n- **STAT 432** - Survival Analysis\n  - Prerequisites: STAT 372, STAT 378\n\n- **STAT 437** - Applied Statistical Methods\n  - Prerequisites: STAT 252, STAT 337\n\n- **STAT 441** - Statistical Methods for Learning and Data Mining\n  - Prerequisites: STAT 378\n\n- **STAT 453** - Risk Theory\n  - Prerequisites: STAT 371, STAT 281\n\n- **STAT 471** - Probability I\n  - Prerequisites: STAT 371, STAT 281\n\n- **STAT 479** - Time Series Analysis\n  - Prerequisites: STAT 372, STAT 378\n\n- **STAT 497** - Reading in Statistics\n  - No prerequisites listed\n\n- **STAT 498** - Statistical Topics in Data Science\n  - No prerequisites listed\n\n- **STAT 499** - Research Project\n  - No prerequisites listed\n\nThese courses build on foundational statistics knowledge and are designed for students in their final year of undergraduate study or those pursuing advanced statistical training.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.023,
+            "overall": 0.707
+          }
+        },
+        {
+          "question": "What graduate courses are there?",
+          "category": "level_specific",
+          "response": "# Graduate Courses Available\n\nThe Department of Mathematical and Statistical Sciences offers a comprehensive range of graduate (500+ level) courses in Mathematics and Statistics:\n\n## 500-Level Courses\n\n### Mathematics (MATH)\n- **MATH 505**: Stochastic Analysis I\n- **MATH 506**: Complex Variables\n- **MATH 508**: Computational Finance\n- **MATH 509**: Data Structures and Platforms\n- **MATH 510**: Stochastic Analysis II\n- **MATH 512**: Algebraic Number Theory\n- **MATH 514**: Measure Theory I\n- **MATH 515**: Mathematical Finance I\n- **MATH 516**: Linear Analysis\n- **MATH 518**: Functional Analysis\n- **MATH 519**: Introduction to Operator Algebras\n- **MATH 520**: Mathematical Finance II\n- **MATH 521**: Differential Manifolds\n- **MATH 524**: Ordinary Differential Equations IIA\n- **MATH 525**: Ordinary Differential Equations IIB\n- **MATH 527**: Intermediate Partial Differential Equations\n- **MATH 530**: Algebraic Topology\n- **MATH 535**: Numerical Methods I\n- **MATH 536**: Numerical Solutions of Partial Differential Equations I\n- **MATH 538**: Techniques of Applied Mathematics\n- **MATH 539**: Applied Functional Analysis\n- **MATH 542**: Fourier Analysis\n- **MATH 543**: Measure Theory II\n- **MATH 556**: Introduction to Fluid Mechanics\n- **MATH 570**: Mathematical Biology\n- **MATH 572**: Mathematical Modelling in Industry, Government, and Sciences\n- **MATH 574**: Mathematical Modeling of Infectious Diseases\n- **MATH 581**: Group Theory\n- **MATH 582**: Rings and Modules\n- **MATH 583**: Topics in Algebra\n\n### Statistics (STAT)\n- **STAT 501**: Directed Study I\n- **STAT 502**: Directed Study II\n- **STAT 503**: Directed Study III\n- **STAT 504**: Directed Study IV\n- **STAT 505**: Directed Study V\n- **STAT 512**: Techniques of Mathematics for Statistics\n- **STAT 513**: Statistical Computing\n- **STAT 514**: Statistics for Clinical Trials I\n- **STAT 515**: Statistics for Clinical Trials II\n- **STAT 532**: Survival Analysis\n- **STAT 537**: Statistical Methods for Applied Research II\n- **STAT 541**: Statistics for Learning\n- **STAT 553**: Risk Theory\n- **STAT 561**: Sample Survey Methodology\n- **STAT 562**: Discrete Data Analysis\n- **STAT 566**: Methods of Statistical Inference\n- **STAT 568**: Design and Analysis of Experiments\n- **STAT 571**: Probability and Measure\n- **STAT 575**: Multivariate Analysis\n- **STAT 578**: Regression Analysis\n- **STAT 580**: Stochastic Processes\n- **STAT 590**: Statistical Consulting\n\n## 600-Level Courses\n\n### Mathematics (MATH)\n- **MATH 600**: Reading in Mathematics\n- **MATH 601**: Graduate Colloquium\n- **MATH 617**: Topics in Functional Analysis I\n- **MATH 623**: Topics in Differential Geometry and Mechanics\n- **MATH 625**: Advanced Mathematical Finance\n- **MATH 653**: Seminar in Functional Analysis\n- **MATH 655**: Topics in Fluid Dynamics\n- **MATH 663**: Topics in Applied Mathematics I\n- **MATH 664**: Topics in Applied Mathematics II\n- **MATH 667**: Topics in Differential Equations I\n- **MATH 676**: Topics in Geometry I\n- **MATH 681**: Topics in Algebra\n- **MATH 682**: Topics in Algebra\n\n### Statistics (STAT)\n- **STAT 600**: Reading in Statistics\n- **STAT 637**: Statistical Methods for Applied Research III\n- **STAT 664**: Advanced Statistical Inference\n- **STAT 665**: Asymptotic Methods in Statistical Inference\n\n## 900-Level Courses\n\n- **MATH 900**: Directed Research Project\n- **STAT 900**: Directed Research Project\n- **STAT 901**: Practicum in Statistics I\n- **STAT 902**: Practicum in Statistics II\n- **STAT 903**: Internship in Biostatistics\n\nFor detailed information about prerequisites and course descriptions, please consult the [University Calendar](https://calendar.ualberta.ca/) or contact the Department of Mathematical and Statistical Sciences.",
+          "metrics": {
+            "precision": 1.0,
+            "coverage": 1.0,
+            "rouge_l": 0.007,
+            "overall": 0.702
+          }
+        }
+      ]
     }
   ]
 }
