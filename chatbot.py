@@ -101,7 +101,8 @@ def detect_course_tools(query: str) -> list:
     # Program/degree/admission and comparison queries should be answered from retrieved
     # pages, not from the course-listing tools (which return course codes, not descriptions).
     program_keywords = [
-        "program", "degree", "admission", "apply", "applying",
+        "degree program", "graduate program", "undergraduate program",
+        "admission", "apply", "applying",
         "phd", "msc", "master", "mmath", "requirements to get in",
         "how to get into", "graduate studies", "postgraduate",
         # comparison / structural questions
@@ -185,6 +186,7 @@ def _detect_graduate_info_query(query: str) -> str:
     listing_keywords = [
         "what graduate programs", "which graduate programs", "graduate programs available",
         "available graduate programs", "list graduate programs", "graduate programs offered",
+        "what grad programs", "grad programs available", "which grad programs",
         "programs in math and stat", "programs offered in math", "graduate degrees available",
         "what programs does", "what degrees",
     ]
@@ -323,6 +325,7 @@ IMPORTANT INSTRUCTIONS:
 3. Do NOT make up course names or numbers - only use courses that appear in the Course Information section.
 4. If the Course Information mentions specific courses (like MATH 118 or MATH 217), include them in your answer.
 5. When listing Statistics (STAT) courses, note that many require MATH prerequisites - include MATH courses that appear in the Course Information as they may be required prerequisites.
+6. When the Course Information contains a list of courses, reproduce ALL of them in your answer — do not stop after the first few. Every course in the list matters.
 
 IMPORTANT TERMINOLOGY CLARIFICATION:
 - "Undergraduate" in this context refers to COURSE LEVEL (100-400 level), NOT first-year students
@@ -345,8 +348,8 @@ Question:
 Answer:""")
 
     def run_chain(question: str):
-        course_info = call_course_tools(question)
         normalized_q = normalize_query(question) if USE_NORMALIZATION else question
+        course_info = call_course_tools(normalized_q)
         docs = retriever.invoke(normalized_q)
 
         if VERBOSE:

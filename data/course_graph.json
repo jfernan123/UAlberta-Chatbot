@@ -252,7 +252,7 @@
       "math_prerequisites": null
     },
     "MATH 225": {
-      "name": "Course MATH 225",
+      "name": "Linear Algebra II",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/honors-courses.html",
       "year_level": 2,
       "prerequisites": [
@@ -329,7 +329,7 @@
       "math_prerequisites": null
     },
     "MATH 226": {
-      "name": "Course MATH 226",
+      "name": "Algebraic Structures",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
       "prerequisites": [
@@ -352,7 +352,7 @@
       "math_prerequisites": null
     },
     "MATH 256": {
-      "name": "Course MATH 256",
+      "name": "Elementary Number Theory",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
       "prerequisites": [
@@ -398,7 +398,7 @@
       "math_prerequisites": null
     },
     "MATH 228": {
-      "name": "Course MATH 228",
+      "name": "Algebra: Introduction to Ring Theory",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
       "prerequisites": [
@@ -447,7 +447,7 @@
       "math_prerequisites": null
     },
     "MATH 111": {
-      "name": "Course MATH 111",
+      "name": "Introduction to Discrete Mathematics",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 1,
       "prerequisites": [],
@@ -456,7 +456,7 @@
       "math_prerequisites": null
     },
     "MATH 160": {
-      "name": "Course MATH 160",
+      "name": "Higher Arithmetic",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 1,
       "prerequisites": [],
@@ -510,7 +510,7 @@
       "math_prerequisites": null
     },
     "MATH 227": {
-      "name": "Course MATH 227",
+      "name": "Honors Linear Algebra II",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
       "prerequisites": [
@@ -582,7 +582,7 @@
       "math_prerequisites": null
     },
     "MATH 253": {
-      "name": "Course MATH 253",
+      "name": "Theory of Interest",
       "url": "https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/courses/course-groupings-by-area.html",
       "year_level": 2,
       "prerequisites": [
