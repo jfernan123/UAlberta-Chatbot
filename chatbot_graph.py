@@ -17,7 +17,7 @@ from courses.course_tools import (
 )
 
 import os
-LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "claude")
+LLM_PROVIDER = "ollama"#os.environ.get("LLM_PROVIDER", "claude")
 VERBOSE = False
 MAX_RETRIEVAL_ATTEMPTS = 2
 
@@ -376,6 +376,18 @@ def build_chatbot():
 
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="UAlberta Math & Stats chatbot (LangGraph)")
+    parser.add_argument("--provider", choices=["claude", "ollama"], help="LLM provider (overrides LLM_PROVIDER env var)")
+    parser.add_argument("--embedding", choices=["ollama", "sentence", "openai"], help="Embedding provider (overrides EMBEDDING_PROVIDER env var)")
+    args = parser.parse_args()
+
+    if args.provider:
+        LLM_PROVIDER = args.provider
+    if args.embedding:
+        import retrieval.embeddings as _emb
+        _emb.EMBEDDING_PROVIDER = args.embedding
+
     bot = build_chatbot()
     while True:
         try:

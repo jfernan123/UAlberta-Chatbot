@@ -40,10 +40,13 @@ $env:ANTHROPIC_API_KEY = "sk-ant-..."
 ### 3. Build the vector database
 
 ```bash
-python -m retrieval.make_db -v
+python -m retrieval.make_db                        # delete old DB and rebuild (ollama embeddings)
+python -m retrieval.make_db --embedding sentence   # use BGE instead of Ollama
+python -m retrieval.make_db --embedding openai     # use OpenAI
+python -m retrieval.make_db -v                     # verbose — shows chunk counts
 ```
 
-This reads `data/pages_math.json`, `data/pages_calendar.json`, and `data/pages_synthetic.json` and creates the `db/` directory.
+Always does a full delete + rebuild from scratch. Reads `data/pages_math.json`, `data/pages_calendar.json`, and `data/pages_synthetic.json`.
 
 ---
 
@@ -52,13 +55,18 @@ This reads `data/pages_math.json`, `data/pages_calendar.json`, and `data/pages_s
 ### LangGraph chatbot (recommended)
 
 ```bash
-python chatbot_graph.py
+python chatbot_graph.py                              # defaults: claude + ollama embeddings
+python chatbot_graph.py --provider ollama            # use local qwen3 instead of Claude
+python chatbot_graph.py --embedding sentence         # use BGE embeddings instead of Ollama
+python chatbot_graph.py --provider ollama --embedding sentence
 ```
 
 ### Original chatbot (unchanged, for reference)
 
 ```bash
-python chatbot.py
+python chatbot.py                                    # defaults: ollama + ollama embeddings
+python chatbot.py --provider claude                  # use Claude instead of local qwen3
+python chatbot.py --embedding sentence
 ```
 
 ### Bare-bones CLI (no tools, raw retriever + Anthropic API)
@@ -104,7 +112,7 @@ python data/filter_calendar.py
 # 3. Generate synthetic bridge documents
 python data/generate_synthetic.py
 
-# 4. Rebuild the vector DB
+# 4. Rebuild the vector DB (always deletes old DB first)
 python -m retrieval.make_db -v
 ```
 
@@ -164,7 +172,19 @@ Tools available:
 
 ## Model
 
-Embeddings use **BAAI/bge-small-en-v1.5** via `sentence-transformers` (local, no Ollama or API needed). The model downloads automatically on first run.
+Embeddings are controlled by the `EMBEDDING_PROVIDER` environment variable:
+
+| `EMBEDDING_PROVIDER` | Model | Requires |
+|---|---|---|
+| `ollama` (default) | `nomic-embed-text` | Ollama running locally |
+| `sentence` | `BAAI/bge-small-en-v1.5` | `pip install sentence-transformers` |
+| `openai` | `text-embedding-3-small` | OpenAI API key |
+
+**After switching embedding providers, rebuild the vector DB** — embeddings from different models are incompatible:
+
+```bash
+python -m retrieval.make_db -v
+```
 
 Both `chatbot.py` and `chatbot_graph.py` support two LLM backends, controlled by the `LLM_PROVIDER` environment variable (or the hardcoded default at the top of each file):
 
@@ -203,6 +223,7 @@ Requires [Ollama](https://ollama.com) installed and running:
 ```bash
 ollama serve
 ollama pull qwen3:0.6b
+ollama pull nomic-embed-text  # only needed if EMBEDDING_PROVIDER=ollama (default)
 ```
 
 Then set `LLM_PROVIDER = "ollama"` in the chatbot file.
