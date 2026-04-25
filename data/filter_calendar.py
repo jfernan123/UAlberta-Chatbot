@@ -53,6 +53,10 @@ def is_math_stat_relevant(page):
     if "content.php" in url:
         return False
 
+    # Drop entity pages (Faculty pages - Engineering, Medicine, Arts, Business, etc.)
+    if "preview_entity" in url:
+        return False
+
     # Drop search, help, index, misc pages
     if any(x in url for x in ["search_advanced", "help.php", "index.php", "catalog_list", "misc/"]):
         return False

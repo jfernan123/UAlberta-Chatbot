@@ -21,8 +21,8 @@ def main():
     parser.add_argument(
         "-i", "--input",
         nargs="+",
-        default=["data/pages_math.json"],
-        help="One or more input JSON files (default: data/pages_math.json)",
+        default=["data/pages_math.json", "data/pages_calendar.json", "data/pages_synthetic.json"],
+        help="One or more input JSON files",
     )
     parser.add_argument(
         "-o", "--output",

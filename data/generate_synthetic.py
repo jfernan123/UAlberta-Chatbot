@@ -165,6 +165,77 @@ synthetic.append({
     }]
 })
 
+# 5. Consolidated Honors/Major Mathematics requirements (poid=84304)
+def build_program_requirements(cal_pages, poid, program_label):
+    """Consolidate all sections from a program page into a single readable document."""
+    page = None
+    for p in cal_pages:
+        if f"poid={poid}" in p.get("url", ""):
+            page = p
+            break
+    if not page:
+        return f"Program page {poid} not found."
+
+    lines = []
+    current_section = None
+    for s in page.get("sections", []):
+        heading = s["heading"].strip()
+        content = s["content"].strip()
+        if not content:
+            current_section = heading
+            continue
+        if current_section:
+            lines.append(f"{current_section}:")
+            current_section = None
+        if heading in ("3 units from:", "6 units from:", "3 units from"):
+            lines.append(f"  Choose {heading} {content}")
+        else:
+            lines.append(f"{heading}: {content}")
+    return "\n".join(lines)
+
+
+math_req = build_program_requirements(cal_pages, "84304", "Mathematics")
+stat_req = build_program_requirements(cal_pages, "84315", "Statistics")
+
+synthetic.append({
+    "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84304",
+    "sections": [{
+        "heading": "Honors in Mathematics Requirements (63 units) - Full Course List",
+        "content": (
+            "Honors in Mathematics at the University of Alberta requires 63 units. "
+            "This is the complete list of required courses for the Honors Mathematics program:\n"
+            + math_req
+        )
+    }, {
+        "heading": "Major in Mathematics Requirements (51 units) - Full Course List",
+        "content": (
+            "Major in Mathematics at the University of Alberta requires 51 units. "
+            "This is the complete list of required courses for the Mathematics Major program:\n"
+            + math_req
+        )
+    }]
+})
+
+synthetic.append({
+    "url": "https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315",
+    "sections": [{
+        "heading": "Honors in Statistics Requirements (66 units) - Full Course List",
+        "content": (
+            "Honors in Statistics at the University of Alberta requires 66 units. "
+            "This is the complete list of required courses for the Honors Statistics program:\n"
+            + stat_req
+        )
+    }, {
+        "heading": "Major in Statistics Requirements (54 units) - Full Course List",
+        "content": (
+            "Major in Statistics at the University of Alberta requires 54 units. "
+            "This is the complete list of required courses for the Statistics Major program:\n"
+            + stat_req
+        )
+    }]
+})
+
+
 out_path = os.path.join(BASE, "data/pages_synthetic.json")
 with open(out_path, "w", encoding="utf-8") as f:
     json.dump(synthetic, f, ensure_ascii=False, indent=2)
