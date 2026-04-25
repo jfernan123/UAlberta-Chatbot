@@ -41,9 +41,10 @@ $env:ANTHROPIC_API_KEY = "sk-ant-..."
 
 ```bash
 python -m retrieval.make_db                        # delete old DB and rebuild (ollama embeddings)
-python -m retrieval.make_db --embedding sentence   # use BGE instead of Ollama
-python -m retrieval.make_db --embedding openai     # use OpenAI
-python -m retrieval.make_db -v                     # verbose — shows chunk counts
+python -m retrieval.make_db --embedding ollama     # nomic-embed-text via Ollama (default)
+python -m retrieval.make_db --embedding sentence   # BGE local via sentence-transformers
+python -m retrieval.make_db --embedding openai     # OpenAI text-embedding-3-small
+python -m retrieval.make_db -v                     # verbose — shows chunk counts per file
 ```
 
 Always does a full delete + rebuild from scratch. Reads `data/pages_math.json`, `data/pages_calendar.json`, and `data/pages_synthetic.json`.
