@@ -245,7 +245,7 @@ This project supports [uv](https://github.com/astral-sh/uv) for running commands
 ```{bash}
 uv sync
 ```
-Ensure [Ollama is installed and running](https://github.com/ollama/ollama?tab=readme-ov-file#start-ollama). See [Using Ollama](#using-ollama-local-free) for setup. if [Ollama](https://ollama.com) not installed or running.
+Ensure [Ollama is installed and running](https://github.com/ollama/ollama?tab=readme-ov-file#start-ollama). See [Using Ollama](#using-ollama-local-free) for setup.
 
 ```bash
 # Run chatbot
