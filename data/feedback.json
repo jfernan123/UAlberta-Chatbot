@@ -436,5 +436,35 @@
     "question": "What is matrix multiplication?",
     "response": "Matrix multiplication is the operation that takes two matrices and produces another matrix. For example, multiplying a row vector with a column vector results in a new matrix. This operation is essential in linear algebra and is used in various applications, such as solving systems of equations or analyzing linear transformations.\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html](https://www.ualberta.ca/en/ma",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:53:10.170002",
+    "question": "What is mathematical finance?",
+    "response": "Mathematical finance refers to the study of financial mathematics and its applications in various fields such as finance, economics, and risk management. It involves the use of mathematical tools to model and analyze financial markets, including topics like present and accumulated values for cash flows, option pricing in discrete-time models, and the pricing and hedging of financial contracts. Courses like **MATH 253 - Theory of Interest** and **MATH 356 - Introduction to Mathematical Finance I*",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:53:36.243118",
+    "question": "What are its prerequisites?",
+    "response": "Prerequisites for the program include:  \n- **MATHQ or MATH pre- or corequisites** (as required for many courses listed in the context).  \n- **CMPUT 174 and CMPUT 175** (for students in the Business Technology Management major).  \n- **Indigenous Canada MOOC certificate** (if completed within 5 years of the first term of registration).  \n\nThese prerequisites ensure students meet the requirements for admission and completion of the program.\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematica",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-25T11:54:13.669022",
+    "question": "What is indienous canada mooc?",
+    "response": "The provided course information does not mention any \"Indienous Canada MOOC.\" The context focuses on university programs, admissions processes, and departmental policies, but there is no information related to MOOCs or Canadian-specific courses. If you're referring to a specific MOOC course, please provide more details, and I'll assist accordingly.\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/how-to-apply.html](https://www.ualbe",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-25T11:54:42.179227",
+    "question": "What is complex variables?",
+    "response": "Complex variables refer to the study of complex analysis, which involves topics such as complex linearity, holomorphicity, and manifolds. The course covers advanced topics like Hartog’s theorem, Weierstrass preparation theorem, Riemann extension theorem, Weierstrass division theorem, analytic Nullstellensatz, implicit and inverse function theorems, complex manifolds, and meromorphic maps. Prerequisites include MATH 411.\n\n---\n**Sources**\n- [https://calendar.ualberta.ca/preview_course_nopop.php?ca",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:55:03.743840",
+    "question": "what is time series analysis?",
+    "response": "Time series analysis is a branch of statistics that deals with the study of sequences, such as time series data, which are sequences of observations over time. This course typically covers topics like stationary series, spectral analysis, models in time series (including autoregressive, moving average, ARMA, and ARIMA), and computational techniques for time series data. It is offered in either term and may be offered in alternate years. The prerequisites for this course include STAT 372 and 378.",
+    "rating": 1
   }
 ]
