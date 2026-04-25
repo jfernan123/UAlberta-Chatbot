@@ -3,6 +3,7 @@ Run the test suite and save results to a Jupyter notebook.
 Usage: python tests/run_suite.py
 Output: tests/results/results_<timestamp>.ipynb
 """
+
 import os
 import sys
 import json
@@ -12,7 +13,8 @@ from datetime import datetime
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from tests.test_suite import EASY, MEDIUM, HARD
-from chatbot_graph import build_chatbot
+from chatbot_graph import build_chatbot, LLM_PROVIDER as CHATBOT_LLM_PROVIDER
+import retrieval.embeddings as emb_module
 
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
 os.makedirs(RESULTS_DIR, exist_ok=True)
@@ -29,14 +31,35 @@ def make_markdown_cell(source: str) -> dict:
 def build_notebook(runs: list[dict], elapsed: float) -> dict:
     cells = []
 
-    # Header
-    cells.append(make_markdown_cell(
-        f"# Chatbot Test Suite Results\n\n"
-        f"- **Date:** {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-        f"- **Model:** chatbot_graph (Claude Haiku)\n"
-        f"- **Questions:** {len(runs)}\n"
-        f"- **Total time:** {elapsed:.1f}s\n"
-    ))
+    # Capture current configuration at runtime
+    from chatbot_graph import _get_llm
+    from retrieval.embeddings import get_embeddings
+
+    # Get LLM model
+    llm = _get_llm()
+    llm_model = getattr(llm, "model", "N/A")
+
+    # Get embedding model
+    emb = get_embeddings()
+    emb_model = getattr(emb, "model", "N/A")
+
+    # Determine DB path
+    db_path = "db/" if os.path.exists("db/chroma.sqlite3") else "N/A"
+
+    # Header with configuration
+    cells.append(
+        make_markdown_cell(
+            f"# Chatbot Test Suite Results\n\n"
+            f"- **Date:** {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
+            f"- **LLM Provider:** {CHATBOT_LLM_PROVIDER}\n"
+            f"- **LLM Model:** {llm_model}\n"
+            f"- **Embedding Provider:** {emb_module.EMBEDDING_PROVIDER}\n"
+            f"- **Embedding Model:** {emb_model}\n"
+            f"- **DB Path:** {db_path}\n"
+            f"- **Questions:** {len(runs)}\n"
+            f"- **Total time:** {elapsed:.1f}s\n"
+        )
+    )
 
     current_category = None
     for run in runs:
@@ -44,21 +67,29 @@ def build_notebook(runs: list[dict], elapsed: float) -> dict:
         if run["category"] != current_category:
             current_category = run["category"]
             count = sum(1 for r in runs if r["category"] == current_category)
-            cells.append(make_markdown_cell(f"---\n\n## {current_category} ({count} questions)"))
+            cells.append(
+                make_markdown_cell(f"---\n\n## {current_category} ({count} questions)")
+            )
 
         # Q&A cell
-        cells.append(make_markdown_cell(
-            f"### Q{run['index']}: {run['question']}\n\n"
-            f"**Time:** {run['elapsed']:.1f}s\n\n"
-            f"---\n\n"
-            f"{run['answer']}"
-        ))
+        cells.append(
+            make_markdown_cell(
+                f"### Q{run['index']}: {run['question']}\n\n"
+                f"**Time:** {run['elapsed']:.1f}s\n\n"
+                f"---\n\n"
+                f"{run['answer']}"
+            )
+        )
 
     return {
         "nbformat": 4,
         "nbformat_minor": 5,
         "metadata": {
-            "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
+            "kernelspec": {
+                "display_name": "Python 3",
+                "language": "python",
+                "name": "python3",
+            },
             "language_info": {"name": "python", "version": "3.11.0"},
         },
         "cells": cells,
@@ -85,13 +116,15 @@ def main():
                 answer = f"**ERROR:** {e}"
             elapsed = time.time() - t0
 
-            runs.append({
-                "index": q_index,
-                "category": category,
-                "question": question,
-                "answer": answer,
-                "elapsed": elapsed,
-            })
+            runs.append(
+                {
+                    "index": q_index,
+                    "category": category,
+                    "question": question,
+                    "answer": answer,
+                    "elapsed": elapsed,
+                }
+            )
             print(f"       → {elapsed:.1f}s")
             q_index += 1
 
