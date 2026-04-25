@@ -154,9 +154,60 @@ def detect_course_tools(query: str) -> list:
     return tools_to_call
 
 
+GRADUATE_PROGRAMS_INFO = """The Department of Mathematical and Statistical Sciences at the University of Alberta offers the following graduate programs:
+
+1. MDP — Master's in Modelling, Data + Predictions (course-based, 16 months): A professionally-oriented data science program combining data modelling and analytics skills for careers in industry and government.
+
+2. Thesis-based MSc (Master of Science): Typically two years. Natural stepping stone to a PhD. Available with specializations in Applied Mathematics, Mathematical Finance, Mathematical Physics, Pure Mathematics, Statistical Machine Learning, and Statistics.
+
+3. PhD (Doctoral Program): Typically four to five years. Normally requires a thesis-based MSc for entry; very strong BSc students may transfer directly. Same specializations as the MSc.
+
+4. Embedded Certificate in Data Science: Supplementary to a Pure/Applied Mathematics or Mathematical Physics degree. Provides marketable skills for the non-academic job market.
+
+5. Graduate Teaching and Learning Program: A supplementary post-baccalaureate certificate in university teaching instruction, open to all graduate students.
+
+Specializations available in MSc and PhD programs: Applied Mathematics, Mathematical Finance, Mathematical Physics, (Pure) Mathematics, Statistical Machine Learning, Statistics.
+
+Source: https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/programs/index.html"""
+
+GRADUATE_CONTACT_INFO = """Graduate program contacts for the Department of Mathematical and Statistical Sciences at the University of Alberta:
+
+- MDP Program (Modelling, Data + Predictions): Jane Cooper (UCOMM 5-182F), email mssmdp@ualberta.ca. Jane Cooper is the coordinator and person in charge of the MDP program.
+- All other graduate programs (MSc, PhD): Amy Ouyang (UCOMM 5-182G), email mssgrad@ualberta.ca, phone 780-492-5799.
+- Prospective student inquiries (any program): sci.gradadm@ualberta.ca
+
+Source: https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/contact.html"""
+
+
+def _detect_graduate_info_query(query: str) -> str:
+    """Return direct info string for graduate program listing or contact queries, else empty string."""
+    q = query.lower()
+    listing_keywords = [
+        "what graduate programs", "which graduate programs", "graduate programs available",
+        "available graduate programs", "list graduate programs", "graduate programs offered",
+        "programs in math and stat", "programs offered in math", "graduate degrees available",
+        "what programs does", "what degrees",
+    ]
+    contact_keywords = [
+        "who is in charge", "who runs", "who manages", "who leads", "who coordinates",
+        "who is responsible", "contact for mdp", "mdp contact", "mdp coordinator",
+        "in charge of the mdp", "who to contact", "who should i contact",
+    ]
+    if any(kw in q for kw in listing_keywords):
+        return GRADUATE_PROGRAMS_INFO
+    if any(kw in q for kw in contact_keywords):
+        return GRADUATE_CONTACT_INFO
+    return ""
+
+
 def call_course_tools(query: str) -> str:
     if not USE_COURSE_TOOLS:
         return ""
+
+    graduate_info = _detect_graduate_info_query(query)
+    if graduate_info:
+        return graduate_info
+
     tools_to_call = detect_course_tools(query)
     course_codes = extract_course_codes(query)
 
@@ -329,6 +380,8 @@ Answer:""")
             if url and url not in seen_urls:
                 seen_urls.add(url)
                 source_urls.append(url)
+            if len(source_urls) == 3:
+                break
 
         if source_urls:
             source_block = "\n\n---\n**Sources**\n" + "\n".join(

@@ -322,5 +322,17 @@
     "question": "Who is in charge of the MDP program?",
     "response": "The MDP program is managed by Jane Cooper, who is the contact person for the graduate program.",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T18:49:13.364312",
+    "question": "Who is in charge of the MDP program?",
+    "response": "The MDP program is selected by the **Board of Governors of the University of Alberta**, **General Faculties Council**, and the **Faculty Council of the Faculty of Medicine and Dentistry**.\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/index.html](https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/index.html)\n- [https://calendar.ualberta.ca/content.php?catoid=56&navoid=17434](https://calendar.ualberta.ca/conten",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T18:50:59.024979",
+    "question": "What graduate programs are available in Math and Stats at UAlberta?",
+    "response": "The graduate programs available in Mathematics and Statistics at UAlberta include those listed in the University Calendar, such as programs focused on Statistics, Mathematics, and related fields like Financial Mathematics and Economics. For example, Statistics programs prepare graduates for careers in data analysis, risk management, and financial engineering. The exact programs are not specified in the provided information, but the context confirms the availability of these programs.\n\n---\n**Sour",
+    "rating": -1
   }
 ]
