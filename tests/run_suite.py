@@ -1,0 +1,112 @@
+"""
+Run the test suite and save results to a Jupyter notebook.
+Usage: python tests/run_suite.py
+Output: tests/results/results_<timestamp>.ipynb
+"""
+import os
+import sys
+import json
+import time
+from datetime import datetime
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from tests.test_suite import EASY, MEDIUM, HARD
+from chatbot_graph import build_chatbot
+
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
+os.makedirs(RESULTS_DIR, exist_ok=True)
+
+
+def make_markdown_cell(source: str) -> dict:
+    return {
+        "cell_type": "markdown",
+        "metadata": {},
+        "source": source,
+    }
+
+
+def build_notebook(runs: list[dict], elapsed: float) -> dict:
+    cells = []
+
+    # Header
+    cells.append(make_markdown_cell(
+        f"# Chatbot Test Suite Results\n\n"
+        f"- **Date:** {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
+        f"- **Model:** chatbot_graph (Claude Haiku)\n"
+        f"- **Questions:** {len(runs)}\n"
+        f"- **Total time:** {elapsed:.1f}s\n"
+    ))
+
+    current_category = None
+    for run in runs:
+        # Section header when category changes
+        if run["category"] != current_category:
+            current_category = run["category"]
+            count = sum(1 for r in runs if r["category"] == current_category)
+            cells.append(make_markdown_cell(f"---\n\n## {current_category} ({count} questions)"))
+
+        # Q&A cell
+        cells.append(make_markdown_cell(
+            f"### Q{run['index']}: {run['question']}\n\n"
+            f"**Time:** {run['elapsed']:.1f}s\n\n"
+            f"---\n\n"
+            f"{run['answer']}"
+        ))
+
+    return {
+        "nbformat": 4,
+        "nbformat_minor": 5,
+        "metadata": {
+            "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
+            "language_info": {"name": "python", "version": "3.11.0"},
+        },
+        "cells": cells,
+    }
+
+
+def main():
+    print("Loading chatbot...")
+    bot = build_chatbot()
+
+    categories = [("EASY", EASY), ("MEDIUM", MEDIUM), ("HARD", HARD)]
+    runs = []
+    total_start = time.time()
+    q_index = 1
+
+    for category, questions in categories:
+        print(f"\n── {category} ({len(questions)} questions) ──")
+        for question in questions:
+            print(f"  [{q_index}] {question[:70]}")
+            t0 = time.time()
+            try:
+                answer = bot(question)
+            except Exception as e:
+                answer = f"**ERROR:** {e}"
+            elapsed = time.time() - t0
+
+            runs.append({
+                "index": q_index,
+                "category": category,
+                "question": question,
+                "answer": answer,
+                "elapsed": elapsed,
+            })
+            print(f"       → {elapsed:.1f}s")
+            q_index += 1
+
+    total_elapsed = time.time() - total_start
+    print(f"\nDone. {len(runs)} questions in {total_elapsed:.1f}s")
+
+    notebook = build_notebook(runs, total_elapsed)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    out_path = os.path.join(RESULTS_DIR, f"results_{timestamp}.ipynb")
+
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(notebook, f, ensure_ascii=False, indent=1)
+
+    print(f"Saved → {out_path}")
+
+
+if __name__ == "__main__":
+    main()
