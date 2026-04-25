@@ -26,6 +26,8 @@ conda activate stat541
 pip install langchain langchain-anthropic langchain-chroma langchain-ollama langgraph anthropic sentence-transformers
 ```
 
+for `uv` see [this](#using-uv)
+
 ### 2. Set your Anthropic API key
 
 ```bash
@@ -56,7 +58,7 @@ Always does a full delete + rebuild from scratch. Reads `data/pages_math.json`, 
 ### LangGraph chatbot (recommended)
 
 ```bash
-python chatbot_graph.py                              # defaults: claude + ollama embeddings
+python chatbot_graph.py                              # defaults: ollama + ollama embeddings
 python chatbot_graph.py --provider ollama            # use local qwen3 instead of Claude
 python chatbot_graph.py --embedding sentence         # use BGE embeddings instead of Ollama
 python chatbot_graph.py --provider ollama --embedding sentence
@@ -90,7 +92,7 @@ streamlit run app.py
 python tests/run_suite.py
 ```
 
-Runs 40 test questions and saves results to `tests/results/results_<timestamp>.ipynb`. Open the notebook in VS Code to read through answers and source URLs.
+Runs 46 test questions and saves results to `tests/results/results_<timestamp>.ipynb`. Open the notebook in VS Code to read through answers and source URLs.
 
 The suite is split into three tiers:
 - **Easy** — direct prerequisite lookups, course listings, Decima Robinson
@@ -166,7 +168,7 @@ Tools available:
 
 | File | Purpose |
 |---|---|
-| `tests/run_suite.py` | Runs all 40 questions, saves timestamped `.ipynb` to `tests/results/` |
+| `tests/run_suite.py` | Runs all 46 questions, saves timestamped `.ipynb` to `tests/results/` |
 | `tests/test_suite.py` | Question lists (EASY / MEDIUM / HARD) |
 
 ---
@@ -192,7 +194,7 @@ Both `chatbot.py` and `chatbot_graph.py` support two LLM backends, controlled by
 | File | Default |
 |---|---|
 | `chatbot.py` | `ollama` (qwen3:0.6b) |
-| `chatbot_graph.py` | `claude` (Claude Haiku) |
+| `chatbot_graph.py` | `ollama` (qwen3:0.6b) |
 
 ```powershell
 # Windows — run with Claude
@@ -208,7 +210,7 @@ LLM_PROVIDER=ollama python chatbot_graph.py
 LLM_PROVIDER=claude python chatbot.py
 ```
 
-### Using Claude (default)
+### Using Claude (optional, requires API key)
 
 Requires an Anthropic API key. Set it before running:
 
@@ -227,4 +229,54 @@ ollama pull qwen3:0.6b
 ollama pull nomic-embed-text  # only needed if EMBEDDING_PROVIDER=ollama (default)
 ```
 
-Then set `LLM_PROVIDER = "ollama"` in the chatbot file.
+Or set `LLM_PROVIDER=ollama` when running:
+
+```bash
+LLM_PROVIDER=ollama python chatbot.py
+```
+
+
+---
+
+## Using uv
+
+This project supports [uv](https://github.com/astral-sh/uv) for running commands.
+
+```{bash}
+uv sync
+```
+
+```bash
+# Run chatbot
+uv run python chatbot.py
+```
+
+For building the vector database, see the [Setup](#3-build-the-vector-database) section above.
+
+```{bash}
+# Rebuild vector DB
+uv run python -m retrieval.make_db -v
+```
+
+```{bash}
+# Run test suite
+uv run python tests/run_suite.py
+
+# Run web UI
+uv run streamlit run app.py
+```
+
+Configuration (set before running):
+
+```bash
+# Use Ollama (default)
+uv run python chatbot.py
+
+# Use Claude (requires ANTHROPIC_API_KEY)
+ANTHROPIC_API_KEY=sk-... LLM_PROVIDER=claude uv run python chatbot.py
+```
+---
+
+## License
+
+This project includes Streamlit. See: https://github.com/streamlit/streamlit/blob/develop/LICENSE
