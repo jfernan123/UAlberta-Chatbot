@@ -316,5 +316,29 @@
     "question": "Tell me about stats courses",
     "response": "Statistics courses at the University of Alberta are structured across four years, with offerings in each year as follows:\n\n- **Year 1**: STAT 151, STAT 161, STAT 181  \n- **Year 2**: STAT 235, STAT 252, STAT 265, STAT 266, STAT 276, STAT 281  \n- **Year 3**: STAT 337, STAT 353, STAT 361, STAT 368, STAT 371, STAT 372, STAT 378  \n- **Year 4**: STAT 413, STAT 432, STAT 437, STAT 441, STAT 453, STAT 471, STAT 479, STAT 497, STAT 498, STAT 499  \n- **Year 5**: STAT 501, STAT 502, STAT 503, STAT 504, STA",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T17:45:58.935956",
+    "question": "Who is in charge of the MDP program?",
+    "response": "The MDP program is managed by Jane Cooper, who is the contact person for the graduate program.",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T18:49:13.364312",
+    "question": "Who is in charge of the MDP program?",
+    "response": "The MDP program is selected by the **Board of Governors of the University of Alberta**, **General Faculties Council**, and the **Faculty Council of the Faculty of Medicine and Dentistry**.\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/index.html](https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/index.html)\n- [https://calendar.ualberta.ca/content.php?catoid=56&navoid=17434](https://calendar.ualberta.ca/conten",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T18:50:59.024979",
+    "question": "What graduate programs are available in Math and Stats at UAlberta?",
+    "response": "The graduate programs available in Mathematics and Statistics at UAlberta include those listed in the University Calendar, such as programs focused on Statistics, Mathematics, and related fields like Financial Mathematics and Economics. For example, Statistics programs prepare graduates for careers in data analysis, risk management, and financial engineering. The exact programs are not specified in the provided information, but the context confirms the availability of these programs.\n\n---\n**Sour",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-24T21:51:20.167783",
+    "question": "Is there a graduate class for numerical methods?",
+    "response": "Yes, there are graduate classes for numerical methods. For example, **MATH 535 - Numerical Methods I** and **MATH 536 - Numerical Solutions of Partial Differential Equations I** are graduate courses that cover topics such as numerical methods for solving linear systems, differential equations, and partial differential equations. These courses are offered as graduate programs and require prerequisites like advanced calculus.\n\n---\n**Sources**\n- [https://calendar.ualberta.ca/preview_course_nopop.ph",
+    "rating": 1
   }
 ]

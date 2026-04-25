@@ -3,9 +3,10 @@
 make_db.py - Create vector database from scraped data
 
 Usage:
-    uv run python make_db.py
-    uv run python make_db.py -v           # verbose output
-    uv run python make_db.py --input custom.json --output custom_db
+    python retrieval/make_db.py
+    python retrieval/make_db.py -v
+    python retrieval/make_db.py -i data/pages_math.json data/pages_calendar.json
+    python retrieval/make_db.py -o custom_db
 """
 
 import argparse
@@ -18,15 +19,13 @@ def main():
         description="Create vector database from scraped JSON data"
     )
     parser.add_argument(
-        "-i",
-        "--input",
+        "-i", "--input",
         nargs="+",
         default=["data/pages_math.json", "data/pages_calendar.json", "data/pages_synthetic.json"],
         help="One or more input JSON files",
     )
     parser.add_argument(
-        "-o",
-        "--output",
+        "-o", "--output",
         default="db",
         help="Output vector database directory (default: db)",
     )
@@ -46,10 +45,10 @@ def main():
 
     if args.verbose:
         print(f"Total: {len(chunks)} chunks")
+        print("Rebuilding vector database (old DB cleared automatically)...")
 
-    create_vector_db(chunks)
-
-    print(f"Created vector database at {args.output}/")
+    create_vector_db(chunks, args.output)
+    print(f"Vector database rebuilt at {args.output}/")
 
 
 if __name__ == "__main__":

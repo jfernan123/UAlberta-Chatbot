@@ -416,9 +416,10 @@ def evaluate_retrieval(
             if match:
                 retrieved_sources.append(match.group(1))
 
-    # For estimation, assume total relevant = retrieved (conservative)
+    # Estimate: assume corpus contains 2× the number retrieved as relevant
     precision = num_relevant_retrieved / k if k > 0 else 0
-    recall = num_relevant_retrieved / max(num_relevant_retrieved, 1)
+    estimated_total_relevant = max(num_relevant_retrieved * 2, 1)
+    recall = num_relevant_retrieved / estimated_total_relevant
 
     return RetrievalResult(
         question=question,
@@ -608,8 +609,11 @@ def run_evaluation(
         print(f"[{i}/{len(test_cases)}] Question: {question[:50]}...")
 
         try:
-            # Get response
-            response = chatbot_func(question)
+            # Get response (chatbot is a streaming generator)
+            chunks = chatbot_func(question)
+            full = "".join(chunks)
+            # Strip trailing source block from evaluation text
+            response = full.split("\n\n---\n**Sources**")[0]
 
             # Get context using pre-built retriever (no re-import inside loop)
             retrieved_docs = retriever.invoke(question)
