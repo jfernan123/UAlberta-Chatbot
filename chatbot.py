@@ -1,3 +1,4 @@
+import os
 import re
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama
@@ -12,8 +13,8 @@ from courses.course_tools import (
     get_courses_by_level,
 )
 
-# Switch to "claude" to use Claude Haiku instead of local Ollama
-LLM_PROVIDER = "ollama"
+# Override with LLM_PROVIDER env var: "ollama" or "claude"
+LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "ollama")
 
 # Set to False to disable course tool detection and rely purely on vector DB
 USE_COURSE_TOOLS = True

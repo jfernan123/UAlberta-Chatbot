@@ -16,7 +16,8 @@ from courses.course_tools import (
     get_program_requirements,
 )
 
-LLM_PROVIDER = "claude"
+import os
+LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "claude")
 VERBOSE = False
 MAX_RETRIEVAL_ATTEMPTS = 2
 

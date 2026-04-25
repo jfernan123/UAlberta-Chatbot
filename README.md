@@ -166,11 +166,25 @@ Tools available:
 
 Embeddings use **nomic-embed-text** via Ollama (local, no API cost).
 
-Both `chatbot.py` and `chatbot_graph.py` support two LLM backends, controlled by the `LLM_PROVIDER` variable at the top of each file:
+Both `chatbot.py` and `chatbot_graph.py` support two LLM backends, controlled by the `LLM_PROVIDER` environment variable (or the hardcoded default at the top of each file):
 
-```python
-LLM_PROVIDER = "claude"   # Claude Haiku via Anthropic API (default)
-LLM_PROVIDER = "ollama"   # qwen3:0.6b via local Ollama (no API cost)
+| File | Default |
+|---|---|
+| `chatbot.py` | `ollama` (qwen3:0.6b) |
+| `chatbot_graph.py` | `claude` (Claude Haiku) |
+
+```powershell
+# Windows — run with Claude
+$env:LLM_PROVIDER = "claude"; python chatbot_graph.py
+
+# Windows — run with Ollama
+$env:LLM_PROVIDER = "ollama"; python chatbot_graph.py
+```
+
+```bash
+# Mac/Linux
+LLM_PROVIDER=ollama python chatbot_graph.py
+LLM_PROVIDER=claude python chatbot.py
 ```
 
 ### Using Claude (default)
