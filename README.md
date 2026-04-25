@@ -164,7 +164,19 @@ Tools available:
 
 ## Model
 
-Embeddings use **BAAI/bge-small-en-v1.5** via `sentence-transformers` (local, no Ollama or API needed). The model downloads automatically on first run.
+Embeddings are controlled by the `EMBEDDING_PROVIDER` environment variable:
+
+| `EMBEDDING_PROVIDER` | Model | Requires |
+|---|---|---|
+| `ollama` (default) | `nomic-embed-text` | Ollama running locally |
+| `sentence` | `BAAI/bge-small-en-v1.5` | `pip install sentence-transformers` |
+| `openai` | `text-embedding-3-small` | OpenAI API key |
+
+**After switching embedding providers, rebuild the vector DB** — embeddings from different models are incompatible:
+
+```bash
+python -m retrieval.make_db -v
+```
 
 Both `chatbot.py` and `chatbot_graph.py` support two LLM backends, controlled by the `LLM_PROVIDER` environment variable (or the hardcoded default at the top of each file):
 
@@ -203,6 +215,7 @@ Requires [Ollama](https://ollama.com) installed and running:
 ```bash
 ollama serve
 ollama pull qwen3:0.6b
+ollama pull nomic-embed-text  # only needed if EMBEDDING_PROVIDER=ollama (default)
 ```
 
 Then set `LLM_PROVIDER = "ollama"` in the chatbot file.

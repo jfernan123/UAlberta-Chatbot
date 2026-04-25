@@ -17,7 +17,7 @@ from courses.course_tools import (
 )
 
 import os
-LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "claude")
+LLM_PROVIDER = "ollama"#os.environ.get("LLM_PROVIDER", "claude")
 VERBOSE = False
 MAX_RETRIEVAL_ATTEMPTS = 2
 
