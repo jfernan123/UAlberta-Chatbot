@@ -1,11 +1,7 @@
-# chatbot.py
-import json
 import re
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.messages import HumanMessage, AIMessage
-from langchain.tools import tool
 from retrieval import load_retriever
 from courses.course_tools import (
     get_stat_courses,
@@ -16,34 +12,54 @@ from courses.course_tools import (
     get_courses_by_level,
 )
 
-# Shared conversation memory (across all users, limited to 10 messages)
-# Manual implementation instead of langchain.memory (v0.3+ changed this)
-_shared_history = []  # List of {"question": str, "answer": str}
+# Switch to "claude" to use Claude Haiku instead of local Ollama
+LLM_PROVIDER = "ollama"
+
+# Set to False to disable course tool detection and rely purely on vector DB
+USE_COURSE_TOOLS = True
+
+# Set to True to print retrieved chunks and course tool output before each answer
+VERBOSE = False
+
+# Set to False to disable query normalisation (e.g. "stat" -> "Statistics")
+USE_NORMALIZATION = True
+
+
+def _get_llm():
+    if LLM_PROVIDER == "claude":
+        from langchain_anthropic import ChatAnthropic
+        return ChatAnthropic(model="claude-haiku-4-5-20251001", temperature=0)
+    return ChatOllama(model="qwen3:0.6b", temperature=0, think=False)
+
+
+# Shared conversation memory (last 10 Q&A pairs across the session)
+_shared_history: list[dict] = []
 MAX_HISTORY = 10
 
 
-def _add_to_history(question: str, answer: str):
-    """Add a Q&A pair to shared history."""
+def _add_to_history(question: str, answer: str) -> None:
     _shared_history.append({"question": question, "answer": answer})
-    # Keep only last MAX_HISTORY pairs
     if len(_shared_history) > MAX_HISTORY:
         _shared_history.pop(0)
 
 
 def _get_history_str() -> str:
-    """Get formatted history string."""
     if not _shared_history:
         return "No previous conversation."
-
     lines = []
     for i, item in enumerate(_shared_history, 1):
         lines.append(f"Turn {i}:")
         lines.append(f"  User: {item['question']}")
-        lines.append(f"  Assistant: {item['answer'][:200]}...")  # Truncate for context
+        lines.append(f"  Assistant: {item['answer'][:200]}...")
     return "\n".join(lines)
 
 
-# Case-insensitivity mapping for common variations
+def _strip_thinking(text: str) -> str:
+    """Remove <think>...</think> blocks emitted by qwen3 models."""
+    return re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+
+
+# Case-insensitivity mapping for common query variations
 QUERY_VARIATIONS = [
     (r"\bmdp\b", "MDP"),
     (r"\bhonours?\b", "Honors"),
@@ -65,124 +81,82 @@ QUERY_VARIATIONS = [
 
 
 def normalize_query(query: str) -> str:
-    """Normalize query to handle common case/spelling variations."""
     normalized = query
     for pattern, replacement in QUERY_VARIATIONS:
         normalized = re.sub(pattern, replacement, normalized, flags=re.IGNORECASE)
     return normalized
 
 
-def extract_course_codes(query: str) -> list:
-    """Extract course codes from a query."""
-    import re
-
+def extract_course_codes(query: str) -> list[str]:
     pattern = r"\b(MATH|STAT)\s*(\d{3})\b"
     matches = re.findall(pattern, query, re.IGNORECASE)
     return [f"{prefix.upper()} {num}" for prefix, num in matches]
 
 
 def detect_course_tools(query: str) -> list:
-    """Detect which course tools should be called based on query keywords."""
     query_lower = query.lower()
     tools_to_call = []
     course_codes = extract_course_codes(query)
 
-    # Prerequisite queries have highest priority (needs course code)
-    prereq_keywords = [
-        "prerequisite",
-        "prereq",
-        "require",
-        "before i take",
-        "before taking",
-        "need before",
+    # Program/degree/admission and comparison queries should be answered from retrieved
+    # pages, not from the course-listing tools (which return course codes, not descriptions).
+    program_keywords = [
+        "program", "degree", "admission", "apply", "applying",
+        "phd", "msc", "master", "mmath", "requirements to get in",
+        "how to get into", "graduate studies", "postgraduate",
+        # comparison / structural questions
+        "difference between", "honors vs", "major vs", "honors and major",
+        "what is the difference", "compare", "program structure",
+        "double major", "can i double",
+        # specific named programs / services
+        "what is the mdp", "what is the msc", "what is the phd",
+        "decima robinson",
     ]
-    if any(kw in query_lower for kw in prereq_keywords) and course_codes:
-        tools_to_call.append(get_course_prerequisites)
-        return tools_to_call  # Prioritize prereq over general course queries
+    if any(kw in query_lower for kw in program_keywords):
+        return []
 
-    # Sequence/pathway queries
+    prereq_keywords = ["prerequisite", "prereq", "require", "before i take", "before taking", "need before"]
+    if any(kw in query_lower for kw in prereq_keywords) and course_codes:
+        return [get_course_prerequisites]
+
     seq_keywords = ["sequence", "path", "stream", "track", "after completing"]
     if any(kw in query_lower for kw in seq_keywords):
-        tools_to_call.append(get_course_sequence)
-        return tools_to_call
+        return [get_course_sequence]
 
-    # Statistics course queries
-    stat_keywords = [
-        "statistic",
-        "statistics",
-        "stat ",
-        "stat",
-        "data science",
-        "biostat",
-        "probability",
-    ]
+    stat_keywords = ["statistic", "statistics", "stat ", "stat", "data science", "biostat", "probability"]
     if any(kw in query_lower for kw in stat_keywords):
         tools_to_call.append(get_stat_courses)
 
-    # Year level queries - check BEFORE math_keywords (to catch "100-level math" etc)
     year_keywords = [
-        "first year",
-        "second year",
-        "third year",
-        "yr1",
-        "yr2",
-        "yr3",
-        "100-level",
-        "100 level",
-        "200-level",
-        "200 level",
-        "300-level",
-        "300 level",
-        "year 1",
-        "year 2",
-        "year 3",
+        "first year", "second year", "third year", "yr1", "yr2", "yr3",
+        "100-level", "100 level", "200-level", "200 level", "300-level", "300 level",
+        "year 1", "year 2", "year 3",
     ]
     for kw in year_keywords:
         if kw in query_lower:
-            tools_to_call = [get_courses_by_level]
-            return tools_to_call
+            return [get_courses_by_level]
 
-    # Math course queries
-    math_keywords = [
-        "math ",
-        "mathematic",
-        "calculus",
-        "algebra",
-        "analysis",
-        "geometry",
-    ]
+    math_keywords = ["math ", "mathematic", "calculus", "algebra", "analysis", "geometry"]
     if any(kw in query_lower for kw in math_keywords):
-        # NEW: If a specific course code is mentioned and user is asking "what is X",
-        # prioritize getting specific course info instead of listing all courses
-        if course_codes and any(
-            kw in query_lower
-            for kw in ["what is", "what's", "details", "about", "name of"]
-        ):
-            # User is asking about a specific course - get that course's details
-            tools_to_call = [get_course_prerequisites]
-            return tools_to_call
+        if course_codes and any(kw in query_lower for kw in ["what is", "what's", "details", "about", "name of"]):
+            return [get_course_prerequisites]
         tools_to_call.append(get_math_courses)
 
-    # Search queries (fallback)
     search_keywords = ["search", "find", "look for", "offered", "without any prereq"]
     if any(kw in query_lower for kw in search_keywords):
         tools_to_call.append(search_courses)
 
-    # Senior/Graduate level course queries - check BEFORE general math/stat keywords
     senior_keywords = ["senior", "400-level", "yr4", "yr 4", "fourth year"]
     grad_keywords = ["graduate", "grad ", "500-level", "yr5", "yr 5", "500 level"]
     if any(kw in query_lower for kw in senior_keywords + grad_keywords):
-        level = (
-            "senior" if any(kw in query_lower for kw in senior_keywords) else "graduate"
-        )
-        tools_to_call = [get_courses_by_level]
-        return tools_to_call
+        return [get_courses_by_level]
 
     return tools_to_call
 
 
 def call_course_tools(query: str) -> str:
-    """Call appropriate course tools based on query."""
+    if not USE_COURSE_TOOLS:
+        return ""
     tools_to_call = detect_course_tools(query)
     course_codes = extract_course_codes(query)
 
@@ -197,52 +171,29 @@ def call_course_tools(query: str) -> str:
             elif tool_func == get_math_courses:
                 result = tool_func.invoke({})
             elif tool_func == get_course_prerequisites:
-                # Use first course code found, or default
                 code = course_codes[0] if course_codes else None
                 if code:
                     result = tool_func.invoke({"course_code": code})
                 else:
                     result = "No specific course code found in question."
             elif tool_func == get_course_sequence:
-                # Try to extract sequence name from query
                 seq = extract_sequence_from_query(query)
                 result = tool_func.invoke({"sequence_name": seq})
             elif tool_func == search_courses:
-                # Extract keyword from query
                 keyword = extract_search_keyword(query)
                 result = tool_func.invoke({"keyword": keyword})
             elif tool_func == get_courses_by_level:
-                # Determine department and level from query
                 q = query.lower()
-                # Check for year level
-                if any(
-                    kw in q
-                    for kw in ["first year", "100-level", "100 level", "yr1", "year 1"]
-                ):
+                if any(kw in q for kw in ["first year", "100-level", "100 level", "yr1", "year 1"]):
                     level = "first"
-                elif any(
-                    kw in q
-                    for kw in ["second year", "200-level", "200 level", "yr2", "year 2"]
-                ):
+                elif any(kw in q for kw in ["second year", "200-level", "200 level", "yr2", "year 2"]):
                     level = "second"
-                elif any(
-                    kw in q
-                    for kw in ["third year", "300-level", "300 level", "yr3", "year 3"]
-                ):
+                elif any(kw in q for kw in ["third year", "300-level", "300 level", "yr3", "year 3"]):
                     level = "third"
-                elif any(
-                    kw in q
-                    for kw in ["senior", "400-level", "400 level", "yr4", "fourth year"]
-                ):
+                elif any(kw in q for kw in ["senior", "400-level", "400 level", "yr4", "fourth year"]):
                     level = "senior"
-                elif any(
-                    kw in q
-                    for kw in ["graduate", "grad ", "500-level", "500 level", "yr5"]
-                ):
-                    level = "graduate"
                 else:
-                    level = "graduate"  # default
-                # Determine department
+                    level = "graduate"
                 dept = None
                 if "math" in query.lower():
                     dept = "math"
@@ -261,7 +212,6 @@ def call_course_tools(query: str) -> str:
 
 
 def extract_sequence_from_query(query: str) -> str | None:
-    """Extract sequence name from query."""
     query_lower = query.lower()
     sequences = {
         "engineering": ["engineering"],
@@ -272,29 +222,19 @@ def extract_sequence_from_query(query: str) -> str | None:
         "applied_stats": ["applied stat"],
         "probability": ["probability"],
     }
-
     for seq_name, keywords in sequences.items():
         if any(kw in query_lower for kw in keywords):
             return seq_name
 
-    # NEW: Detect sequence from course code in query (Option A)
     course_codes = extract_course_codes(query)
     if course_codes:
-        # Map course to its sequence
         course_to_seq = {
-            "MATH 117": "honors",
-            "MATH 118": "honors",
-            "MATH 216": "honors",
-            "MATH 217": "honors",
-            "MATH 100": "engineering",
-            "MATH 101": "engineering",
-            "MATH 209": "engineering",
-            "MATH 134": "regular_life_sci",
-            "MATH 136": "regular_life_sci",
-            "MATH 144": "regular_math_phys",
-            "MATH 146": "regular_math_phys",
-            "MATH 154": "regular_business",
-            "MATH 156": "regular_business",
+            "MATH 117": "honors", "MATH 118": "honors",
+            "MATH 216": "honors", "MATH 217": "honors",
+            "MATH 100": "engineering", "MATH 101": "engineering", "MATH 209": "engineering",
+            "MATH 134": "regular_life_sci", "MATH 136": "regular_life_sci",
+            "MATH 144": "regular_math_phys", "MATH 146": "regular_math_phys",
+            "MATH 154": "regular_business", "MATH 156": "regular_business",
         }
         if course_codes[0] in course_to_seq:
             return course_to_seq[course_codes[0]]
@@ -303,35 +243,24 @@ def extract_sequence_from_query(query: str) -> str | None:
 
 
 def extract_search_keyword(query: str) -> str:
-    """Extract search keyword from query."""
     query_lower = query.lower()
-    # Common patterns for searching
     patterns = [
         r"courses (?:about|covering|dealing with|matching) (\w+)",
         r"courses (?:in|about|for) (\w+)",
         r"what courses (?:cover|deal with|match) (\w+)",
     ]
-
-    import re
-
     for pattern in patterns:
         match = re.search(pattern, query_lower)
         if match:
             return match.group(1)
-
     return query_lower.split()[-1] if query_lower.split() else "calculus"
 
 
 def build_chatbot():
     retriever = load_retriever()
-    llm = ChatOllama(model="qwen3:0.6b", temperature=0)
+    llm = _get_llm()
 
-    # Use shared conversation history across all users
-    get_history = _get_history_str
-    add_to_history = _add_to_history
-
-    prompt = ChatPromptTemplate.from_template("""
-You are a helpful assistant for the University of Alberta Math & Statistics department.
+    prompt = ChatPromptTemplate.from_template("""You are a helpful assistant for the University of Alberta Math & Statistics department.
 Answer questions based on the course information and context provided.
 
 Chat History (previous conversation):
@@ -343,7 +272,6 @@ IMPORTANT INSTRUCTIONS:
 3. Do NOT make up course names or numbers - only use courses that appear in the Course Information section.
 4. If the Course Information mentions specific courses (like MATH 118 or MATH 217), include them in your answer.
 5. When listing Statistics (STAT) courses, note that many require MATH prerequisites - include MATH courses that appear in the Course Information as they may be required prerequisites.
-6. Previous user answers are in data/feedback.json. Study these to craft your response.
 
 IMPORTANT TERMINOLOGY CLARIFICATION:
 - "Undergraduate" in this context refers to COURSE LEVEL (100-400 level), NOT first-year students
@@ -363,78 +291,67 @@ Main Context (from department website):
 Question:
 {question}
 
-Answer:
-""")
+Answer:""")
 
-    def format_docs(docs):
-        return "\n\n".join(doc.page_content for doc in docs)
-
-    def build_input(question):
-        # Detect course tools BEFORE normalization (to preserve STAT/STAT keywords)
+    def run_chain(question: str):
         course_info = call_course_tools(question)
-
-        # Normalize query for retrieval
-        normalized_q = normalize_query(question)
-
+        normalized_q = normalize_query(question) if USE_NORMALIZATION else question
         docs = retriever.invoke(normalized_q)
+
+        if VERBOSE:
+            print(f"\n--- Retrieved {len(docs)} chunks ---")
+            for i, doc in enumerate(docs, 1):
+                print(f"\n[{i}] {doc.page_content[:200]}")
+            print(f"\n--- Course tool output ---\n{course_info}\n" + "-" * 40)
         context = "\n\n".join(doc.page_content for doc in docs)
 
         if not course_info:
             course_info = "No specific course information available for this query."
-
-        return {
-            "context": context,
-            "course_info": course_info,
-            "question": normalized_q,
-        }, docs
-
-    def run_chain(question):
-        # Get course info BEFORE normalization (preserves STAT/MATH keywords)
-        course_info = call_course_tools(question)
-
-        # Then normalize for retrieval
-        normalized_q = normalize_query(question)
-
-        docs = retriever.invoke(normalized_q)
-        context = "\n\n".join(doc.page_content for doc in docs)
-
-        if not course_info:
-            course_info = "No specific course information available for this query."
-
-        # Load chat history from shared memory
-        history_str = get_history()
 
         inputs = {
-            "chat_history": history_str,
+            "chat_history": _get_history_str(),
             "context": context,
             "course_info": course_info,
             "question": normalized_q,
         }
-        answer = (prompt | llm | StrOutputParser()).invoke(inputs)
 
-        # Save to shared history
-        add_to_history(question, answer)
+        chain = prompt | llm | StrOutputParser()
+        full_response = ""
+        for chunk in chain.stream(inputs):
+            full_response += chunk
+            yield chunk
 
-        return answer
+        # Append deduplicated source links after the LLM response
+        seen_urls: set[str] = set()
+        source_urls: list[str] = []
+        for doc in docs:
+            url = doc.metadata.get("url", "")
+            if url and url not in seen_urls:
+                seen_urls.add(url)
+                source_urls.append(url)
+
+        if source_urls:
+            source_block = "\n\n---\n**Sources**\n" + "\n".join(
+                f"- [{url}]({url})" for url in source_urls
+            )
+            yield source_block
+
+        # Save to history without the source block so it doesn't inflate context
+        _add_to_history(question, _strip_thinking(full_response))
 
     return run_chain
 
 
 if __name__ == "__main__":
     bot = build_chatbot()
-
     while True:
         try:
             query = input("Ask a question: ")
             if not query.strip():
                 break
-
-            result = bot(query)
-
-            print("\nAnswer:")
-            print(result)
-        except EOFError:
-            break
-        except KeyboardInterrupt:
+            for chunk in bot(query):
+                print(chunk, end="", flush=True)
+            print()
+        except (EOFError, KeyboardInterrupt):
             print("\nExiting...")
             break

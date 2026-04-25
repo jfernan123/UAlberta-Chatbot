@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 from chatbot import build_chatbot
 from feedback import record_feedback, get_statistics
@@ -7,7 +6,6 @@ bot = build_chatbot()
 
 st.title("UAlberta Math & Stats Assistant")
 
-# Show feedback statistics in sidebar
 with st.sidebar:
     st.header("Feedback Stats")
     stats = get_statistics()
@@ -23,11 +21,10 @@ with st.sidebar:
     st.write(f"- Programs: Best performing")
     st.write(f"- Courses: Need more content")
 
-# Initialize session state for chat history
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# Display chat history
+# Render stored conversation history
 for message in st.session_state.chat_history:
     if message["role"] == "user":
         with st.chat_message("user"):
@@ -36,7 +33,7 @@ for message in st.session_state.chat_history:
         with st.chat_message("assistant"):
             st.write(message["content"])
 
-            # Show feedback buttons for the last bot response
+            # Feedback buttons only on the last assistant message
             if message == st.session_state.chat_history[-1]:
                 st.markdown("**Was this response helpful?**")
                 col1, col2 = st.columns(2)
@@ -59,24 +56,23 @@ for message in st.session_state.chat_history:
                         st.info("Thanks for the feedback!")
                         st.rerun()
 
-# Chat input - auto-submits on Enter
 prompt = st.chat_input("Ask a question...")
 
 if prompt:
-    # Add user message to history
+    # Show user message immediately
     st.session_state.chat_history.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.write(prompt)
 
-    # Get bot response
-    response = bot(prompt)
+    # Stream the bot response — write_stream returns the full concatenated string
+    with st.chat_message("assistant"):
+        response = st.write_stream(bot(prompt))
 
-    # Add bot response to history
     st.session_state.chat_history.append(
         {"role": "assistant", "content": response, "question": prompt}
     )
-
     st.rerun()
 
-# Clear chat button at the bottom
 if st.session_state.chat_history:
     st.markdown("---")
     if st.button("Clear Chat History"):

@@ -3,9 +3,10 @@
 make_db.py - Create vector database from scraped data
 
 Usage:
-    uv run python make_db.py
-    uv run python make_db.py -v           # verbose output
-    uv run python make_db.py --input custom.json --output custom_db
+    python retrieval/make_db.py
+    python retrieval/make_db.py -v
+    python retrieval/make_db.py -i data/pages_math.json data/pages_calendar.json
+    python retrieval/make_db.py -o custom_db
 """
 
 import argparse
@@ -18,14 +19,13 @@ def main():
         description="Create vector database from scraped JSON data"
     )
     parser.add_argument(
-        "-i",
-        "--input",
-        default="data/pages_math.json",
-        help="Input JSON file with scraped content (default: data/pages_math.json)",
+        "-i", "--input",
+        nargs="+",
+        default=["data/pages_math.json"],
+        help="One or more input JSON files (default: data/pages_math.json)",
     )
     parser.add_argument(
-        "-o",
-        "--output",
+        "-o", "--output",
         default="db",
         help="Output vector database directory (default: db)",
     )
@@ -34,19 +34,21 @@ def main():
     )
     args = parser.parse_args()
 
+    chunks = []
+    for input_file in args.input:
+        if args.verbose:
+            print(f"Loading data from {input_file}...")
+        file_chunks = chunk_json(input_file)
+        chunks.extend(file_chunks)
+        if args.verbose:
+            print(f"  {len(file_chunks)} chunks from {input_file}")
+
     if args.verbose:
-        print(f"Loading data from {args.input}...")
+        print(f"Total: {len(chunks)} chunks")
+        print("Rebuilding vector database (old DB cleared automatically)...")
 
-    # Load and chunk data
-    chunks = chunk_json(args.input)
-
-    if args.verbose:
-        print(f"Loaded {len(chunks)} chunks from {args.input}")
-
-    # Create vector database
-    create_vector_db(chunks)
-
-    print(f"Created vector database at {args.output}/")
+    create_vector_db(chunks, args.output)
+    print(f"Vector database rebuilt at {args.output}/")
 
 
 if __name__ == "__main__":
