@@ -400,6 +400,18 @@ Answer:""")
 
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="UAlberta Math & Stats chatbot")
+    parser.add_argument("--provider", choices=["claude", "ollama"], help="LLM provider (overrides LLM_PROVIDER env var)")
+    parser.add_argument("--embedding", choices=["ollama", "sentence", "openai"], help="Embedding provider (overrides EMBEDDING_PROVIDER env var)")
+    args = parser.parse_args()
+
+    if args.provider:
+        LLM_PROVIDER = args.provider
+    if args.embedding:
+        import retrieval.embeddings as _emb
+        _emb.EMBEDDING_PROVIDER = args.embedding
+
     bot = build_chatbot()
     while True:
         try:
