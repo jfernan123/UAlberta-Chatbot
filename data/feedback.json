@@ -340,5 +340,11 @@
     "question": "Is there a graduate class for numerical methods?",
     "response": "Yes, there are graduate classes for numerical methods. For example, **MATH 535 - Numerical Methods I** and **MATH 536 - Numerical Solutions of Partial Differential Equations I** are graduate courses that cover topics such as numerical methods for solving linear systems, differential equations, and partial differential equations. These courses are offered as graduate programs and require prerequisites like advanced calculus.\n\n---\n**Sources**\n- [https://calendar.ualberta.ca/preview_course_nopop.ph",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-24T23:19:49.140648",
+    "question": "What building is the math and stats department in?",
+    "response": "# Department Location\n\nBased on the information available to me, the **Department of Mathematical and Statistical Sciences is located in the University Commons building**.\n\nAccording to the department's welcome message, the department is \"now fully settled in the University Commons building, after half a century in the Central Academic Building.\"\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html](https://www.u",
+    "rating": 1
   }
 ]

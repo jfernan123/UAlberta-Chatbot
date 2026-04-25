@@ -1,7 +1,6 @@
 import os
 import re
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
 from retrieval import load_retriever
 from courses.course_tools import (
@@ -30,6 +29,7 @@ def _get_llm():
     if LLM_PROVIDER == "claude":
         from langchain_anthropic import ChatAnthropic
         return ChatAnthropic(model="claude-haiku-4-5-20251001", temperature=0)
+    from langchain_ollama import ChatOllama
     return ChatOllama(model="qwen3:0.6b", temperature=0, think=False)
 
 
