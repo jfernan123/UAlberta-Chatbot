@@ -17,7 +17,8 @@ from courses.course_tools import (
 )
 
 import os
-LLM_PROVIDER = "ollama"#os.environ.get("LLM_PROVIDER", "claude")
+LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "claude")
+DB_PATH = os.environ.get("DB_PATH", "db")
 VERBOSE = False
 MAX_RETRIEVAL_ATTEMPTS = 2
 
@@ -114,7 +115,7 @@ def classify_node(state: RAGState) -> RAGState:
 # Node 2: retrieve                                                              #
 # --------------------------------------------------------------------------- #
 def retrieve_node(state: RAGState) -> RAGState:
-    retriever = load_retriever()
+    retriever = load_retriever(db_path=DB_PATH)
     query = state["refined_query"]
     query_type = state["query_type"]
     course_codes = _extract_course_codes(query)
@@ -380,6 +381,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="UAlberta Math & Stats chatbot (LangGraph)")
     parser.add_argument("--provider", choices=["claude", "ollama"], help="LLM provider (overrides LLM_PROVIDER env var)")
     parser.add_argument("--embedding", choices=["ollama", "sentence", "openai"], help="Embedding provider (overrides EMBEDDING_PROVIDER env var)")
+    parser.add_argument("--db", default=None, help="Path to vector DB directory (default: db)")
     args = parser.parse_args()
 
     if args.provider:
@@ -387,6 +389,8 @@ if __name__ == "__main__":
     if args.embedding:
         import retrieval.embeddings as _emb
         _emb.EMBEDDING_PROVIDER = args.embedding
+    if args.db:
+        DB_PATH = args.db
 
     bot = build_chatbot()
     while True:

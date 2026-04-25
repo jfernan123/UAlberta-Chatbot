@@ -1,0 +1,47 @@
+,Question,Claude + Ollama Embeddings,Claude + Sentence Embeddings,Claude + OpenAI Embeddings,Ollama + Ollama Embeddings,Ollama + Sentence Embeddings,Ollama + OpenAI Embeddings,Notes
+Q1,,T,T,T,T,T,T,
+Q2,,T,T,T,PC,F,F,
+Q3,,T,T,T,PC,F,PC,
+Q4,,T,T,T,T,T,T,
+Q5,,T,T,T,T,F,T,
+Q6,,T,T,T,PC,F,T,
+Q7,,T,T,T,T,T,T,
+Q8,,T,T,T,T,T,T,
+Q9,,T,T,T,T,T,T,
+Q10,,T,T,T,T,T,T,
+Q11,,T,T,T,T,PC,F,
+Q12,,T,T,T,T,T,T,
+Q13,,T,T,T,T,T,T,
+Q14,,T,T,PC,PC,T,PC,
+Q15,,T,T,T,PC,PC,PC,
+Q16,,PC,PC,T,T,PC,T,
+Q17,,T,T,T,PC,T,T,"Ollama a lot less detailed as expected. Ollama + Ollama embeddings said partially right information, yes tutoring is offered at decima robinson, but no tutoring for courses like stat 413, etc.  Ollama and openAI barely provided any information"
+Q18,,T,T,T,PC,F,T,Each LLM provided different information b ased on the embeddings for claude. Open AI provided more details. Sentence embeddings provided a point by point of the difference where as clauda + ollama provided a summary. Similar responses however. Ollama model got it either partially correct or factually wrong. Ollama + sentence embeddings got it wrong it confused it for a bachelor of arts. Not enough information about honors math so considering it as wrong.
+Q19,,PC,T,PC,T,F,PC,All questions seem to get the pre-requisites wrong which is likely an issue with our course graph tool. Ollama + sentence got it factually wrong. Ollama + OpenAI got it description correct but got pre requisites wrong
+Q20,,T,T,T,T,T,T,Ollama + open AI seems to have a bit of a bias towards biology courses interestingly enough
+Q21,,T,T,T,F,F,F,"The 3 claude models are mostly correct but they forgot some technicalities when it comes to course selection. This likely isn't a retrieval problem but mostly the way the data is laid out in the database.  Claude + OpenAI got it the most correct. All Ollama models got it wrong. Even if they got some pre-reqs they either stated some factually incorrect information, or did not list the full pre reqs"
+Q22,,T,T,T,F,F,F,EverY claude model got it right. Every Ollama model g ot it wrong or incomplete. Some minor foot notes were occluded mostly because it wasn't part of context but I will consider it correct
+Q23,,T,PC,F,F,F,F,Only one model got this one right. They either did not state the requirements correctly or not at all. Ollama keeps having problems with longer responses
+Q24,,T,T,T ,F,T,PC,
+Q25,,F,T,T,T,T,T,Surprisingly correct except for the first claude with the Ollama embeddings. Wrong not because it gave incorrect info but because it couldn't find the answer
+Q26,,F,F,PC,PC,PC,F,Everything wrong. Some partially correct answers with wrong information.
+Q27,,T,T,T,F,F,F,
+Q28,,F,T,T,T,T,T,Claude + Ollama was wrong because it couldn't retrive question
+Q29,,T,T,T,F,PC,PC,"Either didn't have the info, or gave me wrong click to apply. The first 3 answers were great although they contained different but equally valid information each"
+Q30,,T,T,T,PC,F,T,
+Q31,,T,T,T,T,PC,PC,
+Q32,,T,T,PC,PC,PC,PC,
+Q33,,T,T,T,F,PC,PC,
+Q34,,PC,PC,T,F,PC,F,
+Q35,,T,T,T,T,T,T,
+Q36,,T,T,T,T,T,T,
+Q37,,PC,T,T,T,T,T,
+Q38,,T,T,T,T,T,PC,
+Q39,,T,T,T,PC,F,F,
+Q40,,PC,T,PC,PC,PC,PC,
+Q41,,T,T,T,PC,PC,PC,
+Q42,,T,T,T,T,PC,T,
+Q43,,T,T,PC,PC,PC,PC,
+Q44,,T,T,T,T,T,PC,
+Q45,,F,PC,F,F,PC,F,
+Q46,,PC,T,T,F,F,F,

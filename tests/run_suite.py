@@ -1,52 +1,51 @@
 """
 Run the test suite and save results to a Jupyter notebook.
-Usage: python tests/run_suite.py
+
+Usage:
+    python tests/run_suite.py
+    python tests/run_suite.py --provider ollama
+    python tests/run_suite.py --embedding sentence --db sentence_db
 Output: tests/results/results_<timestamp>.ipynb
 """
 import os
 import sys
 import json
 import time
+import argparse
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from tests.test_suite import EASY, MEDIUM, HARD
-from chatbot_graph import build_chatbot
 
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
 
 def make_markdown_cell(source: str) -> dict:
-    return {
-        "cell_type": "markdown",
-        "metadata": {},
-        "source": source,
-    }
+    return {"cell_type": "markdown", "metadata": {}, "source": source}
 
 
-def build_notebook(runs: list[dict], elapsed: float) -> dict:
+def build_notebook(runs: list[dict], elapsed: float, provider: str, embedding: str, db: str) -> dict:
     cells = []
 
-    # Header
     cells.append(make_markdown_cell(
         f"# Chatbot Test Suite Results\n\n"
         f"- **Date:** {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-        f"- **Model:** chatbot_graph (Claude Haiku)\n"
+        f"- **LLM:** {provider}\n"
+        f"- **Embedding:** {embedding}\n"
+        f"- **Vector DB:** {db}\n"
         f"- **Questions:** {len(runs)}\n"
         f"- **Total time:** {elapsed:.1f}s\n"
     ))
 
     current_category = None
     for run in runs:
-        # Section header when category changes
         if run["category"] != current_category:
             current_category = run["category"]
             count = sum(1 for r in runs if r["category"] == current_category)
             cells.append(make_markdown_cell(f"---\n\n## {current_category} ({count} questions)"))
 
-        # Q&A cell
         cells.append(make_markdown_cell(
             f"### Q{run['index']}: {run['question']}\n\n"
             f"**Time:** {run['elapsed']:.1f}s\n\n"
@@ -66,8 +65,33 @@ def build_notebook(runs: list[dict], elapsed: float) -> dict:
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Run test suite and save to notebook")
+    parser.add_argument("--provider", choices=["claude", "ollama"], default=None,
+                        help="LLM provider (overrides LLM_PROVIDER env var)")
+    parser.add_argument("--embedding", choices=["ollama", "sentence", "openai"], default=None,
+                        help="Embedding provider (overrides EMBEDDING_PROVIDER env var)")
+    parser.add_argument("--db", default=None,
+                        help="Vector DB path (default: db)")
+    args = parser.parse_args()
+
+    import retrieval.embeddings as _emb
+    import chatbot_graph as _cg
+
+    if args.provider:
+        _cg.LLM_PROVIDER = args.provider
+    if args.embedding:
+        _emb.EMBEDDING_PROVIDER = args.embedding
+        _emb._embeddings = None
+    if args.db:
+        _cg.DB_PATH = args.db
+
+    provider = _cg.LLM_PROVIDER
+    embedding = _emb.EMBEDDING_PROVIDER
+    db = _cg.DB_PATH
+
+    print(f"LLM: {provider} | Embedding: {embedding} | DB: {db}")
     print("Loading chatbot...")
-    bot = build_chatbot()
+    bot = _cg.build_chatbot()
 
     categories = [("EASY", EASY), ("MEDIUM", MEDIUM), ("HARD", HARD)]
     runs = []
@@ -77,7 +101,7 @@ def main():
     for category, questions in categories:
         print(f"\n── {category} ({len(questions)} questions) ──")
         for question in questions:
-            print(f"  [{q_index}] {question[:70]}")
+            print(f"  [{q_index:02d}] {question[:70]}")
             t0 = time.time()
             try:
                 answer = bot(question)
@@ -92,13 +116,13 @@ def main():
                 "answer": answer,
                 "elapsed": elapsed,
             })
-            print(f"       → {elapsed:.1f}s")
+            print(f"        → {elapsed:.1f}s")
             q_index += 1
 
     total_elapsed = time.time() - total_start
     print(f"\nDone. {len(runs)} questions in {total_elapsed:.1f}s")
 
-    notebook = build_notebook(runs, total_elapsed)
+    notebook = build_notebook(runs, total_elapsed, provider, embedding, db)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_path = os.path.join(RESULTS_DIR, f"results_{timestamp}.ipynb")
 
