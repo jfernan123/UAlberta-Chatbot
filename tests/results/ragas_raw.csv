@@ -1,0 +1,1608 @@
+combo,tier,question,context_relevancy,faithfulness,answer_relevancy,elapsed,answer
+claude + ollama,Easy,What are the prerequisites for STAT 471?,1.0,1.0,0.9607400824519248,5.19,"Based on the course information provided, the prerequisite for **STAT 471: Probability I** is:
+
+**One of STAT 371 or STAT 281**
+
+This means you need to have completed either STAT 371 or STAT 281 before enrolling in STAT 471.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical"
+claude + ollama,Easy,What are the prerequisites for MATH 209?,1.0,1.0,0.9507213366305723,3.28,"Based on the course information, the prerequisites for **MATH 209: Calculus for Engineering III** are:
+
+- **Prerequisite:** MATH 101
+- **Prerequisite or corequisite:** MATH 102
+
+This means you must have completed MATH 101 before taking MATH 209, and you must have either completed MATH 102 or be taki"
+claude + ollama,Easy,What are the prerequisites for STAT 265?,0.5,0.42857142857142855,0.951386714498527,3.66,"Based on the course information provided, **STAT 265: Probability and Statistics I** has the following requirement:
+
+**Corequisite:** One of MATH 209, MATH 214, or MATH 217
+
+This means you must be enrolled in (or have completed) at least one of these mathematics courses at the same time as taking ST"
+claude + ollama,Easy,What are the prerequisites for STAT 378?,1.0,0.6666666666666666,0.9573448743499586,3.31,"# STAT 378: Applied Regression Analysis
+
+**Prerequisites:**
+
+One of the following:
+- STAT 266, OR
+- STAT 276, OR
+- STAT 235 (with consent of the Department)
+
+If you have questions about whether you meet these prerequisites or need consent to take the course, I'd recommend contacting the Math & Stati"
+claude + ollama,Easy,Does STAT 151 have any prerequisites?,1.0,0.4,0.9638252060331508,3.18,"Yes, STAT 151 has a prerequisite. You must have completed **Mathematics 30-1 or 30-2** before taking this course.
+
+---
+**Sources:**
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17355
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17433
+- https://calendar.ualberta.ca/previ"
+claude + ollama,Easy,What are the prerequisites for STAT 266?,1.0,1.0,0.9619966688705675,3.55,"# Prerequisites for STAT 266
+
+To enroll in **STAT 266: Probability and Statistics II**, you must have completed:
+
+1. **One of the following MATH courses:**
+   - MATH 209, OR
+   - MATH 214, OR
+   - MATH 217
+
+2. **One of the following STAT courses:**
+   - STAT 265, OR
+   - STAT 281
+
+Additionally, you "
+claude + ollama,Easy,What are the prerequisites for MATH 217?,1.0,1.0,0.9472115512283716,2.94,"# MATH 217 Prerequisites
+
+Based on the course information, the prerequisites for **MATH 217: Honors Calculus III** are:
+
+- One of: **MATH 102, MATH 125, or MATH 127**, AND
+- Either: **MATH 118 or MATH 216**
+
+This is a Year 2 undergraduate course. Note that MATH 217 can be used as a substitute for MA"
+claude + ollama,Easy,What are the prerequisites for STAT 353?,1.0,1.0,0.9474975542809517,2.58,"Based on the course information provided, the prerequisites for **STAT 353: Life Contingencies I** are:
+
+- **MATH 253** (required)
+- **One of the following:**
+  - STAT 265, OR
+  - STAT 281
+
+This is a Year 3 level course.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sci"
+claude + ollama,Easy,What are the prerequisites for MATH 334?,1.0,1.0,0.9441920463167112,4.15,"# Prerequisites for MATH 334
+
+**MATH 334: Introduction to Partial Differential Equations** requires:
+
+1. **One of:** MATH 102, 125, or 127
+   
+   **AND**
+
+2. **One of:** MATH 209, 214, or 217
+
+**Important Note:** Credit can be obtained in at most one of MATH 201, MATH 334, MATH 336, or MA PH 251.
+
+-"
+claude + ollama,Easy,What are the prerequisites for MATH 225?,1.0,1.0,0.9539093321462371,4.62,"# MATH 225: Linear Algebra II - Prerequisites
+
+The prerequisites for MATH 225 are:
+
+1. **One of:** MATH 100, 113, 114, 117, 134, 144, 154 **or** SCI 100
+
+**AND**
+
+2. **One of:** MATH 102, 125, or 127
+
+**Note:** Credit can be obtained in at most one of MATH 225 or MATH 227 (Honors Linear Algebra II)."
+claude + ollama,Easy,What first year math courses are available?,1.0,1.0,0.9395218849302118,4.75,"# First Year Math Courses at University of Alberta
+
+Here are the first-year (100-level) math courses available:
+
+**Calculus Courses:**
+- MATH 100: Calculus for Engineering I
+- MATH 101: Calculus for Engineering II (requires MATH 100)
+- MATH 117: Honors Calculus I
+- MATH 118: Honors Calculus II (requ"
+claude + ollama,Easy,What 400-level STAT courses are offered?,1.0,0.9166666666666666,0.9943242541596177,4.15,"Based on the course information available, here are the 400-level STAT courses offered:
+
+- **STAT 413**: Computing for Data Science
+- **STAT 432**: Survival Analysis
+- **STAT 437**: Applied Statistical Methods
+- **STAT 441**: Statistical Methods for Learning and Data Mining
+- **STAT 453**: Risk Theo"
+claude + ollama,Easy,What 300-level STAT courses are available?,1.0,1.0,0.960963217133829,4.13,"Based on the course information provided, here are the 300-level STAT courses available:
+
+1. **STAT 337: Biostatistics**
+   - Prerequisites: STAT 151, STAT 161, SCI 151
+
+2. **STAT 353: Life Contingencies I**
+   - Prerequisites: MATH 253, STAT 265, STAT 281
+
+3. **STAT 361: Sampling Techniques**
+   - "
+claude + ollama,Easy,What second year statistics courses are there?,1.0,0.9090909090909091,0.9798224642496115,3.93,"# Second Year Statistics Courses
+
+Here are the second year (200-level) statistics courses offered:
+
+1. **STAT 235** - Introductory Statistics for Engineering
+
+2. **STAT 252** - Introduction to Applied Statistics II
+   - Prerequisites: STAT 151, STAT 161, STAT 235, STAT 141, or SCI 151
+
+3. **STAT 265"
+claude + ollama,Easy,What is the Decima Robinson Support Centre?,1.0,0.9333333333333333,0.9124814414950523,4.12,"# Decima Robinson Support Centre
+
+The Decima Robinson Support Centre is a support service provided by the Math & Statistics department at the University of Alberta for students taking mathematics and statistics courses.
+
+## What They Offer:
+- Comprehensive support for students in **100- and 200-leve"
+claude + ollama,Easy,Where can I get help with my calculus homework?,1.0,1.0,0.9505310084888959,3.35,"For help with your calculus homework, you can visit the **Decima Robinson Support Centre**!
+
+Here are the details:
+
+**Location:** University Commons 1-200
+
+**Hours:**
+- Monday, Wednesday, Friday: 9 AM to 3 PM
+- Tuesday, Thursday: 10 AM to 4 PM
+- (Open during Fall and Winter terms when classes are ta"
+claude + ollama,Easy,Is there tutoring available for statistics students?,1.0,1.0,0.9266916051775821,2.95,"Yes, tutoring and support are available for statistics students! The **Decima Robinson Support Centre** offers comprehensive support for students taking mathematics or statistics courses at the University of Alberta.
+
+**Details:**
+- **Location:** University Commons 1-200
+- **Hours:** 
+  - Monday/Wed"
+claude + ollama,Medium,What is the difference between an Honors and a Major in Mathematics?,0.75,0.5882352941176471,0.9428643718910098,6.41,"# Honors vs. Major in Mathematics
+
+Based on the University of Alberta program information, here are the key differences:
+
+## **Bachelor of Science (BSc) Programs:**
+
+**Honors in Mathematics:**
+- Provides a **challenging and rewarding learning experience** with greater depth of engagement
+- Includes "
+claude + ollama,Medium,What is the difference between STAT 151 and STAT 265?,0.5,0.85,0.0,8.65,"Based on the course information available, here's what I can tell you about these two statistics courses:
+
+**STAT 151 - Introduction to Applied Statistics I**
+- Covers: Point estimation, confidence intervals, hypothesis testing, correlation and regression analysis, ANOVA, goodness of fit, and contin"
+claude + ollama,Medium,What is the difference between the Mathematics and Statistics programs?,0.5,0.6956521739130435,0.8890656206712814,6.02,"# Mathematics and Statistics Programs
+
+Based on the information available, I can share that the University of Alberta offers both Mathematics and Statistics programs, and students have several options for pursuing these disciplines:
+
+## Program Options
+
+**Double Major/Combined Honors**: Students can"
+claude + ollama,Medium,What are the requirements for honors math?,1.0,0.9333333333333333,0.9702600693593898,5.92,"# Honors in Mathematics Requirements
+
+The **Honors in Mathematics program is 63 units** and includes the following requirements:
+
+## Foundation Courses:
+- **CMPUT 174** - Introduction to the Foundations of Computation I
+- **CMPUT 175** - Introduction to the Foundations of Computation II
+  *(Note: CM"
+claude + ollama,Medium,What are the requirements for the major in statistics?,1.0,1.0,0.9781722750304443,7.73,"# Major in Statistics Requirements (54 units)
+
+## Foundation Courses:
+- **CMPUT 174** - Introduction to the Foundations of Computation I
+- **CMPUT 175** - Introduction to the Foundations of Computation II
+- **STAT 151** - Introduction to Applied Statistics I
+- **Choose 3 units** from one of these Ca"
+claude + ollama,Medium,How many units do I need for a minor in mathematics?,1.0,0.7857142857142857,0.9334699172041354,3.8,"For a **Minor in Mathematics**, you need **24 units** total.
+
+These 24 units are broken down as follows:
+
+**Foundation Courses (9 units):**
+- 3 units from first-year calculus options
+- 3 units from second-year calculus options
+- 3 units from linear algebra options
+
+**Senior Courses (15 units):**
+- 3"
+claude + ollama,Medium,What programs are available in Mathematics and Statistics?,1.0,1.0,0.8949973568491609,4.89,"# Undergraduate Programs in Mathematics and Statistics
+
+The Department of Mathematical and Statistical Sciences at the University of Alberta offers the following **undergraduate degree programs**:
+
+1. **Statistics**
+2. **Mathematics**
+3. **Applied Mathematics**
+4. **Mathematical Physics**
+5. **Mathe"
+claude + ollama,Medium,What is the Data Science program?,0.0,0.0,0.0,5.78,"Based on the course information available to me, I don't have specific details about a Data Science program to share with you at this moment.
+
+However, I'd recommend:
+
+1. **Visiting the University of Alberta Calendar** at https://calendar.ualberta.ca to search for Data Science program information
+2."
+claude + ollama,Medium,What is the Applied Mathematics program?,0.0,0.08333333333333333,0.0,5.94,"Based on the course information available to me, I don't have specific details about an Applied Mathematics program to share with you at this moment.
+
+However, I can tell you that the University of Alberta does offer degree options in Mathematics. To get detailed information about the Applied Mathem"
+claude + ollama,Medium,Can I double major in Math and Statistics?,1.0,0.5833333333333334,0.0,4.95,"Based on the information available, I can see that the University of Alberta does allow double majors in BSc programs. However, I don't have specific details in my current resources about whether Math and Statistics can be combined as a double major.
+
+Here's what I can tell you:
+
+**General Double Ma"
+claude + ollama,Medium,What is the MDP program?,0.0,0.125,0.0,4.9,"I don't have specific information about an ""MDP program"" in the course information and context available to me.
+
+To help you better, could you provide more details? For example:
+- Do you know the full name of the program?
+- Is it an undergraduate or graduate program?
+- What faculty or department doe"
+claude + ollama,Medium,How do I apply to the MSc Statistics program?,0.5,0.7222222222222222,0.9224431685581345,5.27,"# Applying to the MSc Statistics Program
+
+Based on the information available, here's what you need to know about applying to the MSc Statistics program at the University of Alberta:
+
+## Program Options
+The MSc Statistics program offers two routes:
+- **Course-based route**: Can be completed in one ye"
+claude + ollama,Medium,What is the PhD program in Mathematics?,1.0,0.8181818181818182,0.9011198868995342,4.87,"# PhD Program in Mathematics
+
+Based on the information from the University of Alberta Math & Statistics department:
+
+## Program Overview
+The PhD program in Mathematics typically lasts **four to five years**.
+
+## Admission Requirements
+To be admitted to the PhD program, students normally need to have"
+claude + ollama,Medium,Is there funding available for graduate students?,1.0,0.875,0.9220189866419014,4.19,"Yes, there is funding available for graduate students in the Department of Mathematical and Statistical Sciences. Here's what's offered:
+
+**Graduate Research Assistantships (GRA/GRAF):**
+- During summer months (May-August), MSc thesis-based and PhD students typically receive financial assistance fro"
+claude + ollama,Hard,I want to study statistics. What courses should I take in first year?,1.0,0.8333333333333334,0.8998373179542991,5.1,"Great question! For first-year statistics courses, the University of Alberta offers three **Stat First Courses** (100-level):
+
+1. **STAT 151: Introduction to Applied Statistics I**
+2. **STAT 161: Introductory Statistics for Business and Economics**
+3. **STAT 181: Introduction to Combinatorics and Pr"
+claude + ollama,Hard,I've completed STAT 265 and STAT 281. What 300-level STAT courses can I take?,1.0,0.2222222222222222,0.9687769233488192,5.74,"Based on your completion of STAT 265 and STAT 281, here are the 300-level STAT courses you can take:
+
+**You meet the prerequisites for:**
+
+1. **STAT 337: Biostatistics** - Prerequisites: STAT 151, STAT 161, SCI 151
+   *(Note: You'd need to have completed STAT 151, STAT 161, and SCI 151)*
+
+2. **STAT "
+claude + ollama,Hard,What is the engineering calculus sequence?,0.25,0.3333333333333333,0.0,6.09,"I don't have specific information about the engineering calculus sequence in the course details available to me right now.
+
+To get accurate information about the engineering calculus sequence, I recommend:
+
+1. **Visiting the department website** at https://www.ualberta.ca/en/mathematical-and-statist"
+claude + ollama,Hard,What courses do I need before taking STAT 471?,1.0,0.7,0.9299096968057757,3.22,"Based on the course information provided, **STAT 471: Probability I** has the following prerequisite requirement:
+
+**You must take one of:**
+- **STAT 371**, OR
+- **STAT 281**
+
+You need to complete at least one of these courses before you can register in STAT 471.
+
+Note that STAT 471 is a Year 4 leve"
+claude + ollama,Hard,What careers can I pursue with a Statistics degree?,1.0,0.6153846153846154,0.9076986590452409,5.4,"# Careers with a Statistics Degree
+
+Graduates from Statistics programs at the University of Alberta are highly sought after in a wide variety of fields. Here are some common career paths:
+
+- **Data Analysts** - Analyzing and interpreting data across various industries
+- **Researchers** - Working in "
+claude + ollama,Hard,What jobs are available for Data Science graduates?,0.5,0.375,0.0,5.62,"Based on the information available from the University of Alberta Math & Statistics department, I don't have specific details about a Data Science program or the particular career outcomes for Data Science graduates in the course materials provided.
+
+However, I can share that the department does off"
+claude + ollama,Hard,Are there research opportunities for undergrad students?,1.0,0.7857142857142857,0.9300458420966504,4.45,"Yes, there are research opportunities for undergraduate students in the Math & Statistics department!
+
+Based on the information available, here are the key opportunities:
+
+**MSS USRA (Undergraduate Student Research Awards)**
+- These are competitive awards for undergraduate research
+- To apply, you n"
+claude + ollama,Hard,Is there a study abroad program for math students?,0.5,0.25,0.0,5.46,"Based on the information available, the context mentions that language or other study abroad may be possible with special permission of the Associate Dean, Academic. However, this reference appears in the context of specific degree program residency requirements rather than a dedicated study abroad "
+claude + ollama,Hard,What student clubs are available for math and stats students?,1.0,0.2,0.0,5.0,"# Student Clubs for Math and Stats Students
+
+The Department of Mathematical and Statistical Sciences has student groups available for both undergraduate and graduate students:
+
+## Graduate Student Groups
+All graduate students in the department belong to:
+- **SIGMAS** (Society in Graduate Mathematics"
+claude + ollama,Hard,What scholarships are available for math students?,1.0,0.8125,0.9311233727795861,6.33,"# Scholarships Available for Math Students
+
+Based on information from the University of Alberta Math & Statistics department, here are the main scholarship opportunities:
+
+## Graduate Students
+
+**Funding Guarantee**: Most students in thesis-based MSc or PhD programs receive a Funding Guarantee from "
+claude + ollama,Hard,What is the Statistical Consulting service?,1.0,0.9473684210526315,0.8980661325294493,5.47,"# Statistical Consulting Service
+
+The Statistical Consulting service is offered by the **Statistics Division** within the Department of Mathematical and Statistical Sciences at the University of Alberta. Here's what they provide:
+
+## Services Offered
+Our consultants assist with research at any stage"
+claude + ollama,Hard,Does the department offer any consulting or training for researchers?,1.0,0.9473684210526315,0.9706501924954933,3.84,"Yes, the department does offer consulting and training services for researchers. Here's what's available:
+
+**Training and Consultation Centre (TCC):**
+The department provides services for university-affiliated researchers and staff, including graduate students working on a thesis. They offer dedicat"
+claude + ollama,Hard,I'm a high school student interested in math. What outreach programs exist?,1.0,0.8947368421052632,0.9140595862449444,5.04,"# Outreach Programs for High School Students
+
+Great question! The University of Alberta Math & Statistics department has several outreach opportunities for high school students interested in mathematics:
+
+## Diversity in Mathematics Summer School
+The department runs summer schools targeted at high s"
+claude + ollama,Hard,What is the difference between the honors statistics and honors mathematics programs?,0.75,0.6923076923076923,0.9358615236734781,7.06,"# Honors Statistics vs. Honors Mathematics
+
+Based on the information from the University of Alberta Math & Statistics department, here are the key differences:
+
+## **Honors Mathematics**
+- Focuses on **mathematical modelling, optimization, stochastic processes, and the theoretical foundations** of m"
+claude + ollama,Hard,"If I complete STAT 151, what statistics courses can I take next?",0.5,0.5714285714285714,0.0,7.46,"Based on the course information provided, I can see that **STAT 151: Introduction to Applied Statistics I** is a Year 1 course that serves as a prerequisite for other courses in the program.
+
+From the context provided, I can confirm that STAT 151 is a prerequisite for:
+- **Finance courses** (in busi"
+claude + sentence,Easy,What are the prerequisites for STAT 471?,1.0,1.0,0.968551630357382,7.49,"According to the course information, the prerequisites for **STAT 471: Probability I** are:
+
+**One of STAT 371 or STAT 281**
+
+This means you need to have completed either STAT 371 or STAT 281 before enrolling in STAT 471.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sc"
+claude + sentence,Easy,What are the prerequisites for MATH 209?,1.0,1.0,0.9507213366305723,2.59,"Based on the course information provided, the prerequisites for **MATH 209: Calculus for Engineering III** are:
+
+- **Prerequisite:** MATH 101
+- **Prerequisite or corequisite:** MATH 102
+
+This means you must have completed MATH 101 before taking MATH 209, and you must have either completed MATH 102 o"
+claude + sentence,Easy,What are the prerequisites for STAT 265?,0.75,1.0,0.9778558401889349,4.94,"Based on the course information provided, **STAT 265 has a corequisite rather than a prerequisite**:
+
+**Corequisite:** One of MATH 209, MATH 214, or MATH 217
+
+This means you must take one of these mathematics courses at the same time as STAT 265.
+
+Additionally, note that **credit can be obtained in "
+claude + sentence,Easy,What are the prerequisites for STAT 378?,1.0,0.7142857142857143,0.9573448743499586,2.58,"# Prerequisites for STAT 378: Applied Regression Analysis
+
+The prerequisites for STAT 378 are:
+
+**One of the following:**
+- STAT 266, OR
+- STAT 276, OR
+- STAT 235 with consent of the Department
+
+If you have questions about whether you meet these prerequisites or need clarification, I'd recommend con"
+claude + sentence,Easy,Does STAT 151 have any prerequisites?,1.0,0.7777777777777778,0.963025344077577,3.11,"Yes, STAT 151 has a prerequisite. You must have completed **Mathematics 30-1 or 30-2** before taking this course.
+
+Additionally, if you feel like you need a refresher on prerequisite statistics skills, the department offers an optional non-credit **Online Statistics Primer Course** that covers topic"
+claude + sentence,Easy,What are the prerequisites for STAT 266?,1.0,0.75,0.9670383766010854,3.57,"# Prerequisites for STAT 266
+
+The prerequisites for **STAT 266: Probability and Statistics II** are:
+
+1. **One of:** MATH 209, MATH 214, or MATH 217, **AND**
+2. **One of:** STAT 265 or STAT 281
+
+Additionally, you must have a **corequisite** of one of:
+- MATH 225, or
+- MATH 227
+
+**Note:** Credit can "
+claude + sentence,Easy,What are the prerequisites for MATH 217?,1.0,1.0,0.9472115512283716,2.59,"# Prerequisites for MATH 217
+
+The prerequisites for **MATH 217: Honors Calculus III** are:
+
+- **One of:** MATH 102, 125, or 127, **AND**
+- **Either:** MATH 118 or MATH 216
+
+In other words, you need to complete one course from the first group AND one course from the second group before enrolling in M"
+claude + sentence,Easy,What are the prerequisites for STAT 353?,1.0,1.0,0.9474975542809517,3.23,"Based on the course information provided, the prerequisites for **STAT 353: Life Contingencies I** are:
+
+1. **MATH 253**
+2. **One of the following:**
+   - STAT 265, or
+   - STAT 281
+
+So you need to complete MATH 253 and at least one of either STAT 265 or STAT 281 before enrolling in STAT 353.
+
+---
+*"
+claude + sentence,Easy,What are the prerequisites for MATH 334?,1.0,1.0,0.9441920463167112,2.96,"# Prerequisites for MATH 334
+
+**MATH 334: Introduction to Partial Differential Equations** requires:
+
+1. **One of:** MATH 102, 125, or 127
+   
+   **AND**
+
+2. **One of:** MATH 209, 214, or 217
+
+**Important Note:** Credit can be obtained in at most one of MATH 201, MATH 334, MATH 336, or MA PH 251.
+
+-"
+claude + sentence,Easy,What are the prerequisites for MATH 225?,1.0,1.0,0.9539397928443837,3.8,"# MATH 225: Linear Algebra II Prerequisites
+
+The prerequisites for MATH 225 are:
+
+1. **One of:** MATH 100, 113, 114, 117, 134, 144, 154, or SCI 100
+   
+   **AND**
+
+2. **One of:** MATH 102, 125, or 127
+
+**Important Note:** Credit can be obtained in at most one of MATH 225 or MATH 227.
+
+---
+**Sources:"
+claude + sentence,Easy,What first year math courses are available?,1.0,1.0,0.9373013027931286,4.69,"# First Year Math Courses Available
+
+The University of Alberta offers a variety of first-year (100-level) math courses:
+
+**Calculus Courses:**
+- MATH 100: Calculus for Engineering I
+- MATH 101: Calculus for Engineering II
+- MATH 117: Honors Calculus I
+- MATH 118: Honors Calculus II
+- MATH 134: Calcu"
+claude + sentence,Easy,What 400-level STAT courses are offered?,1.0,0.8333333333333334,0.9943242541596177,4.13,"Based on the course information available, here are the **400-level STAT courses offered**:
+
+1. **STAT 413** - Computing for Data Science
+2. **STAT 432** - Survival Analysis
+3. **STAT 437** - Applied Statistical Methods
+4. **STAT 441** - Statistical Methods for Learning and Data Mining
+5. **STAT 453"
+claude + sentence,Easy,What 300-level STAT courses are available?,1.0,0.7272727272727273,1.0,4.82,"# 300-Level STAT Courses Available
+
+Based on the course information, the following 300-level STAT courses are available:
+
+- **STAT 337**: Biostatistics
+- **STAT 353**: Life Contingencies I
+- **STAT 361**: Sampling Techniques
+- **STAT 368**: Introduction to Design and Analysis of Experiments
+- **STAT"
+claude + sentence,Easy,What second year statistics courses are there?,1.0,0.9090909090909091,0.9823988721856867,4.14,"# Second Year Statistics Courses (200-level)
+
+Here are the second year statistics courses available:
+
+1. **STAT 235** - Introductory Statistics for Engineering
+
+2. **STAT 252** - Introduction to Applied Statistics II
+   - Prerequisites: STAT 151, STAT 161, STAT 235, STAT 141, or SCI 151
+
+3. **STAT 2"
+claude + sentence,Easy,What is the Decima Robinson Support Centre?,1.0,0.9285714285714286,0.9623308944332054,4.33,"# The Decima Robinson Support Centre
+
+The Decima Robinson Support Centre is a support service provided by the University of Alberta Math & Statistics department to help students with mathematics and statistics courses.
+
+## Services Offered:
+- Help with mathematics and statistics coursework
+- Assista"
+claude + sentence,Easy,Where can I get help with my calculus homework?,1.0,1.0,0.9485791717812516,3.2,"You can get help with your calculus homework at the **Decima Robinson Support Centre**!
+
+Here are the details:
+
+**Location:** University Commons 1-200
+
+**Hours:**
+- Monday, Wednesday, Friday: 9 AM to 3 PM
+- Tuesday, Thursday: 10 AM to 4 PM
+- (Open during Fall and Winter terms when classes are taught"
+claude + sentence,Easy,Is there tutoring available for statistics students?,1.0,1.0,0.9614715955264246,3.28,"Yes, tutoring and support are available for statistics students! The **Decima Robinson Support Centre** provides help for students in mathematics and statistics courses.
+
+Whether you're stuck on a tricky homework question or need general support with your statistics coursework, you can contact the D"
+claude + sentence,Medium,What is the difference between an Honors and a Major in Mathematics?,1.0,1.0,0.9835374980308407,4.56,"# Honors vs. Major in Mathematics
+
+Here are the key differences:
+
+## **Honors in Mathematics**
+- **Depth & Rigor**: Offers greater depth of engagement within the discipline and demands a higher standard of performance
+- **Research Component**: Includes a research or capstone experience
+- **Learning "
+claude + sentence,Medium,What is the difference between STAT 151 and STAT 265?,0.5,0.8461538461538461,0.9825610954941486,6.21,"Based on the course information available, here are the key differences between **STAT 151** and **STAT 265**:
+
+## STAT 151 - Introduction to Applied Statistics I
+- **Level**: Undergraduate (100-level)
+- **Focus**: Applied statistics fundamentals
+- **Topics**: Point estimation, confidence intervals,"
+claude + sentence,Medium,What is the difference between the Mathematics and Statistics programs?,0.75,1.0,0.9791433161151897,6.53,"# Mathematics vs. Statistics Programs
+
+Based on the department information, here are the key differences:
+
+## **Mathematics Program**
+- Focuses on core methods from **calculus and linear algebra**
+- Builds strong foundational skills in mathematical theory and methods
+- Allows you to tailor your stud"
+claude + sentence,Medium,What are the requirements for honors math?,1.0,0.9473684210526315,0.9702600693593898,6.03,"# Honors in Mathematics Requirements
+
+The **Honors in Mathematics program requires 63 units** and includes the following components:
+
+## Foundation Courses
+- **CMPUT 174** - Introduction to the Foundations of Computation I
+- **CMPUT 175** - Introduction to the Foundations of Computation II
+  *(Note:"
+claude + sentence,Medium,What are the requirements for the major in statistics?,1.0,1.0,0.9442696077366831,7.22,"# Major in Statistics Requirements (54 units)
+
+## Foundation Courses:
+- **CMPUT 174** - Introduction to the Foundations of Computation I
+- **CMPUT 175** - Introduction to the Foundations of Computation II
+  - *(Note: CMPUT 274 and CMPUT 275 can serve as substitutes)*
+- **STAT 151** - Introduction to"
+claude + sentence,Medium,How many units do I need for a minor in mathematics?,1.0,0.8571428571428571,0.9369297056091893,4.67,"A **minor in Mathematics requires at least 24 units**, with at least 6 units at the 300-level or higher.
+
+The 24 units are broken down as follows:
+
+**Foundation Courses (9 units):**
+- 3 units from first-year calculus options
+- 3 units from second-year calculus options
+- 3 units from linear algebra o"
+claude + sentence,Medium,What programs are available in Mathematics and Statistics?,1.0,1.0,0.8960398054690106,3.53,"# Programs Available in Mathematics and Statistics
+
+The Department of Mathematical and Statistical Sciences at the University of Alberta offers the following **undergraduate programs**:
+
+1. **Statistics**
+2. **Mathematics and Finance**
+3. **Mathematics and Economics**
+4. **Mathematics**
+5. **Mathema"
+claude + sentence,Medium,What is the Data Science program?,1.0,0.6875,0.8621657515337343,5.38,"# Data Science Program at University of Alberta
+
+The **Data Science program** is an undergraduate degree program offered by the Department of Mathematical and Statistical Sciences. It's designed to prepare graduates for careers involving data analysis, modelling, and computational decision-making.
+
+"
+claude + sentence,Medium,What is the Applied Mathematics program?,0.5,0.4,0.0,6.37,"Based on the context provided, I can see that **Applied Mathematics** is mentioned as one of the prerequisite options for admission to University of Alberta math programs (specifically ""Applied Math 30"" as a high school requirement).
+
+However, the specific details about an Applied Mathematics underg"
+claude + sentence,Medium,Can I double major in Math and Statistics?,1.0,0.35714285714285715,0.9414552269201296,4.74,"Yes, you can double major in Math and Statistics! 
+
+According to the University of Alberta program information, a Major in Mathematics can be combined with a Major in Statistics. However, there are a few important things to keep in mind:
+
+1. **Unit Requirements**: A double major normally requires mo"
+claude + sentence,Medium,What is the MDP program?,1.0,1.0,0.929764876110524,3.42,"# MDP Program
+
+The **MDP (Modelling, Data + Predictions)** is a professionally-oriented, course-based Master's program offered by the Department of Mathematical and Statistical Sciences at the University of Alberta.
+
+## Key Features:
+
+- **Duration:** Designed to be completed in 16 months
+- **Focus:*"
+claude + sentence,Medium,How do I apply to the MSc Statistics program?,0.75,0.8421052631578947,0.9091319264678853,7.35,"# Applying to the MSc Statistics Program
+
+To apply to the MSc Statistics program at the University of Alberta, here are the key steps:
+
+## Admission Requirements
+
+You must meet the following minimum requirements:
+
+1. **Undergraduate Degree**: A 4-year undergraduate degree (preferably with honours, a"
+claude + sentence,Medium,What is the PhD program in Mathematics?,1.0,0.7692307692307693,0.891413034918992,6.17,"# PhD Program in Mathematics
+
+The PhD program in Mathematics at the University of Alberta is a research-focused doctoral program with the following key features:
+
+## Program Duration
+- Typically lasts **4 to 5 years**
+
+## Admission Requirements
+To be admitted to the PhD program, you must:
+- Hold an "
+claude + sentence,Medium,Is there funding available for graduate students?,1.0,0.9473684210526315,0.9308702154386452,4.49,"Yes, there is funding available for graduate students in the Department of Mathematical and Statistical Sciences. Here's what you should know:
+
+**Funding Guarantees:**
+- Domestic PhD students with a Funding Guarantee can expect funding of at least **$29,481 per year** for up to four years, with the "
+claude + sentence,Hard,I want to study statistics. What courses should I take in first year?,1.0,0.7142857142857143,0.9192306568562035,5.29,"Great question! Here are the first-year statistics courses offered by the Department of Mathematical and Statistical Sciences:
+
+**First-Year Statistics Courses (100-level):**
+
+1. **STAT 151: Introduction to Applied Statistics I** - A foundational course in applied statistics covering point estimatio"
+claude + sentence,Hard,I've completed STAT 265 and STAT 281. What 300-level STAT courses can I take?,0.5,0.5652173913043478,0.9687769233488192,5.33,"Based on your completion of STAT 265 and STAT 281, here are the 300-level STAT courses you can take:
+
+1. **STAT 337: Biostatistics**
+   - Prerequisites: STAT 151, STAT 161, SCI 151
+   - *(Note: You'd need to have completed STAT 151 and STAT 161 as well)*
+
+2. **STAT 361: Sampling Techniques**
+   - Pr"
+claude + sentence,Hard,What is the engineering calculus sequence?,0.75,0.7894736842105263,0.9097632437514104,5.71,"# Engineering Calculus Sequence
+
+Based on the course information available, the engineering calculus sequence includes:
+
+1. **MATH 100 - Calculus for Engineering I** (3.5 units)
+   - Prerequisites: Mathematics 30-1
+   - Topics: Review of numbers, inequalities, functions, analytic geometry; limits, c"
+claude + sentence,Hard,What courses do I need before taking STAT 471?,1.0,1.0,0.9552350510257779,4.52,"To take **STAT 471: Probability I**, you need to complete one of the following prerequisite courses:
+
+- **STAT 371**, OR
+- **STAT 281**
+
+You only need to complete one of these courses before registering in STAT 471.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences"
+claude + sentence,Hard,What careers can I pursue with a Statistics degree?,1.0,0.9444444444444444,0.957488053292962,4.64,"# Careers with a Statistics Degree
+
+Graduates from our Statistics program are highly sought after in a wide variety of fields. Here are some common career paths:
+
+**Direct Career Opportunities:**
+- Data analysts
+- Researchers in government agencies (such as Alberta Environment)
+- Biostatisticians in"
+claude + sentence,Hard,What jobs are available for Data Science graduates?,1.0,0.6538461538461539,0.9147892117069185,6.44,"# Jobs Available for Data Science Graduates
+
+Based on the University of Alberta's program information, Data Science graduates have diverse career opportunities, including:
+
+## Primary Career Paths:
+- **Data Analysts** - analyzing and interpreting data across various industries
+- **Quantitative Analy"
+claude + sentence,Hard,Are there research opportunities for undergrad students?,1.0,0.6923076923076923,0.9248874410064332,4.27,"Yes, there are research opportunities available for undergraduate students in the Department of Mathematical and Statistical Sciences!
+
+**Research Project Courses:**
+Students in Specialization or Honors programs can pursue research through **MATH 499, MAPH 499, and STAT 499** courses. These Research"
+claude + sentence,Hard,Is there a study abroad program for math students?,0.5,0.2222222222222222,0.0,5.08,"Based on the information available, I don't have specific details about a dedicated study abroad program for math students in the course materials provided.
+
+However, the context does mention that language or other study abroad may be possible with special permission from the Associate Dean, Academi"
+claude + sentence,Hard,What student clubs are available for math and stats students?,1.0,1.0,0.9722066920506937,5.31,"# Student Clubs for Math and Stats Students
+
+The Department of Mathematical and Statistical Sciences has two main student organizations:
+
+## **Mathematical Sciences Society (MSS)** - Undergraduate
+The MSS is the undergraduate student group that aims to foster collaboration and mentorship among peers"
+claude + sentence,Hard,What scholarships are available for math students?,1.0,1.0,0.9352633856722675,5.35,"# Scholarships Available for Math Students
+
+The University of Alberta Math & Statistics Department offers several scholarship opportunities:
+
+## Undergraduate Scholarships
+
+**Academic Excellence Scholarships**
+- Six scholarships worth $1,000 each annually
+- Available to students entering an Honors o"
+claude + sentence,Hard,What is the Statistical Consulting service?,1.0,1.0,0.8977885630701659,4.11,"# Statistical Consulting Service
+
+The University of Alberta's Department of Mathematical and Statistical Sciences offers statistical consulting through two main avenues:
+
+## Training and Consulting Centre (TCC)
+The **Training and Consulting Centre** is a team of graduate students, faculty, and staff"
+claude + sentence,Hard,Does the department offer any consulting or training for researchers?,1.0,0.9523809523809523,0.910433896485713,4.2,"Yes, the University of Alberta Math & Statistics department offers consulting and training services for researchers through the **Training and Consulting Center (TCC)**.
+
+Here's what they provide:
+
+**Services Available:**
+- Experiment and survey design
+- Data collection support
+- Statistical modelli"
+claude + sentence,Hard,I'm a high school student interested in math. What outreach programs exist?,1.0,0.5714285714285714,0.92077746389869,6.43,"Great question! The University of Alberta Math & Statistics department has several exciting outreach programs for high school students interested in mathematics:
+
+1. **Diversity in Mathematics Summer School**: The department runs summer schools targeted at high school students and undergraduate stud"
+claude + sentence,Hard,What is the difference between the honors statistics and honors mathematics programs?,0.5,0.4117647058823529,0.9750774162676873,7.07,"# Honors Statistics vs. Honors Mathematics Programs
+
+Based on the department information, here are the key differences:
+
+## Program Focus & Depth
+Both **Honors programs** are designed for students who are passionate about and fully committed to their discipline. They build students to the level of r"
+claude + sentence,Hard,"If I complete STAT 151, what statistics courses can I take next?",1.0,0.23076923076923078,0.9470111037082717,4.93,"Based on the course information provided, after completing **STAT 151: Introduction to Applied Statistics I**, you can take the following statistics courses:
+
+- **STAT 252** - Introduction to Applied Statistics II
+- **STAT 265** - Probability and Statistics I
+- **STAT 266** - Probability and Statist"
+claude + openai,Easy,What are the prerequisites for STAT 471?,1.0,0.6,0.968551630357382,5.25,"Based on the course information, the prerequisites for **STAT 471: Probability I** are:
+
+**One of STAT 371 or STAT 281**
+
+You must have completed either STAT 371 or STAT 281 before enrolling in STAT 471.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-st"
+claude + openai,Easy,What are the prerequisites for MATH 209?,1.0,0.75,0.9507213366305723,3.06,"Based on the course information provided:
+
+**MATH 209: Calculus for Engineering III**
+
+**Prerequisites:**
+- MATH 101
+- MATH 102 (prerequisite or corequisite)
+
+Note: This course is restricted to Engineering students. Non-Engineering students who take this course will receive 3 units instead of the st"
+claude + openai,Easy,What are the prerequisites for STAT 265?,0.25,1.0,0.951386714498527,4.8,"Based on the course information provided, **STAT 265: Probability and Statistics I** has the following requirements:
+
+**Corequisite:** One of MATH 209, MATH 214, or MATH 217
+
+Note: This means you must take one of these math courses at the same time as STAT 265, not before it.
+
+Also, please be aware "
+claude + openai,Easy,What are the prerequisites for STAT 378?,1.0,1.0,0.9573448743499586,2.92,"Based on the course information provided, the prerequisites for **STAT 378: Applied Regression Analysis** are:
+
+**One of the following:**
+- STAT 266, or
+- STAT 276, or
+- STAT 235 with consent of the Department
+
+You'll need to complete at least one of these courses before enrolling in STAT 378.
+
+---
+"
+claude + openai,Easy,Does STAT 151 have any prerequisites?,1.0,0.3333333333333333,0.9653052893924855,2.52,"Yes, STAT 151 has a prerequisite. You must have completed **Mathematics 30-1 or 30-2** before taking this course.
+
+---
+**Sources:**
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17355
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17433
+- https://calendar.ualberta.ca/conte"
+claude + openai,Easy,What are the prerequisites for STAT 266?,1.0,1.0,0.9670383766010854,3.19,"# Prerequisites for STAT 266
+
+The prerequisites for **STAT 266: Probability and Statistics II** are:
+
+1. **One of:** MATH 209, MATH 214, or MATH 217
+   
+   **AND**
+
+2. **One of:** STAT 265 or STAT 281
+
+Additionally, you must have a **corequisite** of one of MATH 225 or MATH 227.
+
+**Note:** Credit ca"
+claude + openai,Easy,What are the prerequisites for MATH 217?,1.0,1.0,0.9472115512283716,3.65,"# MATH 217 Prerequisites
+
+**MATH 217: Honors Calculus III** has the following prerequisites:
+
+1. **One of:** MATH 102, 125, or 127, **AND**
+2. **Either:** MATH 118 or MATH 216
+
+So you need to complete one course from the first group AND one course from the second group before enrolling in MATH 217.
+"
+claude + openai,Easy,What are the prerequisites for STAT 353?,1.0,0.8333333333333334,0.9474975542809517,2.75,"Based on the course information provided, the prerequisites for **STAT 353: Life Contingencies I** are:
+
+- **MATH 253** AND
+- One of **STAT 265** or **STAT 281**
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+-"
+claude + openai,Easy,What are the prerequisites for MATH 334?,1.0,1.0,0.9441920463167112,3.31,"# Prerequisites for MATH 334
+
+**MATH 334: Introduction to Partial Differential Equations** requires:
+
+1. **One of:** MATH 102, 125, or 127, **AND**
+2. **One of:** MATH 209, 214, or 217
+
+**Important Note:** Credit can be obtained in at most one of MATH 201, MATH 334, MATH 336, or MA PH 251. This mean"
+claude + openai,Easy,What are the prerequisites for MATH 225?,1.0,1.0,0.9539397928443837,2.73,"# MATH 225: Linear Algebra II Prerequisites
+
+The prerequisites for MATH 225 are:
+
+1. **One of:** MATH 100, 113, 114, 117, 134, 144, 154, or SCI 100
+   
+   **AND**
+
+2. **One of:** MATH 102, 125, or 127
+
+**Important Note:** Credit can be obtained in at most one of MATH 225 or MATH 227.
+
+---
+**Sources:"
+claude + openai,Easy,What first year math courses are available?,1.0,1.0,0.9373013027931286,6.07,"# First Year Math Courses Available
+
+The University of Alberta offers a variety of first-year (100-level) math courses:
+
+**Calculus Courses:**
+- MATH 100: Calculus for Engineering I
+- MATH 101: Calculus for Engineering II (prerequisite: MATH 100)
+- MATH 117: Honors Calculus I
+- MATH 118: Honors Calc"
+claude + openai,Easy,What 400-level STAT courses are offered?,1.0,1.0,0.9999999999999997,4.39,"Based on the course information available, the following 400-level STAT courses are offered:
+
+1. **STAT 413** - Computing for Data Science
+2. **STAT 432** - Survival Analysis
+3. **STAT 437** - Applied Statistical Methods
+4. **STAT 441** - Statistical Methods for Learning and Data Mining
+5. **STAT 45"
+claude + openai,Easy,What 300-level STAT courses are available?,1.0,1.0,0.960963217133829,4.47,"Based on the course information available, here are the **300-level STAT courses**:
+
+1. **STAT 337: Biostatistics**
+   - Prerequisites: STAT 151, STAT 161, SCI 151
+
+2. **STAT 353: Life Contingencies I**
+   - Prerequisites: MATH 253, STAT 265, STAT 281
+
+3. **STAT 361: Sampling Techniques**
+   - Prere"
+claude + openai,Easy,What second year statistics courses are there?,1.0,0.9090909090909091,0.9798224642496115,3.42,"# Second Year Statistics Courses
+
+Here are the second year (200-level) statistics courses offered:
+
+- **STAT 235**: Introductory Statistics for Engineering
+- **STAT 252**: Introduction to Applied Statistics II
+  - Prerequisites: STAT 151, STAT 161, STAT 235, STAT 141, SCI 151
+- **STAT 265**: Probabi"
+claude + openai,Easy,What is the Decima Robinson Support Centre?,1.0,0.8461538461538461,0.9405092113048591,5.4,"# The Decima Robinson Support Centre
+
+The Decima Robinson Support Centre is the Math & Statistics department's support resource for students needing help with mathematics or statistics courses. 
+
+## Services Offered:
+- Help with mathematics and statistics coursework
+- Assistance with homework questi"
+claude + openai,Easy,Where can I get help with my calculus homework?,1.0,0.7142857142857143,0.9413891398747399,3.66,"If you need help with your calculus homework, you should contact the **Decima Robinson Support Centre**. They provide support for mathematics and statistics courses at the University of Alberta.
+
+The Decima Robinson Support Centre can help you with:
+- Tricky homework questions
+- Problems from your w"
+claude + openai,Easy,Is there tutoring available for statistics students?,1.0,1.0,0.9614715955264246,3.89,"Yes, tutoring and support are available for statistics students! The **Decima Robinson Support Centre** provides help for students in mathematics and statistics courses. 
+
+If you're stuck on a tricky homework question or need help with one of your STAT courses, you can contact the Decima Robinson Su"
+claude + openai,Medium,What is the difference between an Honors and a Major in Mathematics?,1.0,0.9285714285714286,0.9737362602873884,4.7,"# Honors vs. Major in Mathematics
+
+Based on the department information, here are the key differences:
+
+## **Honors Program**
+- **Rigor Level**: Students reach the level of rigor used by practising mathematicians and statisticians
+- **Unit Requirements**: 63 units in Mathematics courses
+- **Career Pa"
+claude + openai,Medium,What is the difference between STAT 151 and STAT 265?,0.5,0.5833333333333334,0.9853205359146003,6.34,"Based on the course information available, here are the key differences between **STAT 151** and **STAT 265**:
+
+## STAT 151 - Introduction to Applied Statistics I
+- **Level:** Undergraduate (100-level)
+- **Content:** Covers point estimation, confidence intervals, hypothesis testing, correlation and "
+claude + openai,Medium,What is the difference between the Mathematics and Statistics programs?,0.75,0.7333333333333333,0.9791433161151897,6.46,"# Mathematics vs. Statistics Programs
+
+Based on the department information, here are the key differences:
+
+## **Mathematics Program**
+- Focuses on **core calculus and linear algebra methods**
+- Builds foundational mathematical knowledge and problem-solving skills
+- Available at both **Honors** and *"
+claude + openai,Medium,What are the requirements for honors math?,1.0,0.875,0.9666453831253431,7.3,"# Honors in Mathematics Requirements
+
+The **Honors in Mathematics program requires 63 units** and includes the following components:
+
+## Foundation Courses:
+- **CMPUT 174** - Introduction to the Foundations of Computation I
+- **CMPUT 175** - Introduction to the Foundations of Computation II
+  *(Note"
+claude + openai,Medium,What are the requirements for the major in statistics?,1.0,1.0,0.9683780770220275,7.11,"# Major in Statistics Requirements (54 units)
+
+## Foundation Courses:
+- **CMPUT 174** - Introduction to the Foundations of Computation I
+- **CMPUT 175** - Introduction to the Foundations of Computation II
+- **STAT 151** - Introduction to Applied Statistics I
+- **Choose 3 units** from one of these Ca"
+claude + openai,Medium,How many units do I need for a minor in mathematics?,1.0,1.0,0.9893941221544793,3.36,"A **minor in Mathematics requires at least 24 units**.
+
+These 24 units must include:
+- At least 6 units at the 300-level or higher
+
+The minor is structured with foundation courses (calculus and linear algebra) and senior-level courses to meet this requirement.
+
+---
+**Sources:**
+- https://calendar.ua"
+claude + openai,Medium,What programs are available in Mathematics and Statistics?,1.0,1.0,0.9225979101919543,5.68,"# Programs Available in Mathematics and Statistics
+
+The University of Alberta Department of Mathematical and Statistical Sciences offers a variety of programs:
+
+## Undergraduate Programs
+- **Honors programs** in Mathematics and Statistics
+- **Major programs** in Mathematics and Statistics
+- **Minor "
+claude + openai,Medium,What is the Data Science program?,1.0,0.9375,0.8572834076077259,5.67,"# Data Science Program at University of Alberta
+
+The **Data Science program** is an undergraduate degree offered by the Department of Mathematical and Statistical Sciences. It prepares graduates for careers involving data analysis, modelling, and computational decision-making.
+
+## Program Overview
+
+"
+claude + openai,Medium,What is the Applied Mathematics program?,0.5,0.7222222222222222,0.9036495790951156,6.37,"Based on the information available, **Applied Mathematics is offered as a specialization** at the University of Alberta, rather than as a standalone program.
+
+Specifically, Applied Mathematics is available as a **specialization for graduate students** (MSc level). The context indicates that very str"
+claude + openai,Medium,Can I double major in Math and Statistics?,1.0,0.46153846153846156,0.9413479392796343,5.0,"Yes, you can double major in Math and Statistics at the University of Alberta.
+
+According to the program information, students can pursue a double major in the BSc program. However, there are a few important things to know:
+
+1. **Unit Requirements**: A double major normally requires more than 120 un"
+claude + openai,Medium,What is the MDP program?,1.0,1.0,0.9171286562098065,4.51,"# MDP Program (Master's in Modelling, Data + Predictions)
+
+The **MDP** is a professionally-oriented, course-based Master's program offered by the Department of Mathematical and Statistical Sciences at the University of Alberta.
+
+## Key Features:
+
+- **Duration:** Designed to be completed in 16 months"
+claude + openai,Medium,How do I apply to the MSc Statistics program?,1.0,0.8888888888888888,0.9329966639358709,7.04,"# How to Apply to the MSc Statistics Program
+
+Here are the steps to apply to the MSc Statistics program at the University of Alberta:
+
+## Application Portal & Deadline
+- The application portal for **Fall 2026 entry is now open**
+- **Application deadline: January 15, 2026** (including submission of r"
+claude + openai,Medium,What is the PhD program in Mathematics?,1.0,0.7857142857142857,0.9013814696009783,8.16,"# PhD Program in Mathematics at University of Alberta
+
+The PhD program in Mathematics is a research-focused doctoral program with the following key features:
+
+## Program Length
+- **Typical duration:** 4 to 5 years
+- **Minimum residency requirement:** At least 2 years of full-time studies
+- **Minimum"
+claude + openai,Medium,Is there funding available for graduate students?,1.0,0.875,0.9217937776525315,5.24,"Yes, there is funding available for graduate students in the Department of Mathematical and Statistical Sciences.
+
+Here's what's available:
+
+**Funding Guarantee for Domestic MSc Students:**
+- Domestic MSc students with a Funding Guarantee can expect funding of at least **$28,366 per year** for up to"
+claude + openai,Hard,I want to study statistics. What courses should I take in first year?,1.0,0.38461538461538464,0.9011842592056737,5.58,"Great question! For first-year statistics courses, the University of Alberta offers three **Stat First Courses** (100-level):
+
+1. **STAT 151: Introduction to Applied Statistics I** - A foundational course in applied statistics
+2. **STAT 161: Introductory Statistics for Business and Economics** - Ide"
+claude + openai,Hard,I've completed STAT 265 and STAT 281. What 300-level STAT courses can I take?,1.0,0.2,0.9687769233488192,14.18,"Based on your completion of STAT 265 and STAT 281, here are the 300-level STAT courses you can take:
+
+**You can take:**
+- **STAT 371: Probability and Stochastic Processes** - Prerequisite: STAT 265 ✓
+
+**You cannot take (missing prerequisites):**
+- STAT 337: Biostatistics - requires STAT 151 and SCI "
+claude + openai,Hard,What is the engineering calculus sequence?,1.0,0.8235294117647058,0.9050162228667249,5.82,"# Engineering Calculus Sequence
+
+Based on the course information available, the engineering calculus sequence includes:
+
+1. **MATH 100** - Calculus for Engineering I
+2. **MATH 101** - Calculus for Engineering II
+3. **MATH 209** - Calculus for Engineering III
+
+## MATH 101 Course Details
+
+**MATH 101 -"
+claude + openai,Hard,What courses do I need before taking STAT 471?,1.0,1.0,0.9336799289291192,2.84,"Based on the course information provided, **STAT 471: Probability I** has the following prerequisite:
+
+**One of STAT 371 or STAT 281**
+
+You need to have successfully completed either STAT 371 or STAT 281 before you can register for STAT 471.
+
+---
+**Sources:**
+- https://calendar.ualberta.ca/content.p"
+claude + openai,Hard,What careers can I pursue with a Statistics degree?,1.0,1.0,0.9592533753281632,4.58,"# Careers with a Statistics Degree
+
+Graduates from our Statistics programs are highly sought after in a wide variety of fields. Here are some common career paths:
+
+**Industry & Research Positions:**
+- Data analysts
+- Quantitative analysts
+- Researchers in government agencies (such as Alberta Environ"
+claude + openai,Hard,What jobs are available for Data Science graduates?,1.0,0.8333333333333334,0.9783434003131074,5.5,"# Jobs Available for Data Science Graduates
+
+Based on the department information, Data Science graduates are well-positioned for careers as:
+
+- **Data scientists and analysts** in industry or government
+- **Data analysts**
+- **Quantitative analysts**
+
+The Master's program in Modelling, Data, and Pre"
+claude + openai,Hard,Are there research opportunities for undergrad students?,1.0,0.9333333333333333,0.9300458420966504,4.88,"Yes, there are several research opportunities available for undergraduate students in the Math & Statistics department:
+
+1. **Undergraduate Student Research Awards (USRA)** - This program is jointly administered by Canada's three Tri-Agency funding agencies (NSERC, CIHR, and SSHRC). The Undergraduat"
+claude + openai,Hard,Is there a study abroad program for math students?,0.5,0.5555555555555556,0.0,5.95,"Based on the information available, I don't have specific details about a dedicated study abroad program for math students in the course materials provided.
+
+However, the context does mention that language or other study abroad may be possible with special permission from the Associate Dean, Academi"
+claude + openai,Hard,What student clubs are available for math and stats students?,0.5,0.9090909090909091,0.0,9.39,"Based on the information available, here are the student clubs for math and stats students at the University of Alberta:
+
+**For Undergraduate Students:**
+The department has student groups available, though specific club names aren't detailed in the current information. For more details about undergr"
+claude + openai,Hard,What scholarships are available for math students?,1.0,0.88,0.9409083193032316,10.4,"# Scholarships Available for Math Students
+
+The Department of Mathematical and Statistical Sciences offers several scholarship opportunities:
+
+## **Undergraduate Scholarships:**
+
+- **Academic Excellence Scholarships**: The Department awards six scholarships worth $1,000 each annually to students ent"
+claude + openai,Hard,What is the Statistical Consulting service?,1.0,0.9523809523809523,0.924874484885364,6.4,"# Statistical Consulting Service
+
+The Statistical Consulting service is a resource provided by the University of Alberta's Math & Statistics department to support research and data analysis needs. Here's what they offer:
+
+## Services Provided
+Our consultants assist at any stage of the research proce"
+claude + openai,Hard,Does the department offer any consulting or training for researchers?,1.0,1.0,0.910433896485713,4.41,"Yes, the University of Alberta Math & Statistics department does offer consulting and training services for researchers through the **Training and Consulting Centre**.
+
+Here's what they provide:
+
+**Services Available:**
+- Experiment and survey design
+- Data collection
+- Statistical modelling and dat"
+claude + openai,Hard,I'm a high school student interested in math. What outreach programs exist?,1.0,0.5,0.93028970159622,4.46,"Great question! The Department of Mathematical and Statistical Sciences has several exciting outreach programs for high school students:
+
+1. **High School Mathematics Competition** - An annual competition for high school students interested in testing their math skills.
+
+2. **Alberta Summer Mathemat"
+claude + openai,Hard,What is the difference between the honors statistics and honors mathematics programs?,0.5,0.7647058823529411,0.9750774162676873,6.28,"# Honors Statistics vs. Honors Mathematics Programs
+
+Based on the information available, here are the key differences:
+
+## Program Focus & Rigor
+Both **Honors programs** are designed for students who are passionate about and fully committed to their discipline. They build depth in the subject area a"
+claude + openai,Hard,"If I complete STAT 151, what statistics courses can I take next?",1.0,0.6666666666666666,0.9510978758917631,5.92,"# Statistics Courses After STAT 151
+
+Once you complete **STAT 151: Introduction to Applied Statistics I**, you'll be eligible to take several follow-up statistics courses:
+
+## Primary Next Course:
+- **STAT 252 - Introduction to Applied Statistics II** (3 units)
+  - Covers regression techniques, anal"
+ollama + ollama,Easy,What are the prerequisites for STAT 471?,1.0,0.3333333333333333,0.9999999999999991,7.21,"The prerequisites for STAT 471 are STAT 371 or STAT 281.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_entity.php?catoid=56&ent_oid=7269
+- Course database (data/course_gr"
+ollama + ollama,Easy,What are the prerequisites for MATH 209?,1.0,0.5,1.0000000000000002,2.76,"The prerequisites for MATH 209 are MATH 101 and MATH 102.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668651
+- https://calendar.ualberta"
+ollama + ollama,Easy,What are the prerequisites for STAT 265?,0.5,0.0,1.0000000000000007,4.35,"The prerequisites for STAT 265 are MATH 209, 214, or 217.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=83391&returnto=17465
+- https://calendar"
+ollama + ollama,Easy,What are the prerequisites for STAT 378?,1.0,1.0,1.0000000000000004,2.73,"The prerequisites for STAT 378 are one of STAT 266 or STAT 276, or STAT 235 with consent from the Department.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/content.php?catoid=56&"
+ollama + ollama,Easy,Does STAT 151 have any prerequisites?,1.0,1.0,0.9638252060331508,3.23,"Yes, STAT 151 has a prerequisite of Mathematics 30-1 or 30-2.
+
+---
+**Sources:**
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17355
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17433
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315
+- https://calend"
+ollama + ollama,Easy,What are the prerequisites for STAT 266?,1.0,0.5,1.0000000000000002,2.81,"The prerequisites for STAT 266 are MATH 209, MATH 214, or MATH 217, and one of STAT 265 or STAT 281.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&p"
+ollama + ollama,Easy,What are the prerequisites for MATH 217?,1.0,0.14285714285714285,0.9517890257723276,2.98,"The prerequisites for MATH 217 (Honors Calculus III) are MATH 102, 125, 127, or MATH 118 or MATH 216.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_entity.php?catoid=56&e"
+ollama + ollama,Easy,What are the prerequisites for STAT 353?,1.0,1.0,0.9999999999999999,2.89,"The prerequisites for STAT 353 are MATH 253 and one of STAT 265 or STAT 281.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=83794&returnto=17468"
+ollama + ollama,Easy,What are the prerequisites for MATH 334?,1.0,1.0,1.0,3.24,"The prerequisites for MATH 334 are MATH 102, 125, or 127, and MATH 209, 214, or 217.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=83941&return"
+ollama + ollama,Easy,What are the prerequisites for MATH 225?,1.0,0.5,1.0000000000000002,4.42,"The prerequisites for MATH 225 are one of MATH 100, 113, 114, 117, 134, 144, or SCI 100, and one of MATH 102, 125, or 127.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_p"
+ollama + ollama,Easy,What first year math courses are available?,1.0,1.0,0.9380414968388232,3.52,"The first-year math courses available include:
+
+- **MATH 100: Calculus for Engineering I**  
+- **MATH 101: Calculus for Engineering II**  
+- **MATH 125: Linear Algebra I**  
+- **MATH 127: Honors Linear Algebra I**  
+- **MATH 134: Calculus for the Life Sciences I**  
+- **MATH 136: Calculus for the Li"
+ollama + ollama,Easy,What 400-level STAT courses are offered?,1.0,1.0,0.9943242541596177,6.97,"The 400-level STAT courses offered include:  
+- STAT 413: Computing for Data Science  
+- STAT 432: Survival Analysis  
+- STAT 437: Applied Statistical Methods  
+- STAT 441: Statistical Methods for Learning and Data Mining  
+- STAT 453: Risk Theory  
+- STAT 471: Probability I  
+- STAT 479: Time Serie"
+ollama + ollama,Easy,What 300-level STAT courses are available?,1.0,1.0,0.9896869133519859,3.76,"The 300-level STAT courses available are:  
+- **STAT 337: Biostatistics**  
+- **STAT 353: Life Contingencies I**  
+- **STAT 361: Sampling Techniques**  
+- **STAT 368: Introduction to Design and Analysis of Experiments**  
+- **STAT 371: Probability and Stochastic Processes**  
+- **STAT 372: Mathemati"
+ollama + ollama,Easy,What second year statistics courses are there?,1.0,0.7142857142857143,0.9324126136357626,3.28,"The second year statistics courses at the University of Alberta include:
+
+- **STAT 235: Introductory Statistics for Engineering**  
+- **STAT 252: Introduction to Applied Statistics II**  
+- **STAT 265: Probability and Statistics I**  
+- **STAT 266: Probability and Statistics II**  
+- **STAT 276: Sta"
+ollama + ollama,Easy,What is the Decima Robinson Support Centre?,1.0,1.0,0.9581919510799778,2.72,"The Decima Robinson Support Centre is located in University Commons 1-200 and is open from 9 AM to 3 PM on Mon/Wed/Fri and 10 AM to 4 PM on Tues/Thurs. It provides support for students taking mathematics or statistics courses at the University of Alberta.
+
+---
+**Sources:**
+- https://www.ualberta.ca/"
+ollama + ollama,Easy,Where can I get help with my calculus homework?,1.0,0.75,0.9999999999999991,5.23,"To get help with your calculus homework, you can visit the **Decima Robinson Support Centre**. They offer one-on-one assistance and can help with homework questions, including those related to calculus. The Centre is available every weekday from 1:00 PM to 3:00 PM. Let me know if you need further as"
+ollama + ollama,Easy,Is there tutoring available for statistics students?,1.0,1.0,0.8804762132486483,2.59,"Yes, the Decima Robinson Support Centre offers comprehensive tutoring and assistance for mathematics and statistics students. They are located in University Commons 1-200 and are open from 9 AM to 3 PM on Mon/Wed/Fri and 10 AM to 4 PM on Tues/Thurs. Students can reach out for help with their courses"
+ollama + ollama,Medium,What is the difference between an Honors and a Major in Mathematics?,1.0,0.7777777777777778,0.0,7.08,"The difference between an Honors and a Major in Mathematics lies in their requirements and focus. A Major in Mathematics requires a minimum of **66 units in Science courses**, while an Honors program is designed for students who are passionate and committed to the discipline, requiring specific cour"
+ollama + ollama,Medium,What is the difference between STAT 151 and STAT 265?,0.5,0.7142857142857143,0.9999999999999996,5.27,"The difference between **STAT 151** and **STAT 265** is that **STAT 151** is an introductory course in applied statistics, covering foundational topics such as statistics in a general context, while **STAT 265** is a specialized course in probability and statistics, focusing on probability and stati"
+ollama + ollama,Medium,What is the difference between the Mathematics and Statistics programs?,0.5,1.0,0.9714844675449598,2.88,"The Mathematics program focuses on mathematical modeling, optimization, stochastic processes, and theoretical foundations of data science. The Statistics program emphasizes statistical modeling, inference, regression, and statistical learning methods for analyzing real-world data. These are the core"
+ollama + ollama,Medium,What are the requirements for honors math?,1.0,0.38095238095238093,0.9895564028754054,7.55,"The requirements for honors math are as follows:  
+- **63 units** in total (Honors in Mathematics).  
+- **Choose 3 units** from:  
+  - MATH 117 - Honors Calculus I  
+  - MATH 134 - Calculus for the Life Sciences I  
+  - MATH 144 - Calculus for the Mathematical and Physical Sciences I  
+  - MATH 118 "
+ollama + ollama,Medium,What are the requirements for the major in statistics?,1.0,0.9130434782608695,0.9992414999036168,6.84,"The requirements for the major in Statistics are as follows:  
+- **Foundation Courses**:  
+  - CMPUT 174 - Introduction to the Foundations of Computation I  
+  - CMPUT 175 - Introduction to the Foundations of Computation II  
+  - STAT 151 - Introduction to Applied Statistics I  
+  - Choose 3 units f"
+ollama + ollama,Medium,How many units do I need for a minor in mathematics?,0.5,0.0,0.927970662545215,5.57,"For a minor in Mathematics, you need to meet the minimum requirements outlined by the department. Specifically, you must complete **at least 6 units at the senior level** in the required subject. This aligns with the general requirements for a minor in Mathematics, as specified in the context provid"
+ollama + ollama,Medium,What programs are available in Mathematics and Statistics?,0.75,0.25,0.9906133902262093,3.86,"The available programs in Mathematics and Statistics include:
+
+1. **Molecular Pathology, Analytical and Environmental Toxicology, and Biopreservation** (MSc programs).  
+2. **Bachelor of Science in Engineering** (with specific requirements for qualifying years).  
+
+Other relevant programs mentioned "
+ollama + ollama,Medium,What is the Data Science program?,1.0,1.0,0.8714782585327905,3.16,"The Data Science program at the University of Alberta prepares graduates for careers in data analysis, modeling, and computational decision-making. Graduates may pursue graduate studies in related fields such as statistics, applied mathematics, or economics.
+
+---
+**Sources:**
+- https://www.ualberta."
+ollama + ollama,Medium,What is the Applied Mathematics program?,1.0,0.375,0.9271421975809336,4.64,"The Applied Mathematics program is designed to prepare students for careers in fields such as industry, finance, and research. It emphasizes practical skills in mathematical modeling, data analysis, and computational methods, with courses like Linear Algebra and the MDP program focusing on data scie"
+ollama + ollama,Medium,Can I double major in Math and Statistics?,0.5,0.25,0.9604911276278149,4.71,"Yes, you can double major in Math and Statistics. The current course offerings in the Department of Mathematical and Statistical Sciences allow for both majors and minors in Statistics, as well as Honors in Statistics. To double major, you would need to satisfy the Common Course Requirements, Major/"
+ollama + ollama,Medium,What is the MDP program?,1.0,1.0,0.9350769569572442,2.27,"The MDP program emphasizes practical aspects of mathematical and statistical modeling, data analysis, statistical machine learning algorithms, and modern computational methods. It is highlighted as a program focused on these areas, as mentioned in the context provided.
+
+---
+**Sources:**
+- https://ww"
+ollama + ollama,Medium,How do I apply to the MSc Statistics program?,1.0,0.36363636363636365,0.9438147855290615,4.37,"To apply to the **MSc Statistics** program at the University of Alberta, follow these steps:  
+
+1. **Choose a Program + Specialization**: Select the MSc Statistics program and your desired specialization.  
+2. **Submit the Personal Experiences Form**: Complete the five subsections (Employment, Leade"
+ollama + ollama,Medium,What is the PhD program in Mathematics?,1.0,1.0,0.9225947452843407,3.35,"The PhD program in Mathematics typically lasts four to five years and requires a thesis-based Master's degree in Mathematics or Statistics. Students can transfer to the PhD program if they have a BSc, but there are specific conditions.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-"
+ollama + ollama,Medium,Is there funding available for graduate students?,1.0,0.6666666666666666,0.957536775608645,3.63,"Yes, there is funding available for graduate students through various programs. Here's what is available:
+
+1. **Graduate Research Assistantships (GRAFs)**:  
+   - Offered during the **Fall and Winter terms**.  
+   - Available for **MSc and PhD students**.  
+   - PhD students can apply for a **fifth "
+ollama + ollama,Hard,I want to study statistics. What courses should I take in first year?,1.0,0.75,0.9565751872107904,3.55,"To study statistics in your first year, you should take the following courses:
+
+1. **STAT 151: Introduction to Applied Statistics I** – A foundational course in statistics for undergraduates.
+2. **STAT 161: Introductory Statistics for Business and Economics** – A core course covering basic statistic"
+ollama + ollama,Hard,I've completed STAT 265 and STAT 281. What 300-level STAT courses can I take?,1.0,0.0,0.9275779449213898,9.58,"Based on the course information, you can take STAT 266 and STAT 276 as 300-level STAT courses. However, you must ensure you have completed the required prerequisites, which are MATH 225 or 227. Since you have already completed STAT 265 and 281, which are 300-level courses, you need to check if you h"
+ollama + ollama,Hard,What is the engineering calculus sequence?,0.5,0.42857142857142855,0.0,5.32,"The provided information does not specify a particular engineering calculus sequence. However, it mentions that linear algebra is a prerequisite for advanced courses like coding theory and number theory, which are interdisciplinary fields. If you're referring to engineering calculus, it likely invol"
+ollama + ollama,Hard,What courses do I need before taking STAT 471?,1.0,0.7142857142857143,0.9595518965796931,3.23,"To take STAT 471, you must have completed either STAT 371 or STAT 281. These are the prerequisites for the course. If you're taking STAT 471, ensure you meet these requirements before registering.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-stud"
+ollama + ollama,Hard,What careers can I pursue with a Statistics degree?,1.0,1.0,0.9681029434751459,2.95,"With a Statistics degree, you can pursue careers in fields such as data analysts, researchers in government agencies (e.g., Alberta Environment), biostatisticians in healthcare, actuaries in finance, and professionals in industry (health, finance, computing). Additionally, you can establish careers "
+ollama + ollama,Hard,What jobs are available for Data Science graduates?,0.5,0.5454545454545454,0.9026007816948255,2.82,"Data Science graduates can pursue careers in fields such as computing, financial/market analysis, medical physics, and data analysis. The program emphasizes skills like problem-solving and data analysis, which are highly sought-after in the private sector. Additionally, the Mathematics and Economics"
+ollama + ollama,Hard,Are there research opportunities for undergrad students?,1.0,0.875,0.9887163418097501,2.96,"Yes, there are research opportunities for undergrad students. Programs like the MSS USRAs and the MN program provide research experiences, including opportunities for undergraduate research, clinical components, and collaboration with faculty. Students can apply for these programs and engage in rese"
+ollama + ollama,Hard,Is there a study abroad program for math students?,0.5,0.3333333333333333,0.9198102447763628,4.89,"There are programs like the **BA Honors in Mathematics** and **Minor in Mathematics** that allow students to study mathematics alongside the arts. However, **study abroad** programs are not a standard requirement unless explicitly specified in your degree program. For specific study abroad opportuni"
+ollama + ollama,Hard,What student clubs are available for math and stats students?,0.75,0.75,1.0000000000000007,2.83,"Student clubs available for math and stats students are **SIGMAS (Society in Graduate Mathematics and Statistics)** and **GSA (Graduate Students' Association)**. These are the two student groups that all graduate students in the Department of Mathematical and Statistical Sciences belong to.
+
+---
+**S"
+ollama + ollama,Hard,What scholarships are available for math students?,1.0,0.6666666666666666,0.9434857116534195,4.19,"The Department offers several scholarships for math and statistics students. Specifically, six Academic Excellence Scholarships of $1,000 each are awarded to students entering an Honors or Specialization program in Mathematics or Statistics. These scholarships are based on superior academic achievem"
+ollama + ollama,Hard,What is the Statistical Consulting service?,1.0,1.0,0.9125000576730953,3.07,"The Statistical Consulting service offered by the TCC includes consulting sessions for University-affiliated graduate students, research associates, and faculty members. It also provides a range of services for non-affiliated researchers, supporting long-term projects and addressing their needs. The"
+ollama + ollama,Hard,Does the department offer any consulting or training for researchers?,1.0,1.0,0.9706501924954933,3.46,"Yes, the department offers consulting and training services for researchers. These include individual-based support for projects requiring collaboration or long-term involvement, as well as training services for non-affiliated researchers and for graduate students in applied statistics. Additionally"
+ollama + ollama,Hard,I'm a high school student interested in math. What outreach programs exist?,1.0,1.0,0.9707593226193897,4.73,"There are several outreach programs available for high school students interested in math:
+
+1. **Online Mathematics Primer Course** and **Statistics Primer Course**: These are optional non-credit courses offered to help students transition from high school to university. They refresh math skills in "
+ollama + ollama,Hard,What is the difference between the honors statistics and honors mathematics programs?,0.5,0.3333333333333333,0.0,5.41,"The difference between honors statistics and honors mathematics programs lies in their focus and structure. The honors statistics program typically emphasizes statistics and related disciplines, while the honors mathematics program focuses on mathematics and the arts. Both programs are offered in th"
+ollama + ollama,Hard,"If I complete STAT 151, what statistics courses can I take next?",1.0,0.25,0.9489117863234515,5.87,"If you have completed STAT 151, you can take STAT 161 as your next statistics course in the first year. This course will build on your foundational statistics skills and prepare you for more advanced topics.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergr"
+ollama + sentence,Easy,What are the prerequisites for STAT 471?,1.0,0.3333333333333333,0.9999999999999991,12.06,"The prerequisites for STAT 471 are **STAT 371 or STAT 281**.
+
+---
+**Sources:**
+- https://calendar.ualberta.ca/preview_entity.php?catoid=56&ent_oid=7269
+- https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=670446
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/gra"
+ollama + sentence,Easy,What are the prerequisites for MATH 209?,1.0,1.0,1.0000000000000002,3.07,"The prerequisites for MATH 209 are MATH 101 and MATH 102.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=668651
+- https://calendar.ualberta"
+ollama + sentence,Easy,What are the prerequisites for STAT 265?,0.25,0.0,1.0000000000000007,3.1,"The prerequisites for STAT 265 are a 300-level MATH course and consent from the course coordinator.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_course_nopop.php?catoid="
+ollama + sentence,Easy,What are the prerequisites for STAT 378?,1.0,0.4,1.0000000000000004,3.37,"The prerequisites for STAT 378 are:  
+- **STAT 266 or STAT 276**, or  
+- **STAT 235 with consent from the Department**, or  
+- A **300-level MATH course** and **consent from the course coordinator**.  
+
+These prerequisites ensure students have the foundational knowledge and requirements to succeed i"
+ollama + sentence,Easy,Does STAT 151 have any prerequisites?,1.0,1.0,0.9653052893924855,2.94,"Yes, STAT 151 has prerequisites of **Mathematics 30-1 or 30-2**.
+
+---
+**Sources:**
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84340&returnto=17475
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17355
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&poi"
+ollama + sentence,Easy,What are the prerequisites for STAT 266?,1.0,1.0,1.0000000000000002,3.1,"The prerequisites for STAT 266 are one of MATH 209, MATH 214, or MATH 217, and one of STAT 265 or STAT 281.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_entity.php?catoi"
+ollama + sentence,Easy,What are the prerequisites for MATH 217?,1.0,0.5,1.0000000000000002,3.89,"The prerequisites for MATH 217 are MATH 102, 125, or 127, and either MATH 118 or MATH 216.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_course_nopop.php?catoid=56&coid=6"
+ollama + sentence,Easy,What are the prerequisites for STAT 353?,1.0,1.0,0.9999999999999999,2.63,"The prerequisites for STAT 353 are **MATH 253** and **one of STAT 265 or STAT 281**.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315
+- http"
+ollama + sentence,Easy,What are the prerequisites for MATH 334?,1.0,0.5,1.0,3.35,"The prerequisites for MATH 334 are:  
+- One of MATH 102, 125, or 127.  
+- One of MATH 209, 214, or 217.  
+
+Additionally, the course may be taken for credit in at most one of MATH 201, MATH 334, MATH 336, or MA PH 251.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-scienc"
+ollama + sentence,Easy,What are the prerequisites for MATH 225?,1.0,1.0,1.0000000000000002,3.47,"The prerequisites for MATH 225 are one of MATH 100, 113, 114, 117, 134, 144, 154, or SCI 100, and one of MATH 102, 125, or 127.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/cont"
+ollama + sentence,Easy,What first year math courses are available?,1.0,1.0,0.9954667586256738,3.99,"The first-year math courses available include:  
+- **MATH 100: Calculus for Engineering I**  
+- **MATH 101: Calculus for Engineering II**  
+- **Applied Linear Algebra**  
+- **Introduction to Discrete Mathematics**  
+- **MATH 113: Course MATH 113**  
+- **MATH 114: Course MATH 114**  
+- **MATH 115: Co"
+ollama + sentence,Easy,What 400-level STAT courses are offered?,1.0,0.09090909090909091,0.9943242541596177,5.02,"The 400-level STAT courses offered are listed in the course information as follows:  
+- **STAT 413: Computing for Data Science** (3 units)  
+- **STAT 432: Survival Analysis** (3 units)  
+- **STAT 437: Applied Statistical Methods** (3 units)  
+- **STAT 441: Statistical Methods for Learning and Data M"
+ollama + sentence,Easy,What 300-level STAT courses are available?,1.0,1.0,0.9896869133519859,3.36,"The 300-level STAT courses available are:  
+- **STAT 337: Biostatistics**  
+- **STAT 353: Life Contingencies I**  
+- **STAT 361: Sampling Techniques**  
+- **STAT 368: Introduction to Design and Analysis of Experiments**  
+- **STAT 371: Probability and Stochastic Processes**  
+- **STAT 372: Mathemati"
+ollama + sentence,Easy,What second year statistics courses are there?,1.0,0.8333333333333334,0.9324126136357626,3.12,"The second year statistics courses at the University of Alberta include:  
+- **STAT 235: Introductory Statistics for Engineering**  
+- **STAT 252: Introduction to Applied Statistics II**  
+- **STAT 265: Probability and Statistics I**  
+- **STAT 266: Probability and Statistics II**  
+
+These courses a"
+ollama + sentence,Easy,What is the Decima Robinson Support Centre?,1.0,0.8571428571428571,0.9805781111730741,2.98,"The Decima Robinson Support Centre is a service provided by the University of Alberta Math & Statistics Department to support students, particularly those transitioning from high school to university. It offers weekly review seminars and a Primer Course to help students make the academic transition."
+ollama + sentence,Easy,Where can I get help with my calculus homework?,1.0,0.8333333333333334,0.9999999999999991,2.52,"You can get help with your calculus homework at the **Decima Robinson Support Centre**. They offer one-on-one assistance for math or statistics courses, including help with tricky homework questions. The Centre is located in University Commons 1-200 and is open from 9 AM to 3 PM on weekdays. Let me "
+ollama + sentence,Easy,Is there tutoring available for statistics students?,1.0,0.8333333333333334,0.9859600747353815,2.84,"Yes, there is tutoring available for statistics students through the **Decima Robinson Support Centre**. You can reach out to them for assistance with homework, questions, or other support needs. Let me know if you need further details!
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and"
+ollama + sentence,Medium,What is the difference between an Honors and a Major in Mathematics?,1.0,0.5833333333333334,0.9939767643446441,5.78,"The difference between an Honors in Mathematics and a Major in Mathematics is as follows:  
+- **Honors in Mathematics** is a specific program offered through the Faculty of Science, typically as a **BSc Honors** degree. It is designed for students interested in a broader mathematical focus, with req"
+ollama + sentence,Medium,What is the difference between STAT 151 and STAT 265?,0.5,0.4444444444444444,0.9962028889680541,5.39,"The difference between **STAT 151** and **STAT 265** lies in their focuses and prerequisites:  
+- **STAT 151** is an introductory course covering topics like point estimation, confidence intervals, and regression analysis. It is designed for students interested in statistics at the undergraduate lev"
+ollama + sentence,Medium,What is the difference between the Mathematics and Statistics programs?,1.0,1.0,0.977730165009429,4.29,"The Mathematics program emphasizes mathematical modeling, optimization, stochastic processes, and theoretical foundations of data science, while the Statistics program focuses on statistical modeling, inference, regression, and statistical learning methods. These are distinct programs tailored to di"
+ollama + sentence,Medium,What are the requirements for honors math?,1.0,0.25,0.9308040001749346,4.4,"The requirements for an honors mathematics program at the University of Alberta include:  
+- **Minimum units**: 51 units in the major subject (Honors in Mathematics) and 57 units in total (as specified by the department).  
+- **Foundation Courses**: CMPUT 174 and 175 (see Note 1), and three units fr"
+ollama + sentence,Medium,What are the requirements for the major in statistics?,1.0,0.7368421052631579,0.9992414999036168,5.34,"The requirements for the major in Statistics are as follows:
+
+1. **Foundation Courses**:  
+   - CMPUT 174 - Introduction to the Foundations of Computation I  
+   - CMPUT 175 - Introduction to the Foundations of Computation II  
+   - STAT 151 - Introduction to Applied Statistics I  
+
+2. **MATH Course"
+ollama + sentence,Medium,How many units do I need for a minor in mathematics?,1.0,0.25,0.9844614473707755,3.54,"For a minor in Mathematics, you need **18 units** in total. This includes:  
+- **6 units** at the 300-level or higher in MATHQ (minimum requirement).  
+- **12 units** at the 200-level or higher in MATHQ.  
+
+This meets the minimum requirements specified in the department's program guidelines.
+
+---
+**"
+ollama + sentence,Medium,What programs are available in Mathematics and Statistics?,1.0,0.5833333333333334,0.9497563146115183,3.08,"The available programs in Mathematics and Statistics are as follows:  
+- **Undergraduate Programs**:  
+  - Statistics  
+  - Mathematics and Finance  
+  - Mathematics and Economics  
+  - Mathematics  
+  - Mathematical Physics  
+  - Applied Mathematics  
+  - Data Science  
+
+For graduate programs, the "
+ollama + sentence,Medium,What is the Data Science program?,1.0,1.0,0.8962266569273667,4.07,"The Data Science program at the University of Alberta prepares graduates for careers in data analysis, modelling, and computational decision-making. It emphasizes practical skills in mathematical and statistical modeling, data analytics, and machine learning, with options for both undergraduate and "
+ollama + sentence,Medium,What is the Applied Mathematics program?,0.75,0.8333333333333334,0.9716509958919546,3.98,"The Applied Mathematics program is offered as a specialization in the Department of Mathematical and Statistical Sciences. It provides master's and PhD-level programs with specific regulations, and its offerings include topics such as Linear Algebra, which serve as prerequisites for advanced courses"
+ollama + sentence,Medium,Can I double major in Math and Statistics?,0.75,0.1111111111111111,0.0,4.71,"Yes, you can double major in **Math and Statistics**. The program allows for combining **Mathematics** and **Statistics** as separate major/minor requirements, provided you meet the course requirements and the department's policies allow it. For example, you can combine Math with Statistics as a maj"
+ollama + sentence,Medium,What is the MDP program?,1.0,1.0,0.9579451800686988,2.59,"The MDP program is a **course-based Master's in Modelling, Data + Predictions** (16 months) that emphasizes **practical aspects of mathematical and statistical modeling**, **data analysis**, **statistical machine learning algorithms**, and **modern computational methods**. It prepares students for c"
+ollama + sentence,Medium,How do I apply to the MSc Statistics program?,1.0,0.7222222222222222,0.97518496266295,4.94,"To apply to the **MSc Statistics program**, follow these steps:  
+
+1. **Create an Account**: Go to the [Application Portal](https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/programs/master-of-science.html) and complete the account creation process.  
+
+2. **Submit Req"
+ollama + sentence,Medium,What is the PhD program in Mathematics?,1.0,0.6666666666666666,0.9288636906883125,3.0,"The PhD program in Mathematics typically includes specializations such as Applied Mathematics, Mathematical Finance, Mathematical Physics, Pure Mathematics, Statistical Machine Learning, and Statistics.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-stu"
+ollama + sentence,Medium,Is there funding available for graduate students?,1.0,0.9230769230769231,0.9217937776525315,3.24,"Yes, there is funding available for graduate students in the Department of Mathematical and Statistical Sciences. This includes:
+
+1. **Funding Guarantee**: Domestic PhD students with a Funding Guarantee can expect at least $29,481 per year for up to four years and can apply for additional funding fo"
+ollama + sentence,Hard,I want to study statistics. What courses should I take in first year?,1.0,0.5,0.9565751872107904,3.8,"To study statistics in your first year, you should take the following courses:
+
+1. **STAT 151: Introduction to Applied Statistics I** – A foundational course in statistics, covering topics like linear functions, probability, and descriptive statistics.  
+2. **STAT 161: Introductory Statistics for Bu"
+ollama + sentence,Hard,I've completed STAT 265 and STAT 281. What 300-level STAT courses can I take?,1.0,0.8,0.9185930142439399,6.38,"Based on the course information, you can take the following 300-level STAT courses:
+
+1. **STAT 337: Biostatistics**  
+   Prerequisites: STAT 151, STAT 161, SCI 151  
+
+2. **STAT 353: Life Contingencies I**  
+   Prerequisites: MATH 253, STAT 265, STAT 281  
+
+3. **STAT 361: Sampling Techniques**  
+   P"
+ollama + sentence,Hard,What is the engineering calculus sequence?,1.0,0.6666666666666666,0.9573231762214806,5.08,"The engineering calculus sequence is **MATH 100 - Calculus for Engineering I** followed by **MATH 101 - Calculus for Engineering IICourse Career: Undergraduate**. This sequence is offered either term and requires prerequisites of Mathematics 30-1 and MATH 117.
+
+---
+**Sources:**
+- https://www.ualbert"
+ollama + sentence,Hard,What courses do I need before taking STAT 471?,1.0,0.0,0.9595518965796931,3.43,"To take STAT 471, you must have completed a 300-level STAT course (either STAT 371 or STAT 281) and consent from the course coordinator. No other courses are required for this specific course.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/undergraduate-studies/"
+ollama + sentence,Hard,What careers can I pursue with a Statistics degree?,1.0,0.7272727272727273,0.9751758380006805,3.1,"With a Statistics degree, you can pursue a wide range of careers, including:  
+- **Data analysts**  
+- **Researchers in government agencies** (e.g., Alberta Environment)  
+- **Biostatisticians** in hospitals and medical research  
+- **Actuaries and financial analysts**  
+- **Data science, computing "
+ollama + sentence,Hard,What jobs are available for Data Science graduates?,1.0,0.5,0.9238958813909144,3.42,"Data Science graduates can pursue jobs such as data scientists, analysts, industry professionals in fields like data science, computing science, statistics, applied mathematics, economics, finance, or related interdisciplinary fields. Additionally, they may also pursue graduate studies in data scien"
+ollama + sentence,Hard,Are there research opportunities for undergrad students?,1.0,0.75,0.9236702246356213,3.18,"Yes, there are research opportunities for undergrad students in the Mathematical and Statistical Sciences program. These include Research Project courses like MATH 499, MA PH 499, and STAT 499, which provide students with the chance to engage in independent research under faculty supervision. Additi"
+ollama + sentence,Hard,Is there a study abroad program for math students?,0.5,0.7142857142857143,0.9950743373664023,4.53,"Yes, there is a study abroad program for math students. The **Education Abroad Program** offers education abroad, allowing students to study in different countries. This program is available for undergraduate and graduate students, with specific details provided in the context. For more information,"
+ollama + sentence,Hard,What student clubs are available for math and stats students?,1.0,0.8571428571428571,0.9327020623658476,3.06,The Mathematical Sciences Society (MSS) is the undergraduate student group for Mathematics and Statistics courses. It fosters collaboration and mentorship among peers interested in mathematics or statistics. The MSS maintains a student lounge in University Commons 1-200 and is open between 9 AM and 
+ollama + sentence,Hard,What scholarships are available for math students?,1.0,0.8,0.9352633856722675,4.03,"The available scholarships for math students include:  
+- **Josephine Mitchell Scholarships**: Worth $5,000 each (for entrance into Honors or Specialization programs in Mathematics or Statistics).  
+- **Josephine Mitchell Prize**: Worth $10,000 (for excellence in mathematics competitions or academic"
+ollama + sentence,Hard,What is the Statistical Consulting service?,1.0,1.0,0.8977885630701659,2.78,"The Statistical Consulting service is offered by the University of Alberta's Department of Mathematical and Statistical Sciences, providing consulting and support to graduate students in applied statistics. This service is funded by the department and provides assistance with data analysis, problem-"
+ollama + sentence,Hard,Does the department offer any consulting or training for researchers?,1.0,1.0,0.9908348850886615,3.25,"Yes, the department offers consulting and training services for researchers. The Training and Consulting Center provides statistical consulting for external clients in business, government, and industry on a fee-for-service basis, as well as training services for long-term projects and non-affiliate"
+ollama + sentence,Hard,I'm a high school student interested in math. What outreach programs exist?,1.0,0.6666666666666666,0.9707593226193897,3.89,"There are several outreach programs available for high school students interested in math:  
+
+1. **Ada’s Team** in the Department of Computing Science promotes diversity in STEAM with activities like outreach events, funding for conferences, and hosting technical workshops.  
+2. **Alberta High Schoo"
+ollama + sentence,Hard,What is the difference between the honors statistics and honors mathematics programs?,0.5,0.6428571428571429,0.9863384086296971,5.28,"The difference between honors statistics and honors mathematics programs lies in their structure and requirements:  
+- **Structure**: Honors programs in both disciplines are structured to emphasize rigorous academic rigor, with specific timeframes (e.g., four consecutive years for honors) and prereq"
+ollama + sentence,Hard,"If I complete STAT 151, what statistics courses can I take next?",1.0,0.3333333333333333,0.9611683135043859,5.78,"After completing STAT 151, you can take the following statistics courses in the next semester:
+
+1. **STAT 235: Introductory Statistics for Engineering**  
+   *Prerequisites: STAT 151, STAT 161, STAT 235, STAT 141, SCI 151*  
+
+2. **STAT 252: Introduction to Applied Statistics II**  
+   *Prerequisites"
+ollama + openai,Easy,What are the prerequisites for STAT 471?,1.0,0.3333333333333333,0.9999999999999991,6.74,"The prerequisites for STAT 471 are **STAT 371 or STAT 281**.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17355
+- https://calendar.ualberta.ca/previ"
+ollama + openai,Easy,What are the prerequisites for MATH 209?,1.0,1.0,1.0000000000000002,3.27,"The prerequisites for MATH 209 are MATH 101 and MATH 102.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_entity.php?catoid=56&ent_oid=7269
+- Course database (data/course_g"
+ollama + openai,Easy,What are the prerequisites for STAT 265?,0.75,0.2,1.0000000000000007,3.28,"The prerequisites for STAT 265 are **STAT 281 or STAT 265**.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=84315
+- https://calendar.ualberta.ca"
+ollama + openai,Easy,What are the prerequisites for STAT 378?,1.0,0.6,1.0000000000000004,4.08,"The prerequisites for STAT 378 are:  
+- One of STAT 266 or 276, or  
+- STAT 235 with consent from the Department.  
+
+These are explicitly listed in the Course Information section.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlin"
+ollama + openai,Easy,Does STAT 151 have any prerequisites?,1.0,1.0,0.9653052893924855,3.41,"Yes, STAT 151 has prerequisites of Mathematics 30-1 or 30-2.
+
+---
+**Sources:**
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17355
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17433
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=18917
+- https://calendar.ualb"
+ollama + openai,Easy,What are the prerequisites for STAT 266?,1.0,1.0,1.0000000000000002,3.88,"The prerequisites for STAT 266 are one of MATH 209, MATH 214, or MATH 217 and one of STAT 265 or STAT 281.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_entity.php?catoid"
+ollama + openai,Easy,What are the prerequisites for MATH 217?,1.0,0.5,1.0000000000000002,3.15,"The prerequisites for MATH 217 are MATH 102, 125, or 127, and either MATH 118 or MATH 216.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_entity.php?catoid=56&ent_oid=7269"
+ollama + openai,Easy,What are the prerequisites for STAT 353?,1.0,1.0,0.9999999999999999,2.92,"The prerequisites for STAT 353 are MATH 253 and one of STAT 265 or STAT 281.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/content.php?catoid=56&navoid=17355
+- https://calendar.u"
+ollama + openai,Easy,What are the prerequisites for MATH 334?,1.0,1.0,1.0,3.42,"The prerequisites for MATH 334 are one of MATH 102, 125, or 127, and one of MATH 209, 214, or 217.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/preview_entity.php?catoid=56&ent_"
+ollama + openai,Easy,What are the prerequisites for MATH 225?,1.0,1.0,1.0000000000000002,3.77,"The prerequisites for MATH 225 are one of MATH 100, 113, 114, 117, 134, 144, 154, or SCI 100, and one of MATH 102, 125, or 127.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html
+- https://calendar.ualberta.ca/prev"
+ollama + openai,Easy,What first year math courses are available?,1.0,1.0,0.9915178224887522,4.72,"The first year math courses available include:
+
+- **MATH 100: Calculus for Engineering I**  
+- **MATH 101: Calculus for Engineering II**  
+- **MATH 102: Applied Linear Algebra**  
+- **MATH 111: Introduction to Discrete Mathematics**  
+- **MATH 113: Course MATH 113**  
+- **MATH 114: Course MATH 114**"
+ollama + openai,Easy,What 400-level STAT courses are offered?,1.0,1.0,0.9943242541596177,3.7,"The 400-level STAT courses offered are:  
+- **STAT 413: Computing for Data Science**  
+- **STAT 432: Survival Analysis**  
+- **STAT 437: Applied Statistical Methods**  
+- **STAT 441: Statistical Methods for Learning and Data Mining**  
+- **STAT 453: Risk Theory**  
+- **STAT 471: Probability I**  
+- "
+ollama + openai,Easy,What 300-level STAT courses are available?,1.0,1.0,0.960963217133829,6.07,"The 300-level STAT courses available are:  
+- **STAT 337: Biostatistics** with prerequisites STAT 151, 161, and SCI 151.  
+- **STAT 353: Life Contingencies I** with prerequisites MATH 253, STAT 265, and STAT 281.  
+- **STAT 361: Sampling Techniques** with prerequisites STAT 266 and STAT 276.  
+- **S"
+ollama + openai,Easy,What second year statistics courses are there?,1.0,0.8,0.9741275016883989,3.6,"The second year statistics courses offered include STAT 235: Introductory Statistics for Engineering, STAT 252: Introduction to Applied Statistics II, STAT 265: Probability and Statistics I, and STAT 266: Probability and Statistics II. These courses are prerequisites for subsequent years of study.
+
+"
+ollama + openai,Easy,What is the Decima Robinson Support Centre?,1.0,1.0,0.9805781111730741,3.5,"The Decima Robinson Support Centre is a service provided by the University of Alberta, named after Decima Eveline Robinson, the first BSc graduate in 1911. It offers support for mathematics and statistics courses, helping students with homework or questions.
+
+---
+**Sources:**
+- https://www.ualberta."
+ollama + openai,Easy,Where can I get help with my calculus homework?,1.0,1.0,0.9999999999999991,3.13,"To get help with your calculus homework, contact the **Decima Robinson Support Centre**. They can assist with questions, problems, or support for your academic needs. Let me know if you need further assistance!
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences/unde"
+ollama + openai,Easy,Is there tutoring available for statistics students?,1.0,1.0,0.8841643330596205,5.35,"Yes, tutoring is available through the Decima Robinson Support Centre. This support service provides assistance for students in various courses, including statistics, helping them with homework or complex questions.
+
+---
+**Sources:**
+- https://www.ualberta.ca/en/mathematical-and-statistical-sciences"
+ollama + openai,Medium,What is the difference between an Honors and a Major in Mathematics?,1.0,0.4,0.9845951380811494,5.65,"The difference between an Honors program and a Major in Mathematics lies in their structure and purpose:  
+- **Honors in Mathematics** offers a **specific degree** with **63 units**, while a **Major in Mathematics** offers a **major program** with **51 units**.  
+- **Honors** is designed for student"
+ollama + openai,Medium,What is the difference between STAT 151 and STAT 265?,0.5,0.42857142857142855,0.9999999999999996,4.65,"The difference between STAT 151 and STAT 265 is that STAT 151 is an introductory course in applied statistics, focusing on basic concepts like point estimation, confidence intervals, and hypothesis testing, while STAT 265 is a more advanced course in probability and statistics, covering topics such "
+ollama + openai,Medium,What is the difference between the Mathematics and Statistics programs?,0.75,0.8181818181818182,0.9431862343069843,4.69,"The Mathematics and Statistics programs at the University of Alberta differ in their core focuses:  
+- **Mathematics**: Emphasizes mathematical modeling, optimization, stochastic processes, and theoretical foundations of data science.  
+- **Statistics**: Focuses on statistical modeling, inference, r"
+ollama + openai,Medium,What are the requirements for honors math?,1.0,0.6666666666666666,0.9945522232303067,3.5,"The requirements for honors mathematics are as follows:  
+- **Units**: You must complete **3 units from each of the listed courses** (e.g., MATH 117, MATH 134, etc.) and **choose 3 units from additional courses** (e.g., MATH 125, MATH 127, etc.).  
+- **Total Units**: The program requires **51–57 uni"
+ollama + openai,Medium,What are the requirements for the major in statistics?,1.0,0.9130434782608695,0.9837882667039176,5.06,"The requirements for the major in Statistics are as follows:
+
+1. **Units**:  
+   - **Honors in Statistics**: 66 units  
+   - **Major in Statistics**: 54 units  
+   - **Minor in Statistics**: 24 units  
+
+2. **Core Courses**:  
+   - **Foundation**: CMPUT 174, 175, and STAT 151 (3 units from MATH cours"
+ollama + openai,Medium,How many units do I need for a minor in mathematics?,1.0,0.5,0.9555941156866173,4.74,"To complete a minor in Mathematics, you need at least **24 units** with **at least 6 units** at the 300-level or higher. This ensures you meet the minimum requirements set by the program.
+
+---
+**Sources:**
+- https://calendar.ualberta.ca/preview_program.php?catoid=56&poid=83941&returnto=17477
+- https"
+ollama + openai,Medium,What programs are available in Mathematics and Statistics?,1.0,0.8461538461538461,0.9400372291035,3.69,"The available programs in Mathematics and Statistics at the University of Alberta are:  
+1. **MDP - Master's in Modelling, Data + Predictions** (course-based, 16 months, focusing on data science and industry applications).  
+2. **Thesis-based MSc (Master of Science)** (two years, emphasizing natural"
+ollama + openai,Medium,What is the Data Science program?,1.0,0.7619047619047619,0.891422778036469,4.78,"The Data Science program at the University of Alberta offers two main pathways: the **Data Science - Mathematics Option** and the **Data Science - Statistics Option**. Both programs emphasize mathematical modeling, optimization, stochastic processes, and theoretical foundations of data science, with"
+ollama + openai,Medium,What is the Applied Mathematics program?,0.75,0.5909090909090909,0.9168461487028692,2.99,"The Applied Mathematics program is centered at the Applied Math Institute (AMI) established in 1987. The institute promotes fundamental and applied research on mathematical sciences and stimulates collaborative efforts within the university community. It supports seminars, publications, and national"
+ollama + openai,Medium,Can I double major in Math and Statistics?,0.5,0.375,0.9566207216348731,5.48,"Yes, you can double major in Math and Statistics. Both majors require similar course requirements, including foundational mathematics courses (e.g., MATH 117, 134) and senior-level statistics courses (e.g., STAT 252, 265). Ensure you meet the Common Course Requirements, Major/Honors/Minor Requiremen"
+ollama + openai,Medium,What is the MDP program?,1.0,1.0,0.9213817567924615,2.57,"The MDP program is a **course-based Master's program in Modelling, Data + Predictions** (16 months) at the University of Alberta, emphasizing practical skills in mathematical modeling, data analysis, statistical machine learning, and modern computational methods. It prepares students for careers in "
+ollama + openai,Medium,How do I apply to the MSc Statistics program?,1.0,0.8,0.9619599542108856,4.81,"To apply to the **MSc Statistics program**, follow these steps based on the provided information:
+
+1. **Choose a Program**:  
+   - Select the MSc Statistics program from the available options.  
+   - Create an account in the **Application Portal** as directed by the university.
+
+2. **Submit Required"
+ollama + openai,Medium,What is the PhD program in Mathematics?,1.0,0.75,0.9321120159491408,2.75,"The PhD program in Mathematics is designed for students pursuing a doctoral degree in mathematics. It offers specializations such as Applied Mathematics, Mathematical Finance, Mathematical Physics, Pure Mathematics, and Statistical Machine Learning. The program typically takes four to five years to "
+ollama + openai,Medium,Is there funding available for graduate students?,1.0,1.0,0.9217937776525315,3.93,"Yes, there is funding available for graduate students in the Department of Mathematical and Statistical Sciences. Here's what you can expect:
+
+1. **Funding Guarantee**: Domestic MSc students with a Funding Guarantee receive at least **$28,366 per year** for up to two years.  
+2. **GTA Funding**:  
+ "
+ollama + openai,Hard,I want to study statistics. What courses should I take in first year?,1.0,0.4,0.9604545305294203,3.41,"To study statistics in your first year, you should take the following courses:  
+- **STAT 151: Introduction to Applied Statistics I**  
+- **STAT 161: Introductory Statistics for Business and Economics**  
+- **STAT 181: Introduction to Combinatorics and Probability**  
+
+These courses provide a founda"
+ollama + openai,Hard,I've completed STAT 265 and STAT 281. What 300-level STAT courses can I take?,1.0,0.7,0.94479275971384,5.54,"Based on the course information, you can take the following 300-level STAT courses:
+
+- **STAT 337: Biostatistics**  
+- **STAT 353: Life Contingencies I**  
+- **STAT 361: Sampling Techniques**  
+- **STAT 368: Introduction to Design and Analysis of Experiments**  
+- **STAT 371: Probability and Stochas"
+ollama + openai,Hard,What is the engineering calculus sequence?,0.75,0.4444444444444444,0.9097632437514104,5.21,"The engineering calculus sequence at the University of Alberta includes the following courses:  
+- **MATH 101 - Calculus for Engineering II** (Course Career: Undergraduate, Units: 3.5, Approved Hours: 3-0-1, Faculty: Science, Department: Mathematical & Statistical Sci)  
+- **MATH 100 - Calculus for "
+ollama + openai,Hard,What courses do I need before taking STAT 471?,1.0,0.0,0.9534372269212835,4.48,"To take STAT 471, you must have completed STAT 151 and MATH 156 (or equivalent). These courses are prerequisites for STAT 471. Additionally, you may need to complete other courses like MATH 117, MATH 118, or MATH 125 as corequisites.
+
+---
+**Sources:**
+- https://calendar.ualberta.ca/content.php?catoi"
+ollama + openai,Hard,What careers can I pursue with a Statistics degree?,1.0,0.9411764705882353,0.9684403589010756,3.22,"With a Statistics degree, you can pursue a variety of careers, including:  
+- **Data analysts**  
+- **Researchers in government agencies** (e.g., Alberta Environment)  
+- **Biostatisticians** in hospitals and medical research facilities  
+- **Actuaries** and **financial risk analysts**  
+- **Insuran"
+ollama + openai,Hard,What jobs are available for Data Science graduates?,1.0,0.8571428571428571,0.962130668777534,3.35,"Data Science graduates can pursue a variety of jobs, as highlighted in the context:  
+- **Data analysts** in government agencies like Alberta Environment.  
+- **Biostatisticians** in hospitals and medical research.  
+- **Actuaries** and **financial analysts** with insurance or pension roles.  
+- **R"
+ollama + openai,Hard,Are there research opportunities for undergrad students?,1.0,0.7857142857142857,0.9015838752085933,3.56,"Yes, there are research opportunities for undergrad students at the University of Alberta Math & Statistics department. Programs such as the Undergraduate Research Initiative, SSHRC-funded projects, and research opportunities in fields like wireless communications and nursing practice are available."
+ollama + openai,Hard,Is there a study abroad program for math students?,0.5,0.625,0.9547999499429216,4.18,"Yes, there is a study abroad program for math students at the University of Alberta. The Diversity in Mathematics Summer School program, which was launched in the summer of 2021, targets undergraduate students and high school students from minority backgrounds. This initiative aims to introduce stud"
+ollama + openai,Hard,What student clubs are available for math and stats students?,0.75,0.5,0.9941206602382059,2.97,"The student clubs available for math and statistics students are **SIGMAS (Society in Graduate Mathematics and Statistics)** and **the GSA (Graduate Students' Association)**. These groups are specifically for graduate students in the Department of Mathematical and Statistical Sciences.
+
+---
+**Source"
+ollama + openai,Hard,What scholarships are available for math students?,1.0,0.9090909090909091,0.9516244900978981,5.02,"The Department of Mathematical and Statistical Sciences offers several scholarships for math students. Specifically, the **Academic Excellence Scholarships** are available for students entering an Honors or Specialization program in Mathematics or Statistics, with each scholarship valued at **$1000*"
+ollama + openai,Hard,What is the Statistical Consulting service?,1.0,1.0,0.9171790694755151,5.09,"The Statistical Consulting service offered by the University of Alberta's Mathematics and Statistics department includes a range of services such as data analysis, problem-solving, oral communication with clients, planning experiments and data collection, and statistical modeling and report writing."
+ollama + openai,Hard,Does the department offer any consulting or training for researchers?,1.0,0.6,0.9908348850886615,3.64,"Yes, the department offers consulting and training services for researchers. The Training and Consulting Center provides statistical consulting for external clients in business, government, and industry on a fee-for-service basis. Additionally, they support graduate students in applied statistics th"
+ollama + openai,Hard,I'm a high school student interested in math. What outreach programs exist?,1.0,0.5555555555555556,0.9707593226193897,4.74,"Here are some outreach programs available for high school students interested in math:
+
+1. **Science Summer Camps** – Offers K-12 engagement with STEM activities.  
+2. **Ada’s Team** – Hosts outreach events, funding for conferences, and technical workshops.  
+3. **Mathematics Primer Course** – A non"
+ollama + openai,Hard,What is the difference between the honors statistics and honors mathematics programs?,0.5,0.2,0.9962118017809529,5.24,"The difference between the honors statistics and honors mathematics programs lies in their focus and structure:  
+- **Honors Mathematics**: This program emphasizes advanced courses in mathematics, including topics like microeconomics, econometrics, and rigorous mathematical analysis. It is designed "
+ollama + openai,Hard,"If I complete STAT 151, what statistics courses can I take next?",1.0,0.38095238095238093,0.9451444306524097,7.73,"After completing STAT 151, you can take the following statistics courses in the second year, provided you meet the prerequisites:
+
+1. **STAT 235: Introductory Statistics for Engineering**  
+   *Prerequisites*: STAT 151, STAT 161, STAT 235, SCI 151.  
+   *Notes*: This course is designed for Engineeri"
