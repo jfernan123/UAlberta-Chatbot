@@ -17,7 +17,7 @@ def _rrf_score(rank: int, rrf_k: int = 60) -> float:
     return 1.0 / (rrf_k + rank)
 
 
-def load_retriever(k: int = 10):
+def load_retriever(k: int = 10, db_path: str = "db"):
     docs: list[Document] = []
     for path in PAGES_FILES:
         if os.path.exists(path):
@@ -25,7 +25,7 @@ def load_retriever(k: int = 10):
 
     # Vector retriever (semantic similarity) — opens the pre-built Chroma DB
     vector_db = Chroma(
-        persist_directory="db",
+        persist_directory=db_path,
         embedding_function=get_embeddings(),
     )
     vector_retriever = vector_db.as_retriever(search_kwargs={"k": k})

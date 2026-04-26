@@ -88,16 +88,41 @@ streamlit run app.py
 
 ## Running the Test Suite
 
+### Benchmark (answers only)
+
 ```bash
-python tests/run_suite.py
+python tests/benchmark.py                          # all 6 LLM × embedding combos
+python tests/benchmark.py --llm claude             # Claude combos only
+python tests/benchmark.py --skip-embedding openai  # skip OpenAI embeddings
 ```
 
-Runs 46 test questions and saves results to `tests/results/results_<timestamp>.ipynb`. Open the notebook in VS Code to read through answers and source URLs.
+Runs all 46 questions across every combination and saves a timestamped `.ipynb` to `tests/results/`. Open it in VS Code to read answers side by side.
 
 The suite is split into three tiers:
 - **Easy** — direct prerequisite lookups, course listings, Decima Robinson
 - **Medium** — program requirements, program comparisons, graduate admissions
 - **Hard** — path planning, career outcomes, research opportunities, edge cases
+
+### RAGAS automated evaluation
+
+Scores each combination with three reference-free metrics using Claude Haiku as a judge: Context Relevance, Faithfulness, and Answer Relevancy.
+
+```bash
+python tests/ragas_test.py                         # 3-question smoke test first
+python tests/ragas_eval.py                         # full eval, all 6 combos
+python tests/ragas_eval.py --llm claude            # Claude combos only
+python tests/ragas_eval.py --skip-embedding openai # skip OpenAI embeddings
+```
+
+Requires `instructor` and `anthropic` packages in addition to the base dependencies. Checkpoints are saved to `tests/results/ragas_captures/` after each combo's chatbot calls finish, so the run can be interrupted and resumed without repeating LLM calls.
+
+Output:
+- `tests/results/ragas_raw.csv` — per-question scores for every combo
+- `tests/results/ragas_summary.csv` — mean scores per combo
+
+### Human validation analysis
+
+Open `tests/results/validation_analysis.ipynb` to reproduce the accuracy plots from the paper. Reads `Model Validation - Sheet1.csv` from the project root.
 
 ---
 
@@ -168,8 +193,11 @@ Tools available:
 
 | File | Purpose |
 |---|---|
-| `tests/run_suite.py` | Runs all 46 questions, saves timestamped `.ipynb` to `tests/results/` |
-| `tests/test_suite.py` | Question lists (EASY / MEDIUM / HARD) |
+| `tests/test_suite.py` | 46 questions split into EASY / MEDIUM / HARD tiers |
+| `tests/benchmark.py` | Runs all 46 questions across every LLM × embedding combo, saves timestamped `.ipynb` |
+| `tests/ragas_test.py` | 3-question smoke test for the RAGAS pipeline |
+| `tests/ragas_eval.py` | Full RAGAS automated evaluation across all 6 combos |
+| `tests/results/validation_analysis.ipynb` | Human-annotation analysis notebook (T/PC/F scoring) |
 
 ---
 

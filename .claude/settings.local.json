@@ -3,7 +3,15 @@
     "allow": [
       "Bash(git mv *)",
       "Bash(python -c ' *)",
-      "Bash(python tests/test_suite.py)"
+      "Bash(python tests/test_suite.py)",
+      "Bash(\"C:\\\\Users\\\\Juan\\\\anaconda3\\\\envs\\\\stat541\\\\python.exe\" -c \"import ragas.metrics.collections.context_relevance.metric as m; print\\([x for x in dir\\(m\\) if not x.startswith\\('_'\\)]\\)\")",
+      "Bash('C:\\\\Users\\\\Juan\\\\anaconda3\\\\envs\\\\stat541\\\\python.exe' -c ' *)",
+      "Bash(\"C:\\\\Users\\\\Juan\\\\anaconda3\\\\envs\\\\stat541\\\\python.exe\" -c \"from ragas.evaluation import aevaluate; import inspect; print\\(inspect.signature\\(aevaluate\\)\\)\")",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(git add *)",
+      "Bash(git rebase *)",
+      "Bash(GIT_EDITOR=true git rebase --continue)"
     ]
   }
 }

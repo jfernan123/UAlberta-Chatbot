@@ -1,0 +1,7 @@
+combo,context_relevancy,faithfulness,answer_relevancy
+claude + ollama,0.832,0.728,0.736
+claude + sentence,0.924,0.827,0.905
+claude + openai,0.924,0.83,0.905
+ollama + ollama,0.891,0.669,0.899
+ollama + sentence,0.94,0.679,0.948
+ollama + openai,0.929,0.721,0.965
