@@ -346,5 +346,125 @@
     "question": "What building is the math and stats department in?",
     "response": "# Department Location\n\nBased on the information available to me, the **Department of Mathematical and Statistical Sciences is located in the University Commons building**.\n\nAccording to the department's welcome message, the department is \"now fully settled in the University Commons building, after half a century in the Central Academic Building.\"\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html](https://www.u",
     "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T09:53:21.997339",
+    "question": "What is the math program?",
+    "response": "The Mathematics program at the University of Alberta is structured across multiple years, with courses ranging from Year 1 to Year 5. Here's a comprehensive overview:\n\n- **Year 1**: MATH 100, 101, 102, 111, 113, 114, 115, 117, 118, 125, 127, 134, 136, 144, 146, 154, 156, 160  \n- **Year 2**: MATH 201, 214, 215, 216, 217, 225, 226, 227, 228, 241, 253, 256  \n- **Year 3**: MATH 300, 311, 315, 317, 322, 325, 326, 328, 334, 336, 337, 341, 343, 348, 356, 357, 371, 372, 373, 381  \n- **Year 4**: MATH 405",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T10:31:46.658372",
+    "question": "What is the mdp program?",
+    "response": "The MDP program emphasizes practical aspects such as mathematical and statistical modeling, data analysis, statistical machine learning algorithms, and modern computational methods. It requires MATH prerequisites, as indicated in the course information, which may be necessary for students applying to the program. For inquiries, students can contact Amy Ouyang (UCOMM 5-182G) at atmssgrad@ualberta.ca or the Graduate Program Administrator in the Department of Laboratory Medicine and Pathology.\n\n---",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T10:31:53.544387",
+    "question": "What is the mdp program?",
+    "response": "The MDP program emphasizes practical aspects such as mathematical and statistical modeling, data analysis, statistical machine learning algorithms, and modern computational methods. It requires MATH prerequisites, as indicated in the course information, which may be necessary for students applying to the program. For inquiries, students can contact Amy Ouyang (UCOMM 5-182G) at atmssgrad@ualberta.ca or the Graduate Program Administrator in the Department of Laboratory Medicine and Pathology.\n\n---",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-25T10:32:43.585849",
+    "question": "What is math?",
+    "response": "Mathematics is a broad subject with a wide range of courses across different years (100-400 level) and disciplines. For example, MATH 100, 101, 102, 111, etc., cover Year 1, while MATH 201, 214, 225, 226, 227, 228, 241, 253, 256, etc., are in Year 2. It is required for certain majors like Psychology and Mental Health (Math 30-1/30-2) and fields such as Statistics, Computer Science, and Environmental Science. The courses emphasize practical aspects like mathematical modeling, data analysis, and c",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T10:33:00.367591",
+    "question": "What is statistics?",
+    "response": "Statistics refers to the study of patterns, probabilities, and the variation of phenomena. It encompasses a wide range of disciplines, including mathematics, statistics, and data analysis. Here are the key courses and requirements mentioned in the provided information:\n\n- **STAT Courses**:  \n  - Year 1: STAT 151, STAT 161, STAT 181  \n  - Year 2: STAT 235, STAT 252, STAT 265, STAT 266, STAT 276, STAT 281  \n  - Year 3: STAT 337, STAT 353, STAT 361, STAT 368, STAT 371, STAT 372, STAT 378  \n  - Year",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T10:33:31.902333",
+    "question": "What is number theory?",
+    "response": "Number theory refers to the study of the natural numbers and their properties, including prime factorization, relationships between numbers, and the exploration of mathematical structures. It is a subject primarily pursued by individuals fascinated with its intricate beauty and mathematical rigor. This course, MATH 256, introduces foundational concepts such as number theory, algebra, and combinatorics, while emphasizing the applications of these ideas in various fields.\n\n---\n**Sources**\n- [https",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T10:33:45.979443",
+    "question": "What is measure theory?",
+    "response": "Measure theory is the study of measures, integration, and the properties of sets and functions that are defined on a space of points (often in Euclidean space). It explores concepts like signed and complex measures, Lebesgue measure, integration, and functions of bounded variation. Key topics include set operations, measure theory, integration theory, and functions of bounded variation. For example, in MATH 514 and MATH 543, students typically take courses that cover measure theory, such as set ",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T10:33:55.313265",
+    "question": "What is measure theory?",
+    "response": "Measure theory is the study of measures, integration, and the properties of sets and functions that are defined on a space of points (often in Euclidean space). It explores concepts like signed and complex measures, Lebesgue measure, integration, and functions of bounded variation. Key topics include set operations, measure theory, integration theory, and functions of bounded variation. For example, in MATH 514 and MATH 543, students typically take courses that cover measure theory, such as set ",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:23:24.120042",
+    "question": "What is the MDP program?",
+    "response": "The MDP program emphasizes the practical aspects of mathematical and statistical modeling, data analysis, statistical machine learning algorithms, and modern computational methods. It focuses on developing rigor in these areas, with students engaging in these disciplines.\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/contact.html](https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/contact.html)\n- [https://www.",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-25T11:23:48.847334",
+    "question": "What is probability?",
+    "response": "Probability is a mathematical concept that deals with the analysis of random events and their likelihoods. It involves studying the outcomes of random experiments and how they can be modeled using probability distributions, conditional probabilities, and statistical methods. Key concepts include conditional probability, Bayes' rule, independence, and the strong law of large numbers. These ideas are foundational in fields like statistics, machine learning, and probability theory. For example, in ",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-25T11:24:08.267857",
+    "question": "What is measure theory?",
+    "response": "Measure theory is a mathematical field that studies measures, integration, and the properties of sets and functions. It typically includes topics such as set operations, measure theory, integration, Lebesgue measure, integrals on Euclidean spaces, product measures, Tonelli-Fubini theorems, and functions of bounded variation. These concepts form the foundation of advanced analysis in mathematics. For example, in MATH 514 and MATH 543, students study measure theory, including signed and complex me",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:24:27.736950",
+    "question": "What is engineering?",
+    "response": "Engineering is a major in various faculties such as Agricultural, Life and Environmental Sciences, Arts, Education, Engineering, Kinesiology, Sport, and Recreation. Students in these faculties may be recommended to the Fresh Start Program if they meet specific criteria, such as having a first qualifying year in the Faculty of Engineering or meeting other admission requirements. It is typically required to take Mathematics 30-1 or 30-2 courses for certain majors, including those in Psychology, Su",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-25T11:25:49.771747",
+    "question": "what is graph theory?",
+    "response": "Graph theory is a mathematical field that studies graphs, which are structures consisting of a set of nodes and edges connecting them. It focuses on properties such as paths, cycles, trees, planarity, and duality, as well as topics like coloring problems, matching, and matroid theory. The course MATH 322 emphasizes these concepts, with prerequisites including MATH 102, 125, or 127, and MATH 216 or 228 recommended. Graph theory is typically studied in graduate programs, with advanced mathematical",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:41:57.683877",
+    "question": "What is convex optimization?",
+    "response": "Convex optimization is a mathematical field that deals with optimization problems where the objective function and constraints are convex. It focuses on finding the maximum or minimum values of a function subject to convex constraints. This field typically involves techniques like linear programming, interior point methods, and numerical integration, tailored to specific applications in statistics and machine learning. The course MATH 341 emphasizes the study of convex optimization with constrai",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:44:44.277256",
+    "question": "What is matrix multiplication?",
+    "response": "Matrix multiplication is the operation that takes two matrices and produces another matrix. For example, multiplying a row vector with a column vector results in a new matrix. This operation is essential in linear algebra and is used in various applications, such as solving systems of equations or analyzing linear transformations.\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/deadlines-and-faqs.html](https://www.ualberta.ca/en/ma",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:53:10.170002",
+    "question": "What is mathematical finance?",
+    "response": "Mathematical finance refers to the study of financial mathematics and its applications in various fields such as finance, economics, and risk management. It involves the use of mathematical tools to model and analyze financial markets, including topics like present and accumulated values for cash flows, option pricing in discrete-time models, and the pricing and hedging of financial contracts. Courses like **MATH 253 - Theory of Interest** and **MATH 356 - Introduction to Mathematical Finance I*",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:53:36.243118",
+    "question": "What are its prerequisites?",
+    "response": "Prerequisites for the program include:  \n- **MATHQ or MATH pre- or corequisites** (as required for many courses listed in the context).  \n- **CMPUT 174 and CMPUT 175** (for students in the Business Technology Management major).  \n- **Indigenous Canada MOOC certificate** (if completed within 5 years of the first term of registration).  \n\nThese prerequisites ensure students meet the requirements for admission and completion of the program.\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematica",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-25T11:54:13.669022",
+    "question": "What is indienous canada mooc?",
+    "response": "The provided course information does not mention any \"Indienous Canada MOOC.\" The context focuses on university programs, admissions processes, and departmental policies, but there is no information related to MOOCs or Canadian-specific courses. If you're referring to a specific MOOC course, please provide more details, and I'll assist accordingly.\n\n---\n**Sources**\n- [https://www.ualberta.ca/en/mathematical-and-statistical-sciences/graduate-studies/admissions/how-to-apply.html](https://www.ualbe",
+    "rating": -1
+  },
+  {
+    "timestamp": "2026-04-25T11:54:42.179227",
+    "question": "What is complex variables?",
+    "response": "Complex variables refer to the study of complex analysis, which involves topics such as complex linearity, holomorphicity, and manifolds. The course covers advanced topics like Hartog’s theorem, Weierstrass preparation theorem, Riemann extension theorem, Weierstrass division theorem, analytic Nullstellensatz, implicit and inverse function theorems, complex manifolds, and meromorphic maps. Prerequisites include MATH 411.\n\n---\n**Sources**\n- [https://calendar.ualberta.ca/preview_course_nopop.php?ca",
+    "rating": 1
+  },
+  {
+    "timestamp": "2026-04-25T11:55:03.743840",
+    "question": "what is time series analysis?",
+    "response": "Time series analysis is a branch of statistics that deals with the study of sequences, such as time series data, which are sequences of observations over time. This course typically covers topics like stationary series, spectral analysis, models in time series (including autoregressive, moving average, ARMA, and ARIMA), and computational techniques for time series data. It is offered in either term and may be offered in alternate years. The prerequisites for this course include STAT 372 and 378.",
+    "rating": 1
   }
 ]
